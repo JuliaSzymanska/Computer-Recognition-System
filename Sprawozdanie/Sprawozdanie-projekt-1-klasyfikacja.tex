@@ -1,0 +1,130 @@
+\documentclass{classrep}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+
+\studycycle{Informatyka, studia STACJONARNE, I st.}
+\coursesemester{VI}
+
+\coursename{Komputerowe systemy rozpoznawania}
+\courseyear{2020/2021}
+
+\courseteacher{tytuł/stopień imię nazwisko}
+\coursegroup{dzień, godzina zajęć}
+
+\author{
+  \studentinfo{Autor Pierwszy}{nr albumu 1} \and
+  \studentinfo{Autor Drugi}{nr albumu 2} }
+
+\title{Projekt 1. Klasyfikacja dokumentów tekstowych}
+
+\begin{document}
+\maketitle
+
+Opis projektu ma formę artykułu naukowego lub raportu z zadania
+badawczego/doświadczalnego/obliczeniowego (wg indywidualnych potrzeb związanych np. z
+pracą inżynierską/naukową/zawodową). \\
+\indent {\bf Wybrane sekcje (rozdziały sprawozdania) są uzupełniane wg wymagań w
+opisie Projektu 1. i Harmonogramie Zajęć na WIKAMP KSR jako efekty zadań w~poszczególnych tygodniach}. 
+
+\section{Cel projektu}
+Zwięzły (2-3 zdania) opis
+problemu badawczego/obliczeniowego,  uwzględniający część badawczą i implementacyjną. \\
+\indent Zamieszczony opis (własny, nie skopiowany) zawiera
+przypisy do literatury (bibliografii) zamieszczonej na końcu raportu/sprawozdania
+zgodnie z~Polską Normą cytowania bibliografii (zob. materiały BG PŁ pt. ,,Bibliografia
+załącznikowa'').\\
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 02 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+
+\section{Klasyfikacja nadzorowana metodą $k$-NN}
+Krótki opis metody $k$-NN: zasada działania, wymagane parametry wejściowe, format
+i~znaczenie wyników/rezultatów. Opis własny z przypisami do literatury -- minimum
+teorii potrzebnej do zadania, tak by inżynier innej specjalności zrozumiał dalszy
+opis \cite{tadeusiewicz90}.\\
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 02 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+\subsection{Ekstrakcja cech, wektory cech}
+Wyekstrahowane cechy, min. 10, opisane słownie oraz wzorami, z objaśnieniem
+wszystkich symboli i przykładami użycia (ułatwiających czytelnikowi zrozumienie ich
+znaczenia w zadaniu klasyfikacji). Postać wektora wartości cech po procesie
+ekstrakcji. Użyte oznaczenia są jednolite w całym
+raporcie/sprawozdaniu. \\ 
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 02 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+\subsection{Miary jakości klasyfikacji} 
+Miary jakości klasyfikacji (Accuracy, Precision,
+Recall, F1). We wprowadzeniu zaprezentować minimum teorii potrzebnej do realizacji
+zadania, tak by inżynier innej specjalności zrozumiał dalszy opis.\\
+\indent Stosowane wzory, oznaczenia z objaśnieniami znaczenia symboli użytych w
+doświadczeniu. Oznaczenia jednolite w obrębie całego sprawozdania.  Opis zawiera przypisy do bibliografii zgodnie z
+Polską Normą, (zob. materiały BG PŁ).\\
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 03 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+
+\section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
+Wzory, znaczenia i opisy symboli zastosowanych metryk z
+przykładami. Wzory, opisy i znaczenia miar
+podobieństwa tekstów zastosowanych w obliczaniu metryk dla wektorów cech z
+przykładami dla każdej miary \cite{niewiadomski08}.  Oznaczenia jednolite w obrębie całego sprawozdania.  Wstępne wyniki miary Accuracy dla próbnych klasyfikacji na ograniczonym zbiorze tekstów (podać parametry i kryteria
+wyboru wg punktów 3.-8. z opisu Projektu 1.). \\ 
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 04 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+\section{Budowa aplikacji}
+\subsection{Diagramy UML}
+Diagramy UML i zwięzłe opisy: idei aplikacji, modułu ekstrakcji i modułu
+klasyfikatora.\\
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 03 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+\subsection{Prezentacja wyników, interfejs użytkownika} 
+Krótki ilustrowany opis jak użytkownik może korzystać z aplikacji, w~szczególności wprowadzać parametry klasyfikacji i odczytywać wyniki. Wersja JRE i inne wymogi
+niezbędne do uruchomienia aplikacji przez użytkownika na własnym komputerze. \\
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 04 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+\section{Wyniki klasyfikacji dla różnych parametrów wejściowych}
+Wyniki kolejnych eksperymentów wg punktów 2.-8. opisu projektu 1.  Wykresy i tabele
+obowiązkowe, dokładnie opisane w ,,captions'' (tytułach), konieczny opis osi i
+jednostek wykresów oraz kolumn i wierszy tabel.\\ 
+
+{**Ewentualne wyniki realizacji punktu 9. opisu Projektu 1., czyli,,na ocenę 5.0'' i ich porównanie do wyników z
+części obowiązkowej**.}\\
+
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 05 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+
+\section{Dyskusja, wnioski}
+Dokładne interpretacje uzyskanych wyników w zależności od parametrów klasyfikacji
+opisanych w punktach 3.-8 opisu Projektu 1. 
+Szczególnie istotne są wnioski o charakterze uniwersalnym, istotne dla podobnych zadań. 
+Omówić i wyjaśnić napotkane problemy (jeśli były). Każdy wniosek/problem powinien mieć poparcie
+w przeprowadzonych eksperymentach (odwołania do konkretnych wyników: wykresów,
+tabel). \\
+\underline{Dla końcowej oceny jest to najważniejsza sekcja} sprawozdania, gdyż prezentuje poziom
+zrozumienia rozwiązywanego problemu.\\
+
+** Możliwości kontynuacji prac w obszarze systemów rozpoznawania, zwłaszcza w kontekście pracy inżynierskiej,
+magisterskiej, naukowej, itp. **\\
+
+\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 06 wg Harmonogramu Zajęć
+na WIKAMP KSR.}
+
+
+\section{Braki w realizacji projektu 1.}
+Wymienić wg opisu Projektu 1. wszystkie niezrealizowane obowiązkowe elementy projektu, ewentualnie
+podać merytoryczne (ale nie czasowe) przyczyny tych braków. 
+
+
+\begin{thebibliography}{0}
+\bibitem{tadeusiewicz90} R. Tadeusiewicz: Rozpoznawanie obrazów, PWN, Warszawa, 1991.  
+\bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2008.
+\end{thebibliography}
+
+Literatura zawiera wyłącznie źródła recenzowane i/lub o potwierdzonej wiarygodności,
+możliwe do weryfikacji i cytowane w sprawozdaniu. 
+\end{document}
