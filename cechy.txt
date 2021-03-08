@@ -5,7 +5,9 @@
 5. Nasycenie tekstu ilością słów kluczowych: k / len     k - ilosc wystapien slow kluczowych, len - ilosc fraz w tekscie
 6. Nasycenie tekstu ilością wystąpień słów kluczowych: n / len     n - ilosc wystepujacych słów kluczowych, len - ilosc fraz w tekscie
 7. dateline - tekst
-8. tytul
+8. tytul - tekst
+9. autor - tekst
+10. Druga najczęściej występująca waluta
 
 12. tytuł
 6. tematy
