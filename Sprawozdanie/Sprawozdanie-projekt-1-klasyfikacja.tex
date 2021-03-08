@@ -8,51 +8,42 @@
 \coursename{Komputerowe systemy rozpoznawania}
 \courseyear{2020/2021}
 
-\courseteacher{tytuł/stopień imię nazwisko}
-\coursegroup{dzień, godzina zajęć}
+\courseteacher{prof. dr hab. inż. Adam Niewiadomski}
+\coursegroup{poniedziałek, 12:00}
 
 \author{
-  \studentinfo{Autor Pierwszy}{nr albumu 1} \and
-  \studentinfo{Autor Drugi}{nr albumu 2} }
+  \studentinfo{Julia Szymańska}{224441} \and
+  \studentinfo{Przemysław Zdrzalik}{224466} }
 
 \title{Projekt 1. Klasyfikacja dokumentów tekstowych}
 
 \begin{document}
 \maketitle
 
-Opis projektu ma formę artykułu naukowego lub raportu z zadania
-badawczego/doświadczalnego/obliczeniowego (wg indywidualnych potrzeb związanych np. z
-pracą inżynierską/naukową/zawodową). \\
-\indent {\bf Wybrane sekcje (rozdziały sprawozdania) są uzupełniane wg wymagań w
-opisie Projektu 1. i Harmonogramie Zajęć na WIKAMP KSR jako efekty zadań w~poszczególnych tygodniach}. 
 
 \section{Cel projektu}
-Zwięzły (2-3 zdania) opis
-problemu badawczego/obliczeniowego,  uwzględniający część badawczą i implementacyjną. \\
-\indent Zamieszczony opis (własny, nie skopiowany) zawiera
-przypisy do literatury (bibliografii) zamieszczonej na końcu raportu/sprawozdania
-zgodnie z~Polską Normą cytowania bibliografii (zob. materiały BG PŁ pt. ,,Bibliografia
-załącznikowa'').\\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 02 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+Celem projektu jest stworzenie aplikacji klasyfikującej zbiór danych tekstowych metodą K najbliższych sądziadów (k-NN). W pierwszej fazie aplikacji należy wykonać ekstrakcję cech z otrzymanych zbiorów tekstów. W ostatniej fazie aplikacji należy wykonać klasyfikację tekstów.  (wplyw parametrów na jakość klasyfikacji?)\\
 
 
 \section{Klasyfikacja nadzorowana metodą $k$-NN}
-Krótki opis metody $k$-NN: zasada działania, wymagane parametry wejściowe, format
-i~znaczenie wyników/rezultatów. Opis własny z przypisami do literatury -- minimum
-teorii potrzebnej do zadania, tak by inżynier innej specjalności zrozumiał dalszy
-opis \cite{tadeusiewicz90}.\\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 02 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+
+Metoda K najbliższych sąsiadów, w skrócie metoda $k$-NN, jest to algorytm stosowany do klasyfikacji, który nie wymaga etapu uczenia. 
+Polega na zaklasyfikowaniu rozpatrywanego elementu do zbioru ze zbioru uczącego, który najczęściej występuje w promieniu k od rozpatrywanego elementu. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - promień obszaru rozpatrywanego, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
+
 
 \subsection{Ekstrakcja cech, wektory cech}
+Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wartościami rzeczywistymi oraz tekstowymi. Dane cechy będą reprezentowały tekst w postaci wektora cech podczas procesu klasyfikacji. \\
 Wyekstrahowane cechy, min. 10, opisane słownie oraz wzorami, z objaśnieniem
 wszystkich symboli i przykładami użycia (ułatwiających czytelnikowi zrozumienie ich
 znaczenia w zadaniu klasyfikacji). Postać wektora wartości cech po procesie
 ekstrakcji. Użyte oznaczenia są jednolite w całym
 raporcie/sprawozdaniu. \\ 
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 02 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+
+
+
+
+
+
 \subsection{Miary jakości klasyfikacji} 
 Miary jakości klasyfikacji (Accuracy, Precision,
 Recall, F1). We wprowadzeniu zaprezentować minimum teorii potrzebnej do realizacji
