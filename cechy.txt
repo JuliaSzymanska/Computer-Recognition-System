@@ -2,11 +2,13 @@
 2. pierwsze slowo kluczowe
 3. ilosc wystapien slow kluczowych: k = |w : w ∈ K ∧ w ∈ x|        K - zbior slow kluczowych, x - zbior fraz w tekscie
 4. ilosc wystepujacych słów kluczowych: n = |unique(w : w ∈ K ∧ w ∈ x)|        K - zbior slow kluczowych, x - zbior fraz w tekscie
-5. miejsce - kraj
+5. Nasycenie tekstu ilością słów kluczowych: k / len     k - ilosc wystapien slow kluczowych, len - ilosc fraz w tekscie
+6. Nasycenie tekstu ilością wystąpień słów kluczowych: n / len     n - ilosc wystepujacych słów kluczowych, len - ilosc fraz w tekscie
+7. dateline - tekst
+
+12. tytuł
 6. tematy
 7. data
 8. ludzie
 9. autor
-10. Nasycenie tekstu ilością słów kluczowych: k / len     k - ilosc wystapien slow kluczowych, len - ilosc fraz w tekscie
-11. Nasycenie tekstu ilością wystąpień słów kluczowych: n / len     n - ilosc wystepujacych słów kluczowych, len - ilosc fraz w tekscie
-12. tytuł
+5. miejsce - kraj
