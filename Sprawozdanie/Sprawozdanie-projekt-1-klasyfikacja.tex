@@ -22,13 +22,13 @@
 
 
 \section{Cel projektu}
-Celem projektu jest stworzenie aplikacji klasyfikującej zbiór danych tekstowych metodą K najbliższych sądziadów (k-NN). W pierwszej fazie aplikacji należy wykonać ekstrakcję cech z otrzymanych zbiorów tekstów. W ostatniej fazie aplikacji należy wykonać klasyfikację tekstów.  (wplyw parametrów na jakość klasyfikacji?)\\
+Celem projektu jest stworzenie aplikacji klasyfikującej zbiór danych tekstowych metodą K najbliższych sąsiadów (k-NN). Aplikacja ma za zadanie dokonać ekstrakcji cech z podanego zbioru tekstów oraz następnie ich klasyfikację.\\
 
 
 \section{Klasyfikacja nadzorowana metodą $k$-NN}
 
 Metoda K najbliższych sąsiadów, w skrócie metoda $k$-NN, jest to algorytm stosowany do klasyfikacji, który nie wymaga etapu uczenia. 
-Polega na zaklasyfikowaniu rozpatrywanego elementu do zbioru ze zbioru uczącego, który najczęściej występuje w promieniu k od rozpatrywanego elementu. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - promień obszaru rozpatrywanego, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
+Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego, gdzie spośród k najbliższych rozpatrywanemu elementowi sąsiadów najwięcej z nich należy do tej grupy. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - ilość rozpatrywanych sąsiadów, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
 
 
 \subsection{Ekstrakcja cech, wektory cech}
