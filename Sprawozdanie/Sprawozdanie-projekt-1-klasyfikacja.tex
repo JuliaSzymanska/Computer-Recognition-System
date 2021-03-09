@@ -36,28 +36,17 @@ Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wa
 \begin{enumerate}
   \item Liczba słów - cecha ta oznacza liczbę słów które składają się na pobrany tekst. Będzie ona charakteryzowała długość dokumentu w postaci liczby całkowitej \begin{equation}  m = len \end{equation} gdzie len - liczba słów w tekście.
   \item Druga najczęściej występująca waluta - wybieramy drugą najczęściej występującą walutę z tekstu, dlatego że uważamy że pierwsza wybrana waluta będzie najczęściej dolar ze względu na jego powszechne zastosowanie. Do pobierania nazw walut wykorzystujemy dołączony plik gdzie znajduje się 27 różnych walut wraz z kodami jakimi reprezentowane są w pobieranych tekstach. 
-  \item Data z tagu  \textless Dateline\textgreater\ - Większość tekstów w swoim body posiada tag \textless Dateline\textgreater , w którym w większości przypadków znajduje się miasto oraz data podana w postaci miesiąca i dnia.
+  \item Data z tagu  \textless Dateline\textgreater\ - Każdy tekst w swoim body posiada tag \textless Dateline\textgreater , w którym znajduje się miasto oraz data podana w postaci miesiąca i dnia.
   \item Lokacja z tagu \textless Dateline\textgreater - jak wyżej. Lokację traktujemy jako cechę tekstową.
-  \item Tytuł 
-  \item Autor
-  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekscie nazwę kraju.
-  \item Zbiór występujących słów kluczowych - \begin{equation}  n : n \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu
+  \item Tytuł z tagu \textless Title\textgreater - Każdy tekst w swoim body posiada tag \textless Title\textgreater
+  \item Autor z tagu \textless Author\textgreater - Większość tekstów w swoim body posiada tag \textless Author\textgreater
+  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekście nazwę kraju.
+  \item Zbiór występujących słów kluczowych \begin{equation}  n : n \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu
   \item Ilość wystąpień słów kluczowych - \begin{equation}  w = |n| \end{equation} gdzie n - zbiór występujących słów kluczowych
   \item Nasycenie tekstu ilością słów kluczowych  \begin{equation} nas = w / m \end{equation}  gdzie w - ilość wystąpień słów kluczowych w tekscie, m - liczba słów w tekście
-  \item Najczęściej występujące słowo kluczowe
-  \item Liczba unikalnych słów
+  \item Najczęściej występujące słowo kluczowe - wybieramy najczęściej występujące w analizowanym tekście słowo kluczowe.
+  \item Liczba unikalnych słów - zliczamy liczbę unikalnych słów w analizowanym tekście. 
 \end{enumerate}
-
-
-
-Wyekstrahowane cechy, min. 10, opisane słownie oraz wzorami, z objaśnieniem
-wszystkich symboli i przykładami użycia (ułatwiających czytelnikowi zrozumienie ich
-znaczenia w zadaniu klasyfikacji). Postać wektora wartości cech po procesie
-ekstrakcji. Użyte oznaczenia są jednolite w całym
-raporcie/sprawozdaniu. \\ 
-
-
-
 
 
 
