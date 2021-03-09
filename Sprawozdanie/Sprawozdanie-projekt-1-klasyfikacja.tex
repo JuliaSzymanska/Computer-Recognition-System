@@ -34,15 +34,17 @@ Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego,
 \subsection{Ekstrakcja cech, wektory cech}
 Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wartościami rzeczywistymi oraz tekstowymi. Dane cechy będą reprezentowały tekst w postaci wektora cech podczas procesu klasyfikacji. \\
 \begin{enumerate}
-  \item Liczba słów 
-  \item Druga najczęściej występująca waluta
-  \item Data z tagu  \textless Dateline\textgreater
-  \item Lokacja z tagu \textless Dateline\textgreater
+  \item Liczba słów - cecha ta oznacza liczbę słów które składają się na pobrany tekst. Będzie ona charakteryzowała długość dokumentu w postaci liczby całkowitej \begin{equation}  m = len \end{equation} gdzie len - liczba słów w tekście.
+  \item Druga najczęściej występująca waluta - wybieramy drugą najczęściej występującą walutę z tekstu, dlatego że uważamy że pierwsza wybrana waluta będzie najczęściej dolar ze względu na jego powszechne zastosowanie. Do pobierania nazw walut wykorzystujemy dołączony plik gdzie znajduje się 27 różnych walut wraz z kodami jakimi reprezentowane są w pobieranych tekstach. 
+  \item Data z tagu  \textless Dateline\textgreater\ - Większość tekstów w swoim body posiada tag \textless Dateline\textgreater , w którym w większości przypadków znajduje się miasto oraz data podana w postaci miesiąca i dnia.
+  \item Lokacja z tagu \textless Dateline\textgreater - jak wyżej. Lokację traktujemy jako cechę tekstową.
   \item Tytuł 
   \item Autor
-  \item Najczęściej występująca nazwa kraju
-  \item Nasycenie tekstu ilością słów kluczowych
-  \item Ilość wystąpień słów kluczowych
+  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekscie nazwę kraju.
+  \item Zbiór występujących słów kluczowych - \begin{equation}  n : n \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu
+  \item Ilość wystąpień słów kluczowych - \begin{equation}  w = |n| \end{equation} gdzie n - zbiór występujących słów kluczowych
+  \item Nasycenie tekstu ilością słów kluczowych  \begin{equation} nas = w / m \end{equation}  gdzie w - ilość wystąpień słów kluczowych w tekscie, m - liczba słów w tekście
+  \item Najczęściej występujące słowo kluczowe
   \item Liczba unikalnych słów
 \end{enumerate}
 

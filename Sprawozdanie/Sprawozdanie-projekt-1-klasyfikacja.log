@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  9 MAR 2021 11:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  9 MAR 2021 13:20
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -142,49 +142,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 [1
 
 {C:/Users/Przemek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 4
-1.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
+9.
 
 ("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omlcmr.fd"
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 41.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 39.
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--55
+Underfull \hbox (badness 10000) in paragraph at lines 53--58
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-Overfull \hbox (3.55147pt too wide) in paragraph at lines 89--93
+[2]
+Overfull \hbox (3.55147pt too wide) in paragraph at lines 92--96
 []\OT4/cmr/m/n/12 Krótki ilu-stro-wa-ny opis jak u»yt-kow-nik mo-»e ko-rzy-sta¢
  z apli-ka-cji, w szcze-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 110--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--115
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
-
- []
-
-[3] [4] (Sprawozdanie-projekt-1-klasyfikacja.aux) ) 
+[4] (Sprawozdanie-projekt-1-klasyfikacja.aux) ) 
 Here is how much of TeX's memory you used:
  1411 strings out of 480931
  21643 string characters out of 2898858
@@ -193,18 +190,20 @@ Here is how much of TeX's memory you used:
  539882 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,7n,32p,569b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Przemek/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Przemek/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Pr
-zemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Us
-ers/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><
-C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.
-pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/p
-lr17.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (4 pages, 69442 bytes
+{C:/Users/Przemek/AppData/Local/
+Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Przemek/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przeme
+k/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/pl/plr17.pfb>
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (4 pages, 89253 bytes
 ).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
+ 44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
