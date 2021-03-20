@@ -70,20 +70,24 @@ Wektor cech będzie reprezentowany w postaci:
 \subsection{Miary jakości klasyfikacji} 
 W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar jakości klasyfikacji. Aby obliczyć każdą z miar tworzymy tablicę pomyłek, inaczej macierz błędu \cite{tablica}. Tablica składa się z dwóch wierszy i dwóch kolumn, gdzie wiersze to klasy predykowane, a kolumny to klasy rzeczywiste. Dane oznaczone jako dane pozytywne i negatywne poddawane są klasyfikacji, która przypisuje im predykowaną klasę pozytywną bądź snegatywną.\\
 
+\begin{table}[h!]
+
 \begin{tabular}{l|l|c|c|c}
 \multicolumn{2}{c}{}&\multicolumn{2}{c}{Klasa rzeczywista}&\\
 \cline{3-4}
 \multicolumn{2}{c|}{}&Pozytywna&Negatywna&\multicolumn{1}{c}{}\\
 \cline{2-4}
 \multirow{2}{*}{Klasa predykowana}& Pozytywna& prawdziwie
-pozytywna & fałszywie
-pozytywna\\
+pozytywna (TP) & fałszywie
+pozytywna (FP)\\
 \cline{2-4}
 & Negatywna & fałszywie
-negatywna & prawdziwie
-negatywna \\
+negatywna (FN) & prawdziwie
+negatywna (TN) \\
 \cline{2-4}
 \end{tabular}
+ \caption{Wzór tablicy pomyłek.}
+\end{table}
 
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
 Wzory, znaczenia i opisy symboli zastosowanych metryk z
