@@ -1,6 +1,7 @@
 \documentclass{classrep}
 \usepackage[utf8]{inputenc}
 \usepackage{color}
+\usepackage{makecell}
 
 \studycycle{Informatyka, studia STACJONARNE, I st.}
 \coursesemester{VI}
@@ -71,23 +72,29 @@ Wektor cech będzie reprezentowany w postaci:
 W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar jakości klasyfikacji. Aby obliczyć każdą z miar tworzymy tablicę pomyłek, inaczej macierz błędu \cite{tablica}. Tablica składa się z dwóch wierszy i dwóch kolumn, gdzie wiersze to klasy predykowane, a kolumny to klasy rzeczywiste. Dane oznaczone jako dane pozytywne i negatywne poddawane są klasyfikacji, która przypisuje im predykowaną klasę pozytywną bądź snegatywną.\\
 
 \begin{table}[h!]
-
 \begin{tabular}{l|l|c|c|c}
 \multicolumn{2}{c}{}&\multicolumn{2}{c}{Klasa rzeczywista}&\\
 \cline{3-4}
 \multicolumn{2}{c|}{}&Pozytywna&Negatywna&\multicolumn{1}{c}{}\\
 \cline{2-4}
-\multirow{2}{*}{Klasa predykowana}& Pozytywna& prawdziwie
-pozytywna (TP) & fałszywie
-pozytywna (FP)\\
+\multirow{2}{*}{\thead{Klasa\\ predykowana} }& Pozytywna&  \thead{prawdziwie\\ pozytywna (TP)}
+ & \thead{fałszywie\\ pozytywna (FP)} \\
 \cline{2-4}
-& Negatywna & fałszywie
-negatywna (FN) & prawdziwie
-negatywna (TN) \\
+& Negatywna & \thead{fałszywie\\ negatywna (FN)} & \thead{prawdziwie\\ negatywna (TN)} \\
 \cline{2-4}
 \end{tabular}
  \caption{Wzór tablicy pomyłek.}
 \end{table}
+
+
+Stosowane miary jakości klasyfikacji:\\
+\begin{itemize}
+  \item Dokładność (ang. accurancy), ACC  - jesto to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} ACC = (TP + TN)/(TP + FN + FP + TN)  \end{equation}
+ \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. \begin{equation} PPV =  TP / (TP+FP) \end{equation}
+\item Czułość (ang. recall), TPR  - jes to stosunek wyników prawdziwie dodatnich do sumy prawdziwie dodatnich i fałszywie ujemnych. \begin{equation}   TPR = TP / (TP + FN) \end{equation}
+\item Swoistość (ang. specificity), TNR   - jesto to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} TNR = TN / (FP + TN) \end{equation}
+\end{itemize}
+
 
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
 Wzory, znaczenia i opisy symboli zastosowanych metryk z
