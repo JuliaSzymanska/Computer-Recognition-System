@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  9 MAR 2021 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  20 MAR 2021 12:46
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -126,6 +126,12 @@ LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line
 d"
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
+Overfull \hbox (57.31532pt too wide) in paragraph at lines 25--26
+\OT4/cmr/m/it/12 http://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Cate
+gorization+Collection
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -135,75 +141,87 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 28.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[1
+
+Underfull \vbox (badness 2653) has occurred while \output is active []
+
+ [1
 
 {C:/Users/Przemek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
-9.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 4
+2.
 
 ("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omlcmr.fd"
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 39.
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--58
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 42.
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
  []
 
-[2]
-Overfull \hbox (3.55147pt too wide) in paragraph at lines 92--96
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+
+ []
+
+[3]
+Overfull \hbox (3.55147pt too wide) in paragraph at lines 125--129
 []\OT4/cmr/m/n/12 Krótki ilu-stro-wa-ny opis jak u»yt-kow-nik mo-»e ko-rzy-sta¢
  z apli-ka-cji, w szcze-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--101
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
+Underfull \hbox (badness 10000) in paragraph at lines 131--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--118
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 143--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
 
  []
 
-[4] (Sprawozdanie-projekt-1-klasyfikacja.aux) ) 
+[5] (Sprawozdanie-projekt-1-klasyfikacja.aux) ) 
 Here is how much of TeX's memory you used:
- 1411 strings out of 480931
- 21643 string characters out of 2898858
- 255264 words of memory out of 3000000
- 17307 multiletter control sequences out of 15000+200000
- 539882 words of font info for 45 fonts, out of 3000000 for 9000
+ 1415 strings out of 480931
+ 21671 string characters out of 2898858
+ 257264 words of memory out of 3000000
+ 17309 multiletter control sequences out of 15000+200000
+ 540916 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,32p,569b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,7n,32p,637b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Przemek/AppData/Local/
-Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Przemek/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przeme
-k/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
-:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/pl/plr17.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (4 pages, 89253 bytes
-).
+Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/Przemek/AppData/Local
+/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}<C:/Users/Przemek/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przem
+ek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (5 pages, 118509 byte
+s).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
