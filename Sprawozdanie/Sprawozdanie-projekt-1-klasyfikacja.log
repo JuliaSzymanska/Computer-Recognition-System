@@ -1,0 +1,306 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  20 MAR 2021 15:12
+entering extended mode
+**./Sprawozdanie-projekt-1-klasyfikacja.tex
+(Sprawozdanie-projekt-1-klasyfikacja.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (classrep.cls
+Document Class: classrep 2009/11/27 ICS Class Assignment Report
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mwcls\mwart.cls"
+Document Class: mwart 2017/05/13 v0.75 A LaTeX document class (MW)
+*** Beta version. Formatting may change
+*** in future versions of this class.
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mwcls\mw12.clo"
+File: mw12.clo 2017/05/13 v0.75 A document class size option (MW)
+)
+\@parindent=\dimen134
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen135
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\polski.st
+y"
+Package: polski 2017/05/04 v1.3.4 Polish language package
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ot4enc.def"
+File: ot4enc.def 2020/02/11 v2.0o Standard LaTeX file
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+)) ("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.s
+ty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\col
+or.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdf
+tex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\multiro
+w.sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip49
+\multirow@cntb=\count175
+\multirow@dima=\skip50
+\bigstrutjot=\dimen136
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3back
+end-pdfmode.def"
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count176
+\l__pdf_internal_box=\box45
+) (Sprawozdanie-projekt-1-klasyfikacja.aux)
+\openout1 = `Sprawozdanie-projekt-1-klasyfikacja.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 20.
+LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 2
+0.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmr.fd
+"
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    ... okay on input line 20.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
+-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count177
+\scratchdimen=\dimen137
+\scratchbox=\box46
+\nofMPsegments=\count178
+\nofMParguments=\count179
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count180
+\MPscratchDim=\dimen138
+\MPnumerator=\count181
+\makeMPintoPDFobject=\count182
+\everyMPtoPDFconversion=\toks18
+)
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 21.
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 
+21.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.f
+d"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+Overfull \hbox (57.31532pt too wide) in paragraph at lines 25--26
+\OT4/cmr/m/it/12 http://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Cate
+gorization+Collection
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 28.
+
+Underfull \vbox (badness 2653) has occurred while \output is active []
+
+ [1
+
+{C:/Users/Przemek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 5
+1.
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omlcmr.fd"
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 51.
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+[3]
+Overfull \hbox (118.99402pt too wide) in paragraph at lines 75--89
+[][] 
+ []
+
+
+Overfull \hbox (3.55147pt too wide) in paragraph at lines 109--113
+[]\OT4/cmr/m/n/12 Krótki ilu-stro-wa-ny opis jak u»yt-kow-nik mo-»e ko-rzy-sta¢
+ z apli-ka-cji, w szcze-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
+
+ []
+
+
+Underfull \vbox (badness 1466) has occurred while \output is active []
+
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+[5] (Sprawozdanie-projekt-1-klasyfikacja.aux) ) 
+Here is how much of TeX's memory you used:
+ 1473 strings out of 480931
+ 22605 string characters out of 2898858
+ 256824 words of memory out of 3000000
+ 17362 multiletter control sequences out of 15000+200000
+ 541452 words of font info for 48 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,10n,32p,683b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Przemek/AppData/Local/
+Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/Przemek/AppData/Local
+/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}<C:/Users/Przemek/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przem
+ek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb>
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (5 pages, 119005 byte
+s).
+PDF statistics:
+ 60 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
