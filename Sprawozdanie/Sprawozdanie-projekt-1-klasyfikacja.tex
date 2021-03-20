@@ -16,7 +16,7 @@
   \studentinfo{Przemysław Zdrzalik}{224466} }
 
 \title{Projekt 1. Klasyfikacja dokumentów tekstowych}
-
+\usepackage{multirow}
 \begin{document}
 \maketitle
 
@@ -46,9 +46,9 @@ Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wa
 \begin{enumerate}
   \item Liczba słów - cecha ta oznacza liczbę słów które składają się na pobrany tekst. Cecha ta będzie charakteryzowała długość dokumentu w postaci liczby całkowitej \begin{equation}  c_1 = len \end{equation} gdzie len - liczba słów w tekście po dokonaniu redukcji.\\
   
-\item Druga najczęściej występująca waluta - wybieramy drugą najczęściej występującą walutę z tekstu, ponieważ uważamy, że pierwszą najczęściej występującą walutą będzie dolar ze względu na jego powszechne zastosowanie. Do pobierania nazw walut wykorzystujemy dołączony plik gdzie znajduje się 27 różnych walut wraz z kodami jakimi reprezentowane są w pobieranych tekstach. Przykładem jest kod dla waluty Dolaru Amerykańskiego - DLR. Wartość będzie oznaczana poprzez symbol  c\textsubscript{2}. \\
+\item Druga najczęściej występująca waluta - wybieramy drugą najczęściej występującą walutę z tekstu, ponieważ uważamy, że pierwszą najczęściej występującą walutą będzie dolar ze względu na jego powszechne zastosowanie. Do pobierania nazw walut wykorzystujemy dołączony plik gdzie znajduje się 27 różnych walut wraz z kodami jakimi reprezentowane są w pobieranych tekstach. Przykładem jest kod dla waluty Dolaru Amerykańskiego - DLR. Cechę traktujemy jako cechę tekstową.Wartość będzie oznaczana poprzez symbol  c\textsubscript{2}. \\
  
- \item Data z tagu  \textless Dateline\textgreater\ - Każdy tekst w swoim body posiada tag \textless Dateline\textgreater , w którym znajduje się miasto oraz data podana w postaci miesiąca i dnia. Data będzie konwertowana na wartość liczbową, gdzie liczbą tą będzie numer podanego dnia w ciągu roku, licząc rok tak jakby rok był rokiem przestępnym, przykładowo data 1 marca będzie reprezentowana poprzez wartość 61. Wartość będzie oznaczana poprzez symbol  c\textsubscript{3}.    \\
+ \item Data z tagu  \textless Dateline\textgreater\ - Każdy tekst w swoim body posiada tag \textless Dateline\textgreater , w którym znajduje się miasto oraz data podana w postaci miesiąca i dnia. Data będzie konwertowana na wartość liczbową, gdzie liczbą tą będzie numer podanego dnia w ciągu roku, licząc rok tak jakby rok był rokiem przestępnym, przykładowo data 1 marca będzie reprezentowana poprzez wartość 61. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{3}.    \\
   \item Lokacja z tagu \textless Dateline\textgreater - jak wyżej. Lokację traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{4}. \\
   \item Tytuł z tagu \textless Title\textgreater - Każdy tekst w swoim body posiada tag \textless Title\textgreater. Tytuł traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{5}.\\
   \item Autor z tagu \textless Author\textgreater - Większość tekstów w swoim body posiada tag \textless Author\textgreater. Autora traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{6}.\\
@@ -68,15 +68,22 @@ Wektor cech będzie reprezentowany w postaci:
 
 
 \subsection{Miary jakości klasyfikacji} 
-Miary jakości klasyfikacji (Accuracy, Precision,
-Recall, F1). We wprowadzeniu zaprezentować minimum teorii potrzebnej do realizacji
-zadania, tak by inżynier innej specjalności zrozumiał dalszy opis.\\
-\indent Stosowane wzory, oznaczenia z objaśnieniami znaczenia symboli użytych w
-doświadczeniu. Oznaczenia jednolite w obrębie całego sprawozdania.  Opis zawiera przypisy do bibliografii zgodnie z
-Polską Normą, (zob. materiały BG PŁ).\\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 03 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar jakości klasyfikacji. Aby obliczyć każdą z miar tworzymy tablicę pomyłek, inaczej macierz błędu \cite{tablica}. Tablica składa się z dwóch wierszy i dwóch kolumn, gdzie wiersze to klasy predykowane, a kolumny to klasy rzeczywiste. Dane oznaczone jako dane pozytywne i negatywne poddawane są klasyfikacji, która przypisuje im predykowaną klasę pozytywną bądź snegatywną.\\
 
+\begin{tabular}{l|l|c|c|c}
+\multicolumn{2}{c}{}&\multicolumn{2}{c}{Klasa rzeczywista}&\\
+\cline{3-4}
+\multicolumn{2}{c|}{}&Pozytywna&Negatywna&\multicolumn{1}{c}{}\\
+\cline{2-4}
+\multirow{2}{*}{Klasa predykowana}& Pozytywna& prawdziwie
+pozytywna & fałszywie
+pozytywna\\
+\cline{2-4}
+& Negatywna & fałszywie
+negatywna & prawdziwie
+negatywna \\
+\cline{2-4}
+\end{tabular}
 
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
 Wzory, znaczenia i opisy symboli zastosowanych metryk z
@@ -137,6 +144,8 @@ podać merytoryczne (ale nie czasowe) przyczyny tych braków.
 \begin{thebibliography}{0}
 \bibitem{dane} R. Tadeusiewicz: Rozpoznawanie obrazów, PWN, Warszawa, 1991.  
 \bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2008.
+
+\bibitem{tablica} Tablica pomyłek: \\\textit{} 
 
 \end{thebibliography}
 
