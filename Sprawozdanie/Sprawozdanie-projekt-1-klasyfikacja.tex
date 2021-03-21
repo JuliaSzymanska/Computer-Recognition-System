@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{color}
 \usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{url}
 
 \studycycle{Informatyka, studia STACJONARNE, I st.}
 \coursesemester{VI}
@@ -69,7 +71,7 @@ Wektor cech będzie reprezentowany w postaci:
 
 
 \subsection{Miary jakości klasyfikacji} 
-W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar jakości klasyfikacji. Aby obliczyć każdą z miar tworzymy tablicę pomyłek, inaczej macierz błędu \cite{tablica}. Tablica składa się z dwóch wierszy i dwóch kolumn, gdzie wiersze to klasy predykowane, a kolumny to klasy rzeczywiste. Dane oznaczone jako dane pozytywne i negatywne poddawane są klasyfikacji, która przypisuje im predykowaną klasę pozytywną bądź snegatywną.\\
+W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar jakości klasyfikacji. Aby obliczyć każdą z miar tworzymy tablicę pomyłek, inaczej macierz błędu \cite{tablica}. Tablica składa się z dwóch wierszy i dwóch kolumn, gdzie wiersze to klasy predykowane, a kolumny to klasy rzeczywiste. Dane oznaczone jako dane pozytywne i negatywne poddawane są klasyfikacji, która przypisuje im predykowaną klasę pozytywną bądź negatywną.\\
 
 \begin{table}[h!]
 \begin{tabular}{l|l|c|c|c}
@@ -89,10 +91,10 @@ W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar ja
 
 Stosowane miary jakości klasyfikacji:\\
 \begin{itemize}
-  \item Dokładność (ang. accurancy), ACC  - jesto to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} ACC = (TP + TN)/(TP + FN + FP + TN)  \end{equation}
+  \item Dokładność (ang. accurancy), ACC  - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} ACC = (TP + TN)/(TP + FN + FP + TN)  \end{equation}
  \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. \begin{equation} PPV =  TP / (TP+FP) \end{equation}
-\item Czułość (ang. recall), TPR  - jes to stosunek wyników prawdziwie dodatnich do sumy prawdziwie dodatnich i fałszywie ujemnych. \begin{equation}   TPR = TP / (TP + FN) \end{equation}
-\item Swoistość (ang. specificity), TNR   - jesto to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} TNR = TN / (FP + TN) \end{equation}
+\item Czułość (ang. recall), TPR  - jest to stosunek wyników prawdziwie dodatnich do sumy prawdziwie dodatnich i fałszywie ujemnych. \begin{equation}   TPR = TP / (TP + FN) \end{equation}
+\item Swoistość (ang. specificity), TNR   - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} TNR = TN / (FP + TN) \end{equation}
 \end{itemize}
 
 
@@ -107,10 +109,28 @@ na WIKAMP KSR.}
 
 \section{Budowa aplikacji}
 \subsection{Diagramy UML}
-Diagramy UML i zwięzłe opisy: idei aplikacji, modułu ekstrakcji i modułu
-klasyfikatora.\\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 03 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+
+Aplikacja będzie składała się z dwóch modułów: z modułu ekstrakcji cech oraz z modułu klasyfikacji. Moduł ekstrakcji wczytuje pliki z treścią artykułów. Następnie tworzone są obiekty artykułów. Dla każdego obiektu usuwane są słowa ze stop listy oraz kolejno tworzone są wektory cech artykułów. 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{Ekstrakcja.png}
+ \vspace{-0.3cm}
+ \caption{Diagram klas modułu ekstrakcji cech. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+
+Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{Klasyfikator.png}
+ \vspace{-0.3cm}
+ \caption{Diagram klas modułu klasyfikacji. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+
+\newpage
 
 \subsection{Prezentacja wyników, interfejs użytkownika} 
 Krótki ilustrowany opis jak użytkownik może korzystać z aplikacji, w~szczególności wprowadzać parametry klasyfikacji i odczytywać wyniki. Wersja JRE i inne wymogi
