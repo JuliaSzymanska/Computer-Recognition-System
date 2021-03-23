@@ -20,6 +20,7 @@ public class Article {
     public Article(@NotNull String text) {
     }
 
+    // TODO: 23.03.2021 Usuwanie wszystkich znaków typu , . itp
     private Article(@NotNull String title, @NotNull String dateline, @NotNull String body, @Nullable String author) {
         this.title = applyStopList(title);
         this.body = applyStopList(body);
