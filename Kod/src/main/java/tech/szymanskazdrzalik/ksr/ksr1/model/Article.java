@@ -1,5 +1,7 @@
 package tech.szymanskazdrzalik.ksr.ksr1.model;
 
+import org.apache.commons.lang3.StringUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -15,13 +17,27 @@ public class Article {
 
     private FeatureVector featureVector;
 
-    private void createFeatureVector() {
-
+    public Article(@NotNull String text) {
     }
 
-    public Article(String text) {
-        List<String> textSplitList = Arrays.asList(text.split(" "));
+    private Article(@NotNull String title, @NotNull String dateline, @NotNull String body, @Nullable String author) {
+        this.title = applyStopList(title);
+        this.body = applyStopList(body);
+        this.dateline = applyStopList(dateline);
+        this.author = applyStopList(author);
+    }
+
+    private String applyStopList(String string) {
+        if (string == null) {
+            return null;
+        }
+        List<String> textSplitList = Arrays.asList(string.split(" "));
         textSplitList.removeIf(StopList::contains);
+        return StringUtils.join(textSplitList, " ");
+    }
+
+    private void createFeatureVector() {
+
     }
 
     private static class FeatureVector {
