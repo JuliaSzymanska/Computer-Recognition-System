@@ -18,7 +18,8 @@ public class Article {
 
     private FeatureVector featureVector;
 
-    public Article(@NotNull String text) {
+
+    private Article(@NotNull String text) {
     }
 
     // TODO: 23.03.2021 Usuwanie wszystkich znaków typu , . itp
