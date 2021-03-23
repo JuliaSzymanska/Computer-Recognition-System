@@ -1,6 +1,7 @@
 package tech.szymanskazdrzalik.ksr.ksr1.model;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,6 +21,7 @@ public class Article {
 
 
     public Article(@NotNull String text) {
+        throw new NotImplementedException();
     }
 
     // TODO: 23.03.2021 Usuwanie wszystkich znaków typu , . itp

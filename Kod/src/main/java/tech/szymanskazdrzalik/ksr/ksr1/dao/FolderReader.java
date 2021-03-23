@@ -18,7 +18,11 @@ public class FolderReader {
 
     public static String[] getFilePathsFromFolder(String path) throws IOException {
         try {
-            return IOUtils.readLines(Objects.requireNonNull(Main.class.getClassLoader().getResourceAsStream(path))).toArray(new String[0]);
+            String[] strings = IOUtils.readLines(Objects.requireNonNull(Main.class.getClassLoader().getResourceAsStream(path))).toArray(new String[0]);
+            for (int i = 0; i < strings.length; i++) {
+                strings[i] = path + strings[i];
+            }
+            return strings;
         } catch (NullPointerException e) {
             throw new FileNotFoundException("Invalid folder path");
         }
