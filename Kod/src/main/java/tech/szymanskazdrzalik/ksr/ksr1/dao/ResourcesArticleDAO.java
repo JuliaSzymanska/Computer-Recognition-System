@@ -1,12 +1,10 @@
 package tech.szymanskazdrzalik.ksr.ksr1.dao;
 
-import org.apache.commons.io.IOUtils;
-import tech.szymanskazdrzalik.ksr.ksr1.Main;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,16 +15,13 @@ public class ResourcesArticleDAO implements ArticleDAO {
 
     @Override
     public List<Article> getArticles(File file) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-        StringBuilder str = new StringBuilder();
-        while (bufferedReader.ready()) {
-            str.append(bufferedReader.readLine());
-        }
-        String string = str.toString();
-        List<String> ArticlesSplitStrings = new ArrayList<>(Arrays.asList(string.split(String.format(WITH_DELIMITER, "</REUTERS>"))));
+
+        String string = FileReader.Parse(file);
+        List<String> articlesSplitStrings = new ArrayList<>(Arrays.asList(string.split(String.format(WITH_DELIMITER, "</REUTERS>"))));
         List<Article> articles = new ArrayList<>();
-        for (var x : ArticlesSplitStrings) {
-            articles.add(new Article(x));
+        for (var x : articlesSplitStrings) {
+            System.out.println(x);
+//            articles.add(new Article(x));
         }
         return articles;
     }

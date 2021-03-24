@@ -14,5 +14,5 @@ public interface ArticleDAO {
 
     List<Article> getArticles(String path) throws IOException;
 
-    List<Article>getArticles(URL path) throws IOException;
+    List<Article> getArticles(URL path) throws IOException;
 }

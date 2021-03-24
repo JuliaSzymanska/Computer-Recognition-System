@@ -28,7 +28,7 @@ public class FolderReader {
         }
     }
 
-    public static Article[] readArticlesFromFolder(String path) throws IOException {
+    public static Article[] readArticlesFromFolderInResources(String path) throws IOException {
         List<Article> articles = new ArrayList<>();
         for (var x : getFilePathsFromFolder(path)) {
             if (x.endsWith(".sgm")) {
