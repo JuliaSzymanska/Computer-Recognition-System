@@ -4,7 +4,12 @@ import opennlp.tools.stemmer.PorterStemmer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 public class Article {
@@ -12,7 +17,7 @@ public class Article {
     private final String[] title;
     private final String[] author;
     private final String[] dateline;
-    private boolean isTestSet;
+    private final String isTestSet;
 
     private FeatureVector featureVector;
 
@@ -23,9 +28,10 @@ public class Article {
         String body = getTextPart(strings, "BODY:");
         String dateline = getTextPart(strings, "DATELINE:");
         String author = getTextPart(strings, "AUTHOR:");
-        // TODO: 26.03.2021 ustawic talie pola jak czy to jest test set i inne które chcemy pobrac
+        String isTestSet = getTextPart(strings, "CGISPLIT:");
 
-        // TODO: 23.03.2021 Usuwanie wszystkich znaków typu , . itp
+//        boolean this.isTestSet = getIsTestSet(strings);
+        this.isTestSet = isTestSet;
         this.title = applyStopList(title);
         this.body = applyStopList(body);
         this.dateline = applyStopList(dateline);
@@ -35,8 +41,14 @@ public class Article {
         System.out.println("body" + Arrays.toString(this.body));
         System.out.println("dateline" + Arrays.toString(this.dateline));
         System.out.println("author " + Arrays.toString(this.author));
+        System.out.println("isTestSet " + this.isTestSet);
 
         System.exit(0);
+    }
+
+    private boolean getIsTestSet(String[] strings) {
+        String string = getTextPart(strings, "CGISPLIT:");
+        return Objects.equals(string, "PUBLISHED-TESTSET");
     }
 
 
@@ -111,7 +123,7 @@ public class Article {
         PorterStemmer porterStemmer = new PorterStemmer();
         List<String> newStrings = new ArrayList<>();
         for (var x : strings) {
-           newStrings.add(porterStemmer.stem(x));
+            newStrings.add(porterStemmer.stem(x));
         }
         return newStrings;
     }

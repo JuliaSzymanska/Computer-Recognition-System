@@ -4,22 +4,29 @@ import tech.szymanskazdrzalik.ksr.ksr1.metric.Metric;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class Classifier {
 
-    private static String simulate(Metric metric, int k){
+    private static String simulate(Metric metric, int k) {
         return "";
     }
 
-    private static Article[] findKNearestNeighbours(Article article, int k){
+    private static Article[] findKNearestNeighbours(Article article, int k) {
         return null;
     }
 
-    private static Pair calculateDistance(Article article, Article[] trainingArticles){
+    private static Pair calculateDistance(Article article, Article[] trainingArticles) {
         return null;
     }
 
-    private static String classify(Article article){
+    private static String classify(Article article) {
         return "";
     }
+
+
+
+
 
 }

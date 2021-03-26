@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05e31074-aec2-4fa6-82fd-60922c884ff7" name="Default Changelist" comment="" />
+    <list default="true" id="05e31074-aec2-4fa6-82fd-60922c884ff7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Kod/src/main/java/tech/szymanskazdrzalik/ksr/ksr1/knn/Classifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kod/src/main/java/tech/szymanskazdrzalik/ksr/ksr1/knn/Classifier.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +42,7 @@
       <workItem from="1615275176890" duration="68000" />
       <workItem from="1615275909519" duration="84000" />
       <workItem from="1616602290136" duration="92000" />
+      <workItem from="1616781740876" duration="67000" />
     </task>
     <servers />
   </component>
