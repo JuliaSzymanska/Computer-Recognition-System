@@ -16,13 +16,15 @@ public class Classifier {
 
     private static Pair calculateDistances(Article article, Article[] trainingArticles) {
         for (Article trainingArticle : trainingArticles) {
+            double[] articleArray = new double[12];
+            double[] trainingArticleArray = new double[12];
+            setFeatureArray(article, trainingArticle, articleArray, trainingArticleArray);
         }
         return null;
     }
 
-    private static Pair setFeatureArray(Article article, Article trainingArticle) {
-        double[] articleArray = new double[12];
-        double[] trainingArticleArray = new double[12];
+    private static void setFeatureArray(Article article, Article trainingArticle, double[] articleArray, double[] trainingArticleArray) {
+
         articleArray[0] = article.getFeatureVector().getWordCount();
         trainingArticleArray[0] = trainingArticle.getFeatureVector().getWordCount();
 
@@ -58,8 +60,6 @@ public class Classifier {
 
         articleArray[11] = 0.0;
         trainingArticleArray[11] = areStringEquals(article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
-
-        return null;
     }
 
     private static String classify(Article article) {
