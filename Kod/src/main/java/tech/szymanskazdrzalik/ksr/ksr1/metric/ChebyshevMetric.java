@@ -5,10 +5,10 @@ import java.util.Collections;
 
 public class ChebyshevMetric implements Metric {
     @Override
-    public double calculateDistance(double[] article, double[] trainingArticle) {
-        ArrayList<Double> listOfDifferences = new ArrayList<Double>();
-        for (int i = 0; i < article.length; i++) {
-            listOfDifferences.add(Math.abs(article[i] - trainingArticle[i]));
+    public double calculateDistance(double[] articleArrayVector, double[] trainingArticleArrayVector) {
+        ArrayList<Double> listOfDifferences = new ArrayList<>();
+        for (int i = 0; i < articleArrayVector.length; i++) {
+            listOfDifferences.add(Math.abs(articleArrayVector[i] - trainingArticleArrayVector[i]));
         }
         return Collections.max(listOfDifferences);
     }
