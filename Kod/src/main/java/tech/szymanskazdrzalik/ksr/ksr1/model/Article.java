@@ -21,6 +21,9 @@ public class Article {
 
     private FeatureVector featureVector;
 
+    public FeatureVector getFeatureVector() {
+        return featureVector;
+    }
 
     public Article(@NotNull String text) {
         String[] strings = parseSGMToArray(text);
@@ -132,7 +135,7 @@ public class Article {
 
     }
 
-    private static class FeatureVector {
+    public static class FeatureVector {
         private final int wordCount;
         @Nullable
         private final String author;
@@ -183,5 +186,52 @@ public class Article {
             return stringList.toArray(String[]::new);
         }
 
+        public int getWordCount() {
+            return wordCount;
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+
+        public int getUniqueWordCount() {
+            return uniqueWordCount;
+        }
+
+        public String getSecondCurrency() {
+            return secondCurrency;
+        }
+
+        public int getDayInYear() {
+            return dayInYear;
+        }
+
+        public String getLocation() {
+            return location;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public String getMostPopularCountry() {
+            return mostPopularCountry;
+        }
+
+        public String[] getKeyWords() {
+            return keyWords;
+        }
+
+        public int getKeyWordCount() {
+            return keyWordCount;
+        }
+
+        public int getKeyWordSaturation() {
+            return keyWordSaturation;
+        }
+
+        public String getMostPopularKeyWord() {
+            return mostPopularKeyWord;
+        }
     }
 }
