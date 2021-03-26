@@ -20,8 +20,7 @@ public class ResourcesArticleDAO implements ArticleDAO {
         List<String> articlesSplitStrings = new ArrayList<>(Arrays.asList(string.split(String.format(WITH_DELIMITER, "</REUTERS>"))));
         List<Article> articles = new ArrayList<>();
         for (var x : articlesSplitStrings) {
-            System.out.println(x);
-//            articles.add(new Article(x));
+            articles.add(new Article(x.replace("<!DOCTYPE lewis SYSTEM \"lewis.dtd\">", "")));
         }
         return articles;
     }

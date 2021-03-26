@@ -1,5 +1,7 @@
 package tech.szymanskazdrzalik.ksr.ksr1.model;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -30,7 +32,10 @@ public class StopList {
         words = str.split(" ");
     }
 
-    public static boolean contains(String word) {
+    public static boolean contains(@Nullable String word) {
+        if (words.length == 0) {
+            // TODO: 26.03.2021 load default stoplist
+        }
         return Arrays.asList(words).contains(word);
     }
 

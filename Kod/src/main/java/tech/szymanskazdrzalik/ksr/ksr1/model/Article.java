@@ -1,44 +1,119 @@
 package tech.szymanskazdrzalik.ksr.ksr1.model;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.NotImplementedException;
-import org.apache.commons.lang3.StringUtils;
+import opennlp.tools.stemmer.PorterStemmer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-import java.util.function.BiConsumer;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Article {
-    private String[] body;
-    private String[] title;
-    private String[] author;
-    private String[] dateline;
+    private final String[] body;
+    private final String[] title;
+    private final String[] author;
+    private final String[] dateline;
+    private boolean isTestSet;
 
     private FeatureVector featureVector;
 
 
     public Article(@NotNull String text) {
-        throw new NotImplementedException();
-    }
+        String[] strings = parseSGMToArray(text);
+        String title = getTextPart(strings, "TITLE:");
+        String body = getTextPart(strings, "BODY:");
+        String dateline = getTextPart(strings, "DATELINE:");
+        String author = getTextPart(strings, "AUTHOR:");
+        // TODO: 26.03.2021 ustawic talie pola jak czy to jest test set i inne które chcemy pobrac
 
-    // TODO: 23.03.2021 Usuwanie wszystkich znaków typu , . itp
-    private Article(@NotNull String title, @NotNull String dateline, @NotNull String body, @Nullable String author) {
+        // TODO: 23.03.2021 Usuwanie wszystkich znaków typu , . itp
         this.title = applyStopList(title);
         this.body = applyStopList(body);
         this.dateline = applyStopList(dateline);
         this.author = applyStopList(author);
+        System.out.println("title" + Arrays.toString(this.title));
+        // TODO: 26.03.2021 W tym miejscu nadal pozostaje na samym koncu string  Reuter //&#3; zmieniowny w 2 stringi reuter i 3 i nwm co z tym madrego zrobic
+        System.out.println("body" + Arrays.toString(this.body));
+        System.out.println("dateline" + Arrays.toString(this.dateline));
+        System.out.println("author " + Arrays.toString(this.author));
+
+        System.exit(0);
+    }
+
+
+    private String[] parseSGMToArray(String text) {
+        text = text.replace("\n", " ");
+        text = text.replace("<DATE>", "\nDATE: ");
+        text = text.replace("</DATE>", "");
+        text = text.replace("<TOPICS>", "\nTOPICS: ");
+        text = text.replace("</TOPICS>", "");
+        text = text.replace("<PLACES", "\nPLACES: ");
+        text = text.replace("</PLACES>", "");
+        text = text.replace("<D>", " ");
+        text = text.replace("</D>", "");
+        text = text.replace("<PEOPLE>", "\nPEOPLE: ");
+        text = text.replace("</PEOPLE>", "");
+        text = text.replace("<ORGS>", "\nORGS: ");
+        text = text.replace("</ORGS>", "");
+        text = text.replace("<EXCHANGES>", "\nEXCHANGES: ");
+        text = text.replace("</EXCHANGES>", "");
+        text = text.replace("<COMPANIES>", "\nCOMPANIES: ");
+        text = text.replace("</COMPANIES>", "");
+        text = text.replace("<UNKNOWN>", "\nUNKNOWN: ");
+        text = text.replace("</UNKNOWN>", "");
+        text = text.replace("<TEXT>", "\nTEXT: ");
+        text = text.replace("</TEXT>", "");
+        text = text.replace("<TITLE>", "\nTITLE: ");
+        text = text.replace("</TITLE>", "");
+        text = text.replace("<DATELINE>", "\nDATELINE: ");
+        text = text.replace("</DATELINE>", "");
+        text = text.replace("<AUTHOR>", "\nAUTHOR: ");
+        text = text.replace("</AUTHOR>", "");
+        text = text.replace("<BODY>", "\nBODY: ");
+        text = text.replace("</BODY>", "");
+        text = text.replace("<REUTERS", "REUTERS: ");
+        text = text.replace(">", "");
+        return text.split("\n");
+    }
+
+    private String getTextPart(String[] strings, String charSeq) {
+        int index = contains(strings, charSeq);
+        if (index == -1) {
+            return null;
+        }
+        return strings[index].replace(charSeq, "");
+    }
+
+    private int contains(String[] strings, String charSeq) {
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].contains(charSeq)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     private String[] applyStopList(String string) {
         if (string == null) {
             return null;
         }
-        List<String> textSplitList = Arrays.asList(string.split(" "));
+        // usuniecie wszystkich znaków interpunkcyjnych
+        string = string.trim().replaceAll("\\p{Punct}", " ");
+        // usuniecie spacji i podzielenie
+        List<String> textSplitList = Arrays.asList(string.split(" +"));
+        // stemizacja
+        textSplitList = stemString(textSplitList);
+        // użycie stoplisty
         textSplitList.removeIf(StopList::contains);
         return textSplitList.toArray(new String[0]);
+    }
+
+    private List<String> stemString(List<String> strings) {
+        PorterStemmer porterStemmer = new PorterStemmer();
+        List<String> newStrings = new ArrayList<>();
+        for (var x : strings) {
+           newStrings.add(porterStemmer.stem(x));
+        }
+        return newStrings;
     }
 
     private void createFeatureVector() {
@@ -46,14 +121,15 @@ public class Article {
     }
 
     private static class FeatureVector {
-        private int wordCount;
+        private final int wordCount;
+        @Nullable
+        private final String author;
+        private final int uniqueWordCount;
         @Nullable
         private String secondCurrency;
         private int dayInYear;
         private String location;
         private String title;
-        @Nullable
-        private String author;
         @Nullable
         private String mostPopularCountry;
         private String[] keyWords;
@@ -61,7 +137,6 @@ public class Article {
         private int keyWordSaturation;
         @Nullable
         private String mostPopularKeyWord;
-        private int uniqueWordCount;
 
         // TODO: 23.03.2021  test
         // TODO: 23.03.2021 Finish

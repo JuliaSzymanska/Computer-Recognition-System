@@ -15,6 +15,7 @@ public class FileReader {
         StringBuilder str = new StringBuilder();
         while (bufferedReader.ready()) {
             str.append(bufferedReader.readLine());
+            str.append("\n");
         }
         return str.toString();
     }
