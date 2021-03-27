@@ -21,11 +21,15 @@ public class ResourcesArticleDAO implements ArticleDAO {
         List<String> articlesSplitStrings = new ArrayList<>(Arrays.asList(string.split(String.format(WITH_DELIMITER, "</REUTERS>"))));
         articlesSplitStrings.removeIf(s -> s.contains("</REUTERS>"));
         articlesSplitStrings.removeIf(s -> s.equals("\n"));
+        articlesSplitStrings.removeIf(s -> s.contains("blah blah"));
         List<Article> articles = new ArrayList<>();
         for (var x : articlesSplitStrings) {
             articles.add(new Article(x.replace("<!DOCTYPE lewis SYSTEM \"lewis.dtd\">", "")));
         }
-        articles.get(0).getFeatureVector();
+        articles.removeIf(article -> Objects.equals(article.getBody()[0], ""));
+        for (var x : articles) {
+            x.getFeatureVector();
+        }
         return articles;
     }
 

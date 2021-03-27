@@ -4,13 +4,9 @@ import opennlp.tools.stemmer.PorterStemmer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,14 +17,30 @@ public class Article {
     private final String[] dateline;
     private final String[] places;
     private boolean isTestSet;
-    private FeatureVector featureVector;
 
+    @Override
+    public String toString() {
+        return "Article{" +
+                "body=" + Arrays.toString(body) +
+                ", title=" + Arrays.toString(title) +
+                ", author=" + Arrays.toString(author) +
+                ", dateline=" + Arrays.toString(dateline) +
+                ", places=" + Arrays.toString(places) +
+                ", isTestSet=" + isTestSet +
+                ", featureVector=" + featureVector +
+                '}' + "\n";
+    }
+
+    private FeatureVector featureVector;
     public Article(@NotNull String text) {
         String[] strings = parseSGMToArray(text);
         String title = getTextPart(strings, "TITLE:");
         String body = getTextPart(strings, "BODY:");
         String dateline = getTextPart(strings, "DATELINE:").trim().replace("-", "");
         String author = getTextPart(strings, "AUTHOR:");
+        if (body.equals("")) {
+            int x;
+        }
         this.places = applyStopList(getTextPart(strings, "PLACES:"));
         try {
             this.isTestSet = !getTextPart(getTextPart(strings, "REUTERS").
@@ -46,6 +58,10 @@ public class Article {
         this.author = applyStopList(author);
         // TODO: 26.03.2021 W tym miejscu nadal pozostaje na samym koncu string  Reuter //&#3; zmieniowny w 2 stringi reuter i 3 i nwm co z tym madrego zrobic
 
+    }
+
+    public String[] getBody() {
+        return body;
     }
 
     public FeatureVector getFeatureVector() {
@@ -140,6 +156,38 @@ public class Article {
     }
 
     public static class FeatureVector {
+        @Override
+        public String toString() {
+            return "FeatureVector{" +
+                    "wordCount=" + wordCount +
+                    ", uniqueWordCount=" + uniqueWordCount +
+                    ", secondCurrency='" + secondCurrency + '\'' +
+                    ", keyWords=" + Arrays.toString(keyWords) +
+                    ", keyWordCount=" + keyWordCount +
+                    ", keyWordSaturation=" + keyWordSaturation +
+                    ", mostPopularKeyWord='" + mostPopularKeyWord + '\'' +
+                    ", mostPopularCountry='" + mostPopularCountry + '\'' +
+                    ", author='" + author + '\'' +
+                    ", dayInYear=" + dayInYear +
+                    ", location='" + location + '\'' +
+                    ", title='" + title + '\'' +
+                    '}';
+        }
+
+        private static final Map<String, Integer> monthsValuesMap = new HashMap<>() {{
+            put("jan", 0);
+            put("feb", 31);
+            put("mar", 60);
+            put("apr", 91);
+            put("may", 121);
+            put("jun", 152);
+            put("jul", 182);
+            put("aug", 213);
+            put("sep", 244);
+            put("oct", 274);
+            put("nov", 305);
+            put("dec", 335);
+        }};
         private final int wordCount;
         private final int uniqueWordCount;
         @Nullable
@@ -150,13 +198,13 @@ public class Article {
         @Nullable
         private final String mostPopularKeyWord;
         @Nullable
+        private final String mostPopularCountry;
+        @Nullable
         private String author = null;
         private int dayInYear;
         private String location;
         @Nullable
         private String title;
-        @Nullable
-        private final String mostPopularCountry;
 
         // TODO: 23.03.2021  test
         // TODO: 23.03.2021 Finish
@@ -178,7 +226,7 @@ public class Article {
                 fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
                 this.title = String.join(" ", article.title);
             }
-            List<String> tmp = Arrays.asList(fullText);
+            List<String> tmp = new LinkedList<String>(Arrays.asList(fullText));
             tmp.removeIf(s -> !KeyWords.contains(s));
             this.keyWords = tmp.toArray(String[]::new);
             this.keyWordCount = this.keyWords.length;
@@ -189,6 +237,18 @@ public class Article {
 
             this.uniqueWordCount = findUnique(fullText).length;
             this.secondCurrency = findCurrencies(fullText);
+        }
+
+        private static boolean isInteger(String s) {
+            try {
+                Integer.parseInt(s);
+            } catch (NumberFormatException e) {
+                return false;
+            } catch (NullPointerException e) {
+                return false;
+            }
+            // only got here if we didn't return false
+            return true;
         }
 
         private String findCurrencies(String[] fullText) {
@@ -206,13 +266,13 @@ public class Article {
             for (var x : keyWords) {
                 stringIntegerMap.put(x, stringIntegerMap.getOrDefault(x, 0));
             }
-            var maxEntry = stringIntegerMap.entrySet().stream().findFirst().get();
+            var maxEntry = stringIntegerMap.entrySet().stream().findFirst().orElse(null);
             for (var x : stringIntegerMap.entrySet()) {
                 if (maxEntry == null || x.getValue().compareTo(maxEntry.getValue()) > 0) {
                     maxEntry = x;
                 }
             }
-            return maxEntry.getKey();
+            return maxEntry == null ? "" : maxEntry.getKey();
         }
 
         private String[] findUnique(String[] strings) {
@@ -233,34 +293,27 @@ public class Article {
         private int getDayInYearFromDateLineString(String[] string) {
             // TODO: 27.03.2021 Mam nadzieje że to zawsze tak wyglada :p
             int dayN = 0;
-            String month = string[string.length - 2];
-            String day = string[string.length - 1];
-            if (month.toLowerCase().contains("jan")) {
-                dayN += 0;
-            } else if (month.toLowerCase().contains("feb")) {
-                dayN += 31;
-            } else if (month.toLowerCase().contains("mar")) {
-                dayN += 60;
-            } else if (month.toLowerCase().contains("apr")) {
-                dayN += 91;
-            } else if (month.toLowerCase().contains("may")) {
-                dayN += 121;
-            } else if (month.toLowerCase().contains("jun")) {
-                dayN += 152;
-            } else if (month.toLowerCase().contains("jul")) {
-                dayN += 182;
-            } else if (month.toLowerCase().contains("aug")) {
-                dayN += 213;
-            } else if (month.toLowerCase().contains("sep")) {
-                dayN += 244;
-            } else if (month.toLowerCase().contains("oct")) {
-                dayN += 274;
-            } else if (month.toLowerCase().contains("nov")) {
-                dayN += 305;
-            } else if (month.toLowerCase().contains("dec")) {
-                dayN += 335;
+            search:
+            {
+                for (var x : string) {
+                    if (monthsValuesMap.keySet().stream().anyMatch(x::contains)) {
+                        for (var y : monthsValuesMap.keySet()) {
+                            if (x.contains(y)) {
+                                dayN += monthsValuesMap.get(y);
+                                break search;
+                            }
+                        }
+                    }
+                }
             }
-            dayN += Integer.parseInt(day);
+
+            for (var x : string) {
+                if (isInteger(x)) {
+                    dayN += Integer.parseInt(x);
+                    break;
+                }
+            }
+
             return dayN; // TODO: 27.03.2021
         }
 
