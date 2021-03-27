@@ -26,49 +26,6 @@ public class Classifier {
         this.metric = metric;
     }
 
-    private double cosMetric(String[] text1Array, String[] text2Array) {
-        List<String> text1List = new ArrayList<>(Arrays.asList(text1Array));
-        List<String> text2List = new ArrayList<>(Arrays.asList(text2Array));
-        List<String> listOfWords = new ArrayList<>();
-        for (String i : text1List) {
-            if (!listOfWords.contains(i)) {
-                listOfWords.add(i);
-            }
-        }
-        for (String i : text2List) {
-            if (!listOfWords.contains(i)) {
-                listOfWords.add(i);
-            }
-        }
-        int[] text1WordsCount = new int[listOfWords.size()];
-        int[] text2WordsCount = new int[listOfWords.size()];
-        for (int i = 0; i < listOfWords.size(); i++) {
-            if (text1List.contains(listOfWords.get(i))) {
-                text1WordsCount[i] += 1;
-            }
-            if (text2List.contains(listOfWords.get(i))) {
-                text2WordsCount[i] += 1;
-            }
-        }
-        return calculateCos(text1WordsCount, text2WordsCount);
-    }
-
-    private double cosMetric(String text1, String text2) {
-        return cosMetric(text1.split(" "), text2.split(" "));
-    }
-
-    private double calculateCos(int[] text1WordsCount, int[] text2WordsCount) {
-        int sum = 0;
-        int sumOfSquaresText1 = 0;
-        int sumOfSquaresText2 = 0;
-        for (int i = 0; i < text1WordsCount.length; i++) {
-            sum += text1WordsCount[i] * text2WordsCount[i];
-            sumOfSquaresText1 += text1WordsCount[i] * text1WordsCount[i];
-            sumOfSquaresText2 += text2WordsCount[i] * text2WordsCount[i];
-        }
-        return sum / Math.sqrt(sumOfSquaresText1 * sumOfSquaresText2);
-    }
-
     private String classify(List<Pair<Article, Double>> kNearestNeighbour) {
         Map<String, Integer> map = new HashMap<>();
         for (Pair<Article, Double> articleDoublePair : kNearestNeighbour) {
@@ -117,28 +74,28 @@ public class Classifier {
         trainingArticleArray[0] = trainingArticle.getFeatureVector().getWordCount();
 
         articleArray[1] = 0.0;
-        trainingArticleArray[1] = 1 - cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
+        trainingArticleArray[1] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
 
         articleArray[2] = this.article.getFeatureVector().getUniqueWordCount();
         trainingArticleArray[2] = trainingArticle.getFeatureVector().getUniqueWordCount();
 
         articleArray[3] = 0.0;
-        trainingArticleArray[3] = 1 - cosMetric(this.article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
+        trainingArticleArray[3] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
 
         articleArray[4] = this.article.getFeatureVector().getDayInYear();
         trainingArticleArray[4] = trainingArticle.getFeatureVector().getDayInYear();
 
         articleArray[5] = 0.0;
-        trainingArticleArray[5] = 1 - cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
+        trainingArticleArray[5] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
 
         articleArray[6] = 0.0;
-        trainingArticleArray[6] = 1 - cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
+        trainingArticleArray[6] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
 
         articleArray[7] = 0.0;
-        trainingArticleArray[7] = 1 - cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
+        trainingArticleArray[7] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
 
         articleArray[8] = 0.0;
-        trainingArticleArray[8] = cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
+        trainingArticleArray[8] = CosMetric.cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
 
         articleArray[9] = this.article.getFeatureVector().getKeyWordCount();
         trainingArticleArray[9] = trainingArticle.getFeatureVector().getKeyWordCount();
@@ -147,7 +104,7 @@ public class Classifier {
         trainingArticleArray[10] = trainingArticle.getFeatureVector().getKeyWordSaturation();
 
         articleArray[11] = 0.0;
-        trainingArticleArray[11] = 1 - cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
+        trainingArticleArray[11] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
     }
 
 
