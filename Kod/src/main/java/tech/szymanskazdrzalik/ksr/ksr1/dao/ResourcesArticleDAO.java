@@ -13,6 +13,7 @@ import java.util.function.Predicate;
 
 public class ResourcesArticleDAO implements ArticleDAO {
     private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
+    private List<String> placesNames = Arrays.asList("west-germany", "usa", "france,", "uk", "canada", "japan");
 
     @Override
     public List<Article> getArticles(File file) throws IOException {
@@ -27,6 +28,8 @@ public class ResourcesArticleDAO implements ArticleDAO {
             articles.add(new Article(x.replace("<!DOCTYPE lewis SYSTEM \"lewis.dtd\">", "")));
         }
         articles.removeIf(article -> Objects.equals(article.getBody()[0], ""));
+        articles.removeIf(article -> article.getPlaces().length > 1);
+        articles.removeIf(article -> !placesNames.contains(article.getPlaces()[0]));
         for (var x : articles) {
             x.getFeatureVector();
         }
