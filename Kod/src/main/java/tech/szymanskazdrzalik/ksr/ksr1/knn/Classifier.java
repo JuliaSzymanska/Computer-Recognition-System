@@ -7,17 +7,23 @@ import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Classifier {
 
-    private int k = 0;
-    private Article article;
-    private Article[] trainingArticles;
+    private int k;
+    private final Article article;
+    private final Article[] trainingArticles;
     private List<Pair<Article, Double>> listOfPairs;
-    private Metric metric;
+    private final Metric metric;
 
-    public Classifier() {
+    public Classifier(Article article, Article[] trainingArticles, Metric metric, int k) {
+        this.article = article;
+        this.trainingArticles = trainingArticles;
+        this.k = k;
+        this.metric = metric;
     }
 
     private double cosMetric(String[] text1Array, String[] text2Array) {
@@ -63,8 +69,25 @@ public class Classifier {
         return sum / Math.sqrt(sumOfSquaresText1 * sumOfSquaresText2);
     }
 
-    private String classify(Article article) {
-        return "";
+    private String classify(List<Pair<Article, Double>> kNearestNeighbour) {
+        Map<String, Integer> map = new HashMap<>();
+        for (Pair<Article, Double> articleDoublePair : kNearestNeighbour) {
+            String[] places = articleDoublePair.getM().getPlaces();
+            for (String place : places) {
+                if (!map.containsKey(place)) {
+                    map.put(place, 1);
+                } else {
+                    map.replace(place, map.get(place) + 1);
+                }
+            }
+        }
+        Map.Entry<String, Integer> maxEntry = null;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+                maxEntry = entry;
+            }
+        }
+        return maxEntry.getKey();
     }
 
     private List<Pair<Article, Double>> findKNearestNeighbours() {
@@ -72,14 +95,10 @@ public class Classifier {
         return this.listOfPairs.subList(0, k);
     }
 
-    private String simulate(Article article, Article[] trainingArticles, Metric metric, int k) {
-        this.article = article;
-        this.trainingArticles = trainingArticles;
-        this.k = k;
-        this.metric = metric;
+    private String simulate() {
         this.calculateDistances();
         List<Pair<Article, Double>> kNearestNeighbour = this.findKNearestNeighbours();
-        return "";
+        return classify(kNearestNeighbour);
     }
 
     private void calculateDistances() {
@@ -88,7 +107,7 @@ public class Classifier {
             double[] articleArray = new double[12];
             double[] trainingArticleArray = new double[12];
             setFeatureArray(trainingArticle, articleArray, trainingArticleArray);
-            this.listOfPairs.add(new Pair<Article, Double>(trainingArticle, this.metric.calculateDistance(articleArray, trainingArticleArray)));
+            this.listOfPairs.add(new Pair<>(trainingArticle, this.metric.calculateDistance(articleArray, trainingArticleArray)));
         }
     }
 

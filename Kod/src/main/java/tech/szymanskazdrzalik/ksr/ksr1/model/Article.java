@@ -59,6 +59,9 @@ public class Article {
         return Objects.equals(string, "PUBLISHED-TESTSET");
     }
 
+    public String[] getPlaces() {
+        return places;
+    }
 
     private String[] parseSGMToArray(String text) {
         text = text.replace("\n", " ");

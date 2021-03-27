@@ -14,6 +14,14 @@ public class Pair<M, N extends Comparable<N>> implements Comparable<Pair<M, N>> 
         this.n = n;
     }
 
+    public M getM() {
+        return m;
+    }
+
+    public N getN() {
+        return n;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
