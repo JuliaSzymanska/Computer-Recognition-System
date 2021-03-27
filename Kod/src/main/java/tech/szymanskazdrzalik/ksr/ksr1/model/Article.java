@@ -18,6 +18,10 @@ public class Article {
     private final String[] places;
     private boolean isTestSet;
 
+    public boolean isTestSet() {
+        return isTestSet;
+    }
+
     @Override
     public String toString() {
         return "Article{" +

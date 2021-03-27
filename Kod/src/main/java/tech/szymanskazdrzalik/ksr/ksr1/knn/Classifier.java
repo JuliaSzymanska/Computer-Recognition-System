@@ -14,11 +14,11 @@ public class Classifier {
 
     private final int k;
     private final Article article;
-    private final Article[] trainingArticles;
+    private final List<Article> trainingArticles;
     private final Metric metric;
     private List<Pair<Article, Double>> listOfPairs;
 
-    public Classifier(Article article, Article[] trainingArticles, Metric metric, int k) {
+    public Classifier(Article article, List<Article> trainingArticles, Metric metric, int k) {
         this.article = article;
         this.trainingArticles = trainingArticles;
         this.k = k;
