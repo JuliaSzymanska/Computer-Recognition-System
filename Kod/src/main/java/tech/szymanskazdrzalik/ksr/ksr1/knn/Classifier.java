@@ -14,12 +14,16 @@ import java.util.Map;
 public class Classifier {
 
     private int k = 0;
-    private Article article;
-    private Article[] trainingArticles;
+    private final Article article;
+    private final Article[] trainingArticles;
     private List<Pair<Article, Double>> listOfPairs;
-    private Metric metric;
+    private final Metric metric;
 
-    public Classifier() {
+    public Classifier(Article article, Article[] trainingArticles, Metric metric, int k) {
+        this.article = article;
+        this.trainingArticles = trainingArticles;
+        this.k = k;
+        this.metric = metric;
     }
 
     private double cosMetric(String[] text1Array, String[] text2Array) {
@@ -65,7 +69,7 @@ public class Classifier {
         return sum / Math.sqrt(sumOfSquaresText1 * sumOfSquaresText2);
     }
 
-    private void classify(List<Pair<Article, Double>> kNearestNeighbour) {
+    private String classify(List<Pair<Article, Double>> kNearestNeighbour) {
         Map<String, Integer> map = new HashMap<>();
         for (Pair<Article, Double> articleDoublePair : kNearestNeighbour) {
             String[] places = articleDoublePair.getM().getPlaces();
@@ -83,7 +87,7 @@ public class Classifier {
                 maxEntry = entry;
             }
         }
-        this.article.setPlaces(new String[]{maxEntry.getKey()});
+        return maxEntry.getKey();
     }
 
     private List<Pair<Article, Double>> findKNearestNeighbours() {
@@ -91,15 +95,10 @@ public class Classifier {
         return this.listOfPairs.subList(0, k);
     }
 
-    private String simulate(Article article, Article[] trainingArticles, Metric metric, int k) {
-        this.article = article;
-        this.trainingArticles = trainingArticles;
-        this.k = k;
-        this.metric = metric;
+    private String simulate() {
         this.calculateDistances();
         List<Pair<Article, Double>> kNearestNeighbour = this.findKNearestNeighbours();
-        classify(kNearestNeighbour);
-        return "";
+        return classify(kNearestNeighbour);
     }
 
     private void calculateDistances() {

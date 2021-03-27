@@ -18,12 +18,7 @@ public class Article {
     private final String[] author;
     private final String[] dateline;
     private final boolean isTestSet;
-
-    public void setPlaces(String[] places) {
-        this.places = places;
-    }
-
-    private String[] places;
+    private final String[] places;
 
     private FeatureVector featureVector;
 
