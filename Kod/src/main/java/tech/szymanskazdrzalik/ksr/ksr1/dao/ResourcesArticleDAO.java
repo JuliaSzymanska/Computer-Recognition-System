@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 public class ResourcesArticleDAO implements ArticleDAO {
     private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
@@ -18,10 +19,13 @@ public class ResourcesArticleDAO implements ArticleDAO {
 
         String string = FileReader.Parse(file);
         List<String> articlesSplitStrings = new ArrayList<>(Arrays.asList(string.split(String.format(WITH_DELIMITER, "</REUTERS>"))));
+        articlesSplitStrings.removeIf(s -> s.contains("</REUTERS>"));
+        articlesSplitStrings.removeIf(s -> s.equals("\n"));
         List<Article> articles = new ArrayList<>();
         for (var x : articlesSplitStrings) {
             articles.add(new Article(x.replace("<!DOCTYPE lewis SYSTEM \"lewis.dtd\">", "")));
         }
+        articles.get(0).getFeatureVector();
         return articles;
     }
 

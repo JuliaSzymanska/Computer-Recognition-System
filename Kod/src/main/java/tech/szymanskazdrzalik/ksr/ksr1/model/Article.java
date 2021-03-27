@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Article {
@@ -17,39 +19,40 @@ public class Article {
     private final String[] title;
     private final String[] author;
     private final String[] dateline;
-    private final boolean isTestSet;
     private final String[] places;
-
+    private boolean isTestSet;
     private FeatureVector featureVector;
-
-    public FeatureVector getFeatureVector() {
-        return featureVector;
-    }
 
     public Article(@NotNull String text) {
         String[] strings = parseSGMToArray(text);
         String title = getTextPart(strings, "TITLE:");
         String body = getTextPart(strings, "BODY:");
-        String dateline = getTextPart(strings, "DATELINE:");
+        String dateline = getTextPart(strings, "DATELINE:").trim().replace("-", "");
         String author = getTextPart(strings, "AUTHOR:");
         this.places = applyStopList(getTextPart(strings, "PLACES:"));
-        this.isTestSet = !getTextPart(getTextPart(strings, "REUTERS").
-                split(" "), "CGISPLIT").
-                strip().
-                replaceAll("\"", "").
-                replaceAll("=", "").equals("TRAINING-SET");
+        try {
+            this.isTestSet = !getTextPart(getTextPart(strings, "REUTERS").
+                    split(" "), "CGISPLIT").
+                    strip().
+                    replaceAll("\"", "").
+                    replaceAll("=", "").equals("TRAINING-SET");
+        } catch (Exception e) {
+            e.printStackTrace();
+            this.isTestSet = false;
+        }
         this.title = applyStopList(title);
         this.body = applyStopList(body);
         this.dateline = applyStopList(dateline);
         this.author = applyStopList(author);
-        System.out.println("title" + Arrays.toString(this.title));
         // TODO: 26.03.2021 W tym miejscu nadal pozostaje na samym koncu string  Reuter //&#3; zmieniowny w 2 stringi reuter i 3 i nwm co z tym madrego zrobic
-        System.out.println("body" + Arrays.toString(this.body));
-        System.out.println("dateline" + Arrays.toString(this.dateline));
-        System.out.println("author " + Arrays.toString(this.author));
-        System.out.println("isTestSet " + this.isTestSet);
 
-        System.exit(0);
+    }
+
+    public FeatureVector getFeatureVector() {
+        if (this.featureVector == null) {
+            this.featureVector = new FeatureVector(this);
+        }
+        return this.featureVector;
     }
 
     private boolean isStringTestSet(String string) {
@@ -95,7 +98,7 @@ public class Article {
     private String getTextPart(String[] strings, String charSeq) {
         int index = contains(strings, charSeq);
         if (index == -1) {
-            return null;
+            return "";
         }
         return strings[index].replace(charSeq, "");
     }
@@ -133,48 +136,80 @@ public class Article {
         return newStrings;
     }
 
-    private void createFeatureVector() {
-
-    }
-
     public static class FeatureVector {
         private final int wordCount;
-        @Nullable
-        private final String author;
         private final int uniqueWordCount;
         @Nullable
-        private String secondCurrency;
+        private final String secondCurrency;
+        private final String[] keyWords;
+        private final int keyWordCount;
+        private final float keyWordSaturation;
+        @Nullable
+        private final String mostPopularKeyWord;
+        @Nullable
+        private String author = null;
         private int dayInYear;
         private String location;
+        @Nullable
         private String title;
         @Nullable
-        private String mostPopularCountry;
-        private String[] keyWords;
-        private int keyWordCount;
-        private int keyWordSaturation;
-        @Nullable
-        private String mostPopularKeyWord;
+        private final String mostPopularCountry;
 
         // TODO: 23.03.2021  test
         // TODO: 23.03.2021 Finish
         public FeatureVector(Article article) {
-            String[] fullText =
-                    Stream.concat(
-                            Stream.concat(
-                                    Stream.concat(
-                                            Arrays.stream(article.author),
-                                            Arrays.stream(article.body)),
-                                    Arrays.stream(article.dateline)),
-                            Arrays.stream(article.title)).
-                            toArray(String[]::new);
+            String[] fullText = new String[0];
+            if (article.author != null) {
+                fullText = Stream.concat(Arrays.stream(article.author), Arrays.stream(fullText)).toArray(String[]::new);
+                this.author = String.join(" ", article.author);
+            }
+            if (article.body != null) {
+                fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
+            }
+            if (article.dateline != null) {
+                fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
+                this.dayInYear = getDayInYearFromDateLineString(article.dateline);
+                this.location = article.dateline[0];
+            }
+            if (article.title != null) {
+                fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
+                this.title = String.join(" ", article.title);
+            }
+            List<String> tmp = Arrays.asList(fullText);
+            tmp.removeIf(s -> !KeyWords.contains(s));
+            this.keyWords = tmp.toArray(String[]::new);
+            this.keyWordCount = this.keyWords.length;
             this.wordCount = fullText.length;
-            this.author = String.join(" ", article.author);
+            this.keyWordSaturation = (float) (this.keyWordCount) / this.wordCount;
+            this.mostPopularKeyWord = getMostPopularKeyword(this.keyWords);
+            this.mostPopularCountry = this.findMostPopularCountry(fullText);
+
             this.uniqueWordCount = findUnique(fullText).length;
             this.secondCurrency = findCurrencies(fullText);
         }
 
         private String findCurrencies(String[] fullText) {
+            // TODO: 27.03.2021
             return "";
+        }
+
+        private String findMostPopularCountry(String[] fullText) {
+            // TODO: 27.03.2021
+            return "";
+        }
+
+        private String getMostPopularKeyword(String[] keyWords) {
+            Map<String, Integer> stringIntegerMap = new HashMap<>();
+            for (var x : keyWords) {
+                stringIntegerMap.put(x, stringIntegerMap.getOrDefault(x, 0));
+            }
+            var maxEntry = stringIntegerMap.entrySet().stream().findFirst().get();
+            for (var x : stringIntegerMap.entrySet()) {
+                if (maxEntry == null || x.getValue().compareTo(maxEntry.getValue()) > 0) {
+                    maxEntry = x;
+                }
+            }
+            return maxEntry.getKey();
         }
 
         private String[] findUnique(String[] strings) {
@@ -190,6 +225,40 @@ public class Article {
                 }
             });
             return stringList.toArray(String[]::new);
+        }
+
+        private int getDayInYearFromDateLineString(String[] string) {
+            // TODO: 27.03.2021 Mam nadzieje że to zawsze tak wyglada :p
+            int dayN = 0;
+            String month = string[string.length - 2];
+            String day = string[string.length - 1];
+            if (month.toLowerCase().contains("jan")) {
+                dayN += 0;
+            } else if (month.toLowerCase().contains("feb")) {
+                dayN += 31;
+            } else if (month.toLowerCase().contains("mar")) {
+                dayN += 60;
+            } else if (month.toLowerCase().contains("apr")) {
+                dayN += 91;
+            } else if (month.toLowerCase().contains("may")) {
+                dayN += 121;
+            } else if (month.toLowerCase().contains("jun")) {
+                dayN += 152;
+            } else if (month.toLowerCase().contains("jul")) {
+                dayN += 182;
+            } else if (month.toLowerCase().contains("aug")) {
+                dayN += 213;
+            } else if (month.toLowerCase().contains("sep")) {
+                dayN += 244;
+            } else if (month.toLowerCase().contains("oct")) {
+                dayN += 274;
+            } else if (month.toLowerCase().contains("nov")) {
+                dayN += 305;
+            } else if (month.toLowerCase().contains("dec")) {
+                dayN += 335;
+            }
+            dayN += Integer.parseInt(day);
+            return dayN; // TODO: 27.03.2021
         }
 
         public int getWordCount() {
@@ -232,7 +301,7 @@ public class Article {
             return keyWordCount;
         }
 
-        public int getKeyWordSaturation() {
+        public float getKeyWordSaturation() {
             return keyWordSaturation;
         }
 
