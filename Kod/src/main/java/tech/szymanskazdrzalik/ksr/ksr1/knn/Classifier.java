@@ -95,7 +95,7 @@ public class Classifier {
         return this.listOfPairs.subList(0, k);
     }
 
-    private String simulate() {
+    public String simulate() {
         this.calculateDistances();
         List<Pair<Article, Double>> kNearestNeighbour = this.findKNearestNeighbours();
         return classify(kNearestNeighbour);
