@@ -17,21 +17,8 @@ public class Article {
     private final String[] dateline;
     private final String[] places;
     private boolean isTestSet;
-
-    @Override
-    public String toString() {
-        return "Article{" +
-                "body=" + Arrays.toString(body) +
-                ", title=" + Arrays.toString(title) +
-                ", author=" + Arrays.toString(author) +
-                ", dateline=" + Arrays.toString(dateline) +
-                ", places=" + Arrays.toString(places) +
-                ", isTestSet=" + isTestSet +
-                ", featureVector=" + featureVector +
-                '}' + "\n";
-    }
-
     private FeatureVector featureVector;
+
     public Article(@NotNull String text) {
         String[] strings = parseSGMToArray(text);
         String title = getTextPart(strings, "TITLE:");
@@ -58,6 +45,19 @@ public class Article {
         this.author = applyStopList(author);
         // TODO: 26.03.2021 W tym miejscu nadal pozostaje na samym koncu string  Reuter //&#3; zmieniowny w 2 stringi reuter i 3 i nwm co z tym madrego zrobic
 
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "body=" + Arrays.toString(body) +
+                ", title=" + Arrays.toString(title) +
+                ", author=" + Arrays.toString(author) +
+                ", dateline=" + Arrays.toString(dateline) +
+                ", places=" + Arrays.toString(places) +
+                ", isTestSet=" + isTestSet +
+                ", featureVector=" + featureVector +
+                '}' + "\n";
     }
 
     public String[] getBody() {
@@ -156,24 +156,6 @@ public class Article {
     }
 
     public static class FeatureVector {
-        @Override
-        public String toString() {
-            return "FeatureVector{" +
-                    "wordCount=" + wordCount +
-                    ", uniqueWordCount=" + uniqueWordCount +
-                    ", secondCurrency='" + secondCurrency + '\'' +
-                    ", keyWords=" + Arrays.toString(keyWords) +
-                    ", keyWordCount=" + keyWordCount +
-                    ", keyWordSaturation=" + keyWordSaturation +
-                    ", mostPopularKeyWord='" + mostPopularKeyWord + '\'' +
-                    ", mostPopularCountry='" + mostPopularCountry + '\'' +
-                    ", author='" + author + '\'' +
-                    ", dayInYear=" + dayInYear +
-                    ", location='" + location + '\'' +
-                    ", title='" + title + '\'' +
-                    '}';
-        }
-
         private static final Map<String, Integer> monthsValuesMap = new HashMap<>() {{
             put("jan", 0);
             put("feb", 31);
@@ -205,7 +187,6 @@ public class Article {
         private String location;
         @Nullable
         private String title;
-
         // TODO: 23.03.2021  test
         // TODO: 23.03.2021 Finish
         public FeatureVector(Article article) {
@@ -249,6 +230,24 @@ public class Article {
             }
             // only got here if we didn't return false
             return true;
+        }
+
+        @Override
+        public String toString() {
+            return "FeatureVector{" +
+                    "wordCount=" + wordCount +
+                    ", uniqueWordCount=" + uniqueWordCount +
+                    ", secondCurrency='" + secondCurrency + '\'' +
+                    ", keyWords=" + Arrays.toString(keyWords) +
+                    ", keyWordCount=" + keyWordCount +
+                    ", keyWordSaturation=" + keyWordSaturation +
+                    ", mostPopularKeyWord='" + mostPopularKeyWord + '\'' +
+                    ", mostPopularCountry='" + mostPopularCountry + '\'' +
+                    ", author='" + author + '\'' +
+                    ", dayInYear=" + dayInYear +
+                    ", location='" + location + '\'' +
+                    ", title='" + title + '\'' +
+                    '}';
         }
 
         private String findCurrencies(String[] fullText) {
@@ -296,9 +295,9 @@ public class Article {
             search:
             {
                 for (var x : string) {
-                    if (monthsValuesMap.keySet().stream().anyMatch(x::contains)) {
+                    if (monthsValuesMap.keySet().stream().anyMatch(s -> x.toLowerCase().contains(s.toLowerCase()))) {
                         for (var y : monthsValuesMap.keySet()) {
-                            if (x.contains(y)) {
+                            if (x.toLowerCase().contains(y.toLowerCase())) {
                                 dayN += monthsValuesMap.get(y);
                                 break search;
                             }
