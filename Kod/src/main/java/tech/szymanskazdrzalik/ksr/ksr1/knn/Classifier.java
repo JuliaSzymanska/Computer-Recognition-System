@@ -5,22 +5,16 @@ import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Classifier {
 
-    int k = 0;
-    Article article;
-    Article[] trainingArticles;
-    List<Pair> listOfPairs;
-    Metric metric;
-
-    private List<Pair> findKNearestNeighbours() {
-        Collections.sort(this.listOfPairs);
-        return this.listOfPairs.subList(0, k);
-    }
+    private int k = 0;
+    private Article article;
+    private Article[] trainingArticles;
+    private List<Pair> listOfPairs;
+    private Metric metric;
 
     private static String classify(Article article) {
         return "";
@@ -31,6 +25,11 @@ public class Classifier {
             return 0;
         }
         return 1;
+    }
+
+    private List<Pair> findKNearestNeighbours() {
+        Collections.sort(this.listOfPairs);
+        return this.listOfPairs.subList(0, k);
     }
 
     private String simulate(Metric metric, int k) {

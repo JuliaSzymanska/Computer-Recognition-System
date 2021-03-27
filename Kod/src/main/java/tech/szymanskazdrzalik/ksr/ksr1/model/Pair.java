@@ -4,34 +4,35 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class Pair implements Comparable<Pair> {
+public class Pair<M, N extends Comparable<N>> implements Comparable<Pair<M, N>> {
 
-    public Article article;
-    public Double distance;
+    public M m;
+    public N n;
 
-    public Pair(Article article, double distance) {
-        this.article = article;
-        this.distance = distance;
+    public Pair(M m, N n) {
+        this.m = m;
+        this.n = n;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pair)) return false;
-        Pair pair = (Pair) o;
-        return Double.compare(pair.distance, distance) == 0 && article.equals(pair.article);
+        Pair<?, ?> pair = (Pair<?, ?>) o;
+        return m.equals(pair.m) && n.equals(pair.n);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(article, distance);
+        return Objects.hash(m, n);
     }
 
+
     @Override
-    public int compareTo(@NotNull Pair o) {
-        if (this.distance == null || o.distance == null) {
+    public int compareTo(@NotNull Pair<M, N> o) {
+        if (this.n == null || o.n == null) {
             return 0;
         }
-        return this.distance.compareTo(o.distance);
+        return this.n.compareTo(o.n);
     }
 }
