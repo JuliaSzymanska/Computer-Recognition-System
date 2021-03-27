@@ -5,7 +5,6 @@ import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -13,11 +12,11 @@ import java.util.Map;
 
 public class Classifier {
 
-    private int k;
+    private final int k;
     private final Article article;
     private final Article[] trainingArticles;
-    private List<Pair<Article, Double>> listOfPairs;
     private final Metric metric;
+    private List<Pair<Article, Double>> listOfPairs;
 
     public Classifier(Article article, Article[] trainingArticles, Metric metric, int k) {
         this.article = article;

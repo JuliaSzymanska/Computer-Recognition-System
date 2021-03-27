@@ -46,7 +46,7 @@ public class CosMetric {
             sumOfSquaresText1 += text1WordsCount[i] * text1WordsCount[i];
             sumOfSquaresText2 += text2WordsCount[i] * text2WordsCount[i];
         }
-        return sum / Math.sqrt(sumOfSquaresText1 * sumOfSquaresText2);
+        return Math.abs(sum) / Math.sqrt(sumOfSquaresText1 * sumOfSquaresText2);
     }
 
 }
