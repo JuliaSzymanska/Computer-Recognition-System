@@ -6,60 +6,13 @@ import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 
 public class Classifier {
 
-    private static String simulate(Metric metric, int k) {
-        return "";
-    }
+    int k = 0;
+    Article article;
+    Article[] trainingArticles;
+    Metric metric;
 
-    private static Pair[] findKNearestNeighbours(Article article, int k) {
+    private static Pair[] findKNearestNeighbours(Article article) {
         return null;
-    }
-
-    private static Pair calculateDistances(Article article, Article[] trainingArticles) {
-        for (Article trainingArticle : trainingArticles) {
-            double[] articleArray = new double[12];
-            double[] trainingArticleArray = new double[12];
-            setFeatureArray(article, trainingArticle, articleArray, trainingArticleArray);
-        }
-        return null;
-    }
-
-    private static void setFeatureArray(Article article, Article trainingArticle, double[] articleArray, double[] trainingArticleArray) {
-
-        articleArray[0] = article.getFeatureVector().getWordCount();
-        trainingArticleArray[0] = trainingArticle.getFeatureVector().getWordCount();
-
-        articleArray[1] = 0.0;
-        trainingArticleArray[1] = areStringEquals(article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
-
-        articleArray[2] = article.getFeatureVector().getUniqueWordCount();
-        trainingArticleArray[2] = trainingArticle.getFeatureVector().getUniqueWordCount();
-
-        articleArray[3] = 0.0;
-        trainingArticleArray[3] = areStringEquals(article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
-
-        articleArray[4] = article.getFeatureVector().getDayInYear();
-        trainingArticleArray[4] = trainingArticle.getFeatureVector().getDayInYear();
-
-        articleArray[5] = 0.0;
-        trainingArticleArray[5] = areStringEquals(article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
-
-        articleArray[6] = 0.0;
-        trainingArticleArray[6] = areStringEquals(article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
-
-        articleArray[7] = 0.0;
-        trainingArticleArray[7] = areStringEquals(article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
-
-//        articleArray[8] = 0.0;
-//        trainingArticleArray[8] = areStringEquals(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
-
-        articleArray[9] = article.getFeatureVector().getKeyWordCount();
-        trainingArticleArray[9] = trainingArticle.getFeatureVector().getKeyWordCount();
-
-        articleArray[10] = article.getFeatureVector().getKeyWordSaturation();
-        trainingArticleArray[10] = trainingArticle.getFeatureVector().getKeyWordSaturation();
-
-        articleArray[11] = 0.0;
-        trainingArticleArray[11] = areStringEquals(article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
     }
 
     private static String classify(Article article) {
@@ -71,6 +24,61 @@ public class Classifier {
             return 0;
         }
         return 1;
+    }
+
+    private String simulate(Metric metric, int k) {
+        this.k = k;
+        this.metric = metric;
+        return "";
+    }
+
+    private Pair calculateDistances() {
+        for (Article trainingArticle : this.trainingArticles) {
+            double[] articleArray = new double[12];
+            double[] trainingArticleArray = new double[12];
+            setFeatureArray(trainingArticle, articleArray, trainingArticleArray);
+            this.metric.calculateDistance(articleArray, trainingArticleArray);
+        }
+        return null;
+    }
+
+    private void setFeatureArray(Article trainingArticle, double[] articleArray, double[] trainingArticleArray) {
+
+        articleArray[0] = this.article.getFeatureVector().getWordCount();
+        trainingArticleArray[0] = trainingArticle.getFeatureVector().getWordCount();
+
+        articleArray[1] = 0.0;
+        trainingArticleArray[1] = areStringEquals(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
+
+        articleArray[2] = this.article.getFeatureVector().getUniqueWordCount();
+        trainingArticleArray[2] = trainingArticle.getFeatureVector().getUniqueWordCount();
+
+        articleArray[3] = 0.0;
+        trainingArticleArray[3] = areStringEquals(this.article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
+
+        articleArray[4] = this.article.getFeatureVector().getDayInYear();
+        trainingArticleArray[4] = trainingArticle.getFeatureVector().getDayInYear();
+
+        articleArray[5] = 0.0;
+        trainingArticleArray[5] = areStringEquals(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
+
+        articleArray[6] = 0.0;
+        trainingArticleArray[6] = areStringEquals(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
+
+        articleArray[7] = 0.0;
+        trainingArticleArray[7] = areStringEquals(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
+
+//        articleArray[8] = 0.0;
+//        trainingArticleArray[8] = areStringEquals(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
+
+        articleArray[9] = this.article.getFeatureVector().getKeyWordCount();
+        trainingArticleArray[9] = trainingArticle.getFeatureVector().getKeyWordCount();
+
+        articleArray[10] = this.article.getFeatureVector().getKeyWordSaturation();
+        trainingArticleArray[10] = trainingArticle.getFeatureVector().getKeyWordSaturation();
+
+        articleArray[11] = 0.0;
+        trainingArticleArray[11] = areStringEquals(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
     }
 
 
