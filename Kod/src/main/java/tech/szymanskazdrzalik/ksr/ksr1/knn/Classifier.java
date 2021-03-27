@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Classifier {
 
-    private int k = 0;
+    private int k;
     private final Article article;
     private final Article[] trainingArticles;
     private List<Pair<Article, Double>> listOfPairs;
