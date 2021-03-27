@@ -177,8 +177,12 @@ public class Article {
                             toArray(String[]::new);
             this.wordCount = fullText.length;
             this.author = String.join(" ", article.author);
-
             this.uniqueWordCount = findUnique(fullText).length;
+            this.secondCurrency = findCurrencies(fullText);
+        }
+
+        private String findCurrencies(String[] fullText) {
+            return "";
         }
 
         private String[] findUnique(String[] strings) {
