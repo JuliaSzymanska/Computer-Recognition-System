@@ -18,7 +18,12 @@ public class Article {
     private final String[] author;
     private final String[] dateline;
     private final boolean isTestSet;
-    private final String[] places;
+
+    public void setPlaces(String[] places) {
+        this.places = places;
+    }
+
+    private String[] places;
 
     private FeatureVector featureVector;
 
@@ -56,6 +61,9 @@ public class Article {
         return Objects.equals(string, "PUBLISHED-TESTSET");
     }
 
+    public String[] getPlaces() {
+        return places;
+    }
 
     private String[] parseSGMToArray(String text) {
         text = text.replace("\n", " ");
