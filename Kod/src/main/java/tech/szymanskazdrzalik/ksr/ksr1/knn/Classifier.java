@@ -20,9 +20,9 @@ public class Classifier {
     public Classifier() {
     }
 
-    private double cosMetric(String text1, String text2) {
-        List<String> text1List = new ArrayList<String>(Arrays.asList(text1.split(" ")));
-        List<String> text2List = new ArrayList<String>(Arrays.asList(text2.split(" ")));
+    private double cosMetric(String[] text1Array, String[] text2Array) {
+        List<String> text1List = new ArrayList<>(Arrays.asList(text1Array));
+        List<String> text2List = new ArrayList<>(Arrays.asList(text2Array));
         List<String> listOfWords = new ArrayList<>();
         for (String i : text1List) {
             if (!listOfWords.contains(i)) {
@@ -45,6 +45,10 @@ public class Classifier {
             }
         }
         return calculateCos(text1WordsCount, text2WordsCount);
+    }
+
+    private double cosMetric(String text1, String text2) {
+        return cosMetric(text1.split(" "), text2.split(" "));
     }
 
     private double calculateCos(int[] text1WordsCount, int[] text2WordsCount) {
@@ -114,8 +118,8 @@ public class Classifier {
         articleArray[7] = 0.0;
         trainingArticleArray[7] = cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
 
-//        articleArray[8] = 0.0;
-//        trainingArticleArray[8] = areStringEquals(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
+        articleArray[8] = 0.0;
+        trainingArticleArray[8] = cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
 
         articleArray[9] = this.article.getFeatureVector().getKeyWordCount();
         trainingArticleArray[9] = trainingArticle.getFeatureVector().getKeyWordCount();
