@@ -4,15 +4,22 @@ import tech.szymanskazdrzalik.ksr.ksr1.metric.Metric;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Classifier {
 
     int k = 0;
     Article article;
     Article[] trainingArticles;
+    List<Pair> listOfPairs;
     Metric metric;
 
-    private static Pair[] findKNearestNeighbours(Article article) {
-        return null;
+    private List<Pair> findKNearestNeighbours() {
+        Collections.sort(this.listOfPairs);
+        return this.listOfPairs.subList(0, k);
     }
 
     private static String classify(Article article) {
@@ -29,17 +36,19 @@ public class Classifier {
     private String simulate(Metric metric, int k) {
         this.k = k;
         this.metric = metric;
+        this.calculateDistances();
+        List<Pair> kNearestNeighbour = this.findKNearestNeighbours();
         return "";
     }
 
-    private Pair calculateDistances() {
+    private void calculateDistances() {
+        this.listOfPairs = new ArrayList<>();
         for (Article trainingArticle : this.trainingArticles) {
             double[] articleArray = new double[12];
             double[] trainingArticleArray = new double[12];
             setFeatureArray(trainingArticle, articleArray, trainingArticleArray);
-            this.metric.calculateDistance(articleArray, trainingArticleArray);
+            this.listOfPairs.add(new Pair(trainingArticle, this.metric.calculateDistance(articleArray, trainingArticleArray)));
         }
-        return null;
     }
 
     private void setFeatureArray(Article trainingArticle, double[] articleArray, double[] trainingArticleArray) {
