@@ -17,7 +17,8 @@ public class Article {
     private final String[] title;
     private final String[] author;
     private final String[] dateline;
-    private final String isTestSet;
+    private final boolean isTestSet;
+    private final String[] places;
 
     private FeatureVector featureVector;
 
@@ -31,10 +32,12 @@ public class Article {
         String body = getTextPart(strings, "BODY:");
         String dateline = getTextPart(strings, "DATELINE:");
         String author = getTextPart(strings, "AUTHOR:");
-        String isTestSet = getTextPart(strings, "CGISPLIT:");
-
-//        boolean this.isTestSet = getIsTestSet(strings);
-        this.isTestSet = isTestSet;
+        this.places = applyStopList(getTextPart(strings, "PLACES:"));
+        this.isTestSet = !getTextPart(getTextPart(strings, "REUTERS").
+                split(" "), "CGISPLIT").
+                strip().
+                replaceAll("\"", "").
+                replaceAll("=", "").equals("TRAINING-SET");
         this.title = applyStopList(title);
         this.body = applyStopList(body);
         this.dateline = applyStopList(dateline);
@@ -49,8 +52,7 @@ public class Article {
         System.exit(0);
     }
 
-    private boolean getIsTestSet(String[] strings) {
-        String string = getTextPart(strings, "CGISPLIT:");
+    private boolean isStringTestSet(String string) {
         return Objects.equals(string, "PUBLISHED-TESTSET");
     }
 
@@ -112,7 +114,7 @@ public class Article {
             return null;
         }
         // usuniecie wszystkich znaków interpunkcyjnych
-        string = string.trim().replaceAll("\\p{Punct}", " ");
+        string = string.trim().replaceAll("[\\p{Punct}&&[^_-]]+", "");
         // usuniecie spacji i podzielenie
         List<String> textSplitList = Arrays.asList(string.split(" +"));
         // stemizacja
@@ -190,7 +192,7 @@ public class Article {
             return wordCount;
         }
 
-        public String getAuthor() {
+        public @Nullable String getAuthor() {
             return author;
         }
 
@@ -198,7 +200,7 @@ public class Article {
             return uniqueWordCount;
         }
 
-        public String getSecondCurrency() {
+        public @Nullable String getSecondCurrency() {
             return secondCurrency;
         }
 
@@ -214,7 +216,7 @@ public class Article {
             return title;
         }
 
-        public String getMostPopularCountry() {
+        public @Nullable String getMostPopularCountry() {
             return mostPopularCountry;
         }
 
@@ -230,7 +232,7 @@ public class Article {
             return keyWordSaturation;
         }
 
-        public String getMostPopularKeyWord() {
+        public @Nullable String getMostPopularKeyWord() {
             return mostPopularKeyWord;
         }
     }

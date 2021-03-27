@@ -1,6 +1,8 @@
 package tech.szymanskazdrzalik.ksr.ksr1.model;
 
+import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.Nullable;
+import tech.szymanskazdrzalik.ksr.ksr1.Main;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,10 +13,23 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 public class StopList {
     private static String[] words = new String[0];
+
+    private static final StopList INSTANCE = new StopList();
+
+    private StopList() {
+        try {
+            loadStopWords(Objects.requireNonNull(Main.class.getClassLoader().getResource("Data/stopwords.txt")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private static void loadStopWords(String path) throws IOException {
         loadStopWords(new File(path));
     }
