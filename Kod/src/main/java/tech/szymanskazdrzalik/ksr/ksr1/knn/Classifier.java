@@ -11,13 +11,14 @@ import java.util.List;
 public class Classifier {
 
     private int k = 0;
-    private Article article;
-    private Article[] trainingArticles;
-    private List<Pair> listOfPairs;
+    private final Article article;
+    private final Article[] trainingArticles;
+    private List<Pair<Article, Double>> listOfPairs;
     private Metric metric;
 
-    private static String classify(Article article) {
-        return "";
+    public Classifier(Article article, Article[] trainingArticles) {
+        this.article = article;
+        this.trainingArticles = trainingArticles;
     }
 
     private static double areStringEquals(String article, String trainingArticle) {
@@ -27,7 +28,11 @@ public class Classifier {
         return 1;
     }
 
-    private List<Pair> findKNearestNeighbours() {
+    private String classify(Article article) {
+        return "";
+    }
+
+    private List<Pair<Article, Double>> findKNearestNeighbours() {
         Collections.sort(this.listOfPairs);
         return this.listOfPairs.subList(0, k);
     }
@@ -36,7 +41,7 @@ public class Classifier {
         this.k = k;
         this.metric = metric;
         this.calculateDistances();
-        List<Pair> kNearestNeighbour = this.findKNearestNeighbours();
+        List<Pair<Article, Double>> kNearestNeighbour = this.findKNearestNeighbours();
         return "";
     }
 
@@ -46,7 +51,7 @@ public class Classifier {
             double[] articleArray = new double[12];
             double[] trainingArticleArray = new double[12];
             setFeatureArray(trainingArticle, articleArray, trainingArticleArray);
-            this.listOfPairs.add(new Pair(trainingArticle, this.metric.calculateDistance(articleArray, trainingArticleArray)));
+            this.listOfPairs.add(new Pair<Article, Double>(trainingArticle, this.metric.calculateDistance(articleArray, trainingArticleArray)));
         }
     }
 
