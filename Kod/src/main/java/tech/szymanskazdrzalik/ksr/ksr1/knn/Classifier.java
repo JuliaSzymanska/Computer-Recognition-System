@@ -117,25 +117,25 @@ public class Classifier {
         trainingArticleArray[0] = trainingArticle.getFeatureVector().getWordCount();
 
         articleArray[1] = 0.0;
-        trainingArticleArray[1] = cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
+        trainingArticleArray[1] = 1 - cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
 
         articleArray[2] = this.article.getFeatureVector().getUniqueWordCount();
         trainingArticleArray[2] = trainingArticle.getFeatureVector().getUniqueWordCount();
 
         articleArray[3] = 0.0;
-        trainingArticleArray[3] = cosMetric(this.article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
+        trainingArticleArray[3] = 1 - cosMetric(this.article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
 
         articleArray[4] = this.article.getFeatureVector().getDayInYear();
         trainingArticleArray[4] = trainingArticle.getFeatureVector().getDayInYear();
 
         articleArray[5] = 0.0;
-        trainingArticleArray[5] = cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
+        trainingArticleArray[5] = 1 - cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
 
         articleArray[6] = 0.0;
-        trainingArticleArray[6] = cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
+        trainingArticleArray[6] = 1 - cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
 
         articleArray[7] = 0.0;
-        trainingArticleArray[7] = cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
+        trainingArticleArray[7] = 1 - cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
 
         articleArray[8] = 0.0;
         trainingArticleArray[8] = cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
@@ -147,7 +147,7 @@ public class Classifier {
         trainingArticleArray[10] = trainingArticle.getFeatureVector().getKeyWordSaturation();
 
         articleArray[11] = 0.0;
-        trainingArticleArray[11] = cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
+        trainingArticleArray[11] = 1 - cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
     }
 
 
