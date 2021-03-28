@@ -10,6 +10,7 @@ import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,10 +42,20 @@ public class Main {
                 in.next();
             }
         }
-//        System.out.println("Podaj ilość testowych artykułów. ");
+        System.out.println("Podaj procent artykułów testowych: ");
+        int trainings = 0;
+        while (in.hasNext()) {
+            if (in.hasNextInt()) {
+                trainings = in.nextInt();
+                if (trainings > 0 && trainings < 100) {
+                    break;
+                }
+            } else {
+                System.out.println("Podaj procent artykułów treningowych: ");
+                in.next();
+            }
+        }
 
-//        float b = in.nextFloat();
-//        System.out.println("You entered float " + b);
         Metric metricForClass;
         if (metric == 1) {
             metricForClass = new EuclideanMetric();
@@ -57,6 +68,8 @@ public class Main {
         Article[] articles = FolderReader.readArticlesFromFolderInResources("Data/");
         List<Article> trainingSet = new ArrayList<>();
         List<Article> testSet = new ArrayList<>();
+        Collections.shuffle(trainingSet);
+        trainingSet = trainingSet.subList(0, testSet.size() * trainings / (100 - trainings));
         for (Article a : articles) {
             if (a.isTestSet()) {
                 testSet.add(a);
