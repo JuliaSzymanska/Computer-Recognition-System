@@ -17,7 +17,7 @@
 
 \author{
   \studentinfo{Julia Szymańska}{224441} \and
-  \studentinfo{Przemysław Zdrzalik}{224466} }
+  \studentinfo{Przemysław Zdrzalilllk}{224466} }
 
 \title{Projekt 1. Klasyfikacja dokumentów tekstowych}
 \usepackage{multirow}
@@ -26,13 +26,13 @@
 
 
 \section{Cel projektu}
-Celem projektu jest stworzenie aplikacji klasyfikującej zadany zbiór danych tekstowych metodą K najbliższych sąsiadów (k-NN). Aplikacja ma za zadanie dokonać ekstrakcji cech na zbiorach tekstów ze strony \\\textit{http://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Categorization+Collection} oraz następnie dokonać ich klasyfikacji.\\
+Celem projektu jest stworzenie aplikacji klasyfikującej zadany zbiór danych tekstowych metodą K najbliższych sąsiadów (k-NN). Aplikacja ma za zadanie dokonać ekstrakcji cech na zbiorach tekstów\cite{dane} oraz następnie dokonać ich klasyfikacji.\\
 
 
 \section{Klasyfikacja nadzorowana metodą $k$-NN}
 
 
-Metoda K najbliższych sąsiadów, w skrócie metoda $k$-NN \cite{dane}, jest to algorytm stosowany do klasyfikacji, który nie wymaga etapu uczenia. 
+Metoda K najbliższych sąsiadów, w skrócie metoda $k$-NN\cite{dane}, jest to algorytm stosowany do klasyfikacji, który nie wymaga etapu uczenia. 
 Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego, gdzie spośród k najbliższych rozpatrywanemu elementowi sąsiadów najwięcej z nich należy do tej grupy. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - ilość rozpatrywanych sąsiadów, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
 
 
@@ -100,6 +100,22 @@ Stosowane miary jakości klasyfikacji:\\
 
 
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
+W procesie klasyfikacji możliwe jest wykorzystanie jedne z trzch metryk: Metryka Euklidesowa, Metryka Czebyszewa, Metryka Uliczna. Metryki służą obliczeniu odległości pomiędzy dwoma wektora o dowolnym rozmiarze. Metryka Eukliedesowa jest opisana wzorem: 
+\begin{equation}  \end{equation}
+gdzie: x, y - wektory, d_e(x, y) - odległość pomiędzy wektorem x i y, x_n, y_n - składowe wektora. 
+
+Metryka Czebyszewa jest opisana wzorem: 
+\begin{equation}  \end{equation}
+gdzie: x, y - wektory, d_e(x, y) - odległość pomiędzy wektorem x i y, x_n, y_n - składowe wektora. 
+
+Metryka Uliczna jest opisana wzorem: 
+\begin{equation}  \end{equation}
+gdzie: x, y - wektory, d_e(x, y) - odległość pomiędzy wektorem x i y, x_n, y_n - składowe wektora. 
+
+
+
+
+
 Wzory, znaczenia i opisy symboli zastosowanych metryk z
 przykładami. Wzory, opisy i znaczenia miar
 podobieństwa tekstów zastosowanych w obliczaniu metryk dla wektorów cech z
@@ -178,6 +194,8 @@ podać merytoryczne (ale nie czasowe) przyczyny tych braków.
 \bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2008.
 
 \bibitem{tablica} Internet forum. Wikipedia: The Free Encyclopedia, Dostępny w: \url{https://pl.wikipedia.org/wiki/Tablica_pomy%C5%82ek?fbclid=IwAR1yFbhG8HoSicSBnyA43YhpyU0tJiaIpI6ghUdNZvzDhPtMPwAWHtrdPUQ}
+
+\bibitem{teksty} Machine Learning Repository. UCI:, Dostępny w: \url{http://archive.ics.uci.edu/ml/datasets/Reuters-21578+Text+Categorization+Collection}
 
 \end{thebibliography}
 

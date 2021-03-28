@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Article {
@@ -264,8 +265,28 @@ public class Article {
         }
 
         private String findMostPopularCountry(String[] fullText) {
-            // TODO: 27.03.2021
-            return "";
+            List<String> tmpList = new LinkedList<String>(Arrays.asList(fullText));
+            tmpList.removeIf(s -> !Places.contains(s));
+            String str = mostCommon(tmpList);
+            return str == null ? "" : str;
+        }
+
+        private static <T> T mostCommon(List<T> list) {
+            Map<T, Integer> map = new HashMap<>();
+
+            for (T t : list) {
+                Integer val = map.get(t);
+                map.put(t, val == null ? 1 : val + 1);
+            }
+
+            Map.Entry<T, Integer> max = null;
+
+            for (Map.Entry<T, Integer> e : map.entrySet()) {
+                if (max == null || e.getValue() > max.getValue())
+                    max = e;
+            }
+
+            return max == null ? null : max.getKey();
         }
 
         private String getMostPopularKeyword(String[] keyWords) {
