@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Predicate;
 
 public class ResourcesArticleDAO implements ArticleDAO {
     private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";

@@ -4,10 +4,13 @@ import opennlp.tools.stemmer.PorterStemmer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 public class Article {
@@ -17,24 +20,6 @@ public class Article {
     private final String[] dateline;
     private final String[] places;
     private boolean isTestSet;
-
-    public boolean isTestSet() {
-        return isTestSet;
-    }
-
-    @Override
-    public String toString() {
-        return "Article{" +
-                "body=" + Arrays.toString(body) +
-                ", title=" + Arrays.toString(title) +
-                ", author=" + Arrays.toString(author) +
-                ", dateline=" + Arrays.toString(dateline) +
-                ", places=" + Arrays.toString(places) +
-                ", isTestSet=" + isTestSet +
-                ", featureVector=" + featureVector +
-                '}' + "\n";
-    }
-
     private FeatureVector featureVector;
 
     public Article(@NotNull String text) {
@@ -63,6 +48,23 @@ public class Article {
         this.author = applyStopList(author);
         // TODO: 26.03.2021 W tym miejscu nadal pozostaje na samym koncu string  Reuter //&#3; zmieniowny w 2 stringi reuter i 3 i nwm co z tym madrego zrobic
 
+    }
+
+    public boolean isTestSet() {
+        return isTestSet;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "body=" + Arrays.toString(body) +
+                ", title=" + Arrays.toString(title) +
+                ", author=" + Arrays.toString(author) +
+                ", dateline=" + Arrays.toString(dateline) +
+                ", places=" + Arrays.toString(places) +
+                ", isTestSet=" + isTestSet +
+                ", featureVector=" + featureVector +
+                '}' + "\n";
     }
 
     public String[] getBody() {
@@ -192,6 +194,7 @@ public class Article {
         private String location;
         @Nullable
         private String title;
+
         // TODO: 23.03.2021  test
         // TODO: 23.03.2021 Finish
         public FeatureVector(Article article) {

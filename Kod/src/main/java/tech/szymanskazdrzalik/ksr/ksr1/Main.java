@@ -23,18 +23,18 @@ public class Main {
             }
         }
         double properlyClassified = 0;
-        for(Article a : testSet){
+        for (Article a : testSet) {
             Classifier classifier = new Classifier(a, trainingSet, new ChebyshevMetric(), 5);
             String place = classifier.simulate();
             String place2 = a.getPlaces()[0];
             System.out.println(place2 + "       " + place);
-            if(place2.equals(place)){
+            if (place2.equals(place)) {
                 properlyClassified += 1;
             }
         }
         System.out.println("Sum: " + testSet.size());
         System.out.println("Properly classified: " + properlyClassified);
-        double acc = properlyClassified/testSet.size();
+        double acc = properlyClassified / testSet.size();
         System.out.println("Accuracy: " + acc);
     }
 
