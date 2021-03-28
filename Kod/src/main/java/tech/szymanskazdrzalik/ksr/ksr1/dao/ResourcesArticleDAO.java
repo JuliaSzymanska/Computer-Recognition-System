@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 
 public class ResourcesArticleDAO implements ArticleDAO {
     private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
-    private List<String> placesNames = Arrays.asList("west-germany", "france,", "uk", "canada", "japan");
+    private final List<String> placesNames = Arrays.asList("west-germany", "france,", "uk", "canada", "japan");
 
     @Override
     public List<Article> getArticles(File file) throws IOException {
