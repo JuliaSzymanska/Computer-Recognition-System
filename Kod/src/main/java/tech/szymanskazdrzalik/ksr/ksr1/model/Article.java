@@ -287,7 +287,7 @@ public class Article {
                     max = e;
             }
 
-            return max.getKey();
+            return max == null ? null : max.getKey();
         }
 
         private String getMostPopularKeyword(String[] keyWords) {
@@ -301,7 +301,7 @@ public class Article {
                     maxEntry = x;
                 }
             }
-            return maxEntry == null ? "" : maxEntry.getKey();
+            return maxEntry == null ? null : maxEntry.getKey();
         }
 
         private String[] findUnique(String[] strings) {
