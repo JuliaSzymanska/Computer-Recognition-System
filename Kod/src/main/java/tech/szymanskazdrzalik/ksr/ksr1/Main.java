@@ -18,9 +18,6 @@ public class Main {
         Article[] articles = FolderReader.readArticlesFromFolderInResources("Data/");
         List<Article> trainingSet = new ArrayList<>();
         List<Article> testSet = new ArrayList<>();
-        int[][] acc = new int[2][];
-        acc[0] = new int[2];
-        acc[1] = new int[2];
         for (Article a : articles) {
             if (a.isTestSet()) {
                 testSet.add(a);
@@ -28,11 +25,20 @@ public class Main {
                 trainingSet.add(a);
             }
         }
+        double properlyClassified = 0;
         for(Article a : testSet){
             Classifier classifier = new Classifier(a, trainingSet, new ChebyshevMetric(), 2);
-            System.out.println(Arrays.toString(a.getPlaces()) + "       " + classifier.simulate());
-
+            String place = classifier.simulate();
+            String place2 = a.getPlaces()[0];
+            System.out.println(place2 + "       " + place);
+            if(place2.equals(place)){
+                properlyClassified += 1;
+            }
         }
+        System.out.println("Sum: " + testSet.size());
+        System.out.println("Properly classified: " + properlyClassified);
+        double acc = properlyClassified/testSet.size();
+        System.out.println("Accuracy: " + acc);
 
 
     }
