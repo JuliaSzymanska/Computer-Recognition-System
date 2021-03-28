@@ -79,7 +79,7 @@ public class Main {
         }
         double properlyClassified = 0;
         System.out.println("\nRozpoczęto klasyfikację.\n");
-        Classifier classifier = new Classifier(trainingSet, metricForClass, k);
+        Classifier classifier = new Classifier(trainingSet, metricForClass, k, new boolean[]{true, true, true, true, true, true, true, true, true, true, true});
         for (Article a : testSet) {
             String place = classifier.simulate(a);
             String place2 = a.getPlaces()[0];
