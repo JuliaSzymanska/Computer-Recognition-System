@@ -1,26 +1,19 @@
 package tech.szymanskazdrzalik.ksr.ksr1.model;
 
-import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.Nullable;
 import tech.szymanskazdrzalik.ksr.ksr1.Main;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Predicate;
 
 public class StopList {
-    private static String[] words = new String[0];
-
     private static final StopList INSTANCE = new StopList();
+    private static String[] words = new String[0];
 
     private StopList() {
         try {

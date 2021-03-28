@@ -6,6 +6,10 @@ import java.util.List;
 
 public class CosMetric {
 
+    private CosMetric() {
+
+    }
+
     public static double cosMetric(String[] text1Array, String[] text2Array) {
         List<String> text1List = new ArrayList<>(Arrays.asList(text1Array));
         List<String> text2List = new ArrayList<>(Arrays.asList(text2Array));

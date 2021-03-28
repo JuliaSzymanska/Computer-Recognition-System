@@ -180,8 +180,6 @@ public class Article {
         }};
         private final int wordCount;
         private final int uniqueWordCount;
-        @Nullable
-        private final String secondCurrency;
         private final String[] keyWords;
         private final int keyWordCount;
         private final float keyWordSaturation;
@@ -226,7 +224,6 @@ public class Article {
             this.mostPopularCountry = this.findMostPopularCountry(fullText);
 
             this.uniqueWordCount = findUnique(fullText).length;
-            this.secondCurrency = findCurrencies(fullText);
         }
 
         private static boolean isInteger(String s) {
@@ -246,7 +243,6 @@ public class Article {
             return "FeatureVector{" +
                     "wordCount=" + wordCount +
                     ", uniqueWordCount=" + uniqueWordCount +
-                    ", secondCurrency='" + secondCurrency + '\'' +
                     ", keyWords=" + Arrays.toString(keyWords) +
                     ", keyWordCount=" + keyWordCount +
                     ", keyWordSaturation=" + keyWordSaturation +
@@ -300,7 +296,7 @@ public class Article {
                     maxEntry = x;
                 }
             }
-            return maxEntry == null ? null : maxEntry.getKey();
+            return maxEntry == null ? "" : maxEntry.getKey();
         }
 
         private String[] findUnique(String[] strings) {
@@ -355,10 +351,6 @@ public class Article {
 
         public int getUniqueWordCount() {
             return uniqueWordCount;
-        }
-
-        public @Nullable String getSecondCurrency() {
-            return secondCurrency;
         }
 
         public int getDayInYear() {

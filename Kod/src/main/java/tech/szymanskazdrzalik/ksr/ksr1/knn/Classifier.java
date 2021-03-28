@@ -13,16 +13,85 @@ import java.util.Map;
 public class Classifier {
 
     private final int k;
-    private final Article article;
     private final List<Article> trainingArticles;
     private final Metric metric;
+    private Article article;
     private List<Pair<Article, Double>> listOfPairs;
+    private boolean[] filter;
 
-    public Classifier(Article article, List<Article> trainingArticles, Metric metric, int k) {
-        this.article = article;
+    public Classifier(List<Article> trainingArticles, Metric metric, int k, boolean[] filter) {
+        this.filter = filter;
         this.trainingArticles = trainingArticles;
         this.k = k;
         this.metric = metric;
+    }
+
+    private org.javatuples.Pair<double[], double[]> setFeatureArray(Article trainingArticle, boolean[] filter) {
+
+        List<Double> articleList = new ArrayList<>();
+        List<Double> trainingArticleList = new ArrayList<>();
+
+        if (filter[0]) {
+            articleList.add((double) this.article.getFeatureVector().getWordCount());
+            trainingArticleList.add((double) trainingArticle.getFeatureVector().getWordCount());
+        }
+
+        if (filter[1]) {
+            articleList.add(0.0);
+            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor()));
+        }
+
+        if (filter[2]) {
+            articleList.add((double) this.article.getFeatureVector().getUniqueWordCount());
+            trainingArticleList.add((double) trainingArticle.getFeatureVector().getUniqueWordCount());
+        }
+
+        if (filter[3]) {
+            articleList.add((double) this.article.getFeatureVector().getDayInYear());
+            trainingArticleList.add((double) trainingArticle.getFeatureVector().getDayInYear());
+        }
+
+        if (filter[4]) {
+            articleList.add(0.0);
+            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation()));
+        }
+
+        if (filter[5]) {
+            articleList.add(0.0);
+            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle()));
+        }
+
+        if (filter[6]) {
+            articleList.add(0.0);
+            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry()));
+        }
+
+        if (filter[7]) {
+            articleList.add(0.0);
+            trainingArticleList.add(CosMetric.cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords()));
+        }
+
+        if (filter[8]) {
+            articleList.add((double) this.article.getFeatureVector().getKeyWordCount());
+            trainingArticleList.add((double) trainingArticle.getFeatureVector().getKeyWordCount());
+        }
+
+        if (filter[9]) {
+            articleList.add((double) this.article.getFeatureVector().getKeyWordSaturation());
+            trainingArticleList.add((double) trainingArticle.getFeatureVector().getKeyWordSaturation());
+        }
+
+        if (filter[10]) {
+            articleList.add(0.0);
+            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord()));
+        }
+        double[] doubles1 = new double[trainingArticleList.size()];
+        double[] doubles2 = new double[trainingArticleList.size()];
+        for (int i = 0; i < doubles1.length; i++) {
+            doubles1[i] = articleList.get(i);
+            doubles2[i] = trainingArticleList.get(i);
+        }
+        return new org.javatuples.Pair<>(doubles1, doubles2);
     }
 
     private String classify(List<Pair<Article, Double>> kNearestNeighbour) {
@@ -51,7 +120,8 @@ public class Classifier {
         return this.listOfPairs.subList(0, k);
     }
 
-    public String simulate() {
+    public String simulate(Article article) {
+        this.article = article;
         this.calculateDistances();
         List<Pair<Article, Double>> kNearestNeighbour = this.findKNearestNeighbours();
         return classify(kNearestNeighbour);
@@ -60,50 +130,11 @@ public class Classifier {
     private void calculateDistances() {
         this.listOfPairs = new ArrayList<>();
         for (Article trainingArticle : this.trainingArticles) {
-            double[] articleArray = new double[12];
-            double[] trainingArticleArray = new double[12];
-            setFeatureArray(trainingArticle, articleArray, trainingArticleArray);
+            org.javatuples.Pair<double[], double[]> pair = setFeatureArray(trainingArticle, this.filter);
+            double[] articleArray = pair.getValue0();
+            double[] trainingArticleArray = pair.getValue1();
             this.listOfPairs.add(new Pair<>(trainingArticle, this.metric.calculateDistance(articleArray, trainingArticleArray)));
         }
-    }
-
-    private void setFeatureArray(Article trainingArticle, double[] articleArray, double[] trainingArticleArray) {
-
-        articleArray[0] = this.article.getFeatureVector().getWordCount();
-        trainingArticleArray[0] = trainingArticle.getFeatureVector().getWordCount();
-
-        articleArray[1] = 0.0;
-        trainingArticleArray[1] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor());
-
-        articleArray[2] = this.article.getFeatureVector().getUniqueWordCount();
-        trainingArticleArray[2] = trainingArticle.getFeatureVector().getUniqueWordCount();
-
-        articleArray[3] = 0.0;
-        trainingArticleArray[3] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getSecondCurrency(), trainingArticle.getFeatureVector().getSecondCurrency());
-
-        articleArray[4] = this.article.getFeatureVector().getDayInYear();
-        trainingArticleArray[4] = trainingArticle.getFeatureVector().getDayInYear();
-
-        articleArray[5] = 0.0;
-        trainingArticleArray[5] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation());
-
-        articleArray[6] = 0.0;
-        trainingArticleArray[6] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle());
-
-        articleArray[7] = 0.0;
-        trainingArticleArray[7] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry());
-
-        articleArray[8] = 0.0;
-        trainingArticleArray[8] = CosMetric.cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords());
-
-        articleArray[9] = this.article.getFeatureVector().getKeyWordCount();
-        trainingArticleArray[9] = trainingArticle.getFeatureVector().getKeyWordCount();
-
-        articleArray[10] = this.article.getFeatureVector().getKeyWordSaturation();
-        trainingArticleArray[10] = trainingArticle.getFeatureVector().getKeyWordSaturation();
-
-        articleArray[11] = 0.0;
-        trainingArticleArray[11] = 1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord());
     }
 
 
