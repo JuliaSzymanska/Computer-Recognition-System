@@ -300,7 +300,7 @@ public class Article {
                     maxEntry = x;
                 }
             }
-            return maxEntry == null ? "" : maxEntry.getKey();
+            return maxEntry == null ? null : maxEntry.getKey();
         }
 
         private String[] findUnique(String[] strings) {
