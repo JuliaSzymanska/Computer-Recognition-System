@@ -3,14 +3,11 @@ package tech.szymanskazdrzalik.ksr.ksr1;
 import tech.szymanskazdrzalik.ksr.ksr1.dao.FolderReader;
 import tech.szymanskazdrzalik.ksr.ksr1.knn.Classifier;
 import tech.szymanskazdrzalik.ksr.ksr1.metric.ChebyshevMetric;
-import tech.szymanskazdrzalik.ksr.ksr1.metric.EuclideanMetric;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -27,7 +24,7 @@ public class Main {
         }
         double properlyClassified = 0;
         for(Article a : testSet){
-            Classifier classifier = new Classifier(a, trainingSet, new ChebyshevMetric(), 2);
+            Classifier classifier = new Classifier(a, trainingSet, new ChebyshevMetric(), 5);
             String place = classifier.simulate();
             String place2 = a.getPlaces()[0];
             System.out.println(place2 + "       " + place);
@@ -39,8 +36,6 @@ public class Main {
         System.out.println("Properly classified: " + properlyClassified);
         double acc = properlyClassified/testSet.size();
         System.out.println("Accuracy: " + acc);
-
-
     }
 
 
