@@ -66,9 +66,9 @@ public class Main {
         }
         double properlyClassified = 0;
         System.out.println("\nRozpoczęto klasyfikację.\n");
+        Classifier classifier = new Classifier(trainingSet, metricForClass, k);
         for (Article a : testSet) {
-            Classifier classifier = new Classifier(a, trainingSet, metricForClass, k);
-            String place = classifier.simulate();
+            String place = classifier.simulate(a);
             String place2 = a.getPlaces()[0];
             System.out.println(place2 + "       " + place);
             if (place2.equals(place)) {

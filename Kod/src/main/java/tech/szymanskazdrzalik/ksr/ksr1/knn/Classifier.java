@@ -13,13 +13,12 @@ import java.util.Map;
 public class Classifier {
 
     private final int k;
-    private final Article article;
+    private Article article;
     private final List<Article> trainingArticles;
     private final Metric metric;
     private List<Pair<Article, Double>> listOfPairs;
 
-    public Classifier(Article article, List<Article> trainingArticles, Metric metric, int k) {
-        this.article = article;
+    public Classifier(List<Article> trainingArticles, Metric metric, int k) {
         this.trainingArticles = trainingArticles;
         this.k = k;
         this.metric = metric;
@@ -51,7 +50,8 @@ public class Classifier {
         return this.listOfPairs.subList(0, k);
     }
 
-    public String simulate() {
+    public String simulate(Article article) {
+        this.article = article;
         this.calculateDistances();
         List<Pair<Article, Double>> kNearestNeighbour = this.findKNearestNeighbours();
         return classify(kNearestNeighbour);
