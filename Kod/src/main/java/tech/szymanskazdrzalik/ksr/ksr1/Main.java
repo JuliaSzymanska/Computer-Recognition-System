@@ -131,7 +131,7 @@ public class Main {
         for (Article a : testSet) {
             String place = classifier.simulate(a);
             String place2 = a.getPlaces()[0];
-//            System.out.println(place2 + "       " + place);
+            System.out.println(place2 + "       " + place);
             if (place2.equals(place)) {
 
                 properlyClassified += 1;
