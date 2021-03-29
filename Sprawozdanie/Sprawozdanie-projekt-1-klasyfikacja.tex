@@ -33,7 +33,7 @@ Celem projektu jest stworzenie aplikacji klasyfikującej zadany zbiór danych te
 
 
 Metoda K najbliższych sąsiadów, w skrócie metoda $k$-NN\cite{dane}, jest to algorytm stosowany do klasyfikacji, który nie wymaga etapu uczenia. 
-Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego, gdzie spośród k najbliższych rozpatrywanemu elementowi sąsiadów najwięcej z nich należy do tej grupy. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - ilość rozpatrywanych sąsiadów, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
+Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego, gdzie spośród k najbliższych rozpatrywanemu elementowi sąsiadów najwięcej z nich należy do tej grupy. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - liczba rozpatrywanych sąsiadów, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
 
 
 \subsection{Ekstrakcja cech, wektory cech}
@@ -58,7 +58,7 @@ Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wa
   \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekście nazwę kraju. Nazwy krajów pobieramy z dołączonego pliku all-places-strings.lc, przykładowo krajem występującym w pliku jest 'albania'.Nazwę kraju traktujemy jako cechę tekstową.Wartość będzie oznaczana poprzez symbol  c\textsubscript{7}.\\
   \item Zbiór występujących słów kluczowych. Za słowa kluczowe przyjmujemy słowa znajdujące się w dołączonych plikach o rozszerzeniach .lc.txt. Cechę traktujemy jako cechę tekstową.  \begin{equation}  c_8 : c_8 \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu\\
   \item Liczba wystąpień słów kluczowych - traktujemy jako cechę w postaci liczby całkowitej.\begin{equation}  c_9 = | c_8 | \end{equation} gdzie c\textsubscript{8} - zbiór występujących słów kluczowych\\
-  \item Nasycenie tekstu ilością słów kluczowych - traktujemy jako cechę w postaci liczby zmienno przecinkowej.  \begin{equation} c_{10} = c_9 / c_1 \end{equation}  gdzie c\textsubscript{9} - ilość wystąpień słów kluczowych w tekscie, c\textsubscript{1} - liczba słów w tekście\\
+  \item Nasycenie tekstu ilością słów kluczowych - traktujemy jako cechę w postaci liczby zmienno przecinkowej.  \begin{equation} c_{10} = c_9 / c_1 \end{equation}  gdzie c\textsubscript{9} - liczba wystąpień słów kluczowych w tekscie, c\textsubscript{1} - liczba słów w tekście\\
   \item Najczęściej występujące słowo kluczowe - wybieramy najczęściej występujące w analizowanym tekście słowo kluczowe. Cechę traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{11}.\\
   \item Liczba unikatowych słów - zliczamy liczbę unikatowych słów, to znaczy występujących dokładnie raz w analizowanym tekście. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{12}.\\
 \end{enumerate}
@@ -66,7 +66,7 @@ Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wa
 \ \\ \\
 Wektor cech będzie reprezentowany w postaci: 
 
-\begin{equation} w = [c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_{10}, c_{11}, c_{12}] \end{equation}
+\begin{equation} w = [c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_{10}, c_{11}] \end{equation}
 
 
 
@@ -99,7 +99,7 @@ Stosowane miary jakości klasyfikacji:\\
 
 
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
-W procesie klasyfikacji możliwe jest wykorzystanie jednej z trzch metryk: Metryka Euklidesowa, Metryka Czebyszewa, Metryka Uliczna. Metryki służą obliczeniu odległości pomiędzy dwoma wektora o dowolnym rozmiarze.\\\\ Metryka Eukliedesowa\cite{dane} jest opisana wzorem: 
+W procesie klasyfikacji możliwe jest wykorzystanie jednej z trzech metryk: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. Metryki służą obliczeniu odległości pomiędzy dwoma wektora o dowolnym rozmiarze.\\\\ Metryka Eukliedesowa\cite{dane} jest opisana wzorem: 
 \begin{equation} d(x, y) = \sqrt{(y_1 - x_1)^2 + ... + (y_n - x_n)^2}  \end{equation}
 gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
 \\\\
@@ -111,7 +111,7 @@ Metryka Uliczna\cite{dane} jest opisana wzorem:
 \begin{equation} d(x, y) = \sum_{i = 1}^{n} |x_i - y_i| \end{equation}
 gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
 \\\\
-By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić tekst na liczbę w wektorach. W programie zostało użyte podobieństwo cosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to ilość wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w tekstach cech obu wektorów, w zadanej cesze wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
+By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić tekst na liczbę w wektorach. W programie zostało użyte podobieństwo kosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to liczba wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w tekstach cech obu wektorów, w zadanej cesze wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
 \begin{equation} r_{cos} = \frac{\sum_{i = 1}^{n} x y}{\sqrt{\sum_{i = 1}^{n} x^2}\sqrt{\sum_{i = 1}^{n} y^2}} \end{equation}
 gdzie r\textsubscript{cos} - to cos kąta pomiędzy wektorem x i y; x, y - rozpatrywane wektory; n - długość wektora.
 \newline
@@ -138,7 +138,7 @@ Porównanie wyników klasyfikacji metody k-NN dla 10 różnych wartości paramet
  \label{wyniki klasyfikacji dla różnych proporcji podziału zbioru wektrów na zbiór treningowy i zbiór testowy.}
 \end{table}
 
-Różne wartości parametru k nie mają znacznego znaczenia dal dokładności klasyfikacji. Najgorszy wynik był dla wartości parametru 1. Pozostałe wartości miały bardzo podobną dokładność klasyfikacji. 
+Różne wartości parametru k nie mają znacznego znaczenia dla dokładności klasyfikacji. Najgorszy wynik był dla wartości parametru 1. Pozostałe wartości miały bardzo podobną dokładność klasyfikacji. 
 
 \newpage
 Kolejne porównanie jest dla różnych stosunków zbiorów uczących i testowych. Pozostałe parametry pozostają niezmienne - wartość parametru k to 2, a wybrana metryka to metryka Euklidesowa.
@@ -160,7 +160,7 @@ Kolejne porównanie jest dla różnych stosunków zbiorów uczących i testowych
  \label{wyniki klasyfikacji dla roznych 10 wartosci parametru k}
 \end{table}
 
-Najgorzej wypadającym stosunkiem zbiorów uczących i testowych, gdzie stosunek wynosił 1/99, taki wynik został uzyskanu ponieważ mała ilość danych trenujących wpływa niekorzystnie na wyniki klasyfikacji. Najlepszy wynik był dla stosunku 50/50. 
+Najgorzej wypadającym stosunkiem zbiorów uczących i testowych, gdzie stosunek wynosił 1/99, taki wynik został uzyskanu ponieważ mała liczba danych trenujących wpływa niekorzystnie na wyniki klasyfikacji. Najlepszy wynik był dla stosunku 50/50. 
 
 Następne porównanie jest dla różnych metryk. Pozostałe parametry pozostają niezmienne - wartość parametru k to 1, proporcje podziału zbioru wektrów na zbiór treningowy i zbiór testowy - 50/50. 
 
@@ -178,7 +178,7 @@ Następne porównanie jest dla różnych metryk. Pozostałe parametry pozostają
  \label{wyniki klasyfikacji dla roznych 10 wartosci parametru k}
 \end{table}
 
-Metryka Euklidesowa i Metryka Czebyszwa uzyskały podobny wynik jakości klasyfikacji. Metryka uliczna uzyskała najlepszy wynik. 
+Metryka Euklidesowa i metryka Czebyszwa uzyskały podobny wynik jakości klasyfikacji. Metryka uliczna uzyskała najlepszy wynik. 
 
 Kolejne porównanie polega na porównaniu wpływu różnych cech na wyniki jakości klasyfikacji. W tym celu wybieramy 4 zestawy różnych cech. 
 \begin{enumerate}
@@ -230,7 +230,7 @@ Aplikacja będzie składała się z dwóch modułów: z modułu ekstrakcji cech 
 \end{figure}
 \newpage
 
-Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki EuklidesowejUlicznej, , metryki metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą podobieńśtwa kosinusowego. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
+Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą podobieństwa kosinusowego. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
 
 \begin{figure}[h!]
  \centering
@@ -243,7 +243,7 @@ Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym 
 \newpage
 
 \subsection{Prezentacja wyników, interfejs użytkownika} 
-Po uruchomieniu programu użytkownik proszony jest o podanie poprzez konsolę kolejnych parametrów klasyfikacji. Na początku użytkownik podaje wartość parametru k, następnie wybiera jedną z trzech metryk, kolejno podawany jest procent zbioru treningowego w stosunku do zbioru wszystkich tekstów oraz użytkownik może podac cechy tesktów do klasyfikacji.Wybór parametrów w konsoli prezentuje się:
+Po uruchomieniu programu użytkownik proszony jest o podanie poprzez konsolę kolejnych parametrów klasyfikacji. Na początku użytkownik podaje wartość parametru k, następnie wybiera jedną z trzech metryk, kolejno podawany jest procent zbioru treningowego w stosunku do zbioru wszystkich tekstów oraz użytkownik może podać cechy tesktów do klasyfikacji. Wybór parametrów w konsoli prezentuje się:
 
 \begin{figure}[h!]
  \centering

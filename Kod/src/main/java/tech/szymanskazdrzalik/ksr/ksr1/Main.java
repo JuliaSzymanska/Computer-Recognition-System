@@ -125,7 +125,7 @@ public class Main {
                 trainingSet.add(a);
             }
         }
-        double properlyClassified = 0;
+        int properlyClassified = 0;
         System.out.println("\nRozpoczęto klasyfikację.\n");
         Classifier classifier = new Classifier(trainingSet, metricForClass, k, booleanSet);
         for (Article a : testSet) {
@@ -137,10 +137,10 @@ public class Main {
                 properlyClassified += 1;
             }
         }
-        System.out.println("Sum: " + testSet.size());
-        System.out.println("Properly classified: " + properlyClassified);
-        double acc = properlyClassified / testSet.size();
-        System.out.println("Accuracy: " + acc);
+        System.out.println("Liczba arytkułów testowych: " + testSet.size());
+        System.out.println("Liczba dobrze zaklasyfikowanych artykułów: " + properlyClassified);
+        double acc = (double) properlyClassified / testSet.size();
+        System.out.println("Jakość Klasyfikacji: " + acc);
     }
 
 }
