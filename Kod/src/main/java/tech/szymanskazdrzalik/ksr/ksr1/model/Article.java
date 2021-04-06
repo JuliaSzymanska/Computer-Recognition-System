@@ -29,9 +29,6 @@ public class Article {
         String body = getTextPart(strings, "BODY:");
         String dateline = getTextPart(strings, "DATELINE:").trim().replace("-", "");
         String author = getTextPart(strings, "AUTHOR:");
-        if (body.equals("")) {
-            int x;
-        }
         this.places = applyStopList(getTextPart(strings, "PLACES:"));
         try {
             this.isTestSet = !getTextPart(getTextPart(strings, "REUTERS").
@@ -209,6 +206,7 @@ public class Article {
                 fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
                 this.dayInYear = getDayInYearFromDateLineString(article.dateline);
                 this.location = article.dateline[0];
+                // TODO: 29.03.2021 Pobierać wiecej lepiej
             }
             if (article.title != null) {
                 fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
@@ -253,11 +251,6 @@ public class Article {
                     ", location='" + location + '\'' +
                     ", title='" + title + '\'' +
                     '}';
-        }
-
-        private String findCurrencies(String[] fullText) {
-            // TODO: 27.03.2021
-            return "";
         }
 
         private String findMostPopularCountry(String[] fullText) {
