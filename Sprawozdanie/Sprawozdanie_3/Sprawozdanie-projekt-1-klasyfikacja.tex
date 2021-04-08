@@ -86,16 +86,18 @@ W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar ja
 & Negatywna & \thead{fałszywie\\ negatywna (FN)} & \thead{prawdziwie\\ negatywna (TN)} \\
 \cline{2-4}
 \end{tabular}
- \caption{Wzór tablicy pomyłek.}
+ \caption{Wzór tablicy pomyłek\cite{tablica}.}
 \end{table}
 
 
 Stosowane miary jakości klasyfikacji:\\
 \begin{itemize}
-  \item Dokładność (ang. accurancy), ACC  - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} ACC = (TP + TN)/(TP + FN + FP + TN)  \end{equation}
+  \item Dokładność (ang. accuracy), ACC  - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation}\begin{array}{l} ACC = (TP + TN)/(TP + FN + FP + TN) \\
+ACC = \frac{liczba \ poprawnie\ zaklasyfikowanych\ tekstow}{liczba klasyfikowanych tekstów}  \end{array}\end{equation}
  \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. \begin{equation} PPV =  TP / (TP+FP) \end{equation}
 \item Czułość (ang. recall), TPR  - jest to stosunek wyników prawdziwie dodatnich do sumy prawdziwie dodatnich i fałszywie ujemnych. \begin{equation}   TPR = TP / (TP + FN) \end{equation}
-\item Swoistość (ang. specificity), TNR   - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} TNR = TN / (FP + TN) \end{equation}
+\item Miara F1 - średnia harmoniczna miar Precyzja i Czułość. 
+\begin{equation}   F1 = \frac{2}{\frac{1}{PPV} + \frac{1}{TPR}} \end{equation}
 \end{itemize}
 
 
