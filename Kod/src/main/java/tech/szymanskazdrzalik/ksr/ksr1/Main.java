@@ -140,7 +140,8 @@ public class Main {
             if (place2.equals(place)) {
                 x.setMiddle(x.getMiddle() + 1);
             } else {
-                x.setRight(x.getRight() + 1);
+                var y = map.get(place);
+                y.setRight(y.getRight() + 1);
             }
             System.out.println(place2 + "       " + place);
             if (place2.equals(place)) {
