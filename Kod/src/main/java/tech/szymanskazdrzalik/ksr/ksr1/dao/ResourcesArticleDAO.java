@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class ResourcesArticleDAO implements ArticleDAO {
     private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
-    private final List<String> placesNames = Arrays.asList("west-germany", "usa", "france,", "uk", "canada", "japan");
+    private static final List<String> placesNames = Arrays.asList("west-germany", "usa", "france,", "uk", "canada", "japan");
 
     @Override
     public List<Article> getArticles(File file) throws IOException {
@@ -33,6 +33,10 @@ public class ResourcesArticleDAO implements ArticleDAO {
             x.getFeatureVector();
         }
         return articles;
+    }
+
+    public static String[] getPlacesNames() {
+        return placesNames.toArray(new String[0]);
     }
 
     @Override

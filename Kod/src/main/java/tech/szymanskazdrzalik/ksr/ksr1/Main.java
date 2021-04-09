@@ -1,19 +1,20 @@
 package tech.szymanskazdrzalik.ksr.ksr1;
 
+import org.apache.commons.lang3.tuple.MutableTriple;
+import org.apache.commons.lang3.tuple.Pair;
+import org.apache.commons.lang3.tuple.Triple;
 import tech.szymanskazdrzalik.ksr.ksr1.dao.FolderReader;
+import tech.szymanskazdrzalik.ksr.ksr1.dao.ResourcesArticleDAO;
 import tech.szymanskazdrzalik.ksr.ksr1.knn.Classifier;
 import tech.szymanskazdrzalik.ksr.ksr1.metric.ChebyshevMetric;
 import tech.szymanskazdrzalik.ksr.ksr1.metric.EuclideanMetric;
 import tech.szymanskazdrzalik.ksr.ksr1.metric.ManhattanMetric;
 import tech.szymanskazdrzalik.ksr.ksr1.metric.Metric;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
+import tech.szymanskazdrzalik.ksr.ksr1.model.Results;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
@@ -128,12 +129,21 @@ public class Main {
         int properlyClassified = 0;
         System.out.println("\nRozpoczęto klasyfikację.\n");
         Classifier classifier = new Classifier(trainingSet, metricForClass, k, booleanSet);
+
+        // Krzywizna
+        var map = Results.getMap();
         for (Article a : testSet) {
             String place = classifier.simulate(a);
             String place2 = a.getPlaces()[0];
+            var x = map.get(place2);
+            x.setLeft(x.getLeft() + 1);
+            if (place2.equals(place)) {
+                x.setMiddle(x.getMiddle() + 1);
+            } else {
+                x.setRight(x.getRight() + 1);
+            }
             System.out.println(place2 + "       " + place);
             if (place2.equals(place)) {
-
                 properlyClassified += 1;
             }
         }
