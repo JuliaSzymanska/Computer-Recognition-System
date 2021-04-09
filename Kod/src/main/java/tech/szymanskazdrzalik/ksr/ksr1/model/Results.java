@@ -23,9 +23,23 @@ public class Results {
 
     public static String generateResultString() {
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("----------------------------------\n");
         for (var x : ResourcesArticleDAO.getPlacesNames()) {
+            // left - wszystkie elementy, middle - elementy dobrze zaklasyfikowane, right - elementy innych klas zaklasyfikowane do tej klasy
             var y = map.get(x);
-
+            stringBuilder.append(x).append(":\n");
+            // accuracy
+            stringBuilder.append("Accuracy").append(": ").append(((double)y.middle)/ y.left).append("\n");
+            // Precision
+            var precision = ((double)y.middle)/ (y.middle + y.right);
+            stringBuilder.append("Precision").append(": ").append(precision).append("\n");
+            // Recall
+            var recall = ((double)y.middle)/ (y.left);
+            stringBuilder.append("Precision").append(": ").append(recall).append("\n");
+            // F1
+            var f1 = (2.0 / ((1/precision) + (1/recall)));
+            stringBuilder.append("F1").append(": ").append(f1).append("\n");
+            stringBuilder.append("----------------------------------\n");
         }
         return stringBuilder.toString();
     }

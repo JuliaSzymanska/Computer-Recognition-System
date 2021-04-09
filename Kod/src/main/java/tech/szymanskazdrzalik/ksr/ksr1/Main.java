@@ -151,6 +151,7 @@ public class Main {
         System.out.println("Liczba dobrze zaklasyfikowanych artykułów: " + properlyClassified);
         double acc = (double) properlyClassified / testSet.size();
         System.out.println("Jakość Klasyfikacji: " + acc);
+        System.out.println(Results.generateResultString());
     }
 
 }

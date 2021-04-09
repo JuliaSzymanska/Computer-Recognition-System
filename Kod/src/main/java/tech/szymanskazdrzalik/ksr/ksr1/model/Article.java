@@ -29,7 +29,7 @@ public class Article {
         String body = getTextPart(strings, "BODY:");
         String dateline = getTextPart(strings, "DATELINE:").trim().replace("-", "");
         String author = getTextPart(strings, "AUTHOR:");
-        this.places = applyStopList(getTextPart(strings, "PLACES:"));
+        this.places = getTextPart(strings, "PLACES:").trim().replaceAll("[\\p{Punct}&&[^_-]]+", "").split(" +");
         try {
             this.isTestSet = !getTextPart(getTextPart(strings, "REUTERS").
                     split(" "), "CGISPLIT").
@@ -135,6 +135,7 @@ public class Article {
         }
         return -1;
     }
+
 
     private String[] applyStopList(String string) {
         if (string == null) {

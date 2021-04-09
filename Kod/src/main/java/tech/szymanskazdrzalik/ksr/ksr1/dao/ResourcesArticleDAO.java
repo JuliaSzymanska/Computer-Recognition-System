@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class ResourcesArticleDAO implements ArticleDAO {
     private static final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
-    private static final List<String> placesNames = Arrays.asList("west-germany", "usa", "france,", "uk", "canada", "japan");
+    private static final List<String> placesNames = Arrays.asList("west-germany", "usa", "france", "uk", "canada", "japan");
 
     @Override
     public List<Article> getArticles(File file) throws IOException {
