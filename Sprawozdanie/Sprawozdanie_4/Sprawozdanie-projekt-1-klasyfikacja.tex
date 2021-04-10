@@ -127,7 +127,165 @@ gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym sam
 By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić cechy o wartościach tekstowcyh na liczby w wektorach. W programie zostało użyte podobieństwo kosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla cechy o wartości tekstowej dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to liczba wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w obu wektorów, w zadanej cesze tekstowej wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
 \begin{equation} r_{cos} = \frac{\sum_{i = 1}^{n} x y}{\sqrt{\sum_{i = 1}^{n} x^2}\sqrt{\sum_{i = 1}^{n} y^2}} \end{equation}
 gdzie r\textsubscript{cos} - to cos kąta pomiędzy wektorem x i y; x, y - rozpatrywane wektory; n - długość wektora.
-\newline
+\ \\ \\ 
+
+
+Wstępna klasyfikacja na ograniczonym zbiorze tekstów została przeprowadzona dla trzech różnych zestawów parametrów wejściowych. \newline
+Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
+ 
+\begin{table}[h!]
+\caption{Parametry wejściowe dla pierwszej wstępnej klasyfikacji. }
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+    \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
+\hline
+5 & Czebyszewa & 80\% & Wszysktie cechy \\
+\end {tabular}
+\label {Parametry wejściowe dla pierwszej wstępnej klasyfikacji. }
+\end{table}
+\newpage
+
+Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
+
+\begin{table}[h!]
+\caption{Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej.}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c}
+
+    \textbf{Liczba tekstów} &  \makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}}  & \textbf{Accuracy}\\
+\hline
+394 & 230 & 0,58\\
+
+\end {tabular}
+\label {Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej.}
+\end{table}
+
+
+Parametry wejściowe dla drugiej klasyfikacji wstępnej:
+ 
+\begin{table}[h!]
+\caption{Parametry wejściowe dla drugiej wstępnej klasyfikacji. }
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+    \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
+\hline
+3 & Euklidesowa & 95\% &  \makecell{1. Lokalizacja \\2. Tytuł\\3. Najczęściej występująca\\nazwa państwa\\4. Kluczowe słowa}\\
+\end {tabular}
+\label {Parametry wejściowe dla drugiej wstępnej klasyfikacji. }
+\end{table}
+
+Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej:
+
+\begin{table}[h!]
+\caption{Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej.}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c}
+
+    \textbf{Liczba tekstów} &\makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}} & \textbf{Accuracy}\\
+\hline
+394 & 295 & 0,75\\
+
+\end {tabular}
+\label {Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej.}
+\end{table}
+
+
+Parametry wejściowe dla trzeciej klasyfikacji wstępnej:
+ 
+\begin{table}[h!]
+\caption{Parametry wejściowe dla trzeciej wstępnej klasyfikacji. }
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+    \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
+\hline
+9 & Uliczna & 73\% &  \makecell{1. Kluczowe słowa \\2. Liczba kluczowych słów\\3. Nasycenie tekstu\\słowani kluczowymi\\4. Najczęściej występujące \\słowani kluczowymi}\\
+\end {tabular}
+\label {Parametry wejściowe dla trzeciej wstępnej klasyfikacji. }
+\end{table}
+
+Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
+
+\begin{table}[h!]
+\caption{Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c}
+
+    \textbf{Liczba tekstów} &\makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}} & \textbf{Accuracy}\\
+\hline
+394 & 236 & 0,60\\
+
+\end {tabular}
+\label {Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
+\end{table}
+
+
+\newpage \newpage
+
+\begin{table}[h!]
+\caption{Coś}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c c}
+
+    \textbf{Klasa} & \textbf{N}   & \textbf{P}  & \textbf{I}  & \textbf{Precyzja}  & \textbf{Czułość}  & \textbf{F1} \\
+\hline
+West-germany & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
+Usa & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
+France & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
+Uk & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
+Canada & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
+Japan & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
+
+\end {tabular}
+\label {coś}
+\end{table}
+
+
+
+
+\begin{table}[h!]
+\caption{Wszystkie Razem TMP}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c}
+
+    \textbf{N} & \textbf{P}   & \textbf{Dokładność}  & \textbf{Precyzja}  & \textbf{Czułość}  & \textbf{F1} \\
+\hline
+394 & 258 & 0,65 & 0,72 & 0,65 & 0,57 \\
+
+\end {tabular}
+\label {coś}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage \newpage
+
+
+
 Porównanie wyników klasyfikacji metody k-NN dla 10 różnych wartości parametru k. Pozostałe parametry pozostają niezmienne - proporcje podziału zbioru wektrów na zbiór treningowy i zbiór testowy - 80/20, a wybrana metryka to metryka Euklidesowa. 
 
 \begin{table}[h!]
@@ -149,20 +307,6 @@ Porównanie wyników klasyfikacji metody k-NN dla 10 różnych wartości paramet
 200 &   0.6769662921348315 \\
  \end{tabular}
  \label{wyniki klasyfikacji dla różnych proporcji podziału zbioru wektrów na zbiór treningowy i zbiór testowy.}
-\end{table}
-
-\begin{table}[h!]
-\caption{Wszystkie Razem TMP}
-\centering
-\vspace{0.1cm}
- \begin{tabular}{c c c c c c}
-
-    \textbf{N} & \textbf{P}   & \textbf{Dokładność}  & \textbf{Precyzja}  & \textbf{Czułość}  & \textbf{F1} \\
-\hline
-394 & 258 & 0,65 & 0,72 & 0,65 & 0,57 \\
-
-\end {tabular}
-\label {coś}
 \end{table}
 
 Różne wartości parametru k nie mają znacznego znaczenia dla dokładności klasyfikacji. Najgorszy wynik był dla wartości parametru 1. Pozostałe wartości miały bardzo podobną dokładność klasyfikacji. 
@@ -290,14 +434,28 @@ Po wprowadzeniu przez użytkownika wszystkich parametrów klasyfikacji, rozpoczy
  \label{Wczytywanie danych i klasyfikacja.}
 \end{figure}
 
-Po wykonanej klasyfikacji na konsoli wyświetlany jest wynik jakości klasyfikacji oraz liczba artykułów testowych, a także liczba dobrze zklasyfikowanych artykułów. 
+
+
+
+Po wykonanej klasyfikacji na konsoli wyświetlane są obliczone parametry dla poszczególnych klas klasyfikacji oraz wyliczone parametry dla całego zbioru dokumentów. Dla poszczególnych klas klasyfikacji do obliczonych parametrów zaliczamy liczbę tekstów klasy, liczbę poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy, liczbę tekstów innych klas zaklasfyfikowanych do rozpatrywanej klasy oraz miary jakości: Precision, Recall, F1. 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{wynik_dla _klasy.png}
+ \vspace{-0.3cm}
+ \caption{Wynik klasyfikacji dla pojedyńczej klasy klasyfikacji - klasa west-germany.}
+ \label{Wynik klasyfikacji.}
+\end{figure}
+
+Dla całego zbioru dokumentów do obliczonych parametrów zaliczamy liczbę tekstów testowych, liczbę poprawnie zaklasyfikowanych tekstów oraz miary jakości: Accuracy, Precision, Recall, F1. 
+  
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{wynik.png}
  \vspace{-0.3cm}
- \caption{Wynik klasyfikacji.}
+ \caption{Wynik klasyfikacji dla całego zbioru dokumentów.}
  \label{Wynik klasyfikacji.}
 \end{figure}
+\newpage
 
 Do uruchomienia programu wymagana jest wersja Javy: 11. 
 
