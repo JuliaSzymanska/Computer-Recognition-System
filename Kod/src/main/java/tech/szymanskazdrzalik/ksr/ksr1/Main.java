@@ -13,6 +13,9 @@ import tech.szymanskazdrzalik.ksr.ksr1.metric.Metric;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Results;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
@@ -126,7 +129,6 @@ public class Main {
                 trainingSet.add(a);
             }
         }
-        int properlyClassified = 0;
         System.out.println("\nRozpoczęto klasyfikację.\n");
         Classifier classifier = new Classifier(trainingSet, metricForClass, k, booleanSet);
 
@@ -144,11 +146,39 @@ public class Main {
                 y.setRight(y.getRight() + 1);
             }
             System.out.println(place2 + "       " + place);
-            if (place2.equals(place)) {
-                properlyClassified += 1;
+        }
+        String s = Results.generateResultString();
+        System.out.println(s);
+        StringBuilder saveString = new StringBuilder();
+        saveString.append(k).append("_");
+        if (metric == 1) {
+            saveString.append("euklides");
+        } else if (metric == 2) {
+            saveString.append("czebyszew");
+        } else if (metric == 3) {
+            saveString.append("manhattan");
+        }
+        saveString.append("_").append(trainings).append("percent").append("_");
+        String prefix = "";
+        for (int i = 0; i < booleanSet.length; i++) {
+            if (booleanSet[i]) {
+                saveString.append(prefix).append(i + 1);
+                prefix = "-";
             }
         }
-        System.out.println(Results.generateResultString());
+        try {
+            new File(System.getProperty("user.dir") + "/results/").mkdirs();
+            new File(System.getProperty("user.dir") + "/results/" + saveString).createNewFile();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try (
+                BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+ "/results/" + saveString))) {
+            writer.write(s);
+        } catch (IOException e) {
+            new File(System.getProperty("user.dir") + "/results/" + saveString).delete();
+            e.printStackTrace();
+        }
     }
 
 }
