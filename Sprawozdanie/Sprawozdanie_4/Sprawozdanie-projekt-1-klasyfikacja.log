@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  29 MAR 2021 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  10 APR 2021 13:39
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -469,139 +469,152 @@ Overfull \vbox (1.00003pt too high) detected at line 82
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--107
+Underfull \hbox (badness 10000) in paragraph at lines 116--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--111
+Underfull \hbox (badness 10000) in paragraph at lines 120--124
 
  []
 
+[4]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-14.
+27.
+
 ("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+Underfull \hbox (badness 10000) in paragraph at lines 124--128
 
  []
 
-[4] [5]
-Overfull \hbox (100.28201pt too wide) in paragraph at lines 151--161
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5]
+Overfull \hbox (100.28201pt too wide) in paragraph at lines 179--189
+ [][] 
+ []
+
+[6]
+<Ekstrakcja.png, id=128, 1585.925pt x 759.83875pt>
+File: Ekstrakcja.png Graphic file (type png)
+<use Ekstrakcja.png>
+Package pdftex.def Info: Ekstrakcja.png  used on input line 254.
+(pdftex.def)             Requested size: 398.33858pt x 190.84038pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 254--256
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6]
-<Ekstrakcja.png, id=133, 1585.925pt x 759.83875pt>
-File: Ekstrakcja.png Graphic file (type png)
-<use Ekstrakcja.png>
-Package pdftex.def Info: Ekstrakcja.png  used on input line 226.
-(pdftex.def)             Requested size: 398.33858pt x 190.84038pt.
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 226--228
- [][] 
- []
-
-[7 <./Ekstrakcja.png>]
+[7]
 <Klasyfikator.png, id=144, 1445.4pt x 460.72125pt>
 File: Klasyfikator.png Graphic file (type png)
 <use Klasyfikator.png>
-Package pdftex.def Info: Klasyfikator.png  used on input line 237.
+Package pdftex.def Info: Klasyfikator.png  used on input line 265.
 (pdftex.def)             Requested size: 398.33858pt x 126.96939pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 237--239
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 265--267
  [][] 
  []
 
-[8 <./Klasyfikator.png>]
-<Wybor.png, id=151, 473.77pt x 534.99875pt>
+[8 <./Ekstrakcja.png> <./Klasyfikator.png>]
+<Wybor.png, id=153, 473.77pt x 534.99875pt>
 File: Wybor.png Graphic file (type png)
 <use Wybor.png>
-Package pdftex.def Info: Wybor.png  used on input line 250.
+Package pdftex.def Info: Wybor.png  used on input line 278.
 (pdftex.def)             Requested size: 398.33858pt x 449.82854pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 250--252
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 278--280
  [][] 
  []
 
 [9 <./Wybor.png>]
-<srodek.png, id=158, 325.215pt x 103.38625pt>
+<srodek.png, id=160, 325.215pt x 103.38625pt>
 File: srodek.png Graphic file (type png)
 <use srodek.png>
-Package pdftex.def Info: srodek.png  used on input line 260.
+Package pdftex.def Info: srodek.png  used on input line 288.
 (pdftex.def)             Requested size: 398.33858pt x 126.64215pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 260--262
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 288--290
  [][] 
  []
 
-<wynik.png, id=159, 379.4175pt x 86.3225pt>
+<wynik.png, id=161, 379.4175pt x 86.3225pt>
 File: wynik.png Graphic file (type png)
 <use wynik.png>
-Package pdftex.def Info: wynik.png  used on input line 269.
+Package pdftex.def Info: wynik.png  used on input line 297.
 (pdftex.def)             Requested size: 398.33858pt x 90.62941pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 269--271
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 297--299
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--281
+Underfull \hbox (badness 10000) in paragraph at lines 306--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--284
+Underfull \hbox (badness 10000) in paragraph at lines 310--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--298
+Underfull \hbox (badness 10000) in paragraph at lines 318--326
 
  []
 
 [10 <./srodek.png> <./wynik.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 299--301
+Underfull \hbox (badness 10000) in paragraph at lines 327--329
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 317.
+(Font)              <10.95> on input line 345.
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 []\OT4/cmr/m/n/10.95 Internet fo-rum. Wi-ki-pe-dia: The Free En-cyc-lo-pe-dia, 
 Do-st¦p-ny w:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 []$\OT4/cmtt/m/n/10.95 https : / / pl . wikipedia . org / wiki / Tablica _ pomy
  % C5 % 82ek ? fbclid =
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 325.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 353.
 [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 325.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 353.
  (Sprawozdanie-projekt-1-klasyfikacja.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 325.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 325.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 353.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 353.
 Package rerunfilecheck Info: File `Sprawozdanie-projekt-1-klasyfikacja.out' has
  not changed.
 (rerunfilecheck)             Checksum: 9B467B6C5CE2E2C0CA8984DF8EAAAD4E;833.
@@ -609,16 +622,16 @@ Package rerunfilecheck Info: File `Sprawozdanie-projekt-1-klasyfikacja.out' has
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 325.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 353.
  ) 
 Here is how much of TeX's memory you used:
- 6041 strings out of 480931
- 95192 string characters out of 2898858
- 356996 words of memory out of 3000000
- 21724 multiletter control sequences out of 15000+200000
+ 6043 strings out of 480931
+ 95310 string characters out of 2898858
+ 356031 words of memory out of 3000000
+ 21725 multiletter control sequences out of 15000+200000
  541786 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,18n,32p,868b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,18n,32p,921b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
 nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.
 enc}<C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
@@ -635,10 +648,10 @@ ic/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (11 pages, 336463 byt
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (11 pages, 339337 byt
 es).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 71 named destinations out of 1000 (max. 500000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

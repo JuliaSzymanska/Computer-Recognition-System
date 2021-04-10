@@ -120,8 +120,6 @@ public class Main {
         Article[] articles = FolderReader.readArticlesFromFolderInResources("Data/");
         List<Article> trainingSet = new ArrayList<>();
         List<Article> testSet = new ArrayList<>();
-        Collections.shuffle(trainingSet);
-        trainingSet = trainingSet.subList(0, testSet.size() * trainings / (100 - trainings));
         for (Article a : articles) {
             if (a.isTestSet()) {
                 testSet.add(a);
@@ -129,6 +127,8 @@ public class Main {
                 trainingSet.add(a);
             }
         }
+        Collections.shuffle(trainingSet);
+        trainingSet = trainingSet.subList(0, testSet.size() * trainings / (100 - trainings));
         System.out.println("\nRozpoczęto klasyfikację.\n");
         Classifier classifier = new Classifier(trainingSet, metricForClass, k, booleanSet);
 
