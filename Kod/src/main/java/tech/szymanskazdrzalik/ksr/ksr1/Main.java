@@ -173,7 +173,7 @@ public class Main {
             e.printStackTrace();
         }
         try (
-                BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+ "/results/" + saveString))) {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(System.getProperty("user.dir")+ "/results/" + saveString + ".txt"))) {
             writer.write(s);
         } catch (IOException e) {
             new File(System.getProperty("user.dir") + "/results/" + saveString).delete();
