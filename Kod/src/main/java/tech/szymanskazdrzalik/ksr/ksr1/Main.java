@@ -127,7 +127,7 @@ public class Main {
                 trainingSet.add(a);
             }
         }
-        Collections.shuffle(trainingSet);
+        Collections.shuffle(trainingSet, new Random(0));
         trainingSet = trainingSet.subList(0, testSet.size() * trainings / (100 - trainings));
         System.out.println("\nRozpoczęto klasyfikację.\n");
         Classifier classifier = new Classifier(trainingSet, metricForClass, k, booleanSet);
@@ -168,7 +168,6 @@ public class Main {
         }
         try {
             new File(System.getProperty("user.dir") + "/results/").mkdirs();
-            new File(System.getProperty("user.dir") + "/results/" + saveString).createNewFile();
         } catch (Exception e) {
             e.printStackTrace();
         }
