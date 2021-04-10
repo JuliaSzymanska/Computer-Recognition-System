@@ -168,7 +168,6 @@ public class Main {
         }
         try {
             new File(System.getProperty("user.dir") + "/results/").mkdirs();
-            new File(System.getProperty("user.dir") + "/results/" + saveString).createNewFile();
         } catch (Exception e) {
             e.printStackTrace();
         }

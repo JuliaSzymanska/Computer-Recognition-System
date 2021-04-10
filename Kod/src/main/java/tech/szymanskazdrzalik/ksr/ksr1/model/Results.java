@@ -42,11 +42,11 @@ public class Results {
             sum += y.middle;
             stringBuilder.append(x).append(":\n");
             stringBuilder
-                    .append("Liczba elementów klasy: ")
+                    .append("Liczba tekstów klasy: ")
                     .append(y.left)
-                    .append("\nLiczba poprawnie zaklasyfikowanych: ")
+                    .append("\nLiczba poprawnie zaklasyfikowanych tekstów: ")
                     .append(y.middle)
-                    .append("\nLiczba innych klas zaklasyfikowanych do tej klasy: ")
+                    .append("\nLiczba tekstów innych klas zaklasyfikowanych do tej klasy: ")
                     .append(y.right)
                     .append("\n");
             // accuracy
