@@ -3,13 +3,14 @@ package tech.szymanskazdrzalik.ksr.ksr1.model;
 import org.apache.commons.lang3.tuple.MutableTriple;
 import tech.szymanskazdrzalik.ksr.ksr1.dao.ResourcesArticleDAO;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.BiConsumer;
 
 public class Results {
     private static final Map<String, MutableTriple<Integer, Integer, Integer>> map = new HashMap<>();
     private final static Results INSTANCE = new Results();
+    private final static DecimalFormat df = new DecimalFormat("0.00");
 
     private Results() {
         for (var x : ResourcesArticleDAO.getPlacesNames()) {
@@ -39,29 +40,35 @@ public class Results {
             var y = map.get(x);
             stringBuilder.append(x).append(":\n");
             // accuracy
-            double accuracy = ((double)y.middle)/ y.left;
+            double accuracy = ((double) y.middle) / y.left;
 //            stringBuilder.append("Accuracy").append(": ").append(accuracy).append("\n");
-            acc += accuracy * (((double)(y.left))/ all[0]);
+            acc += accuracy * (((double) (y.left)) / all[0]);
             // Precision
-            var precision = ((double)y.middle)/ (y.middle + y.right);
-            prec += precision * (((double)(y.left))/ all[0]);
-            stringBuilder.append("Precision").append(": ").append(precision).append("\n");
+            var precision = ((double) y.middle) / (y.middle + y.right);
+            if (!Double.isNaN(precision)) {
+                prec += precision * (((double) (y.left)) / all[0]);
+            }
+            stringBuilder.append("Precision").append(": ").append(df.format(precision)).append("\n");
             // Recall
-            var recall = ((double)y.middle)/ (y.left);
-            rec += recall * (((double)(y.left))/ all[0]);
-            stringBuilder.append("Recall").append(": ").append(recall).append("\n");
+            var recall = ((double) y.middle) / (y.left);
+            if (!Double.isNaN(recall)) {
+                rec += recall * (((double) (y.left)) / all[0]);
+            }
+            stringBuilder.append("Recall").append(": ").append(df.format(recall)).append("\n");
             // F1
-            var f1 = (2.0 / ((1/precision) + (1/recall)));
-            f1_all += f1 * (((double)(y.left))/ all[0]);
-            stringBuilder.append("F1").append(": ").append(f1).append("\n");
+            var f1 = (2.0 / ((1 / precision) + (1 / recall)));
+            if (!Double.isNaN(f1)) {
+                f1_all += f1 * (((double) (y.left)) / all[0]);
+            }
+            stringBuilder.append("F1").append(": ").append(df.format(f1)).append("\n");
             stringBuilder.append("----------------------------------\n");
         }
         stringBuilder.append("wszystkie").append(":\n");
         // accuracy
-        stringBuilder.append("Accuracy").append(": ").append(acc).append("\n");
-        stringBuilder.append("Precision").append(": ").append(prec).append("\n");
-        stringBuilder.append("Recall").append(": ").append(rec).append("\n");
-        stringBuilder.append("F1").append(": ").append(f1_all).append("\n");
+        stringBuilder.append("Accuracy").append(": ").append(df.format(acc)).append("\n");
+        stringBuilder.append("Precision").append(": ").append(df.format(prec)).append("\n");
+        stringBuilder.append("Recall").append(": ").append(df.format(rec)).append("\n");
+        stringBuilder.append("F1").append(": ").append(df.format(f1_all)).append("\n");
         stringBuilder.append("----------------------------------\n");
         return stringBuilder.toString();
     }
