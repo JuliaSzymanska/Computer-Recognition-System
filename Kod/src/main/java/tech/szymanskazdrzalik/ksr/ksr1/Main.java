@@ -127,7 +127,7 @@ public class Main {
                 trainingSet.add(a);
             }
         }
-        Collections.shuffle(trainingSet);
+        Collections.shuffle(trainingSet, new Random(0));
         trainingSet = trainingSet.subList(0, testSet.size() * trainings / (100 - trainings));
         System.out.println("\nRozpoczęto klasyfikację.\n");
         Classifier classifier = new Classifier(trainingSet, metricForClass, k, booleanSet);
