@@ -75,8 +75,8 @@ public class Results {
         }
         stringBuilder.append("wszystkie").append(":\n");
         // accuracy
-        stringBuilder.append("Liczba arytkułów testowych: ").append(all[0]).append("\n");
-        stringBuilder.append("Liczba dobrze zaklasyfikowanych artykułów: ").append(sum).append("\n");
+        stringBuilder.append("Liczba tekstów testowych: ").append(all[0]).append("\n");
+        stringBuilder.append("Liczba dobrze zaklasyfikowanych tekstów: ").append(sum).append("\n");
         stringBuilder.append("Accuracy").append(": ").append(df.format(acc)).append("\n");
         stringBuilder.append("Precision").append(": ").append(df.format(prec)).append("\n");
         stringBuilder.append("Recall").append(": ").append(df.format(rec)).append("\n");
