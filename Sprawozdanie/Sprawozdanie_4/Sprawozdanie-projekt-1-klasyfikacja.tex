@@ -82,20 +82,33 @@ W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar ja
 \multirow{2}{*}{\thead{Klasa\\ predykowana} }& Pozytywna&  \thead{prawdziwie\\ pozytywna (TP)}
  & \thead{fałszywie\\ pozytywna (FP)} \\
 \cline{2-4}
-& Negatywna & \thead{prawdziwie\\ negatywna (TN)} & \thead{fałszywie\\ negatywna (FN)} \\
+& Negatywna & \thead{fałszywie\\ negatywna (FN)} & \thead{prawdziwie\\ negatywna (TN)} \\
 \cline{2-4}
 \end{tabular}
- \caption{Wzór tablicy pomyłek.}
+ \caption{Wzór tablicy pomyłek\cite{tablica}.}
 \end{table}
 
+We wzorach zostały użyte oznaczenia:
+\begin{itemize}
+\item TP - liczba poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy 
+\item TN - liczba poprawnie zaklasyfikowanych tekstów pozostałych klas
+\item FP - liczba tekstów pozostałych klas zaklasyfikowanych do rozpatrywanej klasy
+\item FN - liczba tekstów rozpatrywanej klasy zaklasyfikowanych do pozostałych klas
+\end{itemize}
 
+\ \\ \\ 
 Stosowane miary jakości klasyfikacji:\\
 \begin{itemize}
-  \item Dokładność (ang. accurancy), ACC  - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} ACC = (TP + TN)/(TP + FN + FP + TN)  \end{equation}
- \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. \begin{equation} PPV =  TP / (TP+FP) \end{equation}
-\item Czułość (ang. recall), TPR  - jest to stosunek wyników prawdziwie dodatnich do sumy prawdziwie dodatnich i fałszywie ujemnych. \begin{equation}   TPR = TP / (TP + FN) \end{equation}
-\item Swoistość (ang. specificity), TNR   - jest to stopień zgodności wartości ze średnią arytmetyczną uzyskanych wyników. \begin{equation} TNR = TN / (FP + TN) \end{equation}
+  \item Dokładność (ang. accuracy), ACC  - jest to stosunek poprawnie zaklasyfikowanych tekstów do wszystkich klasyfikowanych tekstów.
+ \begin{equation}ACC = \frac{TP + TN}{TP + TN + FP + FN} \end{equation}
+ \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. Precyzja to stosunek liczby poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy do liczby wszystkich tekstów zaklasyfikowanych do rozpatrywanej klasy . 
+ \begin{equation} PPV =  \frac{TP} {TP+FP} \end{equation}
+\item Czułość (ang. recall), TPR  - jest to stosunek liczby poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy do liczby tekstów z rozpatrywanej klasy. 
+ \begin{equation}   TPR = \frac{TP}{TP + FN} \end{equation}
+\item Miara F1 - średnia harmoniczna miar Precyzja i Czułość. 
+\begin{equation}   F1 = \frac{2}{\frac{1}{PPV} + \frac{1}{TPR}} \end{equation}
 \end{itemize}
+
 
 
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}

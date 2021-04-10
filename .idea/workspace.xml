@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05e31074-aec2-4fa6-82fd-60922c884ff7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Kod/src/main/java/tech/szymanskazdrzalik/ksr/ksr1/knn/Classifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kod/src/main/java/tech/szymanskazdrzalik/ksr/ksr1/knn/Classifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,8 @@
       <workItem from="1615275909519" duration="84000" />
       <workItem from="1616602290136" duration="92000" />
       <workItem from="1616781740876" duration="67000" />
+      <workItem from="1617981350571" duration="26000" />
+      <workItem from="1618008059392" duration="30000" />
     </task>
     <servers />
   </component>
