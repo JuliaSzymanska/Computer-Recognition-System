@@ -204,13 +204,14 @@ public class Article {
                 fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
             }
             if (article.dateline != null) {
-                fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
-                this.dayInYear = getDayInYearFromDateLineString(article.dateline);
-                this.location = article.dateline[0];
+                fullText = Stream.concat(Arrays.stream(article.dateline), Arrays.stream(fullText)).toArray(String[]::new);
+                List<String> tmpList = new ArrayList<>();
+                this.dayInYear = getDayInYearFromDateLineString(article.dateline, tmpList);
+                this.location = String.join(" ", tmpList);
                 // TODO: 29.03.2021 Pobierać wiecej lepiej
             }
             if (article.title != null) {
-                fullText = Stream.concat(Arrays.stream(article.body), Arrays.stream(fullText)).toArray(String[]::new);
+                fullText = Stream.concat(Arrays.stream(article.title), Arrays.stream(fullText)).toArray(String[]::new);
                 this.title = String.join(" ", article.title);
             }
             List<String> tmp = new LinkedList<String>(Arrays.asList(fullText));
@@ -308,9 +309,10 @@ public class Article {
             return stringList.toArray(String[]::new);
         }
 
-        private int getDayInYearFromDateLineString(String[] string) {
+        private int getDayInYearFromDateLineString(String[] string, List<String> listOfStringWithoutDate) {
             // TODO: 27.03.2021 Mam nadzieje że to zawsze tak wyglada :p
             int dayN = 0;
+            List<String> tmpList = new ArrayList<>(Arrays.asList(string));
             search:
             {
                 for (var x : string) {
@@ -318,6 +320,7 @@ public class Article {
                         for (var y : monthsValuesMap.keySet()) {
                             if (x.toLowerCase().contains(y.toLowerCase())) {
                                 dayN += monthsValuesMap.get(y);
+                                tmpList.removeIf(s -> s.equals(x));
                                 break search;
                             }
                         }
@@ -327,10 +330,12 @@ public class Article {
 
             for (var x : string) {
                 if (isInteger(x)) {
+                    tmpList.removeIf(s -> s.equals(x));
                     dayN += Integer.parseInt(x);
                     break;
                 }
             }
+            listOfStringWithoutDate.addAll(tmpList);
 
             return dayN; // TODO: 27.03.2021
         }

@@ -27,6 +27,7 @@ public class Results {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("----------------------------------\n");
         final int[] all = {0};
+        int sum = 0;
         double acc = 0;
         double prec = 0;
         double rec = 0;
@@ -38,7 +39,16 @@ public class Results {
         for (var x : ResourcesArticleDAO.getPlacesNames()) {
             // left - wszystkie elementy, middle - elementy dobrze zaklasyfikowane, right - elementy innych klas zaklasyfikowane do tej klasy
             var y = map.get(x);
+            sum += y.middle;
             stringBuilder.append(x).append(":\n");
+            stringBuilder
+                    .append("Liczba elementów klasy: ")
+                    .append(y.left)
+                    .append("\nLiczba poprawnie zaklasyfikowanych: ")
+                    .append(y.middle)
+                    .append("\nLiczba innych klas zaklasyfikowanych do tej klasy: ")
+                    .append(y.right)
+                    .append("\n");
             // accuracy
             double accuracy = ((double) y.middle) / y.left;
 //            stringBuilder.append("Accuracy").append(": ").append(accuracy).append("\n");
@@ -65,6 +75,8 @@ public class Results {
         }
         stringBuilder.append("wszystkie").append(":\n");
         // accuracy
+        stringBuilder.append("Liczba arytkułów testowych: ").append(all[0]).append("\n");
+        stringBuilder.append("Liczba dobrze zaklasyfikowanych artykułów: ").append(sum).append("\n");
         stringBuilder.append("Accuracy").append(": ").append(df.format(acc)).append("\n");
         stringBuilder.append("Precision").append(": ").append(df.format(prec)).append("\n");
         stringBuilder.append("Recall").append(": ").append(df.format(rec)).append("\n");

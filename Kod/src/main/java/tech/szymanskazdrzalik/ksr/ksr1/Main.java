@@ -148,8 +148,6 @@ public class Main {
                 properlyClassified += 1;
             }
         }
-        System.out.println("Liczba arytkułów testowych: " + testSet.size());
-        System.out.println("Liczba dobrze zaklasyfikowanych artykułów: " + properlyClassified);
         System.out.println(Results.generateResultString());
     }
 
