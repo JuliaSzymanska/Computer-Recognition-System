@@ -230,47 +230,6 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 \label {Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage \newpage
-
-\begin{table}[h!]
-\caption{Coś}
-\centering
-\vspace{0.1cm}
- \begin{tabular}{c c c c c c c}
-
-    \textbf{Klasa} & \textbf{N}   & \textbf{P}  & \textbf{I}  & \textbf{Precyzja}  & \textbf{Czułość}  & \textbf{F1} \\
-\hline
-West-germany & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
-Usa & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
-France & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
-Uk & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
-Canada & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
-Japan & 27 & 0 & 7 & 0,00 & 0,00 & 0,00\\
-
-\end {tabular}
-\label {coś}
-\end{table}
-
-
-
-
-\begin{table}[h!]
-\caption{Wszystkie Razem TMP}
-\centering
-\vspace{0.1cm}
- \begin{tabular}{c c c c c c}
-
-    \textbf{N} & \textbf{P}   & \textbf{Dokładność}  & \textbf{Precyzja}  & \textbf{Czułość}  & \textbf{F1} \\
-\hline
-394 & 258 & 0,65 & 0,72 & 0,65 & 0,57 \\
-
-\end {tabular}
-\label {coś}
-\end{table}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Budowa aplikacji}
@@ -414,31 +373,73 @@ F1 					& 0,48 & 0,47 & 0,46 & 0,49 & 0,46 & 0,46 & 0,46 & 0,46 & 0,46 & 0,46\\
 
 Różne wartości parametru k nie mają znacznego znaczenia dla dokładności klasyfikacji. Najgorszy wynik był dla wartości parametru 1. Pozostałe wartości miały bardzo podobną dokładność klasyfikacji.  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-Kolejne eksperyment to wykonanie klasyfikacji dla różnych stosunków zbiorów uczących i testowych. Pozostałe parametry pozostają niezmienne - wartość parametru k to 2, a wybrana metryka to metryka Euklidesowa.
+Następnym eksperymentem jest wykonanie klasyfikacji dla różnych wartości proporcji podziału zbioru. Pozostałe parametry pozostają niezmienne.
 
-
+Parametry wejściowe dla eksperymentu porównującego różne wartości proporcji podziału zbioru:
+ 
 \begin{table}[h!]
- \caption{Wstępne wyniki klasyfikacji dla różnych 10 warotści parametru k.}
- \centering
- \vspace{0.1cm}
- \begin{tabular}{c c}
-  \textbf{Stosunek zbioru treningowego do testowego} & \textbf{Dokładność klasyfikacji -Accurancy}\\
+\caption{Parametry wejściowe dla eksperymentu porównującego różne wartości proporcji podziału zbioru. }
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+    \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-  1/99 & 0.45224719101123595\\
-  20/80 &  0.648876404494382\\
-  50/50 &  0.6713483146067416\\
-  70/30 &  0.6629213483146067\\
-  80/20 &  0.6348314606741573\\
- \end{tabular}
- \label{wyniki klasyfikacji dla roznych 10 wartosci parametru k}
+6 & Uliczna & - & Lokalizacja z tagu Dateline, tytuł z tagu Title\\
+\end {tabular}
+\label {Parametry wejściowe dla eksperymentu porównującego różne wartości proporcji podziału zbioru. }
 \end{table}
 
-Najgorzej wypadającym stosunkiem zbiorów uczących i testowych, gdzie stosunek wynosił 1/99, taki wynik został uzyskanu ponieważ mała liczba danych trenujących wpływa niekorzystnie na wyniki klasyfikacji. Najlepszy wynik był dla stosunku 50/50. 
+\newpage
+\begin{table}[h!]
+\caption{Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru.}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c}
+
+    \textbf{Proporcje} & \textbf{10}   & \textbf{25}  & \textbf{50}  & \textbf{70}  & \textbf{95}\\
+
+\hline
+West-germany Precission 	& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
+West-germany Recall 		& 0,04 & 0,33 & 0,52 & 0,85 & 0,96\\
+West-germany F1		& NaN & 0,50 & 0,68 & 0,92 & 0,98\\
+\hline
+Usa Precission 			& 0,67 & 0,72 & 0,85 & 0,91 & 0,96\\
+Usa Recall				& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
+Usa F1			 	& 0,80 & 0,84 & 0,92 & 0,95 & 0,98\\
+\hline
+France Precission 		& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
+France Recall 			& 0,00 & 1,00 & 1,00 & 1,00 & 1,00\\
+France F1 				& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
+\hline
+Uk Precission 			& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
+Uk Recall 				& 0,97 & 0,97 & 0,97 & 0,97 & 0,97\\
+Uk F1 				& 0,98 & 0,98 & 0,98 & 0,98 & 0,98\\
+\hline
+Canada Precission		& NaN & 1,00 & 1,00 & 0,97 & 1,00\\
+Canada Recall 			& 0,00 & 0,13 & 0,54 & 0,72 & 0,85\\
+Canada F1 			& NaN & 0,23 & 0,70 & 0,82 & 0,92\\
+\hline
+Japan Precission 		& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
+Japan Recall 			& 0,02 & 0,02 & 0,79 & 0,81 & 0,93\\
+Japan F1 				& 0,05 & 0,05 & 0,88 & 0,90 & 0,96\\
+\hline
+Accuracy 				& 0,70 & 0,76 & 0,90 & 0,94 & 0,97\\
+Precission 				& 0,60 & 0,83 & 0,91 & 0,94 & 0,97\\
+Recall 				& 0,70 & 0,76 & 0,90 & 0,94 & 0,97\\
+F1 					& 0,58 & 0,68 & 0,89 & 0,93 & 0,97\\
+
+\end {tabular}
+\label {Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru.}
+\end{table}
+
+
+Metryka Euklidesowa i metryka Czebyszwa uzyskały podobny wynik jakości klasyfikacji. Metryka uliczna uzyskała najlepszy wynik. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Następnym eksperymentem jest wykonanie klasyfikacji dla różnych metryk. Pozostałe parametry pozostają niezmienne - wartość parametru k to 6, proporcje podziału zbioru wektrów na zbiór treningowy i zbiór testowy - 50/50. 
+Następnym eksperymentem jest wykonanie klasyfikacji dla różnych metryk. Pozostałe parametry pozostają niezmienne.
 
 Parametry wejściowe dla eksperymentu porównującego różne metryki:
  
@@ -456,64 +457,127 @@ Parametry wejściowe dla eksperymentu porównującego różne metryki:
 
 \newpage
 \begin{table}[h!]
-\caption{yniki klasyfikacji dla różnych wartości parametru k.}
+\caption{Wyniki klasyfikacji dla różnych metryk.}
 \centering
 \vspace{0.1cm}
- \begin{tabular}{c c c c c c c c c c c}
+ \begin{tabular}{c c c c}
 
-    \textbf{K} & \textbf{1}   & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{7}   & \textbf{10}  & \textbf{20}  & \textbf{50}  & \textbf{100} \\
+    \textbf{Metryka} & \textbf{Euklidesowa}   & \textbf{Czebyszewa}  & \textbf{Uliczna}  \\
 
 \hline
-West-germany Precission 	& 0,23 & NaN & 0,00 & NaN  & NaN & NaN  & NaN & NaN & NaN  & NaN\\
-West-germany Recall 		& 0,11 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 7 & 0,00 & 0,00\\
-West-germany F1		& 0,15 & NaN & 0,00 & NaN  & NaN & NaN  & NaN & NaN & NaN  & NaN \\
+West-germany Precission 	& 0,25 & 0,00 & 0,20 \\
+West-germany Recall 		& 0,04 & 0,00 & 0,04 \\
+West-germany F1		& 0,06 & 0,00 & 0,06 \\
 \hline
-Usa Precission 			& 0,63 & 0,61 & 0,61 & 0,62 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 \\
-Usa Recall				& 0,84 & 0,95 & 0,96 & 0,98 & 1,00 & 1,00 & 1,00 & 1,00 & 1,00 & 1,00 \\
-Usa F1			 	& 0,72 & 0,75 & 0,74 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 \\
+Usa Precission 			& 0,61 & 0,61 & 0,62 \\
+Usa Recall				& 0,98 & 0,98 & 0,99 \\
+Usa F1			 	& 0,75 & 0,76 & 0,76 \\
 \hline
-France Precission 		& 0,00 & NaN & 1,00 & NaN  & NaN  & NaN & NaN & NaN  & NaN & NaN \\
-France Recall 			& 0,00 & 0,00 & 0,09 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
-France F1 				& 0,00 & NaN & 0,17 & NaN  & NaN  & NaN & NaN & NaN  & NaN & NaN\\
+France Precission 		& NaN & NaN & NaN \\
+France Recall 			& 0,00 & 0,00 & 0,00 \\
+France F1 				& NaN & NaN & NaN \\
 \hline
-Uk Precission 			& 0,24 & 0,75 & 0,00 & 0,40 & NaN  & NaN & NaN & NaN  & NaN & NaN\\
-Uk Recall 				& 0,24 & 0,09 & 0,00 & 0,06 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00\\
-Uk F1 				& 0,24 & 0,16 & 0,00 & 0,11 & NaN  & NaN & NaN & NaN  & NaN & NaN \\
+Uk Precission 			& 0,00 & 0,00 & 0,00 \\
+Uk Recall 				& 0,00 & 0,00 & 0,00 \\
+Uk F1 				& 0,00 & 0,00 & 0,00 \\
 \hline
-Canada Precission		& 0,10 & 0,00 & 0,00 & 0,50 & 0,00 & 0,00 & NaN & NaN  & NaN & NaN\\
-Canada Recall 			& 0,03 & 0,00 & 0,00 & 0,03 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
-Canada F1 			& 0,04 & 0,00 & 0,00 & 0,05 & 0,00 & 0,00 & NaN &NaN  & NaN & NaN \\
+Canada Precission		& 0,00 & 0,00 & NaN \\
+Canada Recall 			& 0,00 & 0,00 & 0,00 \\
+Canada F1 			& 0,00 & 0,00 & NaN \\
 \hline
-Japan Precission 		& 0,07 & 0,00 & NaN & 0,50 & NaN  & NaN & NaN & NaN & NaN & NaN \\
-Japan Recall 			& 0,02 & 0,00 & 0,00 & 0,05 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
-Japan F1 				& 0,04 & 0,00 & NaN & 0,09 & NaN  & NaN & NaN & NaN & NaN & NaN\\
+Japan Precission 		& 0,67 & 0,50 & 1,00 \\
+Japan Recall 			& 0,05 & 0,02 & 0,05 \\
+Japan F1 				& 0,09 & 0,04 & 0,09 \\
 \hline
-Accuracy 				& 0,55 & 0,59 & 0,59 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 \\
-Precission 				& 0,44 & 0,44 & 0,40 & 0,52 & 0,37  & 0,37 & 0,37 &  0,37  & 0,37 & 0,37\\
-Recall 				& 0,55 & 0,59 & 0,59 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61  \\
-F1 					& 0,48 & 0,47 & 0,46 & 0,49 & 0,46 & 0,46 & 0,46 & 0,46 & 0,46 & 0,46\\
+Accuracy 				& 0,60 & 0,60 & 0,61 \\
+Precission 				& 0,47 & 0,43 & 0,50 \\
+Recall 				& 0,60 & 0,60 & 0,61 \\
+F1 					& 0,47 & 0,47 & 0,48 \\
 
 \end {tabular}
-\label {Wyniki klasyfikacji dla różnych wartości parametru k.}
+\label {Wyniki klasyfikacji dla różnych metryk.}
 \end{table}
-
-
-
 
 
 Metryka Euklidesowa i metryka Czebyszwa uzyskały podobny wynik jakości klasyfikacji. Metryka uliczna uzyskała najlepszy wynik. 
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Kolejne porównanie polega na porównaniu wpływu różnych cech na wyniki jakości klasyfikacji. W tym celu wybieramy 4 zestawy różnych cech. 
+Następnym eksperymentem jest wykonanie klasyfikacji dla różnych podzbiorów cech. Pozostałe parametry pozostają niezmienne. W tym celu wybieramy 6 zestawy różnych cech. 
+
 \begin{enumerate}
-\item Lokalizacja z tagu Dateline, data z tagu Dateline, tytul z tagu Title, autor z tagu Author
-\item Najczęściej występujące słowo kluczowe, nasycenie tekstu słowami kluczowymi, liczba słów kluczowych, zbiór słów kluczowych
-\item Długość tekstu, najczęściej występująca nazwa kraju, liczba unikatowych słów, 
-\item Długość tekstu, lokalizacja z tagu dateline, zbiór słów kluczowych, najczęściej występująca nazwa kraju
-\item Tytuł z tagu Title
+\item Autor z tagu Author, lokalizacja z tagu Dateline, tytuł z tagu Title, zbiór słów kluczowych
+\item Liczba słów, Autor z tagu Author, liczba unikalnych słów, data z tagu Dateline, najczęściej występująca nazwa kraju
+\item Lokalizacja z tagu Dateline, tytuł z tagu Title, zbiór słów kluczowych, najczęściej występujące słowo kluczowe
+\item Lokalizacja z tagu Dateline, tytuł z tagu Title
 \item Lokalizacja z tagu Dateline
-\item Tytuł z tagu Title, lokalizacja z tagu Dateline
+\item Tytuł z tagu Title
 \end{enumerate}
+
+Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech:
+ 
+\begin{table}[h!]
+\caption{Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech. }
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+    \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
+\hline
+6 & Euklidesa & 90 & -\\
+\end {tabular}
+\label {Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech. }
+\end{table}
+
+\newpage
+\begin{table}[h!]
+\caption{Wyniki klasyfikacji dla różnych podzbiorów cech.}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c c c c}
+
+    \makecell{\textbf{Wyrbany numer} \\\textbf{zestawu cech}} & \textbf{1} & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{6}\\
+
+\hline
+West-germany Precission 	& 1,00 & 0,20 & 1,00 & 1,00 & 1,00 & 1,00\\
+West-germany Recall 		& 0,81 & 0,04 & 0,78 & 0,89 & 0,96 & 0,26\\
+West-germany F1		& 0,90 & 0,06 & 0,88 & 0,94 & 0,98 & 0,41\\
+\hline
+Usa Precission 			& 0,87 & 0,62 & 0,87 & 0,94 & 0,93 & 0,72\\
+Usa Recall				& 1,00 & 0,98 & 1,00 & 1,00 & 1,00 & 0,99\\
+Usa F1			 	& 0,93 & 0,75 & 0,93 & 0,97 & 0,96 & 0,83\\
+\hline
+France Precission 		& 1,00 & Nan & 1,00 & 1,00 & 1,00 & 1,00\\
+France Recall 			& 0,64 & 0,00 & 0,64 & 1,00 & 1,00 & 0,36\\
+France F1 				& 0,78 & Nan & 0,78 & 1,00 & 1,00 & 0,53\\
+\hline
+Uk Precission 			& 1,00 & 0,33 & 0,94 & 1,00 & 1,00 & 0,67\\
+Uk Recall 				& 0,72 & 0,03 & 0,91 & 0,97 & 0,97 & 0,30\\
+Uk F1 				& 0,84 & 0,06 & 0,92 & 0,98 & 0,98 & 0,42\\
+\hline
+Canada Precission		& 1,00 & 0,00 & 1,00 & 0,97 & 1,00 & 0,50\\
+Canada Recall 			& 0,72 & 0,00 & 0,67 & 0,82 & 0,82 & 0,13\\
+Canada F1 			& 0,84 & 0,00 & 0,80 & 0,89 & 0,90 & 0,20\\
+\hline
+Japan Precission 		& 1,00 & 1,00 & 1,00 & 1,00 & 1,00 & 0,96\\
+Japan Recall 			& 0,67 & 0,05 & 0,72 & 0,91 & 0,79 & 0,60\\
+Japan F1 				& 0,81 & 0,09 & 0,84 & 0,95 & 0,88 & 0,74\\
+\hline
+Accuracy 				& 0,91 & 0,61 & 0,90 & 0,96 & 0,95 & 0,74\\
+Precission 				& 0,92 & 0,53 & 0,92 & 0,96 & 0,96 & 0,75\\
+Recall 				& 0,91 & 0,61 & 0,90 & 0,96 & 0,95 & 0,74\\
+F1 					& 0,90 & 0,48 & 0,90 & 0,96 & 0,95 & 0,69\\
+
+\end {tabular}
+\label {Wyniki klasyfikacji dla różnych podzbiorów cech.}
+\end{table}
+
+
+Metryka Euklidesowa i metryka Czebyszwa uzyskały podobny wynik jakości klasyfikacji. Metryka uliczna uzyskała najlepszy wynik. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Kolejne porównanie polega na porównaniu wpływu różnych cech na wyniki jakości klasyfikacji. 
 
 Pozostałe parametry pozostają niezmienne - wartość parametru k to 2, proporcje podziału zbioru wektrów na zbiór treningowy i zbiór testowy - 70/30. 
 
