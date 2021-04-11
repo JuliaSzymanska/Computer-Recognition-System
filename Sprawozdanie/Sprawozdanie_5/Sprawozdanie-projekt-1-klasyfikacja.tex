@@ -130,7 +130,7 @@ Metryka Uliczna\cite{dane} jest opisana wzorem:
 \begin{equation} d(x, y) = \sum_{i = 1}^{n} |x_i - y_i| \end{equation}
 gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
 \\\\
-By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić cechy o wartościach tekstowcyh na liczby w wektorach. W programie zostało użyte podobieństwo kosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla cechy o wartości tekstowej dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to liczba wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w obu wektorów, w zadanej cesze tekstowej wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
+By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie zostało użyte podobieństwo kosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla cechy o wartości tekstowej dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to liczba wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w obu wektorach, w zadanej cesze tekstowej wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
 \begin{equation} r_{cos} = \frac{\sum_{i = 1}^{n} x y}{\sqrt{\sum_{i = 1}^{n} x^2}\sqrt{\sum_{i = 1}^{n} y^2}} \end{equation}
 gdzie r\textsubscript{cos} - to cos kąta pomiędzy wektorem x i y; x, y - rozpatrywane wektory; n - długość wektora.
 \ \\ \\ 
@@ -262,7 +262,7 @@ Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Prezentacja wyników, interfejs użytkownika} 
 
-Po uruchomieniu programu użytkownik proszony jest o podanie poprzez konsolę kolejnych parametrów klasyfikacji. Na początku użytkownik podaje wartość parametru k, następnie wybiera jedną z trzech metryk, kolejno podawany jest procent zbioru treningowego w stosunku do zbioru wszystkich tekstów oraz użytkownik może podać cechy tesktów do klasyfikacji. Wybór parametrów w konsoli prezentuje się:
+Po uruchomieniu programu użytkownik proszony jest o podanie poprzez konsolę kolejnych parametrów klasyfikacji. Na początku użytkownik podaje wartość parametru k, następnie wybiera jedną z trzech metryk, kolejno podawany jest procent zbioru treningowego w stosunku do zbioru wszystkich tekstów oraz użytkownik może podać cechy tekstów do klasyfikacji. Wybór parametrów w konsoli prezentuje się:
 
 \begin{figure}[h!]
  \centering
@@ -451,10 +451,10 @@ Następnym eksperymentem jest wykonanie klasyfikacji dla różnych podzbiorów c
 \item Tytuł z tagu Title
 \end{enumerate}
 
-Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech:
+Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
  
 \begin{table}[h!]
-\caption{Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech. }
+\caption{Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech. }
 \centering
 \vspace{0.1cm}
  \begin{tabular}{c c c c}
@@ -462,7 +462,7 @@ Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech:
 \hline
 6 & Euklidesa & 90 & -\\
 \end {tabular}
-\label {Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech. }
+\label {Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech. }
 \end{table}
 
 \newpage
