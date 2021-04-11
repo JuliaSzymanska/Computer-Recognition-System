@@ -329,7 +329,7 @@ W tym celu przyjęliśmy nastepujące parametry:
 
 \newpage
 \begin{table}[h!]
-\caption{Wyniki klasyfikacji dla różnych wartości parametru k.}
+\caption{Wyniki klasyfikacji dla różnych wartości parametru k. Wartość Nan występująca w tabeli pojawia się, gdy następuje dzielenie przez 0 w Precission. Wartość Nan oznacza, że żaden tekst nie został zaklasyfikowany do tej klasy. Wartość Nan w F1 jest skutkiem wartości Nan w Precission.}
 \centering
 \vspace{0.1cm}
  \begin{tabular}{c c c c c c c c c c c}
@@ -393,7 +393,7 @@ Wybrane parametry przedstawione są w poniższej tabeli:
 
 \newpage
 \begin{table}[h!]
-\caption{Wyniki klasyfikacji dla różnych metryk.}
+\caption{Wyniki klasyfikacji dla różnych metryk. Wartość Nan występująca w tabeli pojawia się, gdy następuje dzielenie przez 0 w Precission. Wartość Nan oznacza, że żaden tekst nie został zaklasyfikowany do tej klasy. Wartość Nan w F1 jest skutkiem wartości Nan w Precission.}
 \centering
 \vspace{0.1cm}
  \begin{tabular}{c c c c}
@@ -467,12 +467,12 @@ Parametry wejściowe dla eksperymentu porównującego różne podzbiorów cech:
 
 \newpage
 \begin{table}[h!]
-\caption{Wyniki klasyfikacji dla różnych podzbiorów cech.}
+\caption{Wyniki klasyfikacji dla różnych podzbiorów cech. Wartość Nan występująca w tabeli pojawia się, gdy następuje dzielenie przez 0 w Precission. Wartość Nan oznacza, że żaden tekst nie został zaklasyfikowany do tej klasy. Wartość Nan w F1 jest skutkiem wartości Nan w Precission.}
 \centering
 \vspace{0.1cm}
  \begin{tabular}{c c c c c c c}
 
-    \makecell{\textbf{Wyrbany numer} \\\textbf{zestawu cech}} & \textbf{1} & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{6}\\
+    \makecell{\textbf{Wybrany numer} \\\textbf{zestawu cech}} & \textbf{1} & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{6}\\
 
 \hline
 West-germany Precission 	& 1,00 & 0,20 & 1,00 & 1,00 & 1,00 & 1,00\\
@@ -509,7 +509,7 @@ F1 					& 0,90 & 0,48 & 0,90 & 0,96 & 0,95 & 0,69\\
 \end{table}
 
 
-Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu dateline. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które bardzo nieznacznie poprawiło jedynie dodanie do tej cechy cechy Tytułu z tagu Title. Sam tytuł z tagu Title też dał dobre wyniki klasyfikacji, jednak nie tak dobre jak lokalizacja.  Dodawanie innych cech do zestawu tych dwu cech pogarszało wyniki.  \\
+Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu dateline. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które nieznacznie poprawiło jedynie dodanie do tej cechy Tytułu z tagu Title. Sam tytuł z tagu Title  dał trzeci najlepszy wynik klasyfikacji. Dodawanie innych cech do zestawu tych dwóch cech pogarszyło wyniki.  \\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -532,7 +532,7 @@ Wybrane parametry przedstawione są w poniższej tabeli:
 
 \newpage
 \begin{table}[h!]
-\caption{Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru.}
+\caption{Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru. Wartość Nan występująca w tabeli pojawia się, gdy następuje dzielenie przez 0 w Precission. Wartość Nan oznacza, że żaden tekst nie został zaklasyfikowany do tej klasy. Wartość Nan w F1 jest skutkiem wartości Nan w Precission. }
 \centering
 \vspace{0.1cm}
  \begin{tabular}{c c c c c c}
@@ -574,7 +574,7 @@ F1 					& 0,58 & 0,68 & 0,89 & 0,93 & 0,97\\
 \end{table}
 
 
-Każde zwiększenie rozmiaru zbioru treningowego w stosunku do zbioru testowego poprawiało jakość klasyfikacji. Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5.\\
+Każde zwiększenie rozmiaru zbioru treningowego w stosunku do zbioru testowego poprawiło jakość klasyfikacji. Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
