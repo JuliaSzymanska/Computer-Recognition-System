@@ -80,7 +80,7 @@ public class Results {
         stringBuilder.append("Accuracy").append(": ").append(df.format(acc)).append("\n");
         stringBuilder.append("Precision").append(": ").append(df.format(prec)).append("\n");
         stringBuilder.append("Recall").append(": ").append(df.format(rec)).append("\n");
-        stringBuilder.append("F1").append(": ").append(df.format(f1_all)).append("\n");
+        stringBuilder.append("F1").append(": ").append(df.format((2.0 / ((1 / prec) + (1 / rec))))).append("\n");
         stringBuilder.append("----------------------------------\n");
         return stringBuilder.toString();
     }
