@@ -31,59 +31,70 @@ public class Classifier {
         List<Double> articleList = new ArrayList<>();
         List<Double> trainingArticleList = new ArrayList<>();
 
+        // Liczba słów
         if (filter[0]) {
             articleList.add((double) this.article.getFeatureVector().getWordCount());
             trainingArticleList.add((double) trainingArticle.getFeatureVector().getWordCount());
         }
 
+        // Autor
         if (filter[1]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor()));
+            trainingArticleList.add(1 - NGramMetric.nGramMetric(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor()));
         }
 
+        // Liczba unikatowych słów
         if (filter[2]) {
             articleList.add((double) this.article.getFeatureVector().getUniqueWordCount());
             trainingArticleList.add((double) trainingArticle.getFeatureVector().getUniqueWordCount());
         }
 
+        // Data
         if (filter[3]) {
             articleList.add((double) this.article.getFeatureVector().getDayInYear());
             trainingArticleList.add((double) trainingArticle.getFeatureVector().getDayInYear());
         }
 
+        // Lokalizacja
         if (filter[4]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation()));
+            trainingArticleList.add(1 - NGramMetric.nGramMetric(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation()));
         }
 
+        // Tytuł
         if (filter[5]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle()));
+            trainingArticleList.add(1 - NGramMetric.nGramMetric(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle()));
         }
 
+        // Najczęsicej występujaca nazwa państwa
         if (filter[6]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry()));
+            trainingArticleList.add(1 - NGramMetric.nGramMetric(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry()));
         }
 
+        // Kluczowe słowa
         if (filter[7]) {
             articleList.add(0.0);
             trainingArticleList.add(CosMetric.cosMetric(article.getFeatureVector().getKeyWords(), trainingArticle.getFeatureVector().getKeyWords()));
         }
 
+        // Liczba słów kluczowych
         if (filter[8]) {
             articleList.add((double) this.article.getFeatureVector().getKeyWordCount());
             trainingArticleList.add((double) trainingArticle.getFeatureVector().getKeyWordCount());
         }
 
+        // Nasycenie tekstu słowami kluczowymi
         if (filter[9]) {
             articleList.add((double) this.article.getFeatureVector().getKeyWordSaturation());
             trainingArticleList.add((double) trainingArticle.getFeatureVector().getKeyWordSaturation());
         }
 
+        //Najczęsciej wystepujące słowo kluczowe
         if (filter[10]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - CosMetric.cosMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord()));
+            trainingArticleList.add(1 - NGramMetric.nGramMetric(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord()));
         }
         double[] doubles1 = new double[trainingArticleList.size()];
         double[] doubles2 = new double[trainingArticleList.size()];

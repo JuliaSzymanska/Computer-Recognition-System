@@ -7,7 +7,6 @@ import java.util.List;
 public class CosMetric {
 
     private CosMetric() {
-
     }
 
     public static double cosMetric(String[] text1Array, String[] text2Array) {
@@ -35,10 +34,6 @@ public class CosMetric {
             }
         }
         return calculateCos(text1WordsCount, text2WordsCount);
-    }
-
-    public static double cosMetric(String text1, String text2) {
-        return cosMetric(text1.split(" "), text2.split(" "));
     }
 
     private static double calculateCos(int[] text1WordsCount, int[] text2WordsCount) {
