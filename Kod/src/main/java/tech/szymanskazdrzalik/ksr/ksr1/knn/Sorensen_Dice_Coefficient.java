@@ -32,8 +32,12 @@ public class Sorensen_Dice_Coefficient {
         // For each word
         for (String word : words) {
             // Find the pairs of characters
-            String[] pairsInWord = letterPairs(word);
-            Collections.addAll(allPairs, pairsInWord);
+            if (word.length() <= 1) {
+                allPairs.add(word);
+            } else {
+                String[] pairsInWord = letterPairs(word);
+                Collections.addAll(allPairs, pairsInWord);
+            }
         }
         return allPairs;
 
