@@ -1,7 +1,7 @@
 package tech.szymanskazdrzalik.ksr.ksr1.knn;
 
 public class NGramMetric {
-    private static final int nn = 3;
+    private static final int nn = 2;
 
     public NGramMetric() {
     }
@@ -19,22 +19,26 @@ public class NGramMetric {
             longerText = text2;
             shorterText = text1;
         }
-        if(longerText.length() < nn){
+
+        if (longerText.length() < nn) {
             n = shorterText.length();
         }
         int gramCount = longerText.length() - n + 1;
         int similarity = 0;
 
         for (int i = 0; i < gramCount; i++) {
-            if(i + n <= shorterText.length()){
-                if(shorterText.substring(i, i + n).equals(longerText.substring(i, i + n))){
-                    similarity += 1;
+            if (i + n <= shorterText.length()) {
+                for (int j = 0; j < longerText.length() - n; j++) {
+                    if (shorterText.substring(i, i + n).equals(longerText.substring(j, j + n))) {
+                        similarity += 1;
+                        break;
+                    }
                 }
-            } else{
+            } else {
                 break;
             }
         }
-        return (double)similarity/(double)gramCount;
+        return (double) similarity / (double) gramCount;
     }
 
 }
