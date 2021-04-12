@@ -8,6 +8,8 @@ public class NGramMetric {
 
     public static double nGramMetric(String text1, String text2) {
         int n = nn;
+        text1 = "lalu";
+        text2 = "lula";
         text1 = text1.toLowerCase();
         text2 = text2.toLowerCase();
         String shorterText;
@@ -34,7 +36,11 @@ public class NGramMetric {
                 break;
             }
         }
-        return (double)similarity/(double)gramCount;
+
+
+        double v = (double) similarity / (double) gramCount;
+        double x = Sorensen_Dice_Coefficient.compareStrings(shorterText, longerText);
+        return v;
     }
 
 }
