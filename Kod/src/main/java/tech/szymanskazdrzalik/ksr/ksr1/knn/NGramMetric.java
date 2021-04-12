@@ -1,15 +1,13 @@
 package tech.szymanskazdrzalik.ksr.ksr1.knn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class NGramMetric {
-    private static final int n = 2;
+    private static final int nn = 3;
 
     public NGramMetric() {
     }
 
     public static double nGramMetric(String text1, String text2) {
+        int n = nn;
         text1 = text1.toLowerCase();
         text2 = text2.toLowerCase();
         String shorterText;
@@ -21,14 +19,15 @@ public class NGramMetric {
             longerText = text2;
             shorterText = text1;
         }
+        if(longerText.length() < nn){
+            n = shorterText.length();
+        }
         int gramCount = longerText.length() - n + 1;
         int similarity = 0;
 
         for (int i = 0; i < gramCount; i++) {
             if(i + n <= shorterText.length()){
                 if(shorterText.substring(i, i + n).equals(longerText.substring(i, i + n))){
-                    String a = shorterText.substring(i, i + n);
-                    String b = longerText.substring(i, i + n);
                     similarity += 1;
                 }
             } else{

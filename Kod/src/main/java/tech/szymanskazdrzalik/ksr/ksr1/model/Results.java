@@ -31,7 +31,6 @@ public class Results {
         double acc = 0;
         double prec = 0;
         double rec = 0;
-        double f1_all = 0;
 
         map.forEach((s, integerIntegerIntegerMutableTriple) -> {
             all[0] += integerIntegerIntegerMutableTriple.left;
@@ -67,9 +66,6 @@ public class Results {
             stringBuilder.append("Recall").append(": ").append(df.format(recall)).append("\n");
             // F1
             var f1 = (2.0 / ((1 / precision) + (1 / recall)));
-            if (!Double.isNaN(f1)) {
-                f1_all += f1 * (((double) (y.left)) / all[0]);
-            }
             stringBuilder.append("F1").append(": ").append(df.format(f1)).append("\n");
             stringBuilder.append("----------------------------------\n");
         }
