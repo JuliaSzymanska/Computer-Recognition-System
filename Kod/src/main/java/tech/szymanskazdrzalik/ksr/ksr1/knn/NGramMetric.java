@@ -44,7 +44,7 @@ public class NGramMetric {
 //
 //
 //        double v = (double) similarity / (double) gramCount;
-        double x = Sorensen_Dice_Coefficient.compareStrings(text1, text2);
+        double x = Sorensen_Dice_Coefficient.diceCoefficientOptimized(text1, text2);
         return x;
 
     }

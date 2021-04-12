@@ -1,56 +1,81 @@
 package tech.szymanskazdrzalik.ksr.ksr1.knn;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class Sorensen_Dice_Coefficient {
 
-    private final static int n = 2;
+    /**
+     * Here's an optimized version of the dice coefficient calculation. It takes
+     * advantage of the fact that a bigram of 2 chars can be stored in 1 int, and
+     * applies a matching algorithm of O(n*log(n)) instead of O(n*n).
+     *
+     * <p>Note that, at the time of writing, this implementation differs from the
+     * other implementations on this page. Where the other algorithms incorrectly
+     * store the generated bigrams in a set (discarding duplicates), this
+     * implementation actually treats multiple occurrences of a bigram as unique.
+     * The correctness of this behavior is most easily seen when getting the
+     * similarity between "GG" and "GGGGGGGG", which should obviously not be 1.
+     * @source https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient
+     *
+     * @param s The first string
+     * @param t The second String
+     * @return The dice coefficient between the two input strings. Returns 0 if one
+     *         or both of the strings are {@code null}. Also returns 0 if one or both
+     *         of the strings contain less than 2 characters and are not equal.
+     * @author Jelle Fresen
+     */
+    public static double diceCoefficientOptimized(String s, String t)
+    {
+        // Verifying the input:
+        if (s == null || t == null)
+            return 0;
+        // Quick check to catch identical objects:
+        if (s == t)
+            return 1;
+        // avoid exception for single character searches
+        if (s.length() < 2 || t.length() < 2)
+            return 0;
 
-    public static double compareStrings(String str1, String str2) {
-        ArrayList<String> pairs1 = wordLetterPairs(str1.toUpperCase());
-        ArrayList<String> pairs2 = wordLetterPairs(str2.toUpperCase());
-        int intersection = 0;
-        int union = pairs1.size() + pairs2.size();
-        for (var pair1 : pairs1) {
-            for (int j = 0; j < pairs2.size(); j++) {
-                var pair2 = pairs2.get(j);
-                if (pair1.equals(pair2)) {
-                    intersection++;
-                    pairs2.remove(j);
-                    break;
-                }
+        // Create the bigrams for string s:
+        final int n = s.length()-1;
+        final int[] sPairs = new int[n];
+        createBigrams(s, n, sPairs);
+
+        // Create the bigrams for string t:
+        final int m = t.length()-1;
+        final int[] tPairs = new int[m];
+        createBigrams(t, m, tPairs);
+
+        // Sort the bigram lists:
+        Arrays.sort(sPairs);
+        Arrays.sort(tPairs);
+
+        // Count the matches:
+        int matches = 0, i = 0, j = 0;
+        while (i < n && j < m)
+        {
+            if (sPairs[i] == tPairs[j])
+            {
+                matches += 2;
+                i++;
+                j++;
             }
+            else if (sPairs[i] < tPairs[j])
+                i++;
+            else
+                j++;
         }
-        return (2.0 * intersection) / union;
+        return (double)matches/(n+m);
     }
 
-    private static ArrayList<String> wordLetterPairs(String str) {
-        ArrayList<String> allPairs = new ArrayList<>();
-        // Tokenize the string and put the tokens/words into an array
-        String[] words = str.split("\\s");
-        // For each word
-        for (String word : words) {
-            // Find the pairs of characters
-            if (word.length() <= 1) {
-                allPairs.add(word);
-            } else {
-                String[] pairsInWord = letterPairs(word);
-                Collections.addAll(allPairs, pairsInWord);
-            }
-        }
-        return allPairs;
-
+    private static void createBigrams(String t, int m, int[] tPairs) {
+        for (int i = 0; i <= m; i++)
+            if (i == 0)
+                tPairs[i] = t.charAt(i) << 16;
+            else if (i == m)
+                tPairs[i-1] |= t.charAt(i);
+            else
+                tPairs[i] = (tPairs[i-1] |= t.charAt(i)) << 16;
     }
-
-    private static String[] letterPairs(String str) {
-        int numPairs = str.length() - 1;
-        String[] pairs = new String[numPairs];
-        for (int i = 0; i < numPairs; i++) {
-            pairs[i] = str.substring(i, i + n);
-        }
-        return pairs;
-    }
-
 
 }
