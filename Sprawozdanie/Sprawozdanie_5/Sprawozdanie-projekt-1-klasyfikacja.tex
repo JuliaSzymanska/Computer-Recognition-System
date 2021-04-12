@@ -106,9 +106,9 @@ Stosowane miary jakości klasyfikacji:\\
 \begin{itemize}
   \item Dokładność (ang. accuracy), ACC  - jest to stosunek poprawnie zaklasyfikowanych tekstów do wszystkich klasyfikowanych tekstów.
  \begin{equation}ACC = \frac{TP + TN}{TP + TN + FP + FN} \end{equation}
- \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. Precyzja to stosunek liczby poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy do liczby wszystkich tekstów zaklasyfikowanych do rozpatrywanej klasy . 
+ \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. Precyzja to stosunek liczby poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy do liczby wszystkich tekstów zaklasyfikowanych do rozpatrywanej klasy. Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych precyzji dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
  \begin{equation} PPV =  \frac{TP} {TP+FP} \end{equation}
-\item Czułość (ang. recall), TPR  - jest to stosunek liczby poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy do liczby tekstów z rozpatrywanej klasy. 
+\item Czułość (ang. recall), TPR  - jest to stosunek liczby poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy do liczby tekstów z rozpatrywanej klasy. Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych czułości dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas.  
  \begin{equation}   TPR = \frac{TP}{TP + FN} \end{equation}
 \item Miara F1 - średnia harmoniczna miar Precyzja i Czułość. 
 \begin{equation}   F1 = \frac{2}{\frac{1}{PPV} + \frac{1}{TPR}} \end{equation}
@@ -209,7 +209,7 @@ Parametry wejściowe dla trzeciej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-9 & Uliczna & 73\% &  \makecell{1. Kluczowe słowa \\2. Liczba kluczowych słów\\3. Nasycenie tekstu\\słowani kluczowymi\\4. Najczęściej występujące \\słowani kluczowymi}\\
+9 & Uliczna & 73\% &  \makecell{1. Kluczowe słowa \\2. Liczba kluczowych słów\\3. Nasycenie tekstu\\słowami kluczowymi\\4. Najczęściej występujące \\słowo kluczowe}\\
 \end {tabular}
 \label {Parametry wejściowe dla trzeciej wstępnej klasyfikacji. }
 \end{table}
@@ -229,6 +229,8 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
 \end{table}
+
+Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to: kluczowe słowa, liczba kluczowych słów, nasycenie tekstu słowami kluczowymi, najczęściej występujące słowo kluczowe. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -364,7 +366,7 @@ Japan F1 				& 0,04 & 0,00 & NaN & 0,09 & NaN  & NaN & NaN & NaN & NaN & NaN\\
 Accuracy 				& 0,55 & 0,59 & 0,59 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 \\
 Precission 				& 0,44 & 0,44 & 0,40 & 0,52 & 0,37  & 0,37 & 0,37 &  0,37  & 0,37 & 0,37\\
 Recall 				& 0,55 & 0,59 & 0,59 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61  \\
-F1 					& 0,48 & 0,47 & 0,46 & 0,49 & 0,46 & 0,46 & 0,46 & 0,46 & 0,46 & 0,46\\
+F1 					& 0,49 & 0,50 & 0,48 & 0,52 & 0,61 & 0,56 & 0,46 & 0,46 & 0,46 & 0,46\\
 
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych wartości parametru k.}
