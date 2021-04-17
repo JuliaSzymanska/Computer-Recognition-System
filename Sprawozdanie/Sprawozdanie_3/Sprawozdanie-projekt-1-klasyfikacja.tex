@@ -105,13 +105,14 @@ Stosowane miary jakości klasyfikacji:\\
  \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. Precyzja to stosunek liczby poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy do liczby wszystkich tekstów zaklasyfikowanych do rozpatrywanej klasy. 
 \begin{equation} PPV =  \frac{TP} {TP+FP} \end{equation} 
 Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych precyzji dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
-\begin{equation} PPV_{calk} = \sum_{n=1}^{m} (PPV_n *\frac{TP + FN}{TP + TN + FP + FN}) \end{equation}
-Gdzie PPV\textsubscript{calk} - precyzja obliczona dla wszystkich klas klasyfikowanych dokumentów,  m - liczba rozpatrywanych klas, PPV\textsubscript{n} - precyzja dla n-tej klasy\\
+\begin{equation} PPV_{calk} = \sum_{n=1}^{m} (PPV_n *\frac{k_n}{k_c}) \end{equation}
+Gdzie PPV\textsubscript{calk} - precyzja obliczona dla wszystkich klas klasyfikowanych dokumentów,  m - liczba rozpatrywanych klas, PPV\textsubscript{n} - precyzja dla n-tej klasy, 
+ k\textsubscript{n} - liczebność rzeczywista tekstów klasy n\textsubscript{c} - liczebność wszystkich tekstów\\
 \item Czułość (ang. recall), TPR  - jest to stosunek liczby poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy do liczby tekstów z rozpatrywanej klasy. 
  \begin{equation}   TPR = \frac{TP}{TP + FN} \end{equation}
 Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych czułości dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
-\begin{equation} TPR_{calk} = \sum_{n=1}^{m} (TPR_n *\frac{TP + FN}{TP + TN + FP + FN}) \end{equation}
-Gdzie TPR\textsubscript{calk} - czułość obliczona dla wszystkich klas klasyfikowanych dokumentów,  m - liczba rozpatrywanych klas, TPR\textsubscript{n} - czułość dla n-tej klasy\\
+\begin{equation} TPR_{calk} = \sum_{n=1}^{m} (TPR_n *\frac{k_n}{k_c}) \end{equation}
+Gdzie TPR\textsubscript{calk} - czułość obliczona dla wszystkich klas klasyfikowanych dokumentów,  m - liczba rozpatrywanych klas, TPR\textsubscript{n} - czułość dla n-tej klasy,  k\textsubscript{n} - liczebność rzeczywista tekstów klasy n\textsubscript{c} - liczebność wszystkich tekstów\\
 \item Miara F1 - średnia harmoniczna miar Precyzja i Czułość. 
 \begin{equation}   F1 = \frac{2}{\frac{1}{PPV} + \frac{1}{TPR}} \end{equation}
 \end{itemize}
