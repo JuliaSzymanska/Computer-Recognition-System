@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  18 APR 2021 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  18 APR 2021 21:23
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -622,121 +622,112 @@ Overfull \hbox (97.97289pt too wide) in paragraph at lines 364--400
 <wykres_k.png, id=186, 903.375pt x 803.0pt>
 File: wykres_k.png Graphic file (type png)
 <use wykres_k.png>
-Package pdftex.def Info: wykres_k.png  used on input line 405.
+Package pdftex.def Info: wykres_k.png  used on input line 406.
 (pdftex.def)             Requested size: 426.79134pt x 379.3705pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 405--407
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 406--408
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--412
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-[14 <./wykres_k.png (PNG copy)>]
-<wykres_metryka.png, id=193, 903.375pt x 803.0pt>
+[14 <./wykres_k.png (PNG copy)>] [15]
+<wykres_metryka.png, id=198, 903.375pt x 803.0pt>
 File: wykres_metryka.png Graphic file (type png)
 <use wykres_metryka.png>
-Package pdftex.def Info: wykres_metryka.png  used on input line 478.
+Package pdftex.def Info: wykres_metryka.png  used on input line 480.
 (pdftex.def)             Requested size: 426.79134pt x 379.3705pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 478--480
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 480--482
  [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 484--485
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \vbox (badness 4441) has occurred while \output is active []
 
-[15]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<wykres_cechy.png, id=205, 803.0pt x 803.0pt>
+ [16 <./wykres_metryka.png (PNG copy)>] [17] [18]
+<wykres_cechy.png, id=220, 803.0pt x 803.0pt>
 File: wykres_cechy.png Graphic file (type png)
 <use wykres_cechy.png>
-Package pdftex.def Info: wykres_cechy.png  used on input line 560.
-(pdftex.def)             Requested size: 284.52756pt x 284.534pt.
+Package pdftex.def Info: wykres_cechy.png  used on input line 563.
+(pdftex.def)             Requested size: 426.79134pt x 426.801pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 563--565
+ [][] 
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 567--568
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
 
-Overfull \hbox (49.68863pt too wide) in paragraph at lines 580--586
+Overfull \hbox (49.68863pt too wide) in paragraph at lines 583--589
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16 <./wykres_metryka.png (PNG copy)>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<wykres_proporcje.png, id=212, 803.0pt x 803.0pt>
+[19 <./wykres_cechy.png (PNG copy)>] [20]
+<wykres_proporcje.png, id=233, 803.0pt x 803.0pt>
 File: wykres_proporcje.png Graphic file (type png)
 <use wykres_proporcje.png>
-Package pdftex.def Info: wykres_proporcje.png  used on input line 634.
-(pdftex.def)             Requested size: 284.52756pt x 284.534pt.
+Package pdftex.def Info: wykres_proporcje.png  used on input line 638.
+(pdftex.def)             Requested size: 426.79134pt x 426.801pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 638--640
+ [][] 
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--655
+Underfull \hbox (badness 10000) in paragraph at lines 651--659
 
  []
 
-[17]
-Underfull \vbox (badness 2119) has occurred while \output is active []
-
- [18 <./wykres_cechy.png (PNG copy)> <./wykres_proporcje.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 656--658
+[21 <./wykres_proporcje.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 660--662
 
  []
 
-[19]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 675.
+(Font)              <10.95> on input line 679.
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 []\OT4/cmr/m/n/10.95 Internet fo-rum. Wi-ki-pe-dia: The Free En-cyc-lo-pe-dia, 
 Do-st¦p-ny w:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 []$\OT4/cmtt/m/n/10.95 https : / / pl . wikipedia . org / wiki / Tablica _ pomy
  % C5 % 82ek ? fbclid =
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 683.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 687.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 687.
  (Sprawozdanie-projekt-1-klasyfikacja.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 683.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 683.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 687.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 687.
 Package rerunfilecheck Info: File `Sprawozdanie-projekt-1-klasyfikacja.out' has
  not changed.
 (rerunfilecheck)             Checksum: 9B467B6C5CE2E2C0CA8984DF8EAAAD4E;833.
@@ -744,16 +735,16 @@ Package rerunfilecheck Info: File `Sprawozdanie-projekt-1-klasyfikacja.out' has
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 683.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 687.
  ) 
 Here is how much of TeX's memory you used:
- 6116 strings out of 480931
- 96982 string characters out of 2898858
- 370336 words of memory out of 3000000
+ 6118 strings out of 480931
+ 96996 string characters out of 2898858
+ 363336 words of memory out of 3000000
  21766 multiletter control sequences out of 15000+200000
  542324 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,18n,32p,761b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,18n,32p,761b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
 nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.
 enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm
@@ -773,10 +764,10 @@ ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (20 pages, 522069 byt
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (22 pages, 523326 byt
 es).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
  147 words of extra memory for PDF output out of 10000 (max. 10000000)
 
