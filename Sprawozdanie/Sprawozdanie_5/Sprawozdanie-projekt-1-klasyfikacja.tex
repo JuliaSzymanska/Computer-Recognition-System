@@ -392,6 +392,15 @@ F1 					& 0,53 & 0,52 & 0,53 & 0,57 & 0,56 & 0,56 & 0,56 & 0,54 & 0,46 & 0,46\\
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych wartości parametru k.}
 \end{table}
+\newpage
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=12cm]{wykres_k.png}
+ \vspace{-0.3cm}
+ \caption{Wykres wyników klasyfikacji dla różnych wartości parametru k.}
+ \label{wykres1}
+\end{figure}
 
 Różne wartości parametru k nie mają znacznego znaczenia dla dokładności klasyfikacji. Najgorszy wynik był dla wartości parametru 1. Od wartości k równej 5 wszystkie obiekty zostały zaklasyfikowane do klasy USA, co możemy odczytać z wartości NaN przy obliczaniu precyzji. Wartość taka pojawia się przy dzieleniu przez 0, co oznacza że nie istniał taki obiekt który zostałby sklasyfikowany do danej klasy. \\
 
@@ -457,6 +466,14 @@ F1 					& 0,49 & 0,53 & 0,53 \\
 \label {Wyniki klasyfikacji dla różnych metryk.}
 \end{table}
 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=9cm]{wykres_metryka.png}
+ \vspace{-0.3cm}
+ \caption{Wykres wyników klasyfikacji dla różnych metryk.}
+ \label{wykres2}
+\end{figure}
 
 Metryki uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metryka Uliczna, drugą najlepszą metryką okazała się Euklidesowa. \\
 
@@ -531,6 +548,15 @@ F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
 \label {Wyniki klasyfikacji dla różnych podzbiorów cech.}
 \end{table}
 
+\newpage
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=10cm]{wykres_cechy.png}
+ \vspace{-0.3cm}
+ \caption{Wykres wyników klasyfikacji dla różnych podzbiorów cech.}
+ \label{wykres3}
+\end{figure}
+
 
 Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu dateline. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które nieznacznie poprawiło jedynie dodanie do tej cechy Tytułu z tagu Title. Sam tytuł z tagu Title  dał trzeci najlepszy wynik klasyfikacji. Dodawanie innych cech do zestawu tych dwóch cech pogarszyło wyniki.  \\
 
@@ -595,6 +621,15 @@ F1 					& 0,64 & 0,83 & 0,91 & 0,93 & 0,98\\
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru.}
 \end{table}
+
+\newpage
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=10cm]{wykres_proporcje.png}
+ \vspace{-0.3cm}
+ \caption{Wykres wyników klasyfikacji dla różnych wartości proporcji podziału zbioru.}
+ \label{wykres4}
+\end{figure}
 
 
 Każde zwiększenie rozmiaru zbioru treningowego w stosunku do zbioru testowego poprawiło jakość klasyfikacji. Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5.\\
