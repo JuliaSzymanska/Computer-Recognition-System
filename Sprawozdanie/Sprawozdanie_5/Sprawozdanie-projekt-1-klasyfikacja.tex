@@ -137,10 +137,26 @@ Metryka Uliczna\cite{dane} jest opisana wzorem:
 \begin{equation} d(x, y) = \sum_{i = 1}^{n} |x_i - y_i| \end{equation}
 gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
 \\\\
-By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie zostało użyte podobieństwo kosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla cechy o wartości tekstowej dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to liczba wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w obu wektorach, w zadanej cesze tekstowej wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
-\begin{equation} r_{cos} = \frac{\sum_{i = 1}^{n} x y}{\sqrt{\sum_{i = 1}^{n} x^2}\sqrt{\sum_{i = 1}^{n} y^2}} \end{equation}
-gdzie r\textsubscript{cos} - to cos kąta pomiędzy wektorem x i y; x, y - rozpatrywane wektory; n - długość wektora.
-\ \\ \\ 
+By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miary podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie została zastosowana metoda bigramów\cite{wyklad}. Korzystając z tej metody obliczamy współczynnik podobieństwa tej samej cechy tekstowej dla dwóch tekstów zgodnie ze wzorem:
+\begin{equation} s = \frac {1}{N - 1}  \sum_{i = 0}^{N-1}h(i) \end{equation}
+
+Gdzie s - wartość liczbowa będąca podobieństwem cechy tekstowej obu dokumentów zawierająca się w przedziale [0, 1], N - długość dłużej cechy tekstowej z obu dokumentów, h(i) - przyjmuje wartość 1 gdy podciąg zaczynający się od i-tej pozycji w jednej cesze tekstowej dokumentu występuje w cesze tekstowej drugiego dokumentu, w przeciwnym wypadku przyjmuje wartość 0.
+\newline
+
+
+\textbf{Przykład 3.1}\textit{
+Dla obliczenia podobieństwa pomiędzy dwoma słowami: 'night', 'nacht' należy najpierw znaleźć dwa zbiory bigramów należących do każdego ze słów - \{ni, ig, gh, ht\},\{na, ac, ch, ht\}.
+Jedynym powtarzającym się bigramem jest 'ht'. Podstawiając wartości do wzoru otrzymujemy:
+\begin{equation} s = \frac {0 + 0 + 0 + 1}{5 - 1} = \frac{1}{4} \end{equation}
+}
+
+Obliczone w ten sposób podobieństwo cechy tekstowej dla dwóch tekstów wykorzystywane jest do obliczenia odległości pomiędzy nimi:
+
+\begin{equation} d = s - 1 \end{equation}
+
+Gdzie d - odległość cechy tekstowej obu dokumentów, s - podobieństwo cechy tekstowej obu dokumentów.
+
+
 
 Wstępna klasyfikacja na ograniczonym zbiorze tekstów została przeprowadzona dla trzech różnych zestawów parametrów wejściowych. \newline
 Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
@@ -156,6 +172,7 @@ Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
 \end {tabular}
 \label {Parametry wejściowe dla pierwszej wstępnej klasyfikacji. }
 \end{table}
+
 Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
 
 \begin{table}[h!]
@@ -203,7 +220,7 @@ Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej:
 \label {Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej.}
 \end{table}
 
-\newpage
+
 Parametry wejściowe dla trzeciej klasyfikacji wstępnej:
  
 \begin{table}[h!]
@@ -235,6 +252,34 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 \end{table}
 
 Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to: kluczowe słowa, liczba kluczowych słów, nasycenie tekstu słowami kluczowymi, najczęściej występujące słowo kluczowe. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Budowa aplikacji}
+\subsection{Diagramy UML}
+
+Aplikacja będzie składała się z dwóch modułów: z modułu ekstrakcji cech oraz z modułu klasyfikacji. Moduł ekstrakcji wczytuje pliki z treścią artykułów. Następnie tworzone są obiekty artykułów. Dla każdego obiektu usuwane są słowa ze stop listy oraz kolejno tworzone są wektory cech artykułów. 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{Ekstrakcja.png}
+ \vspace{-0.3cm}
+ \caption{Diagram klas modułu ekstrakcji cech. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
+
+Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą podobieństwa kosinusowego. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{Klasyfikator.png}
+ \vspace{-0.3cm}
+ \caption{Diagram klas modułu klasyfikacji. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+
+\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -524,7 +569,7 @@ West-germany F1		& NaN & 0,65 & 0,65 & 0,85 & 0,98\\
 \hline
 Usa Precission 			& 0,68 & 0,78 & 0,86 & 0,90 & 0,96\\
 Usa Recall				& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
-Usa F1			 	& 0,81 & 0,88 & 0,92 & 0,95\4 & 0,98\\
+Usa F1			 	& 0,81 & 0,88 & 0,92 & 0,94 & 0,98\\
 \hline
 France Precission 		& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
 France Recall 			& 0,00 & 1,00 & 1,00 & 1,00 & 1,00\\
