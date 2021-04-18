@@ -77,16 +77,16 @@ public class Main {
         boolean[] booleanSet = new boolean[]{true, true, true, true, true, true, true, true, true, true, true};
         if (isSet == 1) {
             System.out.println("Cechy do wyboru: ");
-            System.out.println("1. Liczba słów");
-            System.out.println("2. Autor");
-            System.out.println("3. Liczba unikatowych słów");
-            System.out.println("4. Data");
-            System.out.println("5. Lokalizacja");
-            System.out.println("6. Tytuł");
-            System.out.println("7. Najczęściej występująca nazwa państwa");
-            System.out.println("8. Kluczowe słowa");
-            System.out.println("9. Liczba kluczowych słów");
-            System.out.println("10. Nasycenie tekstu słowani kluczowymi");
+            System.out.println("1.  Liczba słów");
+            System.out.println("2.  Autor z tagu <Author>");
+            System.out.println("3.  Liczba unikatowych słów");
+            System.out.println("4.  Data z tagu <Dateline>");
+            System.out.println("5.  Lokalizacja z tagu <Dateline>");
+            System.out.println("6.  Tytuł z tagu <Title>");
+            System.out.println("7.  Najczęściej występująca nazwa kraju");
+            System.out.println("8.  Zbiór występujących słów kluczowych");
+            System.out.println("9.  Liczba wystąpień słów kluczowych");
+            System.out.println("10. Nasycenie tekstu ilością słów kluczowych");
             System.out.println("11. Najczęściej występujące słowo kluczowe");
             String set = "";
             while (in.hasNext()) {
