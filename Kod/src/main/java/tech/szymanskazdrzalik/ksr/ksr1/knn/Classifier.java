@@ -1,6 +1,5 @@
 package tech.szymanskazdrzalik.ksr.ksr1.knn;
 
-import tech.szymanskazdrzalik.ksr.ksr1.metric.Metric;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Article;
 import tech.szymanskazdrzalik.ksr.ksr1.model.Pair;
 
@@ -14,12 +13,12 @@ public class Classifier {
 
     private final int k;
     private final List<Article> trainingArticles;
-    private final Metric metric;
+    private final tech.szymanskazdrzalik.ksr.ksr1.metric.Metric metric;
     private Article article;
     private List<Pair<Article, Double>> listOfPairs;
     private boolean[] filter;
 
-    public Classifier(List<Article> trainingArticles, Metric metric, int k, boolean[] filter) {
+    public Classifier(List<Article> trainingArticles, tech.szymanskazdrzalik.ksr.ksr1.metric.Metric metric, int k, boolean[] filter) {
         this.filter = filter;
         this.trainingArticles = trainingArticles;
         this.k = k;
@@ -40,7 +39,7 @@ public class Classifier {
         // Autor
         if (filter[1]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - Sorensen_Dice_Coefficient.diceCoefficientOptimized(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor()));
+            trainingArticleList.add(1 - Metric.bigrams(this.article.getFeatureVector().getAuthor(), trainingArticle.getFeatureVector().getAuthor()));
         }
 
         // Liczba unikatowych słów
@@ -58,25 +57,25 @@ public class Classifier {
         // Lokalizacja
         if (filter[4]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - Sorensen_Dice_Coefficient.diceCoefficientOptimized(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation()));
+            trainingArticleList.add(1 - Metric.bigrams(this.article.getFeatureVector().getLocation(), trainingArticle.getFeatureVector().getLocation()));
         }
 
         // Tytuł
         if (filter[5]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - Sorensen_Dice_Coefficient.diceCoefficientOptimized(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle()));
+            trainingArticleList.add(1 - Metric.bigrams(this.article.getFeatureVector().getTitle(), trainingArticle.getFeatureVector().getTitle()));
         }
 
         // Najczęsicej występujaca nazwa państwa
         if (filter[6]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - Sorensen_Dice_Coefficient.diceCoefficientOptimized(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry()));
+            trainingArticleList.add(1 - Metric.bigrams(this.article.getFeatureVector().getMostPopularCountry(), trainingArticle.getFeatureVector().getMostPopularCountry()));
         }
 
         // Kluczowe słowa
         if (filter[7]) {
             articleList.add(0.0);
-            trainingArticleList.add(Sorensen_Dice_Coefficient.diceCoefficientOptimized(String.join(" ", article.getFeatureVector().getKeyWords()), String.join(" ", trainingArticle.getFeatureVector().getKeyWords())));
+            trainingArticleList.add(Metric.bigrams(String.join(" ", article.getFeatureVector().getKeyWords()), String.join(" ", trainingArticle.getFeatureVector().getKeyWords())));
         }
 
         // Liczba słów kluczowych
@@ -94,7 +93,7 @@ public class Classifier {
         //Najczęsciej wystepujące słowo kluczowe
         if (filter[10]) {
             articleList.add(0.0);
-            trainingArticleList.add(1 - Sorensen_Dice_Coefficient.diceCoefficientOptimized(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord()));
+            trainingArticleList.add(1 - Metric.bigrams(this.article.getFeatureVector().getMostPopularKeyWord(), trainingArticle.getFeatureVector().getMostPopularKeyWord()));
         }
         double[] doubles1 = new double[trainingArticleList.size()];
         double[] doubles2 = new double[trainingArticleList.size()];

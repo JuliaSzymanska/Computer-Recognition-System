@@ -2,7 +2,7 @@ package tech.szymanskazdrzalik.ksr.ksr1.knn;
 
 import java.util.*;
 
-public class Sorensen_Dice_Coefficient {
+public class Metric {
 
     /**
      * Here's an optimized version of the dice coefficient calculation. It takes
@@ -24,7 +24,7 @@ public class Sorensen_Dice_Coefficient {
      * @source https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient
      * @author Jelle Fresen
      */
-    public static double diceCoefficientOptimized(String s, String t) {
+    public static double bigrams(String s, String t) {
         // Verifying the input:
         if (s == null || t == null)
             return 0;
