@@ -140,7 +140,7 @@ gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym sam
 By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miary podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie została zastosowana metoda bigramów\cite{wyklad}. Korzystając z tej metody obliczamy współczynnik podobieństwa tej samej cechy tekstowej dla dwóch tekstów zgodnie ze wzorem:
 \begin{equation} s = \frac {1}{N - 1}  \sum_{i = 0}^{N-1}h(i) \end{equation}
 
-Gdzie s - wartość liczbowa będąca podobieństwem cechy tekstowej obu dokumentów zawierająca się w przedziale [0, 1], N - długość dłuższej cechy tekstowej z obu dokumentów, h(i) - przyjmuje wartość 1 gdy podciąg zaczynający się od i-tej pozycji w jednej cesze tekstowej dokumentu występuje w cesze tekstowej drugiego dokumentu, w przeciwnym wypadku przyjmuje wartość 0.
+Gdzie s - wartość liczbowa będąca podobieństwem cechy tekstowej obu dokumentów zawierająca się w przedziale [0, 1], N - długość dłużej cechy tekstowej z obu dokumentów, h(i) - przyjmuje wartość 1 gdy podciąg zaczynający się od i-tej pozycji w jednej cesze tekstowej dokumentu występuje w cesze tekstowej drugiego dokumentu, w przeciwnym wypadku przyjmuje wartość 0.
 \newline
 
 
@@ -154,10 +154,7 @@ Obliczone w ten sposób podobieństwo cechy tekstowej dla dwóch tekstów wykorz
 
 \begin{equation} d = s - 1 \end{equation}
 
-Gdzie d - odległość cechy tekstowej obu dokumentów, s - podobieństwo cechy tekstowej obu dokumentów.\\
-\newline
-
-
+Gdzie d - odległość cechy tekstowej obu dokumentów, s - podobieństwo cechy tekstowej obu dokumentów.
 
 
 
@@ -175,7 +172,6 @@ Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
 \end {tabular}
 \label {Parametry wejściowe dla pierwszej wstępnej klasyfikacji. }
 \end{table}
-\newpage
 
 Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
 
@@ -192,7 +188,6 @@ Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej.}
 \end{table}
-
 
 
 Parametry wejściowe dla drugiej klasyfikacji wstępnej:
@@ -255,7 +250,6 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
 \end{table}
-\newpage
 
 Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to: kluczowe słowa, liczba kluczowych słów, nasycenie tekstu słowami kluczowymi, najczęściej występujące słowo kluczowe. 
 
@@ -275,7 +269,7 @@ Aplikacja będzie składała się z dwóch modułów: z modułu ekstrakcji cech 
 \end{figure}
 \newpage
 
-Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą metody bigramów. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
+Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą podobieństwa kosinusowego. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
 
 \begin{figure}[h!]
  \centering
@@ -398,12 +392,11 @@ F1 					& 0,53 & 0,52 & 0,53 & 0,57 & 0,56 & 0,56 & 0,56 & 0,54 & 0,46 & 0,46\\
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych wartości parametru k.}
 \end{table}
-
 \newpage
 
 \begin{figure}[h!]
  \centering
- \includegraphics[width=15cm]{wykres_k.png}
+ \includegraphics[width=12cm]{wykres_k.png}
  \vspace{-0.3cm}
  \caption{Wykres wyników klasyfikacji dla różnych wartości parametru k.}
  \label{wykres1}
@@ -473,11 +466,10 @@ F1 					& 0,49 & 0,53 & 0,53 \\
 \label {Wyniki klasyfikacji dla różnych metryk.}
 \end{table}
 
-\newpage
 
 \begin{figure}[h!]
  \centering
- \includegraphics[width=15cm]{wykres_metryka.png}
+ \includegraphics[width=9cm]{wykres_metryka.png}
  \vspace{-0.3cm}
  \caption{Wykres wyników klasyfikacji dla różnych metryk.}
  \label{wykres2}
@@ -557,10 +549,9 @@ F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
 \end{table}
 
 \newpage
-
 \begin{figure}[h!]
  \centering
- \includegraphics[width=15cm]{wykres_cechy.png}
+ \includegraphics[width=10cm]{wykres_cechy.png}
  \vspace{-0.3cm}
  \caption{Wykres wyników klasyfikacji dla różnych podzbiorów cech.}
  \label{wykres3}
@@ -632,10 +623,9 @@ F1 					& 0,64 & 0,83 & 0,91 & 0,93 & 0,98\\
 \end{table}
 
 \newpage
-
 \begin{figure}[h!]
  \centering
- \includegraphics[width=15cm]{wykres_proporcje.png}
+ \includegraphics[width=10cm]{wykres_proporcje.png}
  \vspace{-0.3cm}
  \caption{Wykres wyników klasyfikacji dla różnych wartości proporcji podziału zbioru.}
  \label{wykres4}
