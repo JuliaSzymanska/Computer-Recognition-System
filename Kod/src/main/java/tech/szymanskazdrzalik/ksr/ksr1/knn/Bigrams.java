@@ -2,29 +2,10 @@ package tech.szymanskazdrzalik.ksr.ksr1.knn;
 
 import java.util.*;
 
-public class Sorensen_Dice_Coefficient {
+public class Bigrams {
 
-    /**
-     * Here's an optimized version of the dice coefficient calculation. It takes
-     * advantage of the fact that a bigram of 2 chars can be stored in 1 int, and
-     * applies a matching algorithm of O(n*log(n)) instead of O(n*n).
-     *
-     * <p>Note that, at the time of writing, this implementation differs from the
-     * other implementations on this page. Where the other algorithms incorrectly
-     * store the generated bigrams in a set (discarding duplicates), this
-     * implementation actually treats multiple occurrences of a bigram as unique.
-     * The correctness of this behavior is most easily seen when getting the
-     * similarity between "GG" and "GGGGGGGG", which should obviously not be 1.
-     *
-     * @param s The first string
-     * @param t The second String
-     * @return The dice coefficient between the two input strings. Returns 0 if one
-     * or both of the strings are {@code null}. Also returns 0 if one or both
-     * of the strings contain less than 2 characters and are not equal.
-     * @source https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient
-     * @author Jelle Fresen
-     */
-    public static double diceCoefficientOptimized(String s, String t) {
+
+    public static double bigramSimilarity(String s, String t) {
         // Verifying the input:
         if (s == null || t == null)
             return 0;
