@@ -483,7 +483,7 @@ F1 					& 0,49 & 0,53 & 0,53 \\
  \label{wykres2}
 \end{figure}
 
-Metryki uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metryka Uliczna, drugą najlepszą metryką okazała się Euklidesowa. \\
+Metryki uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metryka Czebyszewa, niewiele gorszą, bo z precyzją mniejszą o zaledwie 0.01 była metryka Uliczna. \\
 
 
 
@@ -513,7 +513,6 @@ Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
 \label {Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech. }
 \end{table}
 
-\newpage
 \begin{table}[h!]
 \caption{Wyniki klasyfikacji dla różnych podzbiorów cech. Wartość Nan występująca w tabeli pojawia się, gdy następuje dzielenie przez 0 w Precision. Wartość Nan oznacza, że żaden tekst nie został zaklasyfikowany do tej klasy. Wartość Nan w F1 jest skutkiem wartości Nan w Precision.}
 \centering
@@ -567,7 +566,7 @@ F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
 \end{figure}
 
 
-Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu dateline. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które nieznacznie poprawiło jedynie dodanie do tej cechy Tytułu z tagu Title. Sam tytuł z tagu Title  dał trzeci najlepszy wynik klasyfikacji. Dodawanie innych cech do zestawu tych dwóch cech pogarszyło wyniki.  \\
+Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu dateline. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które nieznacznie poprawiło jedynie dodanie do tej cechy Tytułu z tagu Title. Dodanie do tych dwu cech autora oraz zbioru cech kluczowych nieznacznie pogorszyło wynik. Inne cechy uzyskały znacznie gorsze wyniki  \\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -642,7 +641,7 @@ F1 					& 0,64 & 0,83 & 0,91 & 0,93 & 0,98\\
 \end{figure}
 
 
-Każde zwiększenie rozmiaru zbioru treningowego w stosunku do zbioru testowego poprawiło jakość klasyfikacji. Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5.\\
+Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5. Zwiększanie ilości dokumentów w zbiorze treningowym poprawiało jakość klasyfikacji\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
