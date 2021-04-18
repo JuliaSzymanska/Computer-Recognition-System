@@ -137,10 +137,22 @@ Metryka Uliczna\cite{dane} jest opisana wzorem:
 \begin{equation} d(x, y) = \sum_{i = 1}^{n} |x_i - y_i| \end{equation}
 gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
 \\\\
-By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miar podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie zostało użyte podobieństwo kosinusowe\cite{wyklad}. Należy utworzyć po jedym wektorze dla cechy o wartości tekstowej dla każdego z dwóch rozpatrywanych tekstów - x = \{ x\textsubscript{1}, x\textsubscript{2}, ... , x\textsubscript{n} \},  y = \{ y\textsubscript{1}, y\textsubscript{2}, ... , y\textsubscript{n} \}, gdzie x\textsubscript{n}, y\textsubscript{n}  to liczba wystąpień n-tego słowa, ze zbioru wszystkich słów występujących w obu wektorach, w zadanej cesze tekstowej wektora cech. Dla tak utworzonych wektrów liczony jest kosinus kąta pomiędzy nimi ze wzoru:
-\begin{equation} r_{cos} = \frac{\sum_{i = 1}^{n} x y}{\sqrt{\sum_{i = 1}^{n} x^2}\sqrt{\sum_{i = 1}^{n} y^2}} \end{equation}
-gdzie r\textsubscript{cos} - to cos kąta pomiędzy wektorem x i y; x, y - rozpatrywane wektory; n - długość wektora.
-\ \\ \\ 
+By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miary podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie została zastosowana metoda bigramów !!!!!!!!!!!!!!Źródło!!!!!!!!!!!!!!!. Korzystając z tej metody obliczamy współczynnik podobieństwa dla dwu tekstów tej samej cechy tekstowej zgodnie ze wzorem:
+\begin{equation} s = \frac {2n_t}{n_1 + n_2} \end{equation}
+
+Gdzie s - wartość liczbowa będąca podobieństwem dwu tekstów zawierająca się w przedziale [0, 1], n\textsubscript{t} - liczba bigramów powatrzających się w obu tekstach,  n\textsubscript{1} - liczba bigramów utworzonych z pierwszego tekstu,  n\textsubscript{2} - liczba bigramów utworzonych z drugiego tekstu \\
+\newline
+Przykład:\\
+Dla obliczenia podobieństwa pomiędzy dwoma słowami: 'night', 'nacht' należy najpierw znaleźć dwa zbiory bigramów należących do każdego ze słów - \{ni, ig, gh, ht\},\{na, ac, ch, ht\}.
+Jedynym powtarzającym się bigramem jest 'ht'. Podstawiając wartości do wzoru otrzymujemy:
+\begin{equation} s = \frac {2 * 1}{4 + 4} = \frac{1}{4} \end{equation}
+
+Obliczone w ten sposób podobieństwo dwu cech tekstowych wykorzystywane jest do obliczenia odległości pomiędzy nimi:
+
+\begin{equation} d = s - 1 \end{equation}
+
+
+
 
 
 Wstępna klasyfikacja na ograniczonym zbiorze tekstów została przeprowadzona dla trzech różnych zestawów parametrów wejściowych. \newline
