@@ -364,7 +364,7 @@ Wybrane parametry przedstawione są w poniższej tabeli:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-6 & - & 90\% &  Wszystkie cechy\\
+4 & - & 90\% &  Wszystkie cechy\\
 \end {tabular}
 \label {Parametry wejściowe dla eksperymentu porównującego różne metryki. }
 \end{table}
@@ -379,34 +379,34 @@ Wybrane parametry przedstawione są w poniższej tabeli:
     \textbf{Metryka} & \textbf{Euklidesowa}   & \textbf{Czebyszewa}  & \textbf{Uliczna}  \\
 
 \hline
-West-germany Precission 	& 0,25 & 0,00 & 0,20 \\
-West-germany Recall 		& 0,04 & 0,00 & 0,04 \\
-West-germany F1		& 0,06 & 0,00 & 0,06 \\
+West-germany Precission 	& 0,00 & 0,00 & 0,20 \\
+West-germany Recall 		& 0,00 & 0,00 & 0,04 \\
+West-germany F1		& 0,00 & 0,00 & 0,06 \\
 \hline
-Usa Precission 			& 0,61 & 0,61 & 0,62 \\
-Usa Recall				& 0,98 & 0,98 & 0,99 \\
-Usa F1			 	& 0,75 & 0,76 & 0,76 \\
+Usa Precission 			& 0,62 & 0,63 & 0,62 \\
+Usa Recall				& 0,98 & 0,98 & 0,98 \\
+Usa F1			 	& 0,76 & 0,76 & 0,76 \\
 \hline
-France Precission 		& NaN & NaN & NaN \\
+France Precission 		& 0,00 & 0,00 & 0,00 \\
 France Recall 			& 0,00 & 0,00 & 0,00 \\
-France F1 				& NaN & NaN & NaN \\
+France F1 				& 0,00 & 0,00 & 0,00 \\
 \hline
-Uk Precission 			& 0,00 & 0,00 & 0,00 \\
-Uk Recall 				& 0,00 & 0,00 & 0,00 \\
-Uk F1 				& 0,00 & 0,00 & 0,00 \\
+Uk Precission 			& 0,40 & 0,33 & 0,40 \\
+Uk Recall 				& 0,06 & 0,09 & 0,06 \\
+Uk F1 				& 0,11 & 0,14 & 0,11 \\
 \hline
 Canada Precission		& 0,00 & 0,00 & NaN \\
 Canada Recall 			& 0,00 & 0,00 & 0,00 \\
 Canada F1 			& 0,00 & 0,00 & NaN \\
 \hline
-Japan Precission 		& 0,67 & 0,50 & 1,00 \\
-Japan Recall 			& 0,05 & 0,02 & 0,05 \\
-Japan F1 				& 0,09 & 0,04 & 0,09 \\
+Japan Precission 		& 0,00 & 0,50 & 0,33 \\
+Japan Recall 			& 0,00 & 0,02 & 0,02 \\
+Japan F1 				& 0,00 & 0,04 & 0,04 \\
 \hline
-Accuracy 				& 0,60 & 0,60 & 0,61 \\
-Precission 				& 0,47 & 0,43 & 0,50 \\
-Recall 				& 0,60 & 0,60 & 0,61 \\
-F1 					& 0,52 & 0,50 & 0,55 \\
+Accuracy 				& 0,60 & 0,61 & 0,61 \\
+Precission 				& 0,41 & 0,47 & 0,46 \\
+Recall 				& 0,60 & 0,61 & 0,61 \\
+F1 					& 0,49 & 0,53 & 0,53 \\
 
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych metryk.}
@@ -421,12 +421,12 @@ Metryki uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metr
 Następnym eksperymentem jest wykonanie klasyfikacji dla różnych podzbiorów cech. Pozostałe parametry pozostają niezmienne. W tym celu wybieramy sześć różnych zestawów cech. 
 
 \begin{enumerate}
-\item Autor z tagu Author, lokalizacja z tagu Dateline, tytuł z tagu Title, zbiór słów kluczowych
-\item Liczba słów, Autor z tagu Author, liczba unikalnych słów, data z tagu Dateline, najczęściej występująca nazwa kraju
-\item Lokalizacja z tagu Dateline, tytuł z tagu Title, zbiór słów kluczowych, najczęściej występujące słowo kluczowe
-\item Lokalizacja z tagu Dateline, tytuł z tagu Title
-\item Lokalizacja z tagu Dateline
-\item Tytuł z tagu Title
+\item Liczba słów, autor z tagu \textless Author\textgreater, liczba unikatowych słów, data z tagu \textless Dateline\textgreater, najczęściej występująca nazwa kraju
+\item Autor z tagu \textless Author\textgreater, lokalizacja z tagu \textless Dateline\textgreater, tytuł z tagu \textless Title\textgreater, zbiór występujących słów kluczowych
+\item Lokalizacja z tagu \textless Dateline\textgreater
+\item Tytuł z tagu \textless Title\textgreater
+\item Lokalizacja z tagu \textless Dateline\textgreater, tytuł z tagu \textless Title\textgreater
+\item Najczęściej występująca nazwa kraju, zbiór występujących słów kluczowych, liczba wystąpień słów kluczowych, nasycenie tekstu ilością słów kluczowych, najczęściej występujące słowo kluczowe 
 \end{enumerate}
 
 Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
@@ -438,7 +438,7 @@ Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-6 & Euklidesa & 90 & -\\
+4 & Euklidesa & 90 & -\\
 \end {tabular}
 \label {Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech. }
 \end{table}
@@ -453,34 +453,34 @@ Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
     \makecell{\textbf{Wybrany numer} \\\textbf{zestawu cech}} & \textbf{1} & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{6}\\
 
 \hline
-West-germany Precission 	& 1,00 & 0,20 & 1,00 & 1,00 & 1,00 & 1,00\\
-West-germany Recall 		& 0,81 & 0,04 & 0,78 & 0,89 & 0,96 & 0,26\\
-West-germany F1		& 0,90 & 0,06 & 0,88 & 0,94 & 0,98 & 0,41\\
+West-germany Precission 	& 0,00 & 1,00 & 1,00 & 0,71 & 1,00 & 0,22\\
+West-germany Recall 		& 0,00 & 0,85 & 0,93 & 0,37 & 0,96 & 0,07\\
+West-germany F1		& 0,00 & 0,92 & 0,96 & 0,49 & 0,98 & 0,11\\
 \hline
-Usa Precission 			& 0,87 & 0,62 & 0,87 & 0,94 & 0,93 & 0,72\\
-Usa Recall				& 1,00 & 0,98 & 1,00 & 1,00 & 1,00 & 0,99\\
-Usa F1			 	& 0,93 & 0,75 & 0,93 & 0,97 & 0,96 & 0,83\\
+Usa Precission 			& 0,62 & 0,92 & 0,93 & 0,73 & 0,93 & 0,64\\
+Usa Recall				& 0,98 & 1,00 & 1,00 & 0,97 & 1,00 & 0,90\\
+Usa F1			 	& 0,75 & 0,96 & 0,96 & 0,83 & 0,96 & 0,75\\
 \hline
-France Precission 		& 1,00 & Nan & 1,00 & 1,00 & 1,00 & 1,00\\
-France Recall 			& 0,64 & 0,00 & 0,64 & 1,00 & 1,00 & 0,36\\
-France F1 				& 0,78 & Nan & 0,78 & 1,00 & 1,00 & 0,53\\
+France Precission 		& 0,00 & 1,00 & 1,00 & 0,67 & 1,00 & 0,00\\
+France Recall 			& 0,00 & 1,00 & 1,00 & 0,18 & 1,00 & 0,00\\
+France F1 				& 0,00 & 1,00 & 1,00 & 0,29 & 1,00 & 0,00\\
 \hline
-Uk Precission 			& 1,00 & 0,33 & 0,94 & 1,00 & 1,00 & 0,67\\
-Uk Recall 				& 0,72 & 0,03 & 0,91 & 0,97 & 0,97 & 0,30\\
-Uk F1 				& 0,84 & 0,06 & 0,92 & 0,98 & 0,98 & 0,42\\
+Uk Precission 			& 0,67 & 1,00 & 1,00 & 0,55 & 1,00 & 0,08\\
+Uk Recall 				& 0,06 & 0,97 & 0,97 & 0,33 & 0,97 & 0,03\\
+Uk F1 				& 0,11 & 0,98 & 0,98 & 0,42 & 0,98 & 0,04\\
 \hline
-Canada Precission		& 1,00 & 0,00 & 1,00 & 0,97 & 1,00 & 0,50\\
-Canada Recall 			& 0,72 & 0,00 & 0,67 & 0,82 & 0,82 & 0,13\\
-Canada F1 			& 0,84 & 0,00 & 0,80 & 0,89 & 0,90 & 0,20\\
+Canada Precission		& 0,00 & 1,00 & 1,00 & 0,75 & 1,00 & 0,31\\
+Canada Recall 			& 0,00 & 0,79 & 0,85 & 0,23 & 0,85 & 0,10\\
+Canada F1 			& 0,00 & 0,89 & 0,92 & 0,35 & 0,92 & 0,15\\
 \hline
-Japan Precission 		& 1,00 & 1,00 & 1,00 & 1,00 & 1,00 & 0,96\\
-Japan Recall 			& 0,67 & 0,05 & 0,72 & 0,91 & 0,79 & 0,60\\
-Japan F1 				& 0,81 & 0,09 & 0,84 & 0,95 & 0,88 & 0,74\\
+Japan Precission 		& 0,00 & 0,97 & 0,97 & 0,76 & 0,97 & 0,67\\
+Japan Recall 			& 0,00 & 0,81 & 0,79 & 0,44 & 0,79 & 0,28\\
+Japan F1 				& 0,00 & 0,89 & 0,87 & 0,56 & 0,87 & 0,39\\
 \hline
-Accuracy 				& 0,91 & 0,61 & 0,90 & 0,96 & 0,95 & 0,74\\
-Precission 				& 0,92 & 0,53 & 0,92 & 0,96 & 0,96 & 0,75\\
-Recall 				& 0,91 & 0,61 & 0,90 & 0,96 & 0,95 & 0,74\\
-F1 					& 0,90 & 0,48 & 0,90 & 0,96 & 0,95 & 0,69\\
+Accuracy 				& 0,60 & 0,94 & 0,95 & 0,72 & 0,95 & 0,60\\
+Precission 				& 0,43 & 0,95 & 0,95 & 0,72 & 0,96 & 0,52\\
+Recall 				& 0,60 & 0,94 & 0,95 & 0,72 & 0,95 & 0,60\\
+F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
 
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych podzbiorów cech.}
@@ -503,7 +503,7 @@ Wybrane parametry przedstawione są w poniższej tabeli:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-6 & Uliczna & - &  \makecell{ Lokalizacja z tagu Dateline \\Tytuł z tagu Title}\\
+4 & Euklidesa & - &  \makecell{ 1. Lokalizacja z tagu \textless Dateline\textgreater \\2. Tytuł z tagu \textless Title\textgreater}\\
 \end {tabular}
 \label {Parametry wejściowe dla eksperymentu porównującego różne wartości proporcji podziału zbioru. }
 \end{table}
@@ -519,33 +519,33 @@ Wybrane parametry przedstawione są w poniższej tabeli:
 
 \hline
 West-germany Precission 	& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
-West-germany Recall 		& 0,04 & 0,33 & 0,52 & 0,85 & 0,96\\
-West-germany F1		& NaN & 0,50 & 0,68 & 0,92 & 0,98\\
+West-germany Recall 		& 0,00 & 0,48 & 0,48 & 0,74 & 0,96\\
+West-germany F1		& NaN & 0,65 & 0,65 & 0,85 & 0,98\\
 \hline
-Usa Precission 			& 0,67 & 0,72 & 0,85 & 0,91 & 0,96\\
+Usa Precission 			& 0,68 & 0,78 & 0,86 & 0,90 & 0,96\\
 Usa Recall				& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
-Usa F1			 	& 0,80 & 0,84 & 0,92 & 0,95 & 0,98\\
+Usa F1			 	& 0,81 & 0,88 & 0,92 & 0,95\4 & 0,98\\
 \hline
 France Precission 		& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
 France Recall 			& 0,00 & 1,00 & 1,00 & 1,00 & 1,00\\
 France F1 				& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
 \hline
-Uk Precission 			& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
+Uk Precission 			& 0,94 & 0,86 & 1,00 & 1,00 & 1,00\\
 Uk Recall 				& 0,97 & 0,97 & 0,97 & 0,97 & 0,97\\
-Uk F1 				& 0,98 & 0,98 & 0,98 & 0,98 & 0,98\\
+Uk F1 				& 0,96 & 0,91 & 0,98 & 0,98 & 0,98\\
 \hline
 Canada Precission		& NaN & 1,00 & 1,00 & 0,97 & 1,00\\
-Canada Recall 			& 0,00 & 0,13 & 0,54 & 0,72 & 0,85\\
-Canada F1 			& NaN & 0,23 & 0,70 & 0,82 & 0,92\\
+Canada Recall 			& 0,00 & 0,41 & 0,59 & 0,74 & 0,87\\
+Canada F1 			& NaN & 0,58 & 0,74 & 0,84 & 0,93\\
 \hline
-Japan Precission 		& 1,00 & 1,00 & 1,00 & 1,00 & 1,00\\
-Japan Recall 			& 0,02 & 0,02 & 0,79 & 0,81 & 0,93\\
-Japan F1 				& 0,05 & 0,05 & 0,88 & 0,90 & 0,96\\
+Japan Precission 		& 0,83 & 1,00 & 1,00 & 1,00 & 1,00\\
+Japan Recall 			& 0,12 & 0,19 & 0,79 & 0,79 & 0,93\\
+Japan F1 				& 0,20 & 0,31 & 0,88 & 0,88 & 0,96\\
 \hline
-Accuracy 				& 0,70 & 0,76 & 0,90 & 0,94 & 0,97\\
-Precission 				& 0,60 & 0,83 & 0,91 & 0,94 & 0,97\\
-Recall 				& 0,70 & 0,76 & 0,90 & 0,94 & 0,97\\
-F1 					& 0,58 & 0,68 & 0,89 & 0,93 & 0,97\\
+Accuracy 				& 0,71 & 0,81 & 0,90 & 0,93 & 0,97\\
+Precission 				& 0,59 & 0,85 & 0,91 & 0,93 & 0,98\\
+Recall 				& 0,71 & 0,81 & 0,90 & 0,93 & 0,97\\
+F1 					& 0,64 & 0,83 & 0,91 & 0,93 & 0,98\\
 
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru.}
