@@ -142,7 +142,6 @@ By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, nale�
 gdzie r\textsubscript{cos} - to cos kąta pomiędzy wektorem x i y; x, y - rozpatrywane wektory; n - długość wektora.
 \ \\ \\ 
 
-
 Wstępna klasyfikacja na ograniczonym zbiorze tekstów została przeprowadzona dla trzech różnych zestawów parametrów wejściowych. \newline
 Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
  
@@ -153,12 +152,10 @@ Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-5 & Czebyszewa & 80\% & Wszysktie cechy \\
+5 & Czebyszewa & 80\% & Wszystkie cechy \\
 \end {tabular}
 \label {Parametry wejściowe dla pierwszej wstępnej klasyfikacji. }
 \end{table}
-\newpage
-
 Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
 
 \begin{table}[h!]
@@ -169,7 +166,7 @@ Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
 
     \textbf{Liczba tekstów} &  \makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}}  & \textbf{Accuracy}\\
 \hline
-394 & 230 & 0,58\\
+394 & 238 & 0,60\\
 
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej.}
@@ -185,7 +182,7 @@ Parametry wejściowe dla drugiej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-3 & Euklidesowa & 95\% &  \makecell{1. Lokalizacja \\2. Tytuł\\3. Najczęściej występująca\\nazwa państwa\\4. Kluczowe słowa}\\
+3 & Euklidesowa & 95\% &  \makecell{1. Lokalizacja \\z tagu \textless Dateline\textgreater \\2. Tytuł \\z tagu \textless Title\textgreater\\3. Najczęściej występująca\\nazwa  kraju\\4.  Zbiór występujących\\słów kluczowych}\\
 \end {tabular}
 \label {Parametry wejściowe dla drugiej wstępnej klasyfikacji. }
 \end{table}
@@ -200,13 +197,13 @@ Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej:
 
     \textbf{Liczba tekstów} &\makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}} & \textbf{Accuracy}\\
 \hline
-394 & 295 & 0,75\\
+394 & 383 & 0,97\\
 
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej.}
 \end{table}
 
-
+\newpage
 Parametry wejściowe dla trzeciej klasyfikacji wstępnej:
  
 \begin{table}[h!]
@@ -216,7 +213,7 @@ Parametry wejściowe dla trzeciej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-9 & Uliczna & 73\% &  \makecell{1. Kluczowe słowa \\2. Liczba kluczowych słów\\3. Nasycenie tekstu\\słowami kluczowymi\\4. Najczęściej występujące \\słowo kluczowe}\\
+9 & Uliczna & 73\% &  \makecell{1.  Zbiór występujących\\słów kluczowych \\2.Liczba wystąpień \\słów kluczowych\\3. Nasycenie tekstu \\ilością słów kluczowych\\4. Najczęściej występujące \\słowo kluczowe}\\
 \end {tabular}
 \label {Parametry wejściowe dla trzeciej wstępnej klasyfikacji. }
 \end{table}
@@ -231,41 +228,13 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 
     \textbf{Liczba tekstów} &\makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}} & \textbf{Accuracy}\\
 \hline
-394 & 236 & 0,60\\
+394 & 235 & 0,60\\
 
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
 \end{table}
 
 Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to: kluczowe słowa, liczba kluczowych słów, nasycenie tekstu słowami kluczowymi, najczęściej występujące słowo kluczowe. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Budowa aplikacji}
-\subsection{Diagramy UML}
-
-Aplikacja będzie składała się z dwóch modułów: z modułu ekstrakcji cech oraz z modułu klasyfikacji. Moduł ekstrakcji wczytuje pliki z treścią artykułów. Następnie tworzone są obiekty artykułów. Dla każdego obiektu usuwane są słowa ze stop listy oraz kolejno tworzone są wektory cech artykułów. 
-
-\begin{figure}[h!]
- \centering
- \includegraphics[width=14cm]{Ekstrakcja.png}
- \vspace{-0.3cm}
- \caption{Diagram klas modułu ekstrakcji cech. }
- \label{rysunek do eksperymentu 1 wariantu 1}
-\end{figure}
-\newpage
-
-Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą podobieństwa kosinusowego. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
-
-\begin{figure}[h!]
- \centering
- \includegraphics[width=14cm]{Klasyfikator.png}
- \vspace{-0.3cm}
- \caption{Diagram klas modułu klasyfikacji. }
- \label{rysunek do eksperymentu 1 wariantu 1}
-\end{figure}
-
-\newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -343,37 +312,37 @@ W tym celu przyjęliśmy nastepujące parametry:
 \vspace{0.1cm}
  \begin{tabular}{c c c c c c c c c c c}
 
-    \textbf{K} & \textbf{1}   & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{7}   & \textbf{10}  & \textbf{20}  & \textbf{50}  & \textbf{100} \\
+    \textbf{K} & \textbf{1}   & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{6}   & \textbf{7}  & \textbf{8}  & \textbf{9}  & \textbf{50} \\
 
 \hline
-West-germany Precission 	& 0,23 & NaN & 0,00 & NaN  & NaN & NaN  & NaN & NaN & NaN  & NaN\\
-West-germany Recall 		& 0,11 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00\\
-West-germany F1		& 0,15 & NaN & 0,00 & NaN  & NaN & NaN  & NaN & NaN & NaN  & NaN \\
+West-germany Precission 	& 0,12 & NaN & 0,00 & 0,25 & 0,00 & NaN  & NaN & NaN & NaN  & NaN\\
+West-germany Recall 		& 0,07 & 0,00 & 0,00 & 0,04 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00\\
+West-germany F1		& 0,09 & NaN & 0,00 & 0,06 & 0,00 & NaN  & NaN & NaN & NaN  & NaN \\
 \hline
-Usa Precission 			& 0,63 & 0,61 & 0,61 & 0,62 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 \\
-Usa Recall				& 0,84 & 0,95 & 0,96 & 0,98 & 1,00 & 1,00 & 1,00 & 1,00 & 1,00 & 1,00 \\
-Usa F1			 	& 0,72 & 0,75 & 0,74 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 \\
+Usa Precission 			& 0,65 & 0,63 & 0,62 & 0,63 & 0,62 & 0,62 & 0,61 & 0,61 & 0,61 & 0,61 \\
+Usa Recall				& 0,89 & 0,97 & 0,99 & 1,00 & 1,00 & 1,00 & 0,99 & 1,00 & 1,00 & 1,00 \\
+Usa F1			 	& 0,75 & 0,76 & 0,76 & 0,77 & 0,77 & 0,76 & 0,76 & 0,76 & 0,76 & 0,76 \\
 \hline
-France Precission 		& 0,00 & NaN & 1,00 & NaN  & NaN  & NaN & NaN & NaN  & NaN & NaN \\
-France Recall 			& 0,00 & 0,00 & 0,09 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
-France F1 				& 0,00 & NaN & 0,17 & NaN  & NaN  & NaN & NaN & NaN  & NaN & NaN\\
+France Precission 		& 0,00 & NaN & NaN & NaN  & 0,00  & NaN & 0,33 & NaN  & NaN & NaN \\
+France Recall 			& 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,03 & 0,00 & 0,00 & 0,00 \\
+France F1 				& 0,00 & NaN & NaN & NaN  & 0,00 & NaN & 0,06 & NaN  & NaN & NaN\\
 \hline
-Uk Precission 			& 0,24 & 0,75 & 0,00 & 0,40 & NaN  & NaN & NaN & NaN  & NaN & NaN\\
-Uk Recall 				& 0,24 & 0,09 & 0,00 & 0,06 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00\\
-Uk F1 				& 0,24 & 0,16 & 0,00 & 0,11 & NaN  & NaN & NaN & NaN  & NaN & NaN \\
+Uk Precission 			& 0,31 & 0,80 & 1,00 & 0,75 & 1,00  & 1,00 & NaN & NaN  & NaN & NaN\\
+Uk Recall 				& 0,15 & 0,12 & 0,06 & 0,09 & 0,06 & 0,03 & 0,00 & 0,00 & 0,00 & 0,00\\
+Uk F1 				& 0,20 & 0,21 & 0,11 & 0,16 & 0,11  & 0,06 & NaN & NaN  & NaN & NaN \\
 \hline
-Canada Precission		& 0,10 & 0,00 & 0,00 & 0,50 & 0,00 & 0,00 & NaN & NaN  & NaN & NaN\\
-Canada Recall 			& 0,03 & 0,00 & 0,00 & 0,03 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
-Canada F1 			& 0,04 & 0,00 & 0,00 & 0,05 & 0,00 & 0,00 & NaN &NaN  & NaN & NaN \\
+Canada Precission		& 0,17 & 0,00 & 0,00 & 0,00 & NaN & NaN & 1,00 & NaN  & NaN & NaN\\
+Canada Recall 			& 0,05 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
+Canada F1 			& 0,08 & 0,00 & 0,00 & 0,00 & NaN & NaN & NaN &  NaN  & NaN & NaN \\
 \hline
-Japan Precission 		& 0,07 & 0,00 & NaN & 0,50 & NaN  & NaN & NaN & NaN & NaN & NaN \\
-Japan Recall 			& 0,02 & 0,00 & 0,00 & 0,05 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 & 0,00 \\
-Japan F1 				& 0,04 & 0,00 & NaN & 0,09 & NaN  & NaN & NaN & NaN & NaN & NaN\\
+Japan Precission 		& 0,38 & 0,10 & 0,00 & 0,50 & 0,50  & 0,50 & 1,00 & 1,00 & NaN & NaN \\
+Japan Recall 			& 0,07 & 0,02 & 0,00 & 0,02 & 0,02 & 0,02 & 0,02 & 0,02 & 0,00 & 0,00 \\
+Japan F1 				& 0,12 & 0,04 & 0,00 & 0,04 & 0,04  & 0,04 & 0,05 & 0,05 & NaN & NaN\\
 \hline
-Accuracy 				& 0,55 & 0,59 & 0,59 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 \\
-Precission 				& 0,44 & 0,44 & 0,40 & 0,52 & 0,37  & 0,37 & 0,37 &  0,37  & 0,37 & 0,37\\
-Recall 				& 0,55 & 0,59 & 0,59 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61 & 0,61  \\
-F1 					& 0,49 & 0,50 & 0,48 & 0,52 & 0,61 & 0,56 & 0,46 & 0,46 & 0,46 & 0,46\\
+Accuracy 				& 0,58 & 0,61 & 0,61 & 0,62 & 0,62 & 0,62 & 0,61 & 0,61 & 0,61 & 0,61 \\
+Precission 				& 0,49 & 0,46 & 0,46 & 0,52 & 0,52  & 0,52 & 0,51 &  0,48  & 0,37 & 0,37\\
+Recall 				& 0,58 & 0,61 & 0,61 & 0,62 & 0,62 & 0,62 & 0,61 & 0,61 & 0,61 & 0,61  \\
+F1 					& 0,53 & 0,52 & 0,53 & 0,57 & 0,56 & 0,56 & 0,56 & 0,54 & 0,46 & 0,46\\
 
 \end {tabular}
 \label {Wyniki klasyfikacji dla różnych wartości parametru k.}

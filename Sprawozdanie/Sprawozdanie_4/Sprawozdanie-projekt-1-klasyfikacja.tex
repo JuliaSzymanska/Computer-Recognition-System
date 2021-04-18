@@ -153,7 +153,7 @@ Parametry wejściowe dla pierwszej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-5 & Czebyszewa & 80\% & Wszysktie cechy \\
+5 & Czebyszewa & 80\% & Wszystkie cechy \\
 \end {tabular}
 \label {Parametry wejściowe dla pierwszej wstępnej klasyfikacji. }
 \end{table}
@@ -169,7 +169,7 @@ Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej:
 
     \textbf{Liczba tekstów} &  \makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}}  & \textbf{Accuracy}\\
 \hline
-394 & 230 & 0,58\\
+394 & 238 & 0,60\\
 
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla pierwszej klasyfikacji wstępnej.}
@@ -185,7 +185,7 @@ Parametry wejściowe dla drugiej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-3 & Euklidesowa & 95\% &  \makecell{1. Lokalizacja \\2. Tytuł\\3. Najczęściej występująca\\nazwa państwa\\4. Kluczowe słowa}\\
+3 & Euklidesowa & 95\% &  \makecell{1. Lokalizacja \\z tagu \textless Dateline\textgreater \\2. Tytuł \\z tagu \textless Title\textgreater\\3. Najczęściej występująca\\nazwa  kraju\\4.  Zbiór występujących\\słów kluczowych}\\
 \end {tabular}
 \label {Parametry wejściowe dla drugiej wstępnej klasyfikacji. }
 \end{table}
@@ -200,7 +200,7 @@ Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej:
 
     \textbf{Liczba tekstów} &\makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}} & \textbf{Accuracy}\\
 \hline
-394 & 295 & 0,75\\
+394 & 383 & 0,97\\
 
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla drugiej klasyfikacji wstępnej.}
@@ -216,7 +216,7 @@ Parametry wejściowe dla trzeciej klasyfikacji wstępnej:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-9 & Uliczna & 73\% &  \makecell{1. Kluczowe słowa \\2. Liczba kluczowych słów\\3. Nasycenie tekstu\\słowami kluczowymi\\4. Najczęściej występujące \\słowo kluczowe}\\
+9 & Uliczna & 73\% &  \makecell{1.  Zbiór występujących\\słów kluczowych \\2.Liczba wystąpień \\słów kluczowych\\3. Nasycenie tekstu \\ilością słów kluczowych\\4. Najczęściej występujące \\słowo kluczowe}\\
 \end {tabular}
 \label {Parametry wejściowe dla trzeciej wstępnej klasyfikacji. }
 \end{table}
@@ -231,11 +231,12 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 
     \textbf{Liczba tekstów} &\makecell{\textbf{Liczba poprawnie} \\\textbf{sklasyfikowanych tekstów}} & \textbf{Accuracy}\\
 \hline
-394 & 236 & 0,60\\
+394 & 235 & 0,60\\
 
 \end {tabular}
 \label {Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej.}
 \end{table}
+\newpage
 
 Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to: kluczowe słowa, liczba kluczowych słów, nasycenie tekstu słowami kluczowymi, najczęściej występujące słowo kluczowe. 
 
