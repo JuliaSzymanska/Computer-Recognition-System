@@ -15,17 +15,16 @@ public class Sorensen_Dice_Coefficient {
      * implementation actually treats multiple occurrences of a bigram as unique.
      * The correctness of this behavior is most easily seen when getting the
      * similarity between "GG" and "GGGGGGGG", which should obviously not be 1.
-     * @source https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient
      *
      * @param s The first string
      * @param t The second String
      * @return The dice coefficient between the two input strings. Returns 0 if one
-     *         or both of the strings are {@code null}. Also returns 0 if one or both
-     *         of the strings contain less than 2 characters and are not equal.
+     * or both of the strings are {@code null}. Also returns 0 if one or both
+     * of the strings contain less than 2 characters and are not equal.
+     * @source https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Dice%27s_coefficient
      * @author Jelle Fresen
      */
-    public static double diceCoefficientOptimized(String s, String t)
-    {
+    public static double diceCoefficientOptimized(String s, String t) {
         // Verifying the input:
         if (s == null || t == null)
             return 0;
@@ -37,12 +36,12 @@ public class Sorensen_Dice_Coefficient {
             return 0;
 
         // Create the bigrams for string s:
-        final int n = s.length()-1;
+        final int n = s.length() - 1;
         final int[] sPairs = new int[n];
         createBigrams(s, n, sPairs);
 
         // Create the bigrams for string t:
-        final int m = t.length()-1;
+        final int m = t.length() - 1;
         final int[] tPairs = new int[m];
         createBigrams(t, m, tPairs);
 
@@ -52,20 +51,17 @@ public class Sorensen_Dice_Coefficient {
 
         // Count the matches:
         int matches = 0, i = 0, j = 0;
-        while (i < n && j < m)
-        {
-            if (sPairs[i] == tPairs[j])
-            {
+        while (i < n && j < m) {
+            if (sPairs[i] == tPairs[j]) {
                 matches += 2;
                 i++;
                 j++;
-            }
-            else if (sPairs[i] < tPairs[j])
+            } else if (sPairs[i] < tPairs[j])
                 i++;
             else
                 j++;
         }
-        return (double)matches/(n+m);
+        return (double) matches / (n + m);
     }
 
     private static void createBigrams(String t, int m, int[] tPairs) {
@@ -73,9 +69,10 @@ public class Sorensen_Dice_Coefficient {
             if (i == 0)
                 tPairs[i] = t.charAt(i) << 16;
             else if (i == m)
-                tPairs[i-1] |= t.charAt(i);
+                tPairs[i - 1] |= t.charAt(i);
             else
-                tPairs[i] = (tPairs[i-1] |= t.charAt(i)) << 16;
+                tPairs[i] = (tPairs[i - 1] |= t.charAt(i)) << 16;
     }
+
 
 }
