@@ -257,7 +257,7 @@ Wstępne wyniki miary Accuracy dla trzeciej klasyfikacji wstępnej:
 \end{table}
 \newpage
 
-Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to: kluczowe słowa, liczba kluczowych słów, nasycenie tekstu słowami kluczowymi, najczęściej występujące słowo kluczowe. 
+Najlepsze wyniki zostały uzyskane dla drugiej wstępnej klasyfikacji, w której został ograniczony zbiór cech, wybrane cechy to:  Lokalizacja z tagu \textless Dateline\textgreater , Tytuł z tagu \textless Title\textgreater,  Najczęściej występująca nazwa  kraju,  Zbiór występujących słów kluczowych. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -409,7 +409,7 @@ F1 					& 0,53 & 0,52 & 0,53 & 0,57 & 0,56 & 0,56 & 0,56 & 0,54 & 0,46 & 0,46\\
  \label{wykres1}
 \end{figure}
 
-Różne wartości parametru k nie mają znacznego znaczenia dla dokładności klasyfikacji. Najgorszy wynik był dla wartości parametru od 9 wzwyż, a najlepszy dla wartości parametru = 4. Od wartości k równej 9 wszystkie obiekty zostały zaklasyfikowane do klasy USA, co możemy odczytać z wartości NaN przy obliczaniu precyzji. Wartość taka pojawia się przy dzieleniu przez 0, co oznacza że nie istniał taki obiekt który zostałby sklasyfikowany do danej klasy. \\
+Najgorszy wynik był dla wartości parametru od 9 wzwyż, a najlepszy dla wartości parametru równego 4. Od wartości k równej 9 wszystkie obiekty zostały zaklasyfikowane do klasy USA, co możemy odczytać z wartości NaN przy obliczaniu precyzji. Wartość taka pojawia się przy dzieleniu przez 0, co oznacza że nie istniał taki obiekt który zostałby sklasyfikowany do danej klasy. \\
 
 
 
@@ -566,7 +566,7 @@ F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
 \end{figure}
 
 
-Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu dateline. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które nieznacznie poprawiło jedynie dodanie do tej cechy Tytułu z tagu Title. Dodanie do tych dwu cech autora oraz zbioru cech kluczowych nieznacznie pogorszyło wynik. Inne cechy uzyskały znacznie gorsze wyniki  \\
+Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacja z tagu \textless Dateline\textgreater. Korzystając tylko z tej jednej cechy uzyskaliśmy prawie najlepsze wyniki, które nieznacznie poprawiło jedynie dodanie do tej cechy Tytułu z tagu \textless Title\textgreater. Dodanie do tych dwu cech autora oraz zbioru cech kluczowych nieznacznie pogorszyło wynik. Inne cechy uzyskały znacznie gorsze wyniki  \\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
