@@ -53,19 +53,18 @@ Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wa
 \end{equation}\\
 \begin{enumerate}
   \item Liczba słów - cecha ta oznacza liczbę słów które składają się na pobrany tekst. Cecha ta będzie charakteryzowała długość dokumentu w postaci liczby całkowitej \begin{equation}  c_1 = len \end{equation} gdzie len - liczba słów w tekście.\\
- 
- 
- \item Data z tagu  \textless Dateline\textgreater\ - Każdy tekst w swoim body posiada tag \textless Dateline\textgreater , w którym znajduje się miasto oraz data podana w postaci miesiąca i dnia. Data będzie konwertowana na wartość liczbową, gdzie liczbą tą będzie numer podanego dnia w ciągu roku, licząc rok tak jakby rok był rokiem przestępnym, przykładowo data 1 marca będzie reprezentowana poprzez wartość 61. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{3}.    \\
-  \item Lokacja z tagu \textless Dateline\textgreater - jak wyżej. Lokację traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{4}. \\
-  \item Tytuł z tagu \textless Title\textgreater - Każdy tekst w swoim body posiada tag \textless Title\textgreater. Tytuł traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{5}.\\
-  \item Autor z tagu \textless Author\textgreater - Większość tekstów w swoim body posiada tag \textless Author\textgreater. Autora traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{6}.\\
-  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekście nazwę kraju. Nazwy krajów pobieramy z dołączonego pliku all-places-strings.lc, przykładowo krajem występującym w pliku jest 'albania'.Nazwę kraju traktujemy jako cechę tekstową.Wartość będzie oznaczana poprzez symbol  c\textsubscript{7}.\\
-  \item Zbiór występujących słów kluczowych. Za słowa kluczowe przyjmujemy słowa znajdujące się w dołączonych plikach o rozszerzeniach .lc.txt. Cechę traktujemy jako cechę tekstową.  \begin{equation}  c_8 : c_8 \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu\\
-  \item Liczba wystąpień słów kluczowych - traktujemy jako cechę w postaci liczby całkowitej.\begin{equation}  c_9 = | c_8 | \end{equation} gdzie c\textsubscript{8} - zbiór występujących słów kluczowych\\
-  \item Nasycenie tekstu ilością słów kluczowych - traktujemy jako cechę w postaci liczby zmienno przecinkowej.  \begin{equation} c_{10} = c_9 / c_1 \end{equation}  gdzie c\textsubscript{9} - liczba wystąpień słów kluczowych w tekscie, c\textsubscript{1} - liczba słów w tekście\\
-  \item Najczęściej występujące słowo kluczowe - wybieramy najczęściej występujące w analizowanym tekście słowo kluczowe. Cechę traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{11}.\\
-  \item Liczba unikatowych słów - zliczamy liczbę unikatowych słów, to znaczy występujących dokładnie raz w analizowanym tekście. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{12}.\\
+ \item Data z tagu  \textless Dateline\textgreater\ - Każdy tekst w swoim body posiada tag \textless Dateline\textgreater , w którym znajduje się miasto oraz data podana w postaci miesiąca i dnia. Data będzie konwertowana na wartość liczbową, gdzie liczbą tą będzie numer podanego dnia w ciągu roku, licząc rok tak jakby rok był rokiem przestępnym, przykładowo data 1 marca będzie reprezentowana poprzez wartość 61. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{2}.    \\
+  \item Lokacja z tagu \textless Dateline\textgreater - jak wyżej. Lokację traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{3}. \\
+  \item Tytuł z tagu \textless Title\textgreater - Każdy tekst w swoim body posiada tag \textless Title\textgreater. Tytuł traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{4}.\\
+  \item Autor z tagu \textless Author\textgreater - Większość tekstów w swoim body posiada tag \textless Author\textgreater. Autora traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{5}.\\
+  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekście nazwę kraju. Nazwy krajów pobieramy z dołączonego pliku all-places-strings.lc, przykładowo krajem występującym w pliku jest 'albania'.Nazwę kraju traktujemy jako cechę tekstową.Wartość będzie oznaczana poprzez symbol  c\textsubscript{6}.\\
+  \item Zbiór występujących słów kluczowych. Za słowa kluczowe przyjmujemy słowa znajdujące się w dołączonych plikach o rozszerzeniach .lc.txt. Cechę traktujemy jako cechę tekstową.  \begin{equation}  c_7 : c_7 \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu\\
+  \item Liczba wystąpień słów kluczowych - traktujemy jako cechę w postaci liczby całkowitej.\begin{equation}  c_8 = | c_7 | \end{equation} gdzie c\textsubscript{8} - zbiór występujących słów kluczowych\\
+  \item Nasycenie tekstu ilością słów kluczowych - traktujemy jako cechę w postaci liczby zmienno przecinkowej.  \begin{equation} c_{9} = c_8 / c_1 \end{equation}  gdzie c\textsubscript{9} - liczba wystąpień słów kluczowych w tekscie, c\textsubscript{1} - liczba słów w tekście\\
+  \item Najczęściej występujące słowo kluczowe - wybieramy najczęściej występujące w analizowanym tekście słowo kluczowe. Cechę traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{10}.\\
+  \item Liczba unikatowych słów - zliczamy liczbę unikatowych słów, to znaczy występujących dokładnie raz w analizowanym tekście. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{11}.\\
 \end{enumerate}
+
 
 \ \\ \\
 Wektor cech będzie reprezentowany w postaci: 
@@ -95,10 +94,10 @@ W celu określenia jakości wykonanej klasyfikacji korzystamy z czterech miar ja
 
 We wzorach zostały użyte oznaczenia:
 \begin{itemize}
-\item TP - liczba poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy 
-\item TN - liczba poprawnie zaklasyfikowanych tekstów pozostałych klas
-\item FP - liczba tekstów pozostałych klas zaklasyfikowanych do rozpatrywanej klasy
-\item FN - liczba tekstów rozpatrywanej klasy zaklasyfikowanych do pozostałych klas
+\item TP - sumaryczna liczba poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy 
+\item TN - sumaryczna liczba poprawnie zaklasyfikowanych tekstów pozostałych klas
+\item FP - sumaryczna liczba tekstów pozostałych klas zaklasyfikowanych do rozpatrywanej klasy
+\item FN - sumaryczna liczba tekstów rozpatrywanej klasy zaklasyfikowanych do pozostałych klas
 \end{itemize}
 
 \ \\ \\ 
@@ -110,13 +109,12 @@ Stosowane miary jakości klasyfikacji:\\
 \begin{equation} PPV =  \frac{TP} {TP+FP} \end{equation} 
 Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych precyzji dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
 \begin{equation} PPV_{calk} = \sum_{n=1}^{m} (PPV_n *\frac{k_n}{k}) \end{equation}
-Gdzie PPV\textsubscript{calk} - precyzja obliczona dla wszystkich klas klasyfikowanych dokumentów,  m - liczba rozpatrywanych klas, PPV\textsubscript{n} - precyzja dla n-tej klasy, 
- k\textsubscript{n} - liczebność rzeczywista dokumentów klasy n, k - liczebność wszystkich klasyfikowanych dokumentów\\
+Gdzie \textit{PPV\textsubscript{calk}} - precyzja obliczona dla wszystkich klas klasyfikowanych dokumentów,  \textit{m} - liczba rozpatrywanych klas, \textit{PPV\textsubscript{n}} - precyzja dla n-tej klasy, \textit{k\textsubscript{n}} - liczebność rzeczywista dokumentów klasy n, \textit{k} - liczebność wszystkich klasyfikowanych dokumentów\\
 \item Czułość (ang. recall), TPR  - jest to stosunek liczby poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy do liczby tekstów z rozpatrywanej klasy. 
  \begin{equation}   TPR = \frac{TP}{TP + FN} \end{equation}
 Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych czułości dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
 \begin{equation} TPR_{calk} = \sum_{n=1}^{m} (TPR_n *\frac{k_n}{k}) \end{equation}
-Gdzie TPR\textsubscript{calk} - czułość obliczona dla wszystkich klas klasyfikowanych dokumentów,  m - liczba rozpatrywanych klas, TPR\textsubscript{n} - czułość dla n-tej klasy,  k\textsubscript{n} - liczebność rzeczywista dokumentów klasy n, k - liczebność wszystkich klasyfikowanych dokumentów\\
+Gdzie \textit{TPR\textsubscript{calk}} - czułość obliczona dla wszystkich klas klasyfikowanych dokumentów,  \textit{m} - liczba rozpatrywanych klas, \textit{TPR\textsubscript{n}} - czułość dla n-tej klasy,  \textit{k\textsubscript{n}} - liczebność rzeczywista dokumentów klasy n, \textit{k} - liczebność wszystkich klasyfikowanych dokumentów\\
 \item Miara F1 - średnia harmoniczna miar Precyzja i Czułość. 
 \begin{equation}   F1 = \frac{2}{\frac{1}{PPV} + \frac{1}{TPR}} \end{equation}
 \end{itemize}
@@ -126,35 +124,28 @@ Gdzie TPR\textsubscript{calk} - czułość obliczona dla wszystkich klas klasyfi
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
 
 W procesie klasyfikacji możliwe jest wykorzystanie jednej z trzech metryk: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. Metryki służą obliczeniu odległości pomiędzy dwoma wektora o dowolnym rozmiarze.\\\\ Metryka Eukliedesowa\cite{dane} jest opisana wzorem: 
-\begin{equation} d(x, y) = \sqrt{(y_1 - x_1)^2 + ... + (y_n - x_n)^2}  \end{equation}
-gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
+\begin{equation} d(x, y) = \sqrt{(y_1 -^* x_1)^2 + ... + (y_n -^* x_n)^2}  \end{equation}
+gdzie: \textit{d(x, y)} - odległość pomiędzy wektorem \textit{x} i \textit{y}; \textit{x}, \textit{y} - wektory o tym samym rozmiarze; \textit{n} - rozmiar wektorów \textit{x} i \textit{y};  \textit{x\textsubscript{n}}, \textit{y\textsubscript{n}} - składowe wektora, \textit{-\textsuperscript{*}} - dla dwóch liczb rzeczywistych odejmowanie klasyczne,  dla wartości tekstowych jest to wynik działania funkcji opisanej wzorem \ref{eqn:odl} przy użyciu miary podobieństwa \ref{eqn:pod}.
 \\\\
 Metryka Czebyszewa\cite{dane} jest opisana wzorem: 
-\begin{equation} d(x, y) = max(|y_i - x_i|) \end{equation}
-gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{i}, y\textsubscript{i} - i-ta składowa wektora;
+\begin{equation} d(x, y) = max(|y_i -^* x_i|) \end{equation}
+gdzie:  \textit{d(x, y)} - odległość pomiędzy wektorem  \textit{x} i \textit{y}; \textit{x}, \textit{y} - wektory o tym samym rozmiarze; \textit{n} - rozmiar wektorów \textit{x} i \textit{y};   \textit{x\textsubscript{i}},  \textit{y\textsubscript{i}} - i-ta składowa wektora, \textit{-\textsuperscript{*}} - dla dwóch liczb rzeczywistych odejmowanie klasyczne,  dla wartości tekstowych jest to wynik działania funkcji opisanej wzorem \ref{eqn:odl} przy użyciu miary podobieństwa \ref{eqn:pod}.
 \\\\
 Metryka Uliczna\cite{dane} jest opisana wzorem: 
-\begin{equation} d(x, y) = \sum_{i = 1}^{n} |x_i - y_i| \end{equation}
-gdzie: d(x, y) - odległość pomiędzy wektorem x i y; x, y - wektory o tym samym rozmiarze; n - rozmiar wektorów x i y;  x\textsubscript{n}, y\textsubscript{n} - składowe wektora. 
+\begin{equation} d(x, y) = \sum_{i = 1}^{n} |x_i -^* y_i| \end{equation}
+gdzie: \textit{d(x, y)} - odległość pomiędzy wektorem \textit{x} i \textit{y}; \textit{x}, \textit{y} - wektory o tym samym rozmiarze; \textit{n} - rozmiar wektorów \textit{x} i \textit{y};  \textit{x\textsubscript{n}}, \textit{y\textsubscript{n}} - składowe wektora, \textit{-\textsuperscript{*}} - dla dwóch liczb rzeczywistych odejmowanie klasyczne,  dla wartości tekstowych jest to wynik działania funkcji opisanej wzorem \ref{eqn:odl} przy użyciu miary podobieństwa \ref{eqn:pod}.
 \\\\
 By móc obliczyć odległość pomiędzy wektorami cech zadanych tekstów, należy wcześniej skorzystać z miary podobieństwa tekstu by zamienić cechy o wartościach tekstowych na liczby w wektorach. W programie została zastosowana metoda bigramów\cite{wyklad}. Korzystając z tej metody obliczamy współczynnik podobieństwa tej samej cechy tekstowej dla dwóch tekstów zgodnie ze wzorem:
-\begin{equation} s = \frac {1}{N - 1}  \sum_{i = 0}^{N-1}h(i) \end{equation}
+\begin{equation}\label{eqn:pod} s = \frac {1}{N - 1}  \sum_{i = 0}^{N-1}h(i) \end{equation}
 
-Gdzie s - wartość liczbowa będąca podobieństwem cechy tekstowej obu dokumentów zawierająca się w przedziale [0, 1], N - długość dłuższej cechy tekstowej z obu dokumentów, h(i) - przyjmuje wartość 1 gdy podciąg zaczynający się od i-tej pozycji w jednej cesze tekstowej dokumentu występuje w cesze tekstowej drugiego dokumentu, w przeciwnym wypadku przyjmuje wartość 0.
+Gdzie \textit{s} - wartość liczbowa będąca podobieństwem cechy tekstowej obu dokumentów zawierająca się w przedziale [0, 1], \textit{N} - długość dłuższej cechy tekstowej z obu dokumentów, \textit{h(i)} - przyjmuje wartość 1 gdy podciąg zaczynający się od i-tej pozycji w jednej cesze tekstowej dokumentu występuje w cesze tekstowej drugiego dokumentu, w przeciwnym wypadku przyjmuje wartość 0.
 \newline
-
-
-\textbf{Przykład 3.1}\textit{
-Dla obliczenia podobieństwa pomiędzy dwoma słowami: 'night', 'nacht' należy najpierw znaleźć dwa zbiory bigramów należących do każdego ze słów - \{ni, ig, gh, ht\},\{na, ac, ch, ht\}.
-Jedynym powtarzającym się bigramem jest 'ht'. Podstawiając wartości do wzoru otrzymujemy:
-\begin{equation} s = \frac {0 + 0 + 0 + 1}{5 - 1} = \frac{1}{4} \end{equation}
-}
 
 Obliczone w ten sposób podobieństwo cechy tekstowej dla dwóch tekstów wykorzystywane jest do obliczenia odległości pomiędzy nimi:
 
-\begin{equation} d = s - 1 \end{equation}
+\begin{equation}\label{eqn:odl}d = 1 - s \end{equation}
 
-Gdzie d - odległość cechy tekstowej obu dokumentów, s - podobieństwo cechy tekstowej obu dokumentów.\\
+Gdzie \textit{d} - odległość cechy tekstowej obu dokumentów, \textit{s} - podobieństwo cechy tekstowej obu dokumentów.\\
 \newline
 
 
@@ -405,7 +396,7 @@ F1 					& 0,53 & 0,52 & 0,53 & 0,57 & 0,56 & 0,56 & 0,56 & 0,54 & 0,46 & 0,46\\
  \centering
  \includegraphics[width=15cm]{wykres_k.png}
  \vspace{-0.3cm}
- \caption{Wykres wyników klasyfikacji dla różnych wartości parametru k.}
+ \caption{Wykres przedstawia zależność miar Accuracy, Precision, Recall, i F1 od wartości parametru k.}
  \label{wykres1}
 \end{figure}
 
@@ -479,7 +470,7 @@ F1 					& 0,49 & 0,53 & 0,53 \\
  \centering
  \includegraphics[width=15cm]{wykres_metryka.png}
  \vspace{-0.3cm}
- \caption{Wykres wyników klasyfikacji dla różnych metryk.}
+ \caption{Wykres przedstawia zależność miar Accuracy, Precision, Recall, i F1 od metryki.}
  \label{wykres2}
 \end{figure}
 
@@ -489,15 +480,6 @@ Metryki uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Następnym eksperymentem jest wykonanie klasyfikacji dla różnych podzbiorów cech. Pozostałe parametry pozostają niezmienne. W tym celu wybieramy sześć różnych zestawów cech. 
-
-\begin{enumerate}
-\item Liczba słów, autor z tagu \textless Author\textgreater, liczba unikatowych słów, data z tagu \textless Dateline\textgreater, najczęściej występująca nazwa kraju
-\item Autor z tagu \textless Author\textgreater, lokalizacja z tagu \textless Dateline\textgreater, tytuł z tagu \textless Title\textgreater, zbiór występujących słów kluczowych
-\item Lokalizacja z tagu \textless Dateline\textgreater
-\item Tytuł z tagu \textless Title\textgreater
-\item Lokalizacja z tagu \textless Dateline\textgreater, tytuł z tagu \textless Title\textgreater
-\item Najczęściej występująca nazwa kraju, zbiór występujących słów kluczowych, liczba wystąpień słów kluczowych, nasycenie tekstu ilością słów kluczowych, najczęściej występujące słowo kluczowe 
-\end{enumerate}
 
 Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
  
@@ -519,7 +501,8 @@ Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
 \vspace{0.1cm}
  \begin{tabular}{c c c c c c c}
 
-    \makecell{\textbf{Wybrany numer} \\\textbf{zestawu cech}} & \textbf{1} & \textbf{2}  & \textbf{3}  & \textbf{4}  & \textbf{5} & \textbf{6}\\
+    \makecell{\textbf{Wybrany numer} \\\textbf{zestawu cech}} & \makecell{\textbf{c\textsubscript{1},  c\textsubscript{2}, c\textsubscript{5},} \\\textbf{ c\textsubscript{6}, c\textsubscript{11}}} & \makecell{\textbf{c\textsubscript{3},  c\textsubscript{4},} \\ \textbf{c\textsubscript{5},  c\textsubscript{7}}}  & \textbf{ c\textsubscript{3}}  & \textbf{ c\textsubscript{4}}  & \textbf{ c\textsubscript{3},  c\textsubscript{4}} & 
+\makecell{\textbf{c\textsubscript{6}, c\textsubscript{7}, c\textsubscript{8},} \\\textbf{ c\textsubscript{9}, c\textsubscript{10}}} \\
 
 \hline
 West-germany Precision 	& 0,00 & 1,00 & 1,00 & 0,71 & 1,00 & 0,22\\
@@ -561,7 +544,7 @@ F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
  \centering
  \includegraphics[width=15cm]{wykres_cechy.png}
  \vspace{-0.3cm}
- \caption{Wykres wyników klasyfikacji dla różnych podzbiorów cech.}
+ \caption{Wykres przedstawia zależność miar Accuracy, Precision, Recall, i F1 od podzbioru cech.}
  \label{wykres3}
 \end{figure}
 
@@ -582,7 +565,7 @@ Wybrane parametry przedstawione są w poniższej tabeli:
  \begin{tabular}{c c c c}
     \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
 \hline
-4 & Euklidesa & - &  \makecell{ 1. Lokalizacja z tagu \textless Dateline\textgreater \\2. Tytuł z tagu \textless Title\textgreater}\\
+4 & Euklidesa & - &  c\textsubscript{4}, c\textsubscript{5}\\
 \end {tabular}
 \label {Parametry wejściowe dla eksperymentu porównującego różne wartości proporcji podziału zbioru. }
 \end{table}
@@ -636,7 +619,7 @@ F1 					& 0,64 & 0,83 & 0,91 & 0,93 & 0,98\\
  \centering
  \includegraphics[width=15cm]{wykres_proporcje.png}
  \vspace{-0.3cm}
- \caption{Wykres wyników klasyfikacji dla różnych wartości proporcji podziału zbioru.}
+ \caption{Wykres przedstawia zależność miar Accuracy, Precision, Recall, i F1 od proporcji podziału zbioru.}
  \label{wykres4}
 \end{figure}
 
