@@ -7,6 +7,13 @@
 \BOOKMARK [2][-]{subsection.4.1}{Diagramy UML}{section.4}% 7
 \BOOKMARK [2][-]{subsection.4.2}{Prezentacja wynik\363w, interfejs uzytkownika}{section.4}% 8
 \BOOKMARK [1][-]{section.5}{Wyniki klasyfikacji dla r\363znych parametr\363w wejsciowych}{}% 9
-\BOOKMARK [1][-]{section.6}{Dyskusja, wnioski}{}% 10
-\BOOKMARK [1][-]{section.7}{Braki w realizacji projektu 1.}{}% 11
-\BOOKMARK [1][-]{section*.1}{Literatura}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Eksperyment 1 - Wp\233yw wartosci parametru k na miary jakosci klasyfikacji}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Eksperyment 2 - Wp\233yw wyboru metryki na miary jakosci klasyfikacji}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Eksperyment 3 - Wp\233yw wyboru zestawu cech na miary jakosci klasyfikacji}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.4}{Eksperyment 4 - Wp\233yw wartosci proporcji podzia\233u zbioru na miary jakosci klasyfikacji}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.5}{Eksperyment 5 - Wp\233yw wyboru metryki na miary jakosci klasyfikacji przy ograniczonym zbiorze cech}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Dyskusja, wnioski}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{Wp\233yw wartosci parametru k na miary jakosc klasyfikacji}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.2}{Wp\233yw wyboru metryki na miary jakosci klasyfikacji}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{Braki w realizacji projektu 1.}{}% 18
+\BOOKMARK [1][-]{section*.1}{Literatura}{}% 19
