@@ -600,15 +600,15 @@ France Precision 		& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
 France Recall 			& 0,00 & 1,00 & 1,00 & 1,00 & 1,00\\
 France F1 				& NaN & 1,00 & 1,00 & 1,00 & 1,00\\
 \hline
-Uk Precis=sion 			& 0,94 & 0,86 & 1,00 & 1,00 & 1,00\\
+Uk Precision 			& 0,94 & 0,86 & 1,00 & 1,00 & 1,00\\
 Uk Recall 				& 0,97 & 0,97 & 0,97 & 0,97 & 0,97\\
 Uk F1 				& 0,96 & 0,91 & 0,98 & 0,98 & 0,98\\
 \hline
-Canada Precis=sion		& NaN & 1,00 & 1,00 & 0,97 & 1,00\\
+Canada Precision		& NaN & 1,00 & 1,00 & 0,97 & 1,00\\
 Canada Recall 			& 0,00 & 0,41 & 0,59 & 0,74 & 0,87\\
 Canada F1 			& NaN & 0,58 & 0,74 & 0,84 & 0,93\\
 \hline
-Japan Precis=sion 		& 0,83 & 1,00 & 1,00 & 1,00 & 1,00\\
+Japan Precision  		& 0,83 & 1,00 & 1,00 & 1,00 & 1,00\\
 Japan Recall 			& 0,12 & 0,19 & 0,79 & 0,79 & 0,93\\
 Japan F1 				& 0,20 & 0,31 & 0,88 & 0,88 & 0,96\\
 \hline
@@ -713,22 +713,45 @@ Metryka Euklidesowa i Uliczba uzyskały zbliżone wyniki, spośród nich najleps
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dyskusja, wnioski}
+\subsection{Dyskusja}
 
-\subsection{Wpływ wartości parametru k na miary jakość klasyfikacji}
-W sekcji \ref{subsection:ex1} badającej wpływ wartości parametru k na miary jakość klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że wartość miary accuracy zmienia się wraz ze zmianą wartości paramatru k. Jakość klasyfikacji wzrasta wraz ze wzrostem wartości parametru k, aż do osiągnięcia wartości maksymalnej. Następnie jakość klasyfikacji zaczyna spadać, aż do momentu ustabilizowania się. Po ustabilizowaniu się, zwiększanie parametru k nie wpływa na jakość klasyfikacji. Po przeanalizowaniu wartości precision i recall dla pojedynczych klas w Tabeli \ref{t1} zauważamy, że zmniejszanie się jakości klasyfikacji przy zwiększaniu wartości parametru k jest spowodowane coraz częstszym przyporządkowywaniem elementów do klasy USA. Stabilizowanie się jakości klasyfikacji po wartości progowej parametru k jest wynikiem przyporządkowywania wszystkich elementów do klasy USA. Dla każdej klasy, oprócz klasy USA, wartość recall maleje wraz ze wzrostem parametru k, dla klasy USA wartość miary recall wzrasta aż do osiągnięcia wartości maksymalnej (1.00). Dominacja klasy USA wynika z faktu, że teksty z klasy USA stanowią około 61\% wszystkich klasyfikowanych tekstów. Z tego powodu przy największych wartościach parametru k wartość miary accuracy wynosi okolo 0.61, co wskazuje, że wszystkie teksty zostały zaklasyfikowane do klasy USA. Wartość parametru k ma zauważalny wpływ na jakość klasyfikacji. Dla badanej klasyfikacji oraz dla klasyfikacji o podobnym charakterze istotne jest dobranie odpowiedniej wartości parametru k.
+\subsubsection{Wpływ wartości parametru k na miary jakość klasyfikacji}
+W sekcji \ref{subsection:ex1} badającej wpływ wartości parametru \textit{k} na miary jakość klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że wartość miary \textit{accuracy} zmienia się wraz ze zmianą wartości paramatru \textit{k}. Jakość klasyfikacji wzrasta wraz ze wzrostem wartości parametru \textit{k}, aż do osiągnięcia wartości maksymalnej. Następnie jakość klasyfikacji zaczyna spadać, aż do momentu ustabilizowania się. Po ustabilizowaniu się, zwiększanie parametru \textit{k} nie wpływa na jakość klasyfikacji. Po przeanalizowaniu wartości \textit{precision} i \textit{recall} dla pojedynczych klas w Tabeli \ref{t1} zauważamy, że zmniejszanie się jakości klasyfikacji przy zwiększaniu wartości parametru \textit{k} jest spowodowane coraz częstszym przyporządkowywaniem elementów do klasy USA. Stabilizowanie się jakości klasyfikacji po wartości progowej parametru \textit{k} jest wynikiem przyporządkowywania wszystkich elementów do klasy USA. Dla każdej klasy, oprócz klasy USA, wartość \textit{recall} maleje wraz ze wzrostem parametru \textit{k}, dla klasy USA wartość miary \textit{recall} wzrasta aż do osiągnięcia wartości maksymalnej (1.00). Dominacja klasy USA wynika z faktu, że teksty z klasy USA stanowią około 61\% wszystkich klasyfikowanych tekstów. Z tego powodu przy największych wartościach parametru \textit{k} wartość miary \textit{accuracy} wynosi okolo 0.61, co wskazuje, że wszystkie teksty zostały zaklasyfikowane do klasy USA. Wartość parametru \textit{k} ma zauważalny wpływ na jakość klasyfikacji. Dla badanej klasyfikacji oraz dla klasyfikacji o podobnym charakterze istotne jest dobranie odpowiedniej wartości parametru \textit{k}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Wpływ wyboru metryki na miary jakości klasyfikacji}
-W sekcji \ref{subsection:ex2} zostały porównane trzy metryki: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. W eksperymencie przyjeliśmy wartość parametru k równą 4, ponieważ w sekcji \ref{subsection:ex1}  ta wartość okazała się być wartością, dla której dla zadanego zbioru dokumentów jakość klasyfikacji była najlepsza. Na podstawie Wykresu \ref{wykres2} zauważamy, że najgorzej wypadającą metryką jest metryka Euklidesowa. Dla metryki Czebyszewa i Ulicznej na podstawie Wykresu \ref{wykres2} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t2}, zauważamy, że metryka Czebyszewa i Uliczna uzyskały niemalże takie same wyniki, jedyną różniącą się miarą była precision gdzie metryka Czebyszewa uzyskała wynik lepszy o mniej niż jeden procent.
+\subsubsection{Wpływ wyboru metryki na miary jakości klasyfikacji}
+W sekcji \ref{subsection:ex2} zostały porównane trzy metryki: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. W eksperymencie przyjeliśmy wartość parametru \textit{k} równą 4, ponieważ w sekcji \ref{subsection:ex1}  ta wartość okazała się być wartością, dla której dla zadanego zbioru dokumentów jakość klasyfikacji była najlepsza. Na podstawie Wykresu \ref{wykres2} zauważamy, że najgorzej wypadającą metryką jest metryka Euklidesowa. Dla metryki Czebyszewa i Ulicznej na podstawie Wykresu \ref{wykres2} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t2}, zauważamy, że metryka Czebyszewa i Uliczna uzyskały niemalże takie same wyniki, jedyną różniącą się miarą była \textit{precision} gdzie metryka Czebyszewa uzyskała wynik lepszy o mniej niż jeden procent.
 \newline
 Ze względy na uzyskane wyniki podczas opracowywania wyniosków postanowiliśmy przeprowadzić kolejny eksperyment. W tym eksperymencie jako parametr przekazaliśmy ograniczony zbiór cech, który w sekcji \ref{subsection:ex3} należał do jednego z trzech zbiorów cech, które uzyskały najlepsze wyniki klasyfikacji i równocześnie podany zbiór cech zawierał najwięcej cech, natomiast pozostałe parametry wejściowe są identycznej jak w sekcji \ref{subsection:ex5}.  Na podstawie Wykresu \ref{wykres5} zauważamy, że najgorzej wypadającą metryką jest metryka Czebyszewa. Dla metryki Euklidesowej i Ulicznej na podstawie Wykresu \ref{wykres5} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t5}, zauważamy, że metryka Euklidesowa i Uliczna uzyskały niemalże takie same wyniki, gdzie róznica wyniosła mniej niż jeden procent i wystąpiła we wszystkich miarach jakości.
 \newline
 Po podsumowaniu wyników z obu sekcji stwierdzamy, że najlepszą z metryk jest metryka Uliczna. Na podstawie wyników wnioskujemy, że metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Uliczna i Euklidesowa, ponieważ metryka ta jako odleglość wybiera pare cech, dla których odległość jest największa. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Wpływ wyboru zestwu cech na miary jakości klasyfikacji}
+\subsubsection{Wpływ wyboru zestwu cech na miary jakości klasyfikacji}
 
-W sekcji \ref{subsection:ex3} porównaliśmy sześć zestawów cech. Do porównania przyjęliśmy stałe parametry: wartość k równą 4, metrykę euklidesową i proporcje zbioru trenującego do testowego 90:10. W zależności od wyboru zestawu cech wyniki klasyfikacji były diametralnie rózne. Najlepsze wyniki uzyskaliśmy dla zestawów cech zawierających cechę c\textsubscript{3} -  lokacja z tagu \textless Dateline\textgreater. Dodanie do tej cechy cechy c\textsubscript{4} -  tytuł z tagu \textless Dateline\textgreater  nieznacznie poprawiło wynik klasyfikacji, jednak cecha ta samodzielnie uzyskała wynik dużo gorszy niż cecha c\textsubscript{3}. Najlepsze wyniki klasyfikacji uzyskaliśmy używając cech  tekstowych, bez użycia cech liczbowych. Cechy liczbowe bardzo pogarszały jakość klasyfikacji, prawdopodobnie wynika to z faktu, że odległość pomiędzy cechami tekstowymi przy wykorzystanych przez nas metodach zawsze znajduje się w przedziale \textless 0,1\textgreater , podczas gry odległość dla cech liczbowych może być znacznie większa, więc cechy te dominują cechy tekstowe. Nie znaleźliśmy dobrego sposobu na poradzenie sobie z tym problemem. Jednym z mozliwych rozwiązań mogło by być zastosowanie wag dla odpowiednich cech.
+W sekcji \ref{subsection:ex3} porównaliśmy sześć zestawów cech. Do porównania przyjęliśmy stałe parametry: wartość \textit{k} równą 4, metrykę Euklidesową i proporcje zbioru trenującego do testowego 90:10. W zależności od wyboru zestawu cech wyniki klasyfikacji były diametralnie rózne. Najlepsze wyniki uzyskaliśmy dla zestawów cech zawierających cechę c\textsubscript{3} -  lokacja z tagu \textless Dateline\textgreater. Dodanie do tej cechy cechy c\textsubscript{4} -  tytuł z tagu \textless Dateline\textgreater nieznacznie poprawiło wynik klasyfikacji, jednak cecha ta samodzielnie uzyskała wynik dużo gorszy niż cecha c\textsubscript{3}. Najlepsze wyniki klasyfikacji uzyskaliśmy używając cech  tekstowych, bez użycia cech liczbowych. Cechy liczbowe dawały gorsze wyniki jakości klasyfikacji niż cechy tekstowe. Cechy liczbowe bardzo pogarszały jakość klasyfikacji, co widać po porównaniu jakości klasyfikacji dla zestawu cech c1, c4, c5 oraz c3, c4, prawdopodobnie wynika to z faktu, że odległość pomiędzy cechami tekstowymi w wykorzystanej przez nas funkcji opisanej wzorem \ref{eqn:odl} zawsze znajduje się w przedziale \textless 0,1\textgreater , podczas gry odległość dla cech liczbowych może być znacznie większa, więc cechy te dominują cechy tekstowe. Jednym z możliwych rozwiązań mogłoby być zastosowanie wag dla odpowiednich cech, natomiast to rozwiązanie nie zostało zaimplemenetowane w naszym programie. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Wpływ wartości proporcji podziału zbioru na miary jakości klasyfikacji}
+W sekcji \ref{subsection:ex4} badającej wpływ wartości proporcji podziału zbioru na miary jakości klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym wyniki miar jakości klasyfikacji sa wyższe. Im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym większa szansa, że w zbiorze treningowym znajdziemy tekst podobny dla tekstu ze zbioru testowego. Analizując dane w Tabeli \ref{t3} zauważamy, że dla klas USA oraz UK, dla każdej wartości proporcji zbiorów wartość miary jakości klasyfikacji \textit{recall} jest stała. Natomiast dla pozostałych klas wartość miary \textit{recall} rośnie wraz ze wzrostem proporcji zbiorów. Klasy, dla których liczba tekstów w zbiorze treningowym jest mniejsza potrzebują do poprawnej klasyfikacji większej proporcji tekstów treningowych do tekstów testowych niż klasy o dużej liczbie tekstów w zbiorze treningowym. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wnioski}
+\begin{itemize}
+\item Aby przeanalizować wyniki klasyfikacji nie należy jedynie kierować się miarą \textit{accuracy}. Pod uwagę należy również wziąć miary \textit{precision}, \textit{recall} oraz \textit{F1}. 
+\item Przy wykonywaniu klasyfikacji należy dobrać odpowiednie wartości parametrów wejściowych dal danego zadania.
+\item Należy dobrać odpowiednią wartość parametru \textit{k}, ponieważ zbyt mała, bądź zbyt duża wartość tego parametru pogarsza wyniki klasyfikacji. 
+\item Parametr \textit{k} posiada wartość progrową, dla której zwiększanie wartości teg parametru nie powoduje zwiększania się jakości klasyfikacji, ponieważ wszystkie klasyfikowane elementy zostają zaklasyfikowane do klasy dominującej, przy czym klasa dominująca to klasa, która posiada najwięcej elementów w zbiorze treningowym. 
+\item Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Euklidesowa i Uliczna.
+\item Metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. 
+\item Metryka Uliczna uzyskuje najlepsze wyniki klasyfikacji z testowanych metryk.
+\item Cechy tekstowe dają lepsze wyniki niż cechy liczbowe. 
+\item Zestawu cech jest najbardziej znaczącym parametrem wejściowym.
+\item Im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym wyniki miar jakości klasyfikacji sa wyższe.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
