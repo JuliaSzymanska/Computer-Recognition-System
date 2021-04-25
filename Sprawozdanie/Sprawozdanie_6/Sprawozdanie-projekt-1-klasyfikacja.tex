@@ -465,7 +465,7 @@ Recall 				& 0,60 & 0,61 & 0,61 \\
 F1 					& 0,49 & 0,53 & 0,53 \\
 
 \end {tabular}
-\label {Wyniki klasyfikacji dla różnych metryk.}
+\label {t2}
 \end{table}
 
 \newpage
@@ -484,6 +484,7 @@ Metryki uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Eksperyment 3 - Wpływ wyboru zestawu cech na miary jakości klasyfikacji}
+\label{subsection:ex3}
 Następnym eksperymentem jest wykonanie klasyfikacji dla różnych podzbiorów cech. Pozostałe parametry pozostają niezmienne. W tym celu wybieramy sześć różnych zestawów cech. 
 
 Parametry wejściowe dla eksperymentu porównującego różne podzbiory cech:
@@ -543,7 +544,7 @@ Recall 				& 0,60 & 0,94 & 0,95 & 0,72 & 0,95 & 0,60\\
 F1 					& 0,50 & 0,95 & 0,95 & 0,72 & 0,96 & 0,56\\
 
 \end {tabular}
-\label {Wyniki klasyfikacji dla różnych podzbiorów cech.}
+\label {t3}
 \end{table}
 
 \begin{figure}[h!]
@@ -561,6 +562,7 @@ Po porównaniu zestawów cech odkryliśmy, że najlepszą z cech jest Lokalizacj
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Eksperyment 4 - Wpływ wartości proporcji podziału zbioru na miary jakości klasyfikacji}
+\label{subsection:ex4}
 Ostatnim eksperymentem jest wykonanie klasyfikacji dla różnych wartości proporcji podziału zbioru. Pozostałe parametry pozostają niezmienne.\\ 
 Wybrane parametry przedstawione są w poniższej tabeli:
  
@@ -616,7 +618,7 @@ Recall 				& 0,71 & 0,81 & 0,90 & 0,93 & 0,97\\
 F1 					& 0,64 & 0,83 & 0,91 & 0,93 & 0,98\\
 
 \end {tabular}
-\label {Wyniki klasyfikacji dla różnych wartości proporcji podziału zbioru.}
+\label {t4}
 \end{table}
 
 
@@ -635,10 +637,10 @@ Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5. Zmniejszanie il
 
 \newpage
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Eksperyment 5 - Wpływ wyboru metryki na miary jakości klasyfikacji przy ograniczonym zbiorze cech}
-\label{subsection:ex2}
-Ze względu na ????????????????????????????????? ponawiamy eksperyment wyboru metryk przy ograniczonym zbiorze cech. \\
+\label{subsection:ex5}
+Ze względu na zbliżone wyniki jakości klasyfikacji dla metryki Czebyszewa i Ulicznej, ponawiamy eksperyment wyboru metryk przy ograniczonym zbiorze cech. \\
 
 Wybrane parametry przedstawione są w poniższej tabeli:
  
@@ -694,20 +696,20 @@ Recall 					& 0,95 & 0,63 & 0,96 \\
 F1 					& 0,95 & 0,63 & 0,96 \\
 
 \end {tabular}
-\label {Wyniki klasyfikacji dla różnych metryk przy ograniczonym zbiorze cech.}
+\label {t5}
 \end{table}
 
 \newpage
 
 \begin{figure}[h!]
  \centering
- \includegraphics[width=15cm]{wykres_metryka.png}
+ \includegraphics[width=15cm]{wykres_metryka_2.png}
  \vspace{-0.3cm}
  \caption{Wykres przedstawia zależność miar Accuracy, Precision, Recall, i F1 od metryki przy ograniczonym zbiorze cech.}
- \label{wykres2}
+ \label{wykres5}
 \end{figure}
 
-
+Metryka Euklidesowa i Uliczba uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metryka Uliczna, niewiele gorszą, bo z precyzją mniejszą o zaledwie 0.01 była metryka Euklidesowa. Najgorzej wypadającą metryką w tym eksperymencie jest metryka Czebyszewa. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dyskusja, wnioski}
@@ -715,9 +717,17 @@ F1 					& 0,95 & 0,63 & 0,96 \\
 \subsection{Wpływ wartości parametru k na miary jakość klasyfikacji}
 W sekcji \ref{subsection:ex1} badającej wpływ wartości parametru k na miary jakość klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że wartość miary accuracy zmienia się wraz ze zmianą wartości paramatru k. Jakość klasyfikacji wzrasta wraz ze wzrostem wartości parametru k, aż do osiągnięcia wartości maksymalnej. Następnie jakość klasyfikacji zaczyna spadać, aż do momentu ustabilizowania się. Po ustabilizowaniu się, zwiększanie parametru k nie wpływa na jakość klasyfikacji. Po przeanalizowaniu wartości precision i recall dla pojedynczych klas w Tabeli \ref{t1} zauważamy, że zmniejszanie się jakości klasyfikacji przy zwiększaniu wartości parametru k jest spowodowane coraz częstszym przyporządkowywaniem elementów do klasy USA. Stabilizowanie się jakości klasyfikacji po wartości progowej parametru k jest wynikiem przyporządkowywania wszystkich elementów do klasy USA. Dla każdej klasy, oprócz klasy USA, wartość recall maleje wraz ze wzrostem parametru k, dla klasy USA wartość miary recall wzrasta aż do osiągnięcia wartości maksymalnej (1.00). Dominacja klasy USA wynika z faktu, że teksty z klasy USA stanowią około 61\% wszystkich klasyfikowanych tekstów. Z tego powodu przy największych wartościach parametru k wartość miary accuracy wynosi okolo 0.61, co wskazuje, że wszystkie teksty zostały zaklasyfikowane do klasy USA. Wartość parametru k ma zauważalny wpływ na jakość klasyfikacji. Dla badanej klasyfikacji oraz dla klasyfikacji o podobnym charakterze istotne jest dobranie odpowiedniej wartości parametru k.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wpływ wyboru metryki na miary jakości klasyfikacji}
-W sekcji \ref{subsection:ex2} zostały porównane trzy metryki: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. W eksperymencie przyjeliśmy wartość parametru k równą 4, ponieważ w sekcji \ref{subsection:ex1}  ta wartość okazała się być wartością, dla której dla zadanego zbioru dokumentów jakość klasyfikacji była najlepsza. Na podstawie Wykresu \ref{wykres2} zauważamy, że najgorzej wypadającą metryką jest metryka Euklidesowa. Dla metryki Czebyszewa i Ulicznej na podstawie WYkresy \ref{wykres2} nie jesteśmy w stanie określić, która z metryk posiada lepsze wymiki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t2}, zauważamy, że metryka Czebyszewa i Uliczna uzyskały niemalże takie same wyniki, a niewielka różnica nastąpiła w miarze precision na korzyść metryki Czebyszewa. 
+W sekcji \ref{subsection:ex2} zostały porównane trzy metryki: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. W eksperymencie przyjeliśmy wartość parametru k równą 4, ponieważ w sekcji \ref{subsection:ex1}  ta wartość okazała się być wartością, dla której dla zadanego zbioru dokumentów jakość klasyfikacji była najlepsza. Na podstawie Wykresu \ref{wykres2} zauważamy, że najgorzej wypadającą metryką jest metryka Euklidesowa. Dla metryki Czebyszewa i Ulicznej na podstawie Wykresu \ref{wykres2} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t2}, zauważamy, że metryka Czebyszewa i Uliczna uzyskały niemalże takie same wyniki, a niewielka różnica nastąpiła w miarze precision na korzyść metryki Czebyszewa. 
+\newline
+Ze względy na uzyskane wyniki podczas opracowywania wyniosków postanowiliśmy przeprowadzić kolejny eksperyment. W tym eksperymencie jako parametr przekazaliśmy ograniczony zbiór cech, który w sekcji \ref{subsection:ex3} należał do jednego z trzech zbiorów cech, które uzyskały najlepsze wyniki klasyfikacji i równocześnie podany zbiór cech zawierał najwięcej cech, natomiast pozostałe parametry wejściowe są identycznej jak w sekcji \ref{subsection:ex5}.  Na podstawie Wykresu \ref{wykres5} zauważamy, że najgorzej wypadającą metryką jest metryka Czebyszewa. Dla metryki Euklidesowej i Ulicznej na podstawie Wykresu \ref{wykres5} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t5}, zauważamy, że metryka Euklidesowa i Uliczna uzyskały niemalże takie same wyniki, a niewielka różnica nastąpiła we wszystkich miarach jakości klasyfikacji na korzyść metryki Ulicznej. 
+\newline
+Po podsumowaniu wyników z obu sekcji stwierdzamy, że najlepszą z metryk jest metryka Uliczna. Na podstawie wyników wnioskujemy, że metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Uliczna i Euklidesowa, ponieważ metryka ta jako odleglość wybiera pare cech, dla których odległość jest największa. 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Braki w realizacji projektu 1.}
 Wszystkie obowiązkowe elementy projektu zostały zrealizowane.
 
