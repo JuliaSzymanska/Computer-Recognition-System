@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 15:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 16:04
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -519,7 +519,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
  []
 
 [6] [7]
-<Ekstrakcja.png, id=175, 1567.8575pt x 759.83875pt>
+<Ekstrakcja.png, id=179, 1567.8575pt x 759.83875pt>
 File: Ekstrakcja.png Graphic file (type png)
 <use Ekstrakcja.png>
 Package pdftex.def Info: Ekstrakcja.png  used on input line 262.
@@ -530,7 +530,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 262--264
  []
 
 [8 <./Ekstrakcja.png (PNG copy)>]
-<Klasyfikator.png, id=182, 1566.85374pt x 499.8675pt>
+<Klasyfikator.png, id=186, 1566.85374pt x 499.8675pt>
 File: Klasyfikator.png Graphic file (type png)
 <use Klasyfikator.png>
 Package pdftex.def Info: Klasyfikator.png  used on input line 273.
@@ -541,7 +541,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 273--275
  []
 
 [9 <./Klasyfikator.png (PNG copy)>]
-<Wybor.png, id=188, 396.48125pt x 530.98375pt>
+<Wybor.png, id=192, 396.48125pt x 530.98375pt>
 File: Wybor.png Graphic file (type png)
 <use Wybor.png>
 Package pdftex.def Info: Wybor.png  used on input line 289.
@@ -552,7 +552,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 289--291
  []
 
 [10 <./Wybor.png>]
-<srodek.png, id=196, 325.215pt x 103.38625pt>
+<srodek.png, id=200, 325.215pt x 103.38625pt>
 File: srodek.png Graphic file (type png)
 <use srodek.png>
 Package pdftex.def Info: srodek.png  used on input line 299.
@@ -562,7 +562,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 299--301
  [][] 
  []
 
-<wynik_dla _klasy.png, id=197, 514.92375pt x 181.67876pt>
+<wynik_dla _klasy.png, id=201, 514.92375pt x 181.67876pt>
 File: wynik_dla _klasy.png Graphic file (type png)
 <use wynik_dla _klasy.png>
 Package pdftex.def Info: wynik_dla _klasy.png  used on input line 311.
@@ -578,7 +578,7 @@ Underfull \hbox (badness 3088) in paragraph at lines 313--313
 -sy kla-sy-fi-ka-cji - kla-sa 
  []
 
-<wynik.png, id=198, 402.50375pt x 186.6975pt>
+<wynik.png, id=202, 402.50375pt x 186.6975pt>
 File: wynik.png Graphic file (type png)
 <use wynik.png>
 Package pdftex.def Info: wynik.png  used on input line 321.
@@ -597,7 +597,7 @@ Overfull \hbox (97.97289pt too wide) in paragraph at lines 357--393
  []
 
 [13]
-<wykres_k.png, id=220, 903.375pt x 803.0pt>
+<wykres_k.png, id=224, 903.375pt x 803.0pt>
 File: wykres_k.png Graphic file (type png)
 <use wykres_k.png>
 Package pdftex.def Info: wykres_k.png  used on input line 399.
@@ -621,7 +621,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 412--413
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [14 <./wykres_k.png (PNG copy)>] [15]
-<wykres_metryka.png, id=232, 903.375pt x 803.0pt>
+<wykres_metryka.png, id=236, 903.375pt x 803.0pt>
 File: wykres_metryka.png Graphic file (type png)
 <use wykres_metryka.png>
 Package pdftex.def Info: wykres_metryka.png  used on input line 475.
@@ -644,7 +644,7 @@ Overfull \hbox (38.68912pt too wide) in paragraph at lines 511--548
  [][] 
  []
 
-<wykres_cechy.png, id=238, 803.0pt x 803.0pt>
+<wykres_cechy.png, id=242, 803.0pt x 803.0pt>
 File: wykres_cechy.png Graphic file (type png)
 <use wykres_cechy.png>
 Package pdftex.def Info: wykres_cechy.png  used on input line 552.
@@ -666,7 +666,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 560--561
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [18 <./wykres_cechy.png (PNG copy)>]
-<wykres_proporcje.png, id=251, 803.0pt x 803.0pt>
+<wykres_proporcje.png, id=255, 803.0pt x 803.0pt>
 File: wykres_proporcje.png Graphic file (type png)
 <use wykres_proporcje.png>
 Package pdftex.def Info: wykres_proporcje.png  used on input line 627.
@@ -690,7 +690,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 643--644
  []
 
 [21] [22]
-<wykres_metryka_2.png, id=274, 903.375pt x 803.0pt>
+<wykres_metryka_2.png, id=278, 903.375pt x 803.0pt>
 File: wykres_metryka_2.png Graphic file (type png)
 <use wykres_metryka_2.png>
 Package pdftex.def Info: wykres_metryka_2.png  used on input line 706.
@@ -705,39 +705,39 @@ Underfull \vbox (badness 4595) has occurred while \output is active []
 
  [24]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 741.
+(Font)              <10.95> on input line 745.
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
 []\OT4/cmr/m/n/10.95 Internet fo-rum. Wi-ki-pe-dia: The Free En-cyc-lo-pe-dia, 
 Do-st¦p-ny w:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
 []$\OT4/cmtt/m/n/10.95 https : / / pl . wikipedia . org / wiki / Tablica _ pomy
  % C5 % 82ek ? fbclid =
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 747.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 751.
 [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 747.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 751.
  (Sprawozdanie-projekt-1-klasyfikacja.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 747.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 747.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 751.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 751.
 Package rerunfilecheck Info: File `Sprawozdanie-projekt-1-klasyfikacja.out' has
  not changed.
-(rerunfilecheck)             Checksum: 8B2BD0318E99D779C7EED49DF92D1B13;1704.
+(rerunfilecheck)             Checksum: 619E168071FD4D767A52FDD2499C9241;1811.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 747.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 751.
  ) 
 Here is how much of TeX's memory you used:
- 6132 strings out of 480931
- 97013 string characters out of 2898858
+ 6134 strings out of 480931
+ 97043 string characters out of 2898858
  364254 words of memory out of 3000000
- 21774 multiletter control sequences out of 15000+200000
+ 21775 multiletter control sequences out of 15000+200000
  543374 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,32p,1672b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -762,10 +762,10 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Users/Pr
 zemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (25 pages, 589389 byt
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (25 pages, 591413 byt
 es).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 391 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 500000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -725,6 +725,10 @@ Ze względy na uzyskane wyniki podczas opracowywania wyniosków postanowiliśmy 
 \newline
 Po podsumowaniu wyników z obu sekcji stwierdzamy, że najlepszą z metryk jest metryka Uliczna. Na podstawie wyników wnioskujemy, że metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Uliczna i Euklidesowa, ponieważ metryka ta jako odleglość wybiera pare cech, dla których odległość jest największa. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wpływ wyboru zestwu cech na miary jakości klasyfikacji}
+
+W sekcji \ref{subsection:ex3} porównaliśmy sześć zestawów cech. Do porównania przyjęliśmy stałe parametry: wartość k równą 4, metrykę euklidesową i proporcje zbioru trenującego do testowego 90:10. W zależności od wyboru zestawu cech wyniki klasyfikacji były diametralnie rózne. Najlepsze wyniki uzyskaliśmy dla zestawów cech zawierających cechę c\textsubscript{3} -  lokacja z tagu \textless Dateline\textgreater. Dodanie do tej cechy cechy c\textsubscript{4} -  tytuł z tagu \textless Dateline\textgreater  nieznacznie poprawiło wynik klasyfikacji, jednak cecha ta samodzielnie uzyskała wynik dużo gorszy niż cecha c\textsubscript{3}. Najlepsze wyniki klasyfikacji uzyskaliśmy używając cech  tekstowych, bez użycia cech liczbowych. Cechy liczbowe bardzo pogarszały jakość klasyfikacji, prawdopodobnie wynika to z faktu, że odległość pomiędzy cechami tekstowymi przy wykorzystanych przez nas metodach zawsze znajduje się w przedziale \textless 0,1\textgreater , podczas gry odległość dla cech liczbowych może być znacznie większa, więc cechy te "dominują" cechy tekstowe. Nie znaleźliśmy dobrego sposobu na poradzenie sobie z tym problemem. Jednym z mozliwych rozwiązań mogło by być zastosowanie wag dla odpowiednich cech.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
