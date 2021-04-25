@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 14:59
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -750,10 +750,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 737.
  ) 
 Here is how much of TeX's memory you used:
- 6120 strings out of 480931
- 96863 string characters out of 2898858
+ 6122 strings out of 480931
+ 97041 string characters out of 2898858
  363569 words of memory out of 3000000
- 21764 multiletter control sequences out of 15000+200000
+ 21766 multiletter control sequences out of 15000+200000
  543374 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,32p,1672b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -778,7 +778,7 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Users/Pr
 zemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (24 pages, 543388 byt
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (24 pages, 543653 byt
 es).
 PDF statistics:
  374 PDF objects out of 1000 (max. 8388607)
