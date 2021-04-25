@@ -31,19 +31,20 @@ plt.grid(color='grey', linestyle='dashed', linewidth=0.5)
 plt.show()
 
 # # cechy
-# data = [["c1,  c2, c5,\nc6, c11", 0.60, 0.43, 0.60, 0.50],
-#         ["c3, c4,\nc5, c7", 0.94, 0.95, 0.94, 0.95],
-#         ["c3", 0.95, 0.95, 0.95, 0.95],
-#         ["c4", 0.72, 0.72, 0.72, 0.72],
-#         ["c3, c4", 0.95, 0.96, 0.95, 0.96],
-#         ["c6, c7, c8,\nc9, c10", 0.60, 0.52, 0.60, 0.56],
-#         ]
-#
-#
-# df = pd.DataFrame(data, columns=["Cechy", "Accuracy", "Precision", "Recall", "F1"])
-# df.plot(x="Cechy", y=["Accuracy", "Precision", "Recall", "F1"], kind="bar", figsize=(8, 8), rot=0)
-# plt.grid(color='grey', linestyle='dashed', linewidth=0.5)
-# plt.show()
+data = [["c1,  c2, c5,\nc6, c11", 0.60, 0.43, 0.60, 0.50],
+        ["c3, c4,\nc5, c7", 0.94, 0.95, 0.94, 0.95],
+        ["c3", 0.95, 0.95, 0.95, 0.95],
+        ["c4", 0.72, 0.72, 0.72, 0.72],
+        ["c3, c4", 0.95, 0.96, 0.95, 0.96],
+        ["c6, c7, c8,\nc9, c10", 0.60, 0.52, 0.60, 0.56],
+        ["c1, c3, c4", 0.62, 0.55, 0.62, 0.58],
+        ]
+
+
+df = pd.DataFrame(data, columns=["Cechy", "Accuracy", "Precision", "Recall", "F1"])
+df.plot(x="Cechy", y=["Accuracy", "Precision", "Recall", "F1"], kind="bar", figsize=(8, 8), rot=0)
+plt.grid(color='grey', linestyle='dashed', linewidth=0.5)
+plt.show()
 
 
 # # proporcje
