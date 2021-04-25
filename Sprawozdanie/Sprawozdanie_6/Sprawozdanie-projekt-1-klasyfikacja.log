@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 16:15
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -640,7 +640,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 481--482
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [16 <./wykres_metryka.png (PNG copy)>]
-Overfull \hbox (38.68912pt too wide) in paragraph at lines 511--548
+Overfull \hbox (105.88925pt too wide) in paragraph at lines 511--548
  [][] 
  []
 
@@ -762,7 +762,7 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Users/Pr
 zemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (25 pages, 591413 byt
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (25 pages, 591286 byt
 es).
 PDF statistics:
  391 PDF objects out of 1000 (max. 8388607)
