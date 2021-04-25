@@ -635,6 +635,80 @@ Najlepszą jakość klasyfikacji otrzymano dla proporcji 95 - 5. Zmniejszanie il
 
 \newpage
 
+
+\subsection{Eksperyment 5 - Wpływ wyboru metryki na miary jakości klasyfikacji przy ograniczonym zbiorze cech}
+\label{subsection:ex2}
+Następnym eksperymentem jest wykonanie klasyfikacji dla różnych metryk. Pozostałe parametry pozostają niezmienne.\\
+
+Wybrane parametry przedstawione są w poniższej tabeli:
+ 
+\begin{table}[h!]
+\caption{Parametry wejściowe dla eksperymentu porównującego różne metryki. }
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+    \textbf{K} & \textbf{Metryka}   & \textbf{Procent zbioru trenującego}  & \textbf{Wybrane cechy}   \\
+\hline
+4 & - & 90\% &  c\textsubscript{3},  c\textsubscript{4},  c\textsubscript{5},  c\textsubscript{7}, \\
+\end {tabular}
+\label {Parametry wejściowe dla eksperymentu porównującego różne metryki. }
+\end{table}
+
+\newpage
+\begin{table}[h!]
+\caption{Wyniki klasyfikacji dla różnych metryk. Wartość Nan występująca w tabeli pojawia się, gdy następuje dzielenie przez 0 w Precision. Wartość Nan oznacza, że żaden tekst nie został zaklasyfikowany do tej klasy. Wartość Nan w F1 jest skutkiem wartości Nan w Precision.}
+\centering
+\vspace{0.1cm}
+ \begin{tabular}{c c c c}
+
+    \textbf{Metryka} & \textbf{Euklidesowa}   & \textbf{Czebyszewa}  & \textbf{Uliczna}  \\
+
+\hline
+West-germany Precision 		& 1,00 & 1,00 & 1,00 \\
+West-germany Recall 		& 0,85 & 0,04 & 0,93 \\
+West-germany F1			& 0,92 & 0,07 & 0,96 \\
+\hline
+Usa Precision 			& 0,92 & 0,63 & 0,94 \\
+Usa Recall				& 1,00 & 1,00 & 1,00 \\
+Usa F1			 	& 0,96 & 0,77 & 1,00 \\
+\hline
+France Precision 			& 1,00 & 0,00 & 1,00 \\
+France Recall 			& 1,00 & 0,00 & 1,00 \\
+France F1 				& 1,00 & 0,00 & 1,00 \\
+\hline
+Uk Precision 				& 1,00 & 0,75 & 1,00 \\
+Uk Recall 				& 0,97 & 0,09 & 0,97 \\
+Uk F1 					& 0,98 & 0,16 & 0,98 \\
+\hline
+Canada Precision			& 1,00 & NaN & 1,00\\
+Canada Recall 			& 0,82 & 0,00 & 0,85 \\
+Canada F1 				& 0,90 & NaN & 0,92\\
+\hline
+Japan Precision 			& 0,97 & 1,00 & 0,97 \\
+Japan Recall 				& 0,81 & 0,07 & 0,84 \\
+Japan F1 				& 0,89 & 0,13 & 0,90 \\
+\hline
+Accuracy 				& 0,95 & 0,63 & 0,96 \\
+Precision 				& 0,95 & 0,62 & 0,96 \\
+Recall 					& 0,95 & 0,63 & 0,96 \\	
+F1 					& 0,95 & 0,63 & 0,96 \\
+
+\end {tabular}
+\label {Wyniki klasyfikacji dla różnych metryk.}
+\end{table}
+
+\newpage
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{wykres_metryka.png}
+ \vspace{-0.3cm}
+ \caption{Wykres przedstawia zależność miar Accuracy, Precision, Recall, i F1 od metryki.}
+ \label{wykres2}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dyskusja, wnioski}
 
