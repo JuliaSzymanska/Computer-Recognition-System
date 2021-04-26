@@ -35,7 +35,7 @@ Celem projektu jest stworzenie aplikacji klasyfikującej zadany zbiór danych te
 \section{Klasyfikacja nadzorowana metodą $k$-NN}
 
 Metoda K najbliższych sąsiadów, w skrócie metoda $k$-NN\cite{dane}, jest to algorytm stosowany do klasyfikacji, który nie wymaga etapu uczenia. 
-Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego, gdzie spośród k najbliższych rozpatrywanemu elementowi sąsiadów najwięcej z nich należy do tej grupy. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: warotść k - liczba rozpatrywanych sąsiadów, proporcje podziału zbiorów na zbior uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
+Polega na zaklasyfikowaniu rozpatrywanego elementu do grupy ze zbioru uczącego, gdzie spośród k najbliższych rozpatrywanemu elementowi sąsiadów najwięcej z nich należy do tej grupy. Klasyfikator przyjmuje cztery parametry wejściowe takie jak: wartość k - liczba rozpatrywanych sąsiadów, proporcje podziału zbiorów na zbiór uczący i zbiór testowy, zbiór cech, a także metrykę i/lub miarę prawdopodobieństwa. Wynikiem klasyfikacji jest zaklasyfikowanie elementu do jednego ze zbiorów uczących. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,10 +57,10 @@ Na zbiorach danych tekstowych należy dokonać ekstrakcji cech, które będą wa
   \item Lokacja z tagu \textless Dateline\textgreater - jak wyżej. Lokację traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{3}. \\
   \item Tytuł z tagu \textless Title\textgreater - Każdy tekst w swoim body posiada tag \textless Title\textgreater. Tytuł traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{4}.\\
   \item Autor z tagu \textless Author\textgreater - Większość tekstów w swoim body posiada tag \textless Author\textgreater. Autora traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{5}.\\
-  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekście nazwę kraju. Nazwy krajów pobieramy z dołączonego pliku all-places-strings.lc, przykładowo krajem występującym w pliku jest 'albania'.Nazwę kraju traktujemy jako cechę tekstową.Wartość będzie oznaczana poprzez symbol  c\textsubscript{6}.\\
+  \item Najczęściej występująca nazwa kraju - wybieramy najczęściej występującą w analizowanym tekście nazwę kraju. Nazwy krajów pobieramy z dołączonego pliku all-places-strings.lc, przykładowo krajem występującym w pliku jest 'albania'. Nazwę kraju traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{6}.\\
   \item Zbiór występujących słów kluczowych. Za słowa kluczowe przyjmujemy słowa znajdujące się w dołączonych plikach o rozszerzeniach .lc.txt. Cechę traktujemy jako cechę tekstową.  \begin{equation}  c_7 : c_7 \in N \cap t \end{equation} gdzie N - zbiór wszystkich słów kluczowych, t - zbiór słów należących do tekstu\\
   \item Liczba wystąpień słów kluczowych - traktujemy jako cechę w postaci liczby całkowitej.\begin{equation}  c_8 = | c_7 | \end{equation} gdzie c\textsubscript{8} - zbiór występujących słów kluczowych\\
-  \item Nasycenie tekstu ilością słów kluczowych - traktujemy jako cechę w postaci liczby zmienno przecinkowej.  \begin{equation} c_{9} = c_8 / c_1 \end{equation}  gdzie c\textsubscript{9} - liczba wystąpień słów kluczowych w tekscie, c\textsubscript{1} - liczba słów w tekście\\
+  \item Nasycenie tekstu ilością słów kluczowych - traktujemy jako cechę w postaci liczby zmiennoprzecinkowej.  \begin{equation} c_{9} = c_8 / c_1 \end{equation}  gdzie c\textsubscript{9} - liczba wystąpień słów kluczowych w tekście, c\textsubscript{1} - liczba słów w tekście\\
   \item Najczęściej występujące słowo kluczowe - wybieramy najczęściej występujące w analizowanym tekście słowo kluczowe. Cechę traktujemy jako cechę tekstową. Wartość będzie oznaczana poprzez symbol  c\textsubscript{10}.\\
   \item Liczba unikatowych słów - zliczamy liczbę unikatowych słów, to znaczy występujących dokładnie raz w analizowanym tekście. Cechę traktujemy jako cechę w postaci liczby całkowitej. Wartość będzie oznaczana poprzez symbol  c\textsubscript{11}.\\
 \end{enumerate}
@@ -107,12 +107,12 @@ Stosowane miary jakości klasyfikacji:\\
  \begin{equation}ACC = \frac{TP + TN}{TP + TN + FP + FN} \end{equation}
  \item Precyzja (ang. precision), PPV  - jest to stopień zgodności wyników uzyskanych w określonych warunkach z wielokrotnych pomiarów. Precyzja to stosunek liczby poprawnie zaklasyfikowanych tekstów rozpatrywanej klasy do liczby wszystkich tekstów zaklasyfikowanych do rozpatrywanej klasy. 
 \begin{equation} PPV =  \frac{TP} {TP+FP} \end{equation} 
-Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych precyzji dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
+Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych precyzji dla pojedynczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
 \begin{equation} PPV_{calk} = \sum_{n=1}^{m} (PPV_n *\frac{k_n}{k}) \end{equation}
 Gdzie \textit{PPV\textsubscript{calk}} - precyzja obliczona dla wszystkich klas klasyfikowanych dokumentów,  \textit{m} - liczba rozpatrywanych klas, \textit{PPV\textsubscript{n}} - precyzja dla n-tej klasy, \textit{k\textsubscript{n}} - liczebność rzeczywista dokumentów klasy n, \textit{k} - liczebność wszystkich klasyfikowanych dokumentów\\
 \item Czułość (ang. recall), TPR  - jest to stosunek liczby poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy do liczby tekstów z rozpatrywanej klasy. 
  \begin{equation}   TPR = \frac{TP}{TP + FN} \end{equation}
-Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych czułości dla pojedyńczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
+Dla całego zbioru dokumentów wartość miary jest liczona jako średnia ważona obliczonych czułości dla pojedynczych klas, gdzie wagą jest stosunek liczebności tej klasy do liczebności wszystkich klas. 
 \begin{equation} TPR_{calk} = \sum_{n=1}^{m} (TPR_n *\frac{k_n}{k}) \end{equation}
 Gdzie \textit{TPR\textsubscript{calk}} - czułość obliczona dla wszystkich klas klasyfikowanych dokumentów,  \textit{m} - liczba rozpatrywanych klas, \textit{TPR\textsubscript{n}} - czułość dla n-tej klasy,  \textit{k\textsubscript{n}} - liczebność rzeczywista dokumentów klasy n, \textit{k} - liczebność wszystkich klasyfikowanych dokumentów\\
 \item Miara F1 - średnia harmoniczna miar Precyzja i Czułość. 
@@ -123,7 +123,7 @@ Gdzie \textit{TPR\textsubscript{calk}} - czułość obliczona dla wszystkich kla
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Klasyfikacja z użyciem metryk i miar podobieństwa tekstów}
 
-W procesie klasyfikacji możliwe jest wykorzystanie jednej z trzech metryk: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. Metryki służą obliczeniu odległości pomiędzy dwoma wektora o dowolnym rozmiarze.\\\\ Metryka Eukliedesowa\cite{dane} jest opisana wzorem: 
+W procesie klasyfikacji możliwe jest wykorzystanie jednej z trzech metryk: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. Metryki służą obliczeniu odległości pomiędzy dwoma wektora o dowolnym rozmiarze.\\\\ Metryka Euklidesowa\cite{dane} jest opisana wzorem: 
 \begin{equation} d(x, y) = \sqrt{(y_1 -^* x_1)^2 + ... + (y_n -^* x_n)^2}  \end{equation}
 gdzie: \textit{d(x, y)} - odległość pomiędzy wektorem \textit{x} i \textit{y}; \textit{x}, \textit{y} - wektory o tym samym rozmiarze; \textit{n} - rozmiar wektorów \textit{x} i \textit{y};  \textit{x\textsubscript{n}}, \textit{y\textsubscript{n}} - składowe wektora, \textit{-\textsuperscript{*}} - dla dwóch liczb rzeczywistych odejmowanie klasyczne,  dla wartości tekstowych jest to wynik działania funkcji opisanej wzorem \ref{eqn:odl} przy użyciu miary podobieństwa \ref{eqn:pod}.
 \\\\
@@ -266,7 +266,7 @@ Aplikacja będzie składała się z dwóch modułów: z modułu ekstrakcji cech 
 \end{figure}
 \newpage
 
-Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą metody bigramów. W ten sposób tworzone są pary zawierające artykuł i odleglość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
+Moduł klasyfikacji oblicza odległości pomiędzy artykułem zadanym a każdym z artykułów ze zbioru trenującego za pomocą jednej z zadanych metryk \cite{dane} : metryki Euklidesowej, metryki Ulicznej, metryki Czebyszewa. Dla cech zapisanych w postaci tekstowej ich odległość jest obliczana za pomocą metody bigramów. W ten sposób tworzone są pary zawierające artykuł i odległość od zadanego artykułu. Następnie znajdowanych jest k najbliższych sąsiadów dla zadanego artykułu, gdzie poprzez słowo sąsiad rozumiemy artykuł ze zbioru trenującego. Ostatecznie artykuł jest klasyfikowany do klasy, której obiekty najczęściej wystąpiły wśród k najbliższych sąsiadów. 
 
 \begin{figure}[h!]
  \centering
@@ -305,12 +305,12 @@ Po wprowadzeniu przez użytkownika wszystkich parametrów klasyfikacji, rozpoczy
 
 
 
-Po wykonanej klasyfikacji na konsoli wyświetlane są obliczone parametry dla poszczególnych klas klasyfikacji oraz wyliczone parametry dla całego zbioru dokumentów. Dla poszczególnych klas klasyfikacji do obliczonych parametrów zaliczamy liczbę tekstów klasy, liczbę poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy, liczbę tekstów innych klas zaklasfyfikowanych do rozpatrywanej klasy oraz miary jakości: Precision, Recall, F1. 
+Po wykonanej klasyfikacji na konsoli wyświetlane są obliczone parametry dla poszczególnych klas klasyfikacji oraz wyliczone parametry dla całego zbioru dokumentów. Dla poszczególnych klas klasyfikacji do obliczonych parametrów zaliczamy liczbę tekstów klasy, liczbę poprawnie zaklasyfikowanych tekstów do rozpatrywanej klasy, liczbę tekstów innych klas zaklasyfikowanych do rozpatrywanej klasy oraz miary jakości: Precision, Recall, F1. 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{wynik_dla _klasy.png}
  \vspace{-0.3cm}
- \caption{Wynik klasyfikacji dla pojedyńczej klasy klasyfikacji - klasa west-germany.}
+ \caption{Wynik klasyfikacji dla pojedynczej klasy klasyfikacji - klasa west-germany.}
  \label{Wynik klasyfikacji.}
 \end{figure}
 
@@ -335,7 +335,7 @@ Do uruchomienia programu wymagana jest wersja Javy: 11.
 \label{subsection:ex1}
 
 Eksperymenty zostały rozpoczęte od porównania wyników klasyfikacji dla różnych wartości parametru k.
-W tym celu przyjęliśmy nastepujące parametry:
+W tym celu przyjęliśmy następujące parametry:
  
 \begin{table}[h!]
 \caption{Parametry wejściowe dla eksperymentu porównującego różne wartości parametru k. }
@@ -653,7 +653,7 @@ Wybrane parametry przedstawione są w poniższej tabeli:
 \hline
 4 & - & 90\% &  c\textsubscript{3},  c\textsubscript{4},  c\textsubscript{5},  c\textsubscript{7}, \\
 \end {tabular}
-\label {Parametry wejściowe dla eksperymentu porównującego różne metryk przy ograniczonym zbiorze cechi. }
+\label {Parametry wejściowe dla eksperymentu porównującego różne metryk przy ograniczonym zbiorze cech. }
 \end{table}
 
 \newpage
@@ -709,32 +709,32 @@ F1 					& 0,95 & 0,63 & 0,96 \\
  \label{wykres5}
 \end{figure}
 
-Metryka Euklidesowa i Uliczba uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metryka Uliczna, niewiele gorszą, bo z precyzją mniejszą o zaledwie 0.01 była metryka Euklidesowa. Najgorzej wypadającą metryką w tym eksperymencie jest metryka Czebyszewa. 
+Metryka Euklidesowa i Uliczna uzyskały zbliżone wyniki, spośród nich najlepszą okazała się metryka Uliczna, niewiele gorszą, bo z precyzją mniejszą o zaledwie 0.01 była metryka Euklidesowa. Najgorzej wypadającą metryką w tym eksperymencie jest metryka Czebyszewa. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dyskusja, wnioski}
 \subsection{Dyskusja}
 
 \subsubsection{Wpływ wartości parametru k na miary jakość klasyfikacji}
-W sekcji \ref{subsection:ex1} badającej wpływ wartości parametru \textit{k} na miary jakość klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że wartość miary \textit{accuracy} zmienia się wraz ze zmianą wartości paramatru \textit{k}. Jakość klasyfikacji wzrasta wraz ze wzrostem wartości parametru \textit{k}, aż do osiągnięcia wartości maksymalnej. Następnie jakość klasyfikacji zaczyna spadać, aż do momentu ustabilizowania się. Po ustabilizowaniu się, zwiększanie parametru \textit{k} nie wpływa na jakość klasyfikacji. Po przeanalizowaniu wartości \textit{precision} i \textit{recall} dla pojedynczych klas w Tabeli \ref{t1} zauważamy, że zmniejszanie się jakości klasyfikacji przy zwiększaniu wartości parametru \textit{k} jest spowodowane coraz częstszym przyporządkowywaniem elementów do klasy USA. Stabilizowanie się jakości klasyfikacji po wartości progowej parametru \textit{k} jest wynikiem przyporządkowywania wszystkich elementów do klasy USA. Dla każdej klasy, oprócz klasy USA, wartość \textit{recall} maleje wraz ze wzrostem parametru \textit{k}, dla klasy USA wartość miary \textit{recall} wzrasta aż do osiągnięcia wartości maksymalnej (1.00). Dominacja klasy USA wynika z faktu, że teksty z klasy USA stanowią około 61\% wszystkich klasyfikowanych tekstów. Z tego powodu przy największych wartościach parametru \textit{k} wartość miary \textit{accuracy} wynosi okolo 0.61, co wskazuje, że wszystkie teksty zostały zaklasyfikowane do klasy USA. Wartość parametru \textit{k} ma zauważalny wpływ na jakość klasyfikacji. Dla badanej klasyfikacji oraz dla klasyfikacji o podobnym charakterze istotne jest dobranie odpowiedniej wartości parametru \textit{k}.
+W sekcji \ref{subsection:ex1} badającej wpływ wartości parametru \textit{k} na miary jakość klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że wartość miary \textit{accuracy} zmienia się wraz ze zmianą wartości parametru \textit{k}. Jakość klasyfikacji wzrasta wraz ze wzrostem wartości parametru \textit{k}, aż do osiągnięcia wartości maksymalnej. Następnie jakość klasyfikacji zaczyna spadać, aż do momentu ustabilizowania się. Po ustabilizowaniu się, zwiększanie parametru \textit{k} nie wpływa na jakość klasyfikacji. Po przeanalizowaniu wartości \textit{precision} i \textit{recall} dla pojedynczych klas w Tabeli \ref{t1} zauważamy, że zmniejszanie się jakości klasyfikacji przy zwiększaniu wartości parametru \textit{k} jest spowodowane coraz częstszym przyporządkowywaniem elementów do klasy USA. Stabilizowanie się jakości klasyfikacji po wartości progowej parametru \textit{k} jest wynikiem przyporządkowywania wszystkich elementów do klasy USA. Dla każdej klasy, oprócz klasy USA, wartość \textit{recall} maleje wraz ze wzrostem parametru \textit{k}, dla klasy USA wartość miary \textit{recall} wzrasta aż do osiągnięcia wartości maksymalnej (1.00). Dominacja klasy USA wynika z faktu, że teksty z klasy USA stanowią około 61\% wszystkich klasyfikowanych tekstów. Z tego powodu przy największych wartościach parametru \textit{k} wartość miary \textit{accuracy} wynosi około 0.61, co wskazuje, że wszystkie teksty zostały zaklasyfikowane do klasy USA. Wartość parametru \textit{k} ma zauważalny wpływ na jakość klasyfikacji. Dla badanej klasyfikacji oraz dla klasyfikacji o podobnym charakterze istotne jest dobranie odpowiedniej wartości parametru \textit{k}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Wpływ wyboru metryki na miary jakości klasyfikacji}
-W sekcji \ref{subsection:ex2} zostały porównane trzy metryki: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. W eksperymencie przyjeliśmy wartość parametru \textit{k} równą 4, ponieważ w sekcji \ref{subsection:ex1}  ta wartość okazała się być wartością, dla której dla zadanego zbioru dokumentów jakość klasyfikacji była najlepsza. Na podstawie Wykresu \ref{wykres2} zauważamy, że najgorzej wypadającą metryką jest metryka Euklidesowa. Dla metryki Czebyszewa i Ulicznej na podstawie Wykresu \ref{wykres2} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t2}, zauważamy, że metryka Czebyszewa i Uliczna uzyskały niemalże takie same wyniki, jedyną różniącą się miarą była \textit{precision} gdzie metryka Czebyszewa uzyskała wynik lepszy o mniej niż jeden procent.
+W sekcji \ref{subsection:ex2} zostały porównane trzy metryki: metryka Euklidesowa, metryka Czebyszewa, metryka Uliczna. W eksperymencie przyjęliśmy wartość parametru \textit{k} równą 4, ponieważ w sekcji \ref{subsection:ex1}  ta wartość okazała się być wartością, dla której dla zadanego zbioru dokumentów jakość klasyfikacji była najlepsza. Na podstawie Wykresu \ref{wykres2} zauważamy, że najgorzej wypadającą metryką jest metryka Euklidesowa. Dla metryki Czebyszewa i Ulicznej na podstawie Wykresu \ref{wykres2} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfikacji. Po porównaniu dokładnych wyników w Tabeli \ref{t2}, zauważamy, że metryka Czebyszewa i Uliczna uzyskały niemalże takie same wyniki, jedyną różniącą się miarą była \textit{precision} gdzie metryka Czebyszewa uzyskała wynik lepszy o mniej niż jeden procent.
 \newline
-Ze względy na uzyskane wyniki podczas opracowywania wyniosków postanowiliśmy przeprowadzić kolejny eksperyment. W tym eksperymencie jako parametr przekazaliśmy ograniczony zbiór cech, który w sekcji \ref{subsection:ex3} należał do jednego z trzech zbiorów cech, które uzyskały najlepsze wyniki klasyfikacji i równocześnie podany zbiór cech zawierał najwięcej cech, natomiast pozostałe parametry wejściowe są identycznej jak w sekcji \ref{subsection:ex5}.  Na podstawie Wykresu \ref{wykres5} zauważamy, że najgorzej wypadającą metryką jest metryka Czebyszewa. Dla metryki Euklidesowej i Ulicznej na podstawie Wykresu \ref{wykres5} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfiakcji. Po porównaniu dokładnych wyników w Tabeli \ref{t5}, zauważamy, że metryka Euklidesowa i Uliczna uzyskały niemalże takie same wyniki, gdzie róznica wyniosła mniej niż jeden procent i wystąpiła we wszystkich miarach jakości.
+Ze względy na uzyskane wyniki podczas opracowywania wniosków postanowiliśmy przeprowadzić kolejny eksperyment. W tym eksperymencie jako parametr przekazaliśmy ograniczony zbiór cech, który w sekcji \ref{subsection:ex3} należał do jednego z trzech zbiorów cech, które uzyskały najlepsze wyniki klasyfikacji i równocześnie podany zbiór cech zawierał najwięcej cech, natomiast pozostałe parametry wejściowe są identycznej jak w sekcji \ref{subsection:ex5}.  Na podstawie Wykresu \ref{wykres5} zauważamy, że najgorzej wypadającą metryką jest metryka Czebyszewa. Dla metryki Euklidesowej i Ulicznej na podstawie Wykresu \ref{wykres5} nie jesteśmy w stanie określić, która z metryk posiada lepsze wyniki miar jakości klasyfikacji. Po porównaniu dokładnych wyników w Tabeli \ref{t5}, zauważamy, że metryka Euklidesowa i Uliczna uzyskały niemalże takie same wyniki, gdzie różnica wyniosła mniej niż jeden procent i wystąpiła we wszystkich miarach jakości.
 \newline
-Po podsumowaniu wyników z obu sekcji stwierdzamy, że najlepszą z metryk jest metryka Uliczna. Na podstawie wyników wnioskujemy, że metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Uliczna i Euklidesowa, ponieważ metryka ta jako odleglość wybiera pare cech, dla których odległość jest największa. 
+Po podsumowaniu wyników z obu sekcji stwierdzamy, że najlepszą z metryk jest metryka Uliczna. Na podstawie wyników wnioskujemy, że metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Uliczna i Euklidesowa, ponieważ metryka ta jako odległość wybiera pare cech, dla których odległość jest największa. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Wpływ wyboru zestwu cech na miary jakości klasyfikacji}
+\subsubsection{Wpływ wyboru zestawu cech na miary jakości klasyfikacji}
 
-W sekcji \ref{subsection:ex3} porównaliśmy sześć zestawów cech. Do porównania przyjęliśmy stałe parametry: wartość \textit{k} równą 4, metrykę Euklidesową i proporcje zbioru trenującego do testowego 90:10. W zależności od wyboru zestawu cech wyniki klasyfikacji były diametralnie rózne. Najlepsze wyniki uzyskaliśmy dla zestawów cech zawierających cechę c\textsubscript{3} -  lokacja z tagu \textless Dateline\textgreater. Dodanie do tej cechy cechy c\textsubscript{4} -  tytuł z tagu \textless Dateline\textgreater nieznacznie poprawiło wynik klasyfikacji, jednak cecha ta samodzielnie uzyskała wynik dużo gorszy niż cecha c\textsubscript{3}. Najlepsze wyniki klasyfikacji uzyskaliśmy używając cech  tekstowych, bez użycia cech liczbowych. Cechy liczbowe dawały gorsze wyniki jakości klasyfikacji niż cechy tekstowe. Cechy liczbowe bardzo pogarszały jakość klasyfikacji, co widać po porównaniu jakości klasyfikacji dla zestawu cech c1, c4, c5 oraz c3, c4, prawdopodobnie wynika to z faktu, że odległość pomiędzy cechami tekstowymi w wykorzystanej przez nas funkcji opisanej wzorem \ref{eqn:odl} zawsze znajduje się w przedziale \textless 0,1\textgreater , podczas gry odległość dla cech liczbowych może być znacznie większa, więc cechy te dominują cechy tekstowe. Jednym z możliwych rozwiązań mogłoby być zastosowanie wag dla odpowiednich cech, natomiast to rozwiązanie nie zostało zaimplemenetowane w naszym programie. 
+W sekcji \ref{subsection:ex3} porównaliśmy sześć zestawów cech. Do porównania przyjęliśmy stałe parametry: wartość \textit{k} równą 4, metrykę Euklidesową i proporcje zbioru trenującego do testowego 90:10. W zależności od wyboru zestawu cech wyniki klasyfikacji były diametralnie różne. Najlepsze wyniki uzyskaliśmy dla zestawów cech zawierających cechę c\textsubscript{3} -  lokacja z tagu \textless Dateline\textgreater. Dodanie do tej cechy cechy c\textsubscript{4} -  tytuł z tagu \textless Dateline\textgreater nieznacznie poprawiło wynik klasyfikacji, jednak cecha ta samodzielnie uzyskała wynik dużo gorszy niż cecha c\textsubscript{3}. Najlepsze wyniki klasyfikacji uzyskaliśmy używając cech  tekstowych, bez użycia cech liczbowych. Cechy liczbowe dawały gorsze wyniki jakości klasyfikacji niż cechy tekstowe. Cechy liczbowe bardzo pogarszały jakość klasyfikacji, co widać po porównaniu jakości klasyfikacji dla zestawu cech c1, c4, c5 oraz c3, c4, prawdopodobnie wynika to z faktu, że odległość pomiędzy cechami tekstowymi w wykorzystanej przez nas funkcji opisanej wzorem \ref{eqn:odl} zawsze znajduje się w przedziale \textless 0,1\textgreater , podczas gry odległość dla cech liczbowych może być znacznie większa, więc cechy te dominują cechy tekstowe. Jednym z możliwych rozwiązań mogłoby być zastosowanie wag dla odpowiednich cech, natomiast to rozwiązanie nie zostało zaimplementowane w naszym programie. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Wpływ wartości proporcji podziału zbioru na miary jakości klasyfikacji}
-W sekcji \ref{subsection:ex4} badającej wpływ wartości proporcji podziału zbioru na miary jakości klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym wyniki miar jakości klasyfikacji sa wyższe. Im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym większa szansa, że w zbiorze treningowym znajdziemy tekst podobny dla tekstu ze zbioru testowego. Analizując dane w Tabeli \ref{t3} zauważamy, że dla klas USA oraz UK, dla każdej wartości proporcji zbiorów wartość miary jakości klasyfikacji \textit{recall} jest stała. Natomiast dla pozostałych klas wartość miary \textit{recall} rośnie wraz ze wzrostem proporcji zbiorów. Klasy, dla których liczba tekstów w zbiorze treningowym jest mniejsza potrzebują do poprawnej klasyfikacji większej proporcji tekstów treningowych do tekstów testowych niż klasy o dużej liczbie tekstów w zbiorze treningowym. 
+W sekcji \ref{subsection:ex4} badającej wpływ wartości proporcji podziału zbioru na miary jakości klasyfikacji na podstawie Wykresu \ref{wykres1} zauważamy, że im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym wyniki miar jakości klasyfikacji są wyższe. Im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym większa szansa, że w zbiorze treningowym znajdziemy tekst podobny dla tekstu ze zbioru testowego. Analizując dane w Tabeli \ref{t3} zauważamy, że dla klas USA oraz UK, dla każdej wartości proporcji zbiorów wartość miary jakości klasyfikacji \textit{recall} jest stała. Natomiast dla pozostałych klas wartość miary \textit{recall} rośnie wraz ze wzrostem proporcji zbiorów. Klasy, dla których liczba tekstów w zbiorze treningowym jest mniejsza potrzebują do poprawnej klasyfikacji większej proporcji tekstów treningowych do tekstów testowych niż klasy o dużej liczbie tekstów w zbiorze treningowym. 
 
 
 
@@ -742,14 +742,14 @@ W sekcji \ref{subsection:ex4} badającej wpływ wartości proporcji podziału zb
 \subsection{Wnioski}
 \begin{itemize}
 \item Aby przeanalizować wyniki klasyfikacji nie należy jedynie kierować się miarą \textit{accuracy}. Pod uwagę należy również wziąć miary \textit{precision}, \textit{recall} oraz \textit{F1}. 
-\item Przy wykonywaniu klasyfikacji należy dobrać odpowiednie wartości parametrów wejściowych dal danego zadania.
+\item Przy wykonywaniu klasyfikacji należy dobrać odpowiednie wartości parametrów wejściowych dla danego zadania.
 \item Należy dobrać odpowiednią wartość parametru \textit{k}, ponieważ zbyt mała, bądź zbyt duża wartość tego parametru pogarsza wyniki klasyfikacji. 
-\item Parametr \textit{k} posiada wartość progrową, dla której zwiększanie wartości teg parametru nie powoduje zwiększania się jakości klasyfikacji, ponieważ wszystkie klasyfikowane elementy zostają zaklasyfikowane do klasy dominującej, przy czym klasa dominująca to klasa, która posiada najwięcej elementów w zbiorze treningowym. 
+\item Parametr \textit{k} posiada wartość progową, dla której zwiększanie wartości teg parametru nie powoduje zwiększania się jakości klasyfikacji, ponieważ wszystkie klasyfikowane elementy zostają zaklasyfikowane do klasy dominującej, przy czym klasa dominująca to klasa, która posiada najwięcej elementów w zbiorze treningowym. 
 \item Metryka Czebyszewa jest bardziej wrażliwa na cechy mające negatywny wpływ na jakość klasyfikacji niż metryka Euklidesowa i Uliczna.
 \item Metryka Czebyszewa może zostać zastosowana w celu znalezienia cechy negatywnie wpływającej na jakość klasyfikacji. 
 \item Metryka Uliczna uzyskuje najlepsze wyniki klasyfikacji z testowanych metryk.
 \item Cechy tekstowe dają lepsze wyniki niż cechy liczbowe. 
-\item Zestawu cech jest najbardziej znaczącym parametrem wejściowym.
+\item Zestaw cech jest najbardziej znaczącym parametrem wejściowym.
 \item Im większy stosunek liczby tekstów ze zbioru treningowego do liczby tekstów ze zbioru testowego, tym wyniki miar jakości klasyfikacji sa wyższe.
 \end{itemize}
 
