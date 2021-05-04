@@ -22,30 +22,28 @@
 \maketitle
 
 \section{Cel}
-Celem projektu jest stworzenie aplikacji lingwistycznie agregującej zawartości zbioru danych. Jako wynik działania aplikacji zostanie wygenerowany opis zawartości danych liczbowych w zbiorze w języku quasi-naturalnym.
+Celem projektu jest stworzenie aplikacji lingwistycznie agregującej zawartości zbioru danych wypadków samochodowych w Zjednoczonych Stanach Ameryki\cite{dane}. Jako wynik działania aplikacji zostanie wygenerowany opis zawartości danych liczbowych w zbiorze w języku quasi-naturalnym.
 
 
 \section{Charakterystyka podsumowywanej bazy danych}
-W programie został użyty zbiór danych znajdujący się w pliku CSV, który został przekształcony w bazę danych. 
+W programie został użyty zbiór danych\cite{dane} znajdujący się w pliku CSV, który został przekształcony w bazę danych. 
 
-Zbiór danych zawiera informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020. Spośród 47 kolumn znajdujących się w zbiorze danych, wybraliśmy następujących 11 kolumn:
+Zbiór danych zawiera informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020. Spośród 47 kolumn znajdujących się w zbiorze danych, wybraliśmy następujące 11 kolumn:
 \begin{itemize}
 \item Dotkliwość - Severity - wpływ wypadku na ruch na drodze, przyjmuje wartości całkowite od 1 do 4 włącznie, gdzie 1 oznacza najmniejszy wpływ na ruch drogowy, natomaist 4 oznacza największy wpływ. Dotkliwość można lingistycznie opisać jako mały lub duży wpływ na ruch drogowy.
 \item Czas rozpoczęcia - Start\_Time - czas rozpoczęcia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 31 grudnai 2020. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku.
 \item Czas zakończenia - End\_Time - czas zakończenia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 1 stycznia 2021. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku. 
-\item Odległość - Distance - długość odcinka ulicy, na którego miał wpływ wypadek wyrażony w milach. Przyjmuje wartości zmiennoprzecinkowe od 0 do 334, gdzie zdecydowana większość danych mieści się w przedziale od 0 do 6.67. 
-\item Temperatura - Temperature - temperatura powietrza w momencie, gdy zdarzył się wypadek wyrażona w Fahrenheit'ach.  Przyjmuje wartości zmiennoprzecinkowe od -16 do 104. 
-Temperature można opisac jako bardzo zimną, zimną, umiarkowaną, ciepłą, bardzo ciepłą. Oczywiście jest to opis subiektywny.
-\item Temperatura odczuwalna - Wind\_Chill - temperatura odczuwalna w momencie, gdy zdarzył się wypadek wyrażona w Fahrenheit'ach.  Przyjmuje wartości zmiennoprzecinkowe od -16 do 101. Temperaturę odczuwalną mozna opisać tak samo jak temperaturę.
-\item Wilgotność - Humidity - wilgotność powietrza w momencie, gdy zdarzył się wypadek wyrażona w procentach. Przyjmuje wartości zmiennoprzecinkowe od 4 do 100. 
-\item Ciśnienie - Pressure - ciśnienie powietrza w momencie, gdy zdarzył się wypadek wyrażona w inches. Przyjmuje wartości zmiennoprzecinkowe od 27 do 32. Ciśnieje można opisac jako wysokie, umiarkowane lub niskie. 
-\item Widoczność - Visibiity - widoczność w momencie, gdy zdarzył się wypadek wyrażona w milach. Przyjmuje wartości zmiennoprzecinkowe od 0 do 12. 
-Widoczność mozna opisać jako dobrą, ograniczoną, słabą 
-\item Prędkość wiatru - Wind\_Speed - prędkość wiatru  w momencie, gdy zdarzył się wypadek wyrażona w milach na godzinę. Przyjmuje wartości zmiennoprzecinkowe od 0 do 40.
-Wiatr mozna opisać jako silny, słaby, bryzę i umiarkowany.
-\item Ilość opadów - Principation - ilość opadów w momencie, gdy zdarzył się wypadek wyrażona w inches. Jeśli opady nie występowały to kolumna przyjmuje wartość nan.  Przyjmuje wartości zmiennoprzecinkowe od 0 do 0.5.
+\item Odległość - Distance - długość odcinka ulicy wyrażony w milach, na którego miał wpływ wypadek. Przyjmuje wartości zmiennoprzecinkowe od 0 do 334, gdzie zdecydowana większość danych mieści się w przedziale od 0.00 do 7.00. 
+\item Temperatura - Temperature - temperatura powietrza wyrażona w Fahrenheit'ach, w momencie, gdy zdarzył się wypadek.  Przyjmuje wartości zmiennoprzecinkowe od -16.00 do 104.00.  Temperature można opisac jako bardzo zimną, zimną, umiarkowaną, ciepłą, bardzo ciepłą. Oczywiście jest to opis subiektywny.
+\item Temperatura odczuwalna - Wind\_Chill - temperatura odczuwalna wyrażona w Fahrenheit'ach, w momencie, gdy zdarzył się wypadek.  Przyjmuje wartości zmiennoprzecinkowe od -16.00 do 101.00. Temperaturę odczuwalną mozna opisać tak samo jak temperaturę.
+\item Wilgotność - Humidity - wilgotność powietrza wyrażona w procentach w momencie, gdy zdarzył się wypadek. Przyjmuje wartości zmiennoprzecinkowe od 4.00 do 100.00. 
+\item Ciśnienie - Pressure - ciśnienie powietrza wyrażone w inches, w momencie, gdy zdarzył się wypadek. Przyjmuje wartości zmiennoprzecinkowe od 27.00 do 32.00. Ciśnieje można opisac jako wysokie, umiarkowane lub niskie. 
+\item Widoczność - Visibiity - widoczność wyrażona w milach, w momencie, gdy zdarzył się wypadek. Przyjmuje wartości zmiennoprzecinkowe od 0.00 do 12.00. 
+Widoczność mozna opisać jako dobrą, ograniczoną, słabą.
+\item Prędkość wiatru - Wind\_Speed - prędkość wiatru wyrażona w milach na godzinę,  w momencie, gdy zdarzył się wypadek. Przyjmuje wartości zmiennoprzecinkowe od 0.00 do 40.00. Wiatr mozna opisać jako słaby, umiarkowany, silny.
+\item Ilość opadów - Principation - ilość opadów wyrażona w inches, w momencie, gdy zdarzył się wypadek. Jeśli opady nie występowały to kolumna przyjmuje wartość nan.  Przyjmuje wartości zmiennoprzecinkowe od 0.00 do 0.50.
 \end{itemize}
-
+\ \\
 Atrybutom nadawane są opisane zwyczajowe wartości lingwistyczne ze względu na zwiększenie przystępności i ułatwienie szybkiego zrozumienia atrybutu przez człowieka, kiedy ten atrybut nie musi być dokładnie opisany.
 Przykładowo temperatura, mimo że zrozumiała dla człowieka w postaci liczbowej, jest łatwiejsza do szybszego zrozumienia w postaci tekstowej, a dla ludzi nie ma dużego znaczenia czy temperatura rózni się o 1 czy 2 stopnie, wystarczy opisać ją słownie tak jak wcześniej podaliśmy jako  bardzo zimną, zimną, umiarkowaną, ciepłą, bardzo ciepłą.
 
@@ -58,8 +56,6 @@ Przykładowo temperatura, mimo że zrozumiała dla człowieka w postaci liczbowe
  \label{Wynik klasyfikacji.}
 \end{figure}
 \newpage
-
-
 
 
 \section{Atrybuty i liczności obiektów wyrażone zmiennymi lingwistycznymi}
@@ -146,6 +142,8 @@ podać merytoryczne (ale nie czasowe) przyczyny tych braków.
  \bibitem{niewiadomski19} A. Niewiadomski, Zbiory rozmyte typu 2. Zastosowania w reprezentowaniu informacji.  Seria „Problemy współczesnej informatyki” pod redakcją L. Rutkowskiego. Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2019.
 \bibitem{zadrozny06} S. Zadrożny, Zapytania nieprecyzyjne i lingwistyczne podsumowania baz danych, EXIT, 2006, Warszawa
 \bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2008.
+\bibitem{dane} 2021 Kaggle Inc [internetowa społeczność związana z analizą danych], US Accidents (3 million records -- updated)
+A Countrywide Traffic Accident Dataset (2016 - 2020) [przeglądany 24 kwietnia 2021], Dostępny w: \url{https://www.kaggle.com/sobhanmoosavi/us-accidents}
 \end{thebibliography}
 
 Literatura zawiera wyłącznie źródła recenzowane i/lub o potwierdzonej wiarygodności,
