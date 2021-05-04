@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  25 APR 2021 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  4 MAY 2021 18:28
 entering extended mode
 **./Sprawozdanie-projekt-1-klasyfikacja.tex
 (Sprawozdanie-projekt-1-klasyfikacja.tex
@@ -574,7 +574,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 311--313
 
 
 Underfull \hbox (badness 3088) in paragraph at lines 313--313
- []\OT4/cmr/m/n/10.95 Rysunek 5.[]Wynik kla-sy-fi-ka-cji dla po-je-dy«-czej kla
+ []\OT4/cmr/m/n/10.95 Rysunek 5.[]Wynik kla-sy-fi-ka-cji dla po-je-dyn-czej kla
 -sy kla-sy-fi-ka-cji - kla-sa 
  []
 
@@ -700,72 +700,79 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 706--708
  [][] 
  []
 
-[23 <./wykres_metryka_2.png (PNG copy)>]
-Underfull \vbox (badness 4595) has occurred while \output is active []
-
- [24]
+[23 <./wykres_metryka_2.png (PNG copy)>] [24] [25]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 745.
+(Font)              <10.95> on input line 768.
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--746
+Underfull \hbox (badness 10000) in paragraph at lines 768--769
 []\OT4/cmr/m/n/10.95 Internet fo-rum. Wi-ki-pe-dia: The Free En-cyc-lo-pe-dia, 
 Do-st¦p-ny w:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--746
+Underfull \hbox (badness 10000) in paragraph at lines 768--769
 []$\OT4/cmtt/m/n/10.95 https : / / pl . wikipedia . org / wiki / Tablica _ pomy
  % C5 % 82ek ? fbclid =
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 751.
-[25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 751.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 774.
+[26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 774.
  (Sprawozdanie-projekt-1-klasyfikacja.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 751.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 751.
-Package rerunfilecheck Info: File `Sprawozdanie-projekt-1-klasyfikacja.out' has
- not changed.
-(rerunfilecheck)             Checksum: 619E168071FD4D767A52FDD2499C9241;1811.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 774.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 774.
 
+
+Package rerunfilecheck Warning: File `Sprawozdanie-projekt-1-klasyfikacja.out' 
+has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Sprawozdanie-projekt-1-klasyfikacja
+.out':
+(rerunfilecheck)             Before: FCBD01CAAB8FD24B5F95C59C2D5525FD;1831
+(rerunfilecheck)             After:  AFF21F3F6686EAD6C43138ABA756E68C;2093.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 751.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 774.
  ) 
 Here is how much of TeX's memory you used:
- 6134 strings out of 480931
- 97043 string characters out of 2898858
+ 6141 strings out of 480931
+ 97316 string characters out of 2898858
  364254 words of memory out of 3000000
- 21775 multiletter control sequences out of 15000+200000
+ 21777 multiletter control sequences out of 15000+200000
  543374 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,19n,32p,1672b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
-nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.
-enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit
-.enc}<C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmex10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Przemek/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Przeme
-k/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
-/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/pl/plbx8.pfb><C:/Users/Przemek/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Users/Pr
-zemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (25 pages, 591286 byt
+ 36i,19n,32p,1817b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsection.6.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc
+}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.en
+c}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.e
+nc}<C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Przemek/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Przemek/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
+sers/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/pl/plbx8.pfb><C:/Users/Przemek/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/Przemek/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Users/Prze
+mek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
+Output written on Sprawozdanie-projekt-1-klasyfikacja.pdf (26 pages, 591766 byt
 es).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
+ 405 PDF objects out of 1000 (max. 8388607)
+ 112 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

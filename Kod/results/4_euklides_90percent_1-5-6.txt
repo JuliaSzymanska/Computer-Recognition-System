@@ -1,0 +1,57 @@
+----------------------------------
+west-germany:
+Liczba tekstów klasy: 27
+Liczba poprawnie zaklasyfikowanych tekstów: 0
+Liczba tekstów innych klas zaklasyfikowanych do tej klasy: 0
+Precision: NaN
+Recall: 0,00
+F1: NaN
+----------------------------------
+usa:
+Liczba tekstów klasy: 241
+Liczba poprawnie zaklasyfikowanych tekstów: 237
+Liczba tekstów innych klas zaklasyfikowanych do tej klasy: 139
+Precision: 0,63
+Recall: 0,98
+F1: 0,77
+----------------------------------
+france:
+Liczba tekstów klasy: 11
+Liczba poprawnie zaklasyfikowanych tekstów: 1
+Liczba tekstów innych klas zaklasyfikowanych do tej klasy: 0
+Precision: 1,00
+Recall: 0,09
+F1: 0,17
+----------------------------------
+uk:
+Liczba tekstów klasy: 33
+Liczba poprawnie zaklasyfikowanych tekstów: 3
+Liczba tekstów innych klas zaklasyfikowanych do tej klasy: 4
+Precision: 0,43
+Recall: 0,09
+F1: 0,15
+----------------------------------
+canada:
+Liczba tekstów klasy: 39
+Liczba poprawnie zaklasyfikowanych tekstów: 2
+Liczba tekstów innych klas zaklasyfikowanych do tej klasy: 5
+Precision: 0,29
+Recall: 0,05
+F1: 0,09
+----------------------------------
+japan:
+Liczba tekstów klasy: 43
+Liczba poprawnie zaklasyfikowanych tekstów: 2
+Liczba tekstów innych klas zaklasyfikowanych do tej klasy: 1
+Precision: 0,67
+Recall: 0,05
+F1: 0,09
+----------------------------------
+wszystkie:
+Liczba tekstów testowych: 394
+Liczba dobrze zaklasyfikowanych tekstów: 245
+Accuracy: 0,62
+Precision: 0,55
+Recall: 0,62
+F1: 0,58
+----------------------------------
