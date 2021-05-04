@@ -25,6 +25,24 @@ Celem projektu jest stworzenie aplikacji lingwistycznie agregującej zawartości
 
 
 \section{Charakterystyka podsumowywanej bazy danych}
+W programie został użyty zbiór danych znajdujący się w pliku CSV, który został przekształcony w bazę danych. 
+
+Zbiór danych zawiera informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020. Spośród 47 kolumn znajdujących się w zbiorze danych, wybraliśmy następujących 11 kolumn:
+\begin{itemize}
+\item Dotkliwość - Severity - wpływ wypadku na ruch na drodze, przyjmuje wartości całkowite od 1 do 4 włącznie, gdzie 1 oznacza najmniejszy wpływ na ruch drogowy, natomaist 4 oznacza największy wpływ. 
+\item Czas rozpoczęcia - Start\_Time - czas rozpoczęcia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 31 grudnai 2020. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku.
+\item Czas zakończenia - End\_Time - czas zakończenia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 1 stycznia 2021. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku. 
+\item Odległość - Distance - długość odcinka ulicy, na którego miał wpływ wypadek wyrażony w milach. Przyjmuje wartości zmiennoprzecinkowe od 0 do 334, gdzie zdecydowana większość danych mieści się w przedziale od 0 do 6.67. 
+\item Temperatura - Temperature - temperatura powietrza w momencie, gdy zdarzył się wypadek wyrażona w Fahrenheit'ach.  Przyjmuje wartości zmiennoprzecinkowe od -16 do 104. 
+\item Temperatura odczuwalna - Wind\_Chill - temperatura odczuwalna w momencie, gdy zdarzył się wypadek wyrażona w Fahrenheit'ach.  Przyjmuje wartości zmiennoprzecinkowe od -16 do 101. 
+\item Wilgotność - Humidity - wilgotność powietrza w momencie, gdy zdarzył się wypadek wyrażona w procentach. Przyjmuje wartości zmiennoprzecinkowe od 4 do 100. 
+\item Ciśnienie - Pressure - ciśnienie powietrza w momencie, gdy zdarzył się wypadek wyrażona w inches. Przyjmuje wartości zmiennoprzecinkowe od 27 do 32. 
+\item Widoczność - Visibiity - widoczność w momencie, gdy zdarzył się wypadek wyrażona w milach. Przyjmuje wartości zmiennoprzecinkowe od 0 do 12.
+\item Prędkość wiatru - Wind\_Speed - prędkość wiatru  w momencie, gdy zdarzył się wypadek wyrażona w milach na godzinę. Przyjmuje wartości zmiennoprzecinkowe od 0 do 40.
+\item Ilość opadów - Principation - ilość opadów w momencie, gdy zdarzył się wypadek wyrażona w inches. Jeśli wyapdy nie występowały to kolumna przyjmuje wartość nan.  Przyjmuje wartości zmiennoprzecinkowe od 0 do 0.5.
+\end{itemize}
+\
+\\
 Krótki opis bazy danych wybranej do podsumowywania, źródło, opis treści,
 użyteczność/zastosowania. Liczba rekordów (min. $10\,000$ i koniecznie wszystkie tego
 samego typu), liczba atrybutów możliwych do rozmycia (min. $10$), czyli o stosunkowo dużej
