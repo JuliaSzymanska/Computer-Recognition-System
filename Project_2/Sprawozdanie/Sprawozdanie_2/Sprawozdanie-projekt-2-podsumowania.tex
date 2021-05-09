@@ -282,6 +282,46 @@ Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wra
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Widoczność powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+\begin{equation}
+\mu _{widocznoscBrak}(x) =   1 \ \ dla \ \ x  = 0
+\end{equation}
+
+\begin{equation}
+\mu _{widocznoscSlaba}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 0.1 \\
+\frac{0.1 - x}{0.2} & \mbox{dla} & 0.1 < x \leq 0.3\\
+0 & \mbox{dla} & 0.3 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{widocznoscOgraniczona}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 0.1 \\
+\frac{x - 0.1}{0.2} & \mbox{dla} & 0.1 < x \leq 0.3\\
+1 & \mbox{dla} & 0.3 < x < 0.7\\
+\frac{1 - x}{0.3} & \mbox{dla} & 0.7 < x \leq1\\
+ 0 & \mbox{dla} & x  \leq 1 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{widocznoscDobra}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 0.7 \\
+\frac{x - 0.7}{0.3} & \mbox{dla} & 0.7 < x \leq 1\\
+1 & \mbox{dla} & 1 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWidocznosc.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 
 
