@@ -10,5 +10,8 @@
         <module name="ksr" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Kod" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
