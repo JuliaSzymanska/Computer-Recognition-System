@@ -23,10 +23,11 @@
 \begin{document}
 \maketitle
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cel}
 Celem projektu jest stworzenie aplikacji lingwistycznie agregującej zawartości zbioru danych wypadków samochodowych w Zjednoczonych Stanach Ameryki\cite{dane}. Jako wynik działania aplikacji zostanie wygenerowany opis zawartości danych liczbowych w zbiorze w języku quasi-naturalnym.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charakterystyka podsumowywanej bazy danych}
 W programie został użyty zbiór danych\cite{dane} znajdujący się w pliku CSV, który został przekształcony w bazę danych. 
 
@@ -59,8 +60,9 @@ Przykładowo temperatura, mimo że zrozumiała dla człowieka w postaci liczbowe
 \end{figure}
 \newpage
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Atrybuty i liczności obiektów wyrażone zmiennymi lingwistycznymi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Dotkliwość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
 
 %\begin{equation}
@@ -78,9 +80,17 @@ Dotkliwość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wyk
 \mu _{dotkliwoscMala}(x) =  \frac{4 - x}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
 \end{equation}
 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciDotkliwosc.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego dotkliwości. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Czas trwania wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
-
 \begin{equation}
 \mu _{czasTrwaniaKrotki}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 1.5 \\
@@ -107,7 +117,17 @@ Czas trwania wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w fo
 \end{array}\right.
 \end{equation}
 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCzasTrwania.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
 \begin{equation}
 \mu _{OdlegloscKrotki}(x) =  \left\{ \begin{array}{rcl}
@@ -124,6 +144,47 @@ Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykr
 1 & \mbox{dla} & 1 \leq x\\
 \end{array}\right.
 \end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Temperatura w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+\begin{equation}
+\mu _{temperaturaBardzoZimno}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 1.5 \\
+\frac{3 - x}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
+0 & \mbox{dla} & 3 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{czasTrwaniaSredni}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 1.5 \\
+\frac{x - 1.5}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
+1 & \mbox{dla} & 3 < x < 5.5\\
+\frac{7 - x}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
+ 0 & \mbox{dla} & x  \leq 7 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{czasTrwaniaDlugi}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 5.5 \\
+\frac{x - 5.5}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
+1 & \mbox{dla} & 7 \leq x\\
+\end{array}\right.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Zmienne lingwistyczne dla wybranych 10 atrybutów z bazy danych, przedstawione w
