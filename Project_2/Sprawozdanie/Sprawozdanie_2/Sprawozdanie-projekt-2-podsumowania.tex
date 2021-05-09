@@ -35,7 +35,7 @@ Zbiór danych zawiera informacje o ponad 3 milionach wypadków samochodowych w 4
 \item Dotkliwość - Severity - wpływ wypadku na ruch na drodze, przyjmuje wartości całkowite od 1 do 4 włącznie, gdzie 1 oznacza najmniejszy wpływ na ruch drogowy, natomaist 4 oznacza największy wpływ. Dotkliwość można lingistycznie opisać jako mały lub duży wpływ na ruch drogowy.
 \item Czas rozpoczęcia - Start\_Time - czas rozpoczęcia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 31 grudnia 2020. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku.
 \item Czas zakończenia - End\_Time - czas zakończenia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 1 stycznia 2021. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku. 
-\item Odległość - Distance - długość odcinka ulicy wyrażony w milach, na którego miał wpływ wypadek. Przyjmuje wartości zmiennoprzecinkowe od 0 do 334, gdzie zdecydowana większość danych mieści się w przedziale od 0.00 do 7.00. 
+\item Odległość - Distance - długość odcinka ulicy wyrażony w milach, na którego miał wpływ wypadek. Przyjmuje wartości zmiennoprzecinkowe od 0 do 334, gdzie zdecydowana większość danych mieści się w przedziale od 0.00 do 4.00. 
 \item Temperatura - Temperature - temperatura powietrza wyrażona w Fahrenheit'ach, w momencie, gdy zdarzył się wypadek.  Przyjmuje wartości zmiennoprzecinkowe od -16.00 do 104.00.  Temperature można opisac jako bardzo zimną, zimną, umiarkowaną, ciepłą, bardzo ciepłą. Oczywiście jest to opis subiektywny.
 \item Temperatura odczuwalna - Wind\_Chill - temperatura odczuwalna wyrażona w Fahrenheit'ach, w momencie, gdy zdarzył się wypadek.  Przyjmuje wartości zmiennoprzecinkowe od -16.00 do 101.00. Temperaturę odczuwalną mozna opisać tak samo jak temperaturę.
 \item Wilgotność - Humidity - wilgotność powietrza wyrażona w procentach w momencie, gdy zdarzył się wypadek. Przyjmuje wartości zmiennoprzecinkowe od 4.00 do 100.00. 
@@ -77,6 +77,54 @@ Dotkliwość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wyk
 \begin{equation}
 \mu _{dotkliwoscMala}(x) =  \frac{4 - x}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
 \end{equation}
+
+
+Czas trwania wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+
+\begin{equation}
+\mu _{czasTrwaniaKrotki}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 1.5 \\
+\frac{3 - x}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
+0 & \mbox{dla} & 3 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{czasTrwaniaSredni}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 1.5 \\
+\frac{x - 1.5}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
+1 & \mbox{dla} & 3 < x < 5.5\\
+\frac{7 - x}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
+ 0 & \mbox{dla} & x  \leq 7 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{czasTrwaniaDlugi}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 5.5 \\
+\frac{x - 5.5}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
+1 & \mbox{dla} & 7 \leq x\\
+\end{array}\right.
+\end{equation}
+
+
+Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+\begin{equation}
+\mu _{OdlegloscKrotki}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 0.5 \\
+\frac{1 - x}{0.5} & \mbox{dla} & 0.5 < x \leq 1\\
+0 & \mbox{dla} & 1 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{OdlegloscDlugi}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 0.5 \\
+\frac{x - 0.5}{0.5} & \mbox{dla} & 0.5 < x \leq 1\\
+1 & \mbox{dla} & 1 \leq x\\
+\end{array}\right.
+\end{equation}
+
 
 Zmienne lingwistyczne dla wybranych 10 atrybutów z bazy danych, przedstawione w
 formie wykresów funkcji przynależności i wzorów analitycznych, wymienione etykiety oraz objaśnione wszystkie
