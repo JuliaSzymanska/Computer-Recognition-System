@@ -145,6 +145,15 @@ Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykr
 \end{array}\right.
 \end{equation}
 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciOdleglosc.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego odległości. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
 \begin{equation}
@@ -197,7 +206,7 @@ Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczn
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciTemperatura.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \caption{Wykres funkcji przynależności zbioru rozmytego temperatury. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -237,7 +246,7 @@ Wilgotność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWilgotnosc.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \caption{Wykres funkcji przynależności zbioru rozmytego wilgotności. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -275,7 +284,7 @@ Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wra
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCiśnienie.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \caption{Wykres funkcji przynależności zbioru rozmytego ciśneinia. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -318,7 +327,7 @@ Widoczność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWidocznosc.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \caption{Wykres funkcji przynależności zbioru rozmytego widoczności. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -379,12 +388,57 @@ Predkosc wiatru w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z e
 
 \begin{figure}[h!]
  \centering
- \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWidocznosc.png}
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciPredkoscWiatru.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \caption{Wykres funkcji przynależności zbioru rozmytego prędkości wiatru. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Opadów w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+
+\begin{equation}
+\mu _{opadyBrak}(x) =   1 \ \ dla \ \ x  = 0
+\end{equation}
+
+\begin{equation}
+\mu _{opadyNiewielkie}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 0.1 \\
+\frac{0.1- x}{0.1} & \mbox{dla} & 0.1 < x \leq 0.2\\
+0 & \mbox{dla} & 0.2 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{opadyUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 0.1 \\
+\frac{x - 0.1}{0.1} & \mbox{dla} & 0.1 < x \leq 0.2\\
+1 & \mbox{dla} & 0.2 < x < 0.4\\
+\frac{0.45 - x}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
+ 0 & \mbox{dla} & x  \leq 0.45 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{opadyDuze}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 0.4 \\
+\frac{x - 0.45}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
+1 & \mbox{dla} & 0.45 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciOpady.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego opadów. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
+
 
 
 
