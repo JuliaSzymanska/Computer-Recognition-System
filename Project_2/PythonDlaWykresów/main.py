@@ -62,8 +62,21 @@ def draw_temperature():
     plt.show()
 
 
+def draw_humidity():
+    plt.grid(linestyle='dotted')
+    plt.plot([4, 30, 40], [1, 1, 0], label="Suche Powietrze")
+    plt.plot([30, 40, 60, 70], [0, 1, 1, 0], label="Umiarkowana Wilgotność powietrza")
+    plt.plot([60, 70, 100], [0, 1, 1], label="Wilgotne Powietrze")
+    plt.xlabel('Wilgotność Powietrza')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego\nWilgotności Powietrza W Momencie Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_temperature()
+    draw_humidity()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
