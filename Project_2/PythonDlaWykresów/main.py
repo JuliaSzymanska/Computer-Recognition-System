@@ -102,8 +102,38 @@ def draw_visibility():
     plt.show()
 
 
+def draw_wind_speed():
+    plt.grid(linestyle='dotted')
+    plt.scatter([0], [1], label="Brak Wiatru")
+    plt.plot([0, 3, 3.5], [1, 1, 0], '#651fff', label="Słaby Wiatr")
+    plt.plot([3, 3.5, 8, 9], [0, 1, 1, 0], 'g', label="Umiarkowany Wiatr")
+    plt.plot([8, 9, 17, 20], [0, 1, 1, 0], 'r', label="Silny Wiatr")
+    plt.plot([17, 20, 27, 30], [0, 1, 1, 0], 'm', label="Wicher")
+    plt.plot([27, 30, 40], [0, 1, 1], 'c', label="Huragan")
+    plt.xlabel('Prędkość Wiatru w Milach na Godzinę')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego\nPrędkości Wiatru W Momencie Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+def draw_principation():
+    plt.grid(linestyle='dotted')
+    plt.scatter([0], [1], label="Brak Opadów")
+    plt.plot([0, 0.1, 0.2], [1, 1, 0], '#651fff', label="Niewielkie Opady")
+    plt.plot([0.1, 0.2, 0.4, 0.45], [0, 1, 1, 0], 'g', label="Umiarkowane Opady")
+    plt.plot([0.4, 0.45, 0.5], [0, 1, 1], 'r', label="Duże Opady")
+    plt.xlabel('Opady w Calach')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego\nOpadów W Momencie Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_visibility()
+    draw_principation()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
