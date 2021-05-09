@@ -149,30 +149,58 @@ Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykr
 Temperatura w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
 \begin{equation}
 \mu _{temperaturaBardzoZimno}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 1.5 \\
-\frac{3 - x}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
-0 & \mbox{dla} & 3 \leq x\\
+ 1 & \mbox{dla} & x  \leq 14 \\
+\frac{23 - x}{9} & \mbox{dla} & 14 < x \leq 23\\
+0 & \mbox{dla} & 23 \leq x\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{czasTrwaniaSredni}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 1.5 \\
-\frac{x - 1.5}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
-1 & \mbox{dla} & 3 < x < 5.5\\
-\frac{7 - x}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
- 0 & \mbox{dla} & x  \leq 7 \\
+\mu _{temperaturaZimno}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 14 \\
+\frac{x - 14}{9} & \mbox{dla} & 14 < x \leq 23\\
+1 & \mbox{dla} & 23 < x < 44\\
+\frac{54 - x}{10} & \mbox{dla} & 44 < x \leq 54\\
+ 0 & \mbox{dla} & x  \leq 54 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{czasTrwaniaDlugi}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 5.5 \\
-\frac{x - 5.5}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
-1 & \mbox{dla} & 7 \leq x\\
+\mu _{temperaturaSrednia}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 44 \\
+\frac{x - 44}{10} & \mbox{dla} & 44 < x \leq 54\\
+1 & \mbox{dla} & 54 < x < 63\\
+\frac{71 - x}{8} & \mbox{dla} & 63 < x \leq 71\\
+ 0 & \mbox{dla} & x  \leq 71 \\
 \end{array}\right.
 \end{equation}
 
+\begin{equation}
+\mu _{temperaturaCieplo}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 63 \\
+\frac{x - 63}{8} & \mbox{dla} & 63 < x \leq 71\\
+1 & \mbox{dla} & 71 < x < 80\\
+\frac{90 - x}{10} & \mbox{dla} & 80 < x \leq 90\\
+ 0 & \mbox{dla} & x  \leq 90 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{temperaturaBardzoCieplo}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 80 \\
+\frac{x - 80}{10} & \mbox{dla} & 80 < x \leq 90\\
+1 & \mbox{dla} & 90 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciTemperatura.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 
 
