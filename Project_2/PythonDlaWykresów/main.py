@@ -91,8 +91,8 @@ def draw_pressure():
 def draw_visibility():
     plt.grid(linestyle='dotted')
     plt.scatter([0], [1], label="Brak Widoczności")
-    plt.plot([0, 0.1, 0.3], [1, 1, 0], '#E6E6FA', label="Słaba Widoczność")
-    plt.plot([0.1, 0.3, 0.7, 1], [0, 1, 1, 0], '#FF4500', label="Ograniczona Widoczność")
+    plt.plot([0, 0.1, 0.3], [1, 1, 0], '#651fff', label="Słaba Widoczność")
+    plt.plot([0.1, 0.3, 0.7, 1], [0, 1, 1, 0], 'g', label="Ograniczona Widoczność")
     plt.plot([0.7, 1, 2], [0, 1, 1], 'r', label="Dobra Widoczność")
     plt.xlabel('Widoczność W Milach')
     plt.ylabel('Stopień Przynależności')
