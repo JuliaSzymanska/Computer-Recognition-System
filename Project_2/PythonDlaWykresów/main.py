@@ -75,8 +75,34 @@ def draw_humidity():
     plt.show()
 
 
+def draw_pressure():
+    plt.grid(linestyle='dotted')
+    plt.plot([27, 28.5, 29], [1, 1, 0], label="Niskie Ciśnienie")
+    plt.plot([28.5, 29, 30, 30.5], [0, 1, 1, 0], label="Umiarkowane Ciśnienie")
+    plt.plot([30, 30.5, 32], [0, 1, 1], label="Wysokie Ciśnienie")
+    plt.xlabel('Ciśnienie w Calach Rtęci')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego\nCiśnienia W Momencie Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+def draw_visibility():
+    plt.grid(linestyle='dotted')
+    plt.plot([27, 28.5, 29], [1, 1, 0], label="Niskie Ciśnienie")
+    plt.plot([28.5, 29, 30, 30.5], [0, 1, 1, 0], label="Umiarkowane Ciśnienie")
+    plt.plot([30, 30.5, 32], [0, 1, 1], label="Wysokie Ciśnienie")
+    plt.xlabel('Ciśnienie w Calach Rtęci')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego\nCiśnienia W Momencie Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_humidity()
+    draw_pressure()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
