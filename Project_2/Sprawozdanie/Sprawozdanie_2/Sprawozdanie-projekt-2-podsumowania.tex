@@ -283,7 +283,7 @@ Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wra
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Widoczność powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Widoczność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
 \begin{equation}
 \mu _{widocznoscBrak}(x) =   1 \ \ dla \ \ x  = 0
 \end{equation}
@@ -323,6 +323,68 @@ Widoczność powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona w
 \end{figure}
 \newpage
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Predkosc wiatru w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+
+\begin{equation}
+\mu _{wiatrBrak}(x) =   1 \ \ dla \ \ x  = 0
+\end{equation}
+
+\begin{equation}
+\mu _{wiatrSlaby}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 3 \\
+\frac{3- x}{0.5} & \mbox{dla} & 3 < x \leq 3.5\\
+0 & \mbox{dla} & 3.5 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{wiatrUmiarkowany}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 3 \\
+\frac{x - 3}{0.5} & \mbox{dla} & 3 < x \leq 3.5\\
+1 & \mbox{dla} & 3.5 < x < 8\\
+\frac{9 - x}{1} & \mbox{dla} & 8 < x \leq 9\\
+ 0 & \mbox{dla} & x  \leq 9 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{wiatrSilny}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 8 \\
+\frac{x - 8}{1} & \mbox{dla} & 8 < x \leq 9\\
+1 & \mbox{dla} & 9 < x < 17\\
+\frac{20 - x}{3} & \mbox{dla} & 17 < x \leq 20\\
+ 0 & \mbox{dla} & x  \leq 20 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{Wicher}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 17 \\
+\frac{x - 17}{3} & \mbox{dla} & 17 < x \leq 20\\
+1 & \mbox{dla} & 20 < x < 27\\
+\frac{30 - x}{3} & \mbox{dla} & 27 < x \leq 30\\
+ 0 & \mbox{dla} & x  \leq 30 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{Huragan}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 27 \\
+\frac{x - 40}{10} & \mbox{dla} & 30 < x \leq 40\\
+1 & \mbox{dla} & 40 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWidocznosc.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 
 
