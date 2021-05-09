@@ -19,6 +19,7 @@ def draw_severity():
     plt.tight_layout()
     plt.show()
 
+
 def draw_duration():
     plt.xticks(range(0, 24))
     plt.grid(linestyle='dotted')
@@ -32,10 +33,37 @@ def draw_duration():
     plt.tight_layout()
     plt.show()
 
-    pass
+
+def draw_distance():
+    # plt.xticks(range(0, 24))
+    plt.grid(linestyle='dotted')
+    plt.plot([0, 0.5, 1], [1, 1, 0], label="Krótka Odległość")
+    plt.plot([0.5, 1, 3], [0, 1, 1], label="Długa Odległość")
+    plt.xlabel('Długość Trasy Dotknięta Wypadkiem w Milach')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego Odległości Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+def draw_temperature():
+    plt.grid(linestyle='dotted')
+    plt.plot([-16, 14, 23], [1, 1, 0], '#0000CD', label="Bardzo Niska Temperatura")
+    plt.plot([14, 23, 44, 54], [0, 1, 1, 0], '#1E90FF', label="Niska Temperatura")
+    plt.plot([44, 54, 63, 71], [0, 1, 1, 0], '#FFD700', label="Średnia Temperatura")
+    plt.plot([63, 71, 80, 90], [0, 1, 1, 0], '#FF4500', label="Wysoka Temperatura")
+    plt.plot([80, 90, 104], [0, 1, 1], '#FF0000', label="Bardzo Wysoka Temperatura")
+    plt.xlabel('Temperatura W Stopniach Fahrenheita')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Funkcja Przynależności Zbioru Rozmytego\nTemperatury W Momencie Wypadku")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_duration()
+    draw_temperature()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
