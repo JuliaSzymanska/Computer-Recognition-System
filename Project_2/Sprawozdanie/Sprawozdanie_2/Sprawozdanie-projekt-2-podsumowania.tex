@@ -146,7 +146,7 @@ Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykr
 \end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Temperatura w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
 \begin{equation}
 \mu _{temperaturaBardzoZimno}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 14 \\
@@ -205,6 +205,42 @@ Temperatura w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyki
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Wilgotność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+\begin{equation}
+\mu _{wilgotnoscSuche}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 30 \\
+\frac{30 - x}{9} & \mbox{dla} & 30 < x \leq 40\\
+0 & \mbox{dla} & 40 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{wilgotnoscUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 30 \\
+\frac{x - 30}{10} & \mbox{dla} & 30 < x \leq 40\\
+1 & \mbox{dla} & 40 < x < 60\\
+\frac{70 - x}{10} & \mbox{dla} & 60 < x \leq 70\\
+ 0 & \mbox{dla} & x  \leq 70 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{wilgotnoscWilgotne}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 60 \\
+\frac{x - 60}{10} & \mbox{dla} & 60 < x \leq 70\\
+1 & \mbox{dla} & 70 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWilgotnosc.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 
 
