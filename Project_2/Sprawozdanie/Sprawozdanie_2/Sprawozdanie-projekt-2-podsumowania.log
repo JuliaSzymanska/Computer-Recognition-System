@@ -1,0 +1,234 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  4 MAY 2021 19:18
+entering extended mode
+**./Sprawozdanie-projekt-2-podsumowania.tex
+(Sprawozdanie-projekt-2-podsumowania.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (classrep.cls
+Document Class: classrep 2009/11/27 ICS Class Assignment Report
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mwcls\mwart.cls"
+Document Class: mwart 2017/05/13 v0.75 A LaTeX document class (MW)
+*** Beta version. Formatting may change
+*** in future versions of this class.
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mwcls\mw12.clo"
+File: mw12.clo 2017/05/13 v0.75 A document class size option (MW)
+)
+\@parindent=\dimen134
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen135
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\polski.st
+y"
+Package: polski 2017/05/04 v1.3.4 Polish language package
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ot4enc.def"
+File: ot4enc.def 2020/02/11 v2.0o Standard LaTeX file
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+)) ("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.s
+ty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\col
+or.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdf
+tex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+x.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.
+sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+s.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.st
+y"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\gra
+phics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3back
+end-pdfmode.def"
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count175
+\l__pdf_internal_box=\box45
+) (Sprawozdanie-projekt-2-podsumowania.aux)
+\openout1 = `Sprawozdanie-projekt-2-podsumowania.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 21.
+LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 2
+1.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmr.fd
+"
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    ... okay on input line 21.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
+-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count176
+\scratchdimen=\dimen138
+\scratchbox=\box46
+\nofMPsegments=\count177
+\nofMParguments=\count178
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count179
+\MPscratchDim=\dimen139
+\MPnumerator=\count180
+\makeMPintoPDFobject=\count181
+\everyMPtoPDFconversion=\toks19
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\eps
+topdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 22.
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 
+22.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.f
+d"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+) [1
+
+{C:/Users/Przemek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<accidents.png, id=8, 272.01625pt x 340.27126pt>
+File: accidents.png Graphic file (type png)
+<use accidents.png>
+Package pdftex.def Info: accidents.png  used on input line 53.
+(pdftex.def)             Requested size: 398.33858pt x 498.31837pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 53--55
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2]
+Underfull \vbox (badness 1377) has occurred while \output is active []
+
+ [3 <./accidents.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 101--107
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
+
+ []
+
+
+Underfull \vbox (badness 1077) has occurred while \output is active []
+
+ [5]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 146.
+
+[6] (Sprawozdanie-projekt-2-podsumowania.aux) ) 
+Here is how much of TeX's memory you used:
+ 1699 strings out of 480931
+ 25908 string characters out of 2898858
+ 261136 words of memory out of 3000000
+ 17575 multiletter control sequences out of 15000+200000
+ 539881 words of font info for 45 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,7n,32p,413b,345s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Przemek/AppData/Local/
+Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/Przemek/AppData/Local
+/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/Przemek/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Prze
+mek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users
+/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (6 pages, 84525 bytes
+).
+PDF statistics:
+ 44 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
