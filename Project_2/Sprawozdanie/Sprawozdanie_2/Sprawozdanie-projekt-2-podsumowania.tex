@@ -243,6 +243,42 @@ Wilgotność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
 \newpage
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+\begin{equation}
+\mu _{cisnienieNiskie}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 28.5 \\
+\frac{28.5 - x}{0.5} & \mbox{dla} & 28.5 < x \leq 29\\
+0 & \mbox{dla} & 29 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{cisnienieUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x  \leq 28.5 \\
+\frac{x - 28.5}{0.5} & \mbox{dla} & 28.5 < x \leq 29\\
+1 & \mbox{dla} & 29 < x < 30\\
+\frac{30.5 - x}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
+ 0 & \mbox{dla} & x  \leq 30.5 \\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{cisnienieWysokie}(x) =  \left\{ \begin{array}{rcl}
+ 0 & \mbox{dla} & x \leq 30 \\
+\frac{x - 30}{1.5} & \mbox{dla} & 30.5 < x \leq 32\\
+1 & \mbox{dla} & 32 \leq x\\
+\end{array}\right.
+\end{equation}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCiśnienie.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 
 
