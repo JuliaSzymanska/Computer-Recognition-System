@@ -63,18 +63,15 @@ Przykładowo temperatura, mimo że zrozumiała dla człowieka w postaci liczbowe
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Atrybuty i liczności obiektów wyrażone zmiennymi lingwistycznymi}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Poniżej zostaną przedstawione zmiene lingwistyczne dla jedenastu atrybutów z bazy danych wraz z przypisanymi etykietami w formie funkcji przynależności oraz wzorów analitycznych. \\
 
-%\begin{equation}
-%\mu _{severity}(x) =  \left\{ \begin{array}{rcl}
-%0 & \mbox{dla} & x = 1 \\
-%\frac{x - 1}{3} & \mbox{dla} & x  \epsilon \{2, 3, 4\}\\
-%\end{array}\right.
-%\end{equation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Czas trwania wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Na podstawie znajdujących się w bazie danych pól Czas rozpoczęcia (Start\_Time) oraz Czas zakończenia (End\_Time) zostanie obliczony Czas trwania (Duration) wypadku według wzoru:
+\begin{equation}
+Duration = End\_Time - Start\_Time
+\end{equation}
+Przedstawienie Czasu trwania (Duration) jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, średni, długi. 
 \begin{equation}
 \mu _{czasTrwaniaKrotki}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 1.5 \\
@@ -101,6 +98,7 @@ Czas trwania wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w fo
 \end{array}\right.
 \end{equation}
 
+gdzie: \(\mu _{czasTrwaniaKrotki}\), \(\mu _{czasTrwaniaSredni}\), \(\mu _{czasTrwaniaDlugi}\) - funkcje przynależności, \textit{x} - czas trwania wypadku. 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCzasTrwania.png}
@@ -112,7 +110,7 @@ Czas trwania wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w fo
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie odległości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, długi. 
 \begin{equation}
 \mu _{OdlegloscKrotki}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 0.5 \\
@@ -129,6 +127,8 @@ Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykr
 \end{array}\right.
 \end{equation}
 
+gdzie: \(\mu _{OdlegloscKrotki}\), \(\mu _{OdlegloscDlugi}\)- funkcje przynależności, \textit{x} - odleglość. 
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciOdleglosc.png}
@@ -139,7 +139,7 @@ Odleglość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykr
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie temperatury oraz temperatury odczuwalnej jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: bardzo zimno, zimno, umiarkowanie, ciepło, bardzo ciepło. 
 \begin{equation}
 \mu _{temperaturaBardzoZimno}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 14 \\
@@ -159,7 +159,7 @@ Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczn
 \end{equation}
 
 \begin{equation}
-\mu _{temperaturaSrednia}(x) =  \left\{ \begin{array}{rcl}
+\mu _{temperaturaUmiarkowanie}(x) =  \left\{ \begin{array}{rcl}
  0 & \mbox{dla} & x  \leq 44 \\
 \frac{x - 44}{10} & \mbox{dla} & 44 < x \leq 54\\
 1 & \mbox{dla} & 54 < x < 63\\
@@ -186,7 +186,8 @@ Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczn
 \end{array}\right.
 \end{equation}
 
-\newpage
+gdzie: \(\mu _{temperaturaBardzoZimna}\), \(\mu _{temperaturaZimna}\), \(\mu _{temperaturaUmiarkowana}\), \(\mu _{temperaturaCiepla}\), \(\mu _{temperaturaBardzoCiepla}\) - funkcje przynależności, \textit{x} - temperatura, temperatura odczuwalna. 
+
 
 \begin{figure}[h!]
  \centering
@@ -197,8 +198,8 @@ Temperatura oraz temperatura odczuwalna w momencie wypadku, zmienna lingwistyczn
 \end{figure}
 \newpage
 
-Dotkliwość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Przedstawienie dotkliwości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: duża, mała. 
 \begin{equation}
 \mu _{dotkliwoscDuza}(x) =  \frac{x - 1}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
 \end{equation}
@@ -206,6 +207,8 @@ Dotkliwość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wyk
 \begin{equation}
 \mu _{dotkliwoscMala}(x) =  \frac{4 - x}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
 \end{equation}
+
+gdzie: \(\mu _{dotkliwoscDuza}\), \(\mu _{dotkliwoscMala}\)- funkcje przynależności, \textit{x} - dotkliwość. 
 
 \begin{figure}[h!]
  \centering
@@ -220,7 +223,7 @@ Dotkliwość, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wyk
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Wilgotność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie wilgotności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: suche, umiarkowane, wilgotne. 
 \begin{equation}
 \mu _{wilgotnoscSuche}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 30 \\
@@ -247,6 +250,8 @@ Wilgotność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
 \end{array}\right.
 \end{equation}
 
+gdzie: \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wilgotnoscWilgotne}\) - funkcje przynależności, \textit{x} - wilgotność. 
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWilgotnosc.png}
@@ -258,7 +263,7 @@ Wilgotność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie ciśnienia jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: niskie, umiarkowane, wysokie. 
 \begin{equation}
 \mu _{cisnienieNiskie}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 28.5 \\
@@ -285,6 +290,8 @@ Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wra
 \end{array}\right.
 \end{equation}
 
+gdzie: \(\mu _{cisnienieNiskie}\), \(\mu _{cisnienieUmiarkowane}\), \(\mu _{cisnienieWysokie}\) - funkcje przynależności, \textit{x} - ciśnienie. 
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCiśnienie.png}
@@ -297,7 +304,7 @@ Ciśnienie powietrza w momencie wypadku, zmienna lingwistyczna przedstawiona wra
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Widoczność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie widoczności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: brak, słaba, ograniczona, dobra. 
 \begin{equation}
 \mu _{widocznoscBrak}(x) =   1 \ \ dla \ \ x  = 0
 \end{equation}
@@ -328,6 +335,8 @@ Widoczność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
 \end{array}\right.
 \end{equation}
 
+gdzie: \(\mu _{widocznoscBrak}\), \(\mu _{widocznoscSlaba}\), \(\mu _{widocznoscOgraniczona}\), \(\mu _{widocznoscDobra}\)  - funkcje przynależności, \textit{x} - widoczność. 
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWidocznosc.png}
@@ -339,7 +348,7 @@ Widoczność w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etyk
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Predkosc wiatru w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie predkości wiatru jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: brak, słaby, umiarkowany, silny, wicher, huragan. 
 
 \begin{equation}
 \mu _{wiatrBrak}(x) =   1 \ \ dla \ \ x  = 0
@@ -374,7 +383,7 @@ Predkosc wiatru w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z e
 \end{equation}
 
 \begin{equation}
-\mu _{Wicher}(x) =  \left\{ \begin{array}{rcl}
+\mu _{wiatrWicher}(x) =  \left\{ \begin{array}{rcl}
  0 & \mbox{dla} & x  \leq 17 \\
 \frac{x - 17}{3} & \mbox{dla} & 17 < x \leq 20\\
 1 & \mbox{dla} & 20 < x < 27\\
@@ -384,12 +393,15 @@ Predkosc wiatru w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z e
 \end{equation}
 
 \begin{equation}
-\mu _{Huragan}(x) =  \left\{ \begin{array}{rcl}
+\mu _{wiatrHuragan}(x) =  \left\{ \begin{array}{rcl}
  0 & \mbox{dla} & x \leq 27 \\
 \frac{x - 40}{10} & \mbox{dla} & 30 < x \leq 40\\
 1 & \mbox{dla} & 40 \leq x\\
 \end{array}\right.
 \end{equation}
+
+gdzie: \(\mu _{wiatrBrak}\), \(\mu _{wiatrSlaby}\), \(\mu _{wiatrUmiarkowany}\), \(\mu _{wiatrSilny}\), \(\mu _{wiatrWicher}\), \(\mu _{wiatrHuragan}\)  - funkcje przynależności, \textit{x} - prędkość wiatru. 
+
 \newpage
 \begin{figure}[h!]
  \centering
@@ -403,7 +415,7 @@ Predkosc wiatru w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z e
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Opadów w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietami w formie wykresu funkcji przynelażności oraz wzorów analitycznych:
+Przedstawienie opadów jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: brak, niewielkie, umiarkowane, duże. 
 
 \begin{equation}
 \mu _{opadyBrak}(x) =   1 \ \ dla \ \ x  = 0
@@ -435,6 +447,8 @@ Opadów w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietam
 \end{array}\right.
 \end{equation}
 
+gdzie: \(\mu _{opadyBrak}\), \(\mu _{opadyNiewielkie}\), \(\mu _{opadyUmiarkowane}\), \(\mu _{opadyDuze}\)  - funkcje przynależności, \textit{x} - opady. 
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciOpady.png}
@@ -444,22 +458,22 @@ Opadów w momencie wypadku, zmienna lingwistyczna przedstawiona wraz z etykietam
 \end{figure}
 \newpage
 
+Do kwantyfikatora lingwistycznego zostały dopasowane etykiety: niewiele, około 1/4, około połowy, większość, prawie wszystkie. 
 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{kwantyfikatory.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności zbioru rozmytego opadów. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
-
-
-Zmienne lingwistyczne dla wybranych 10 atrybutów z bazy danych, przedstawione w
-formie wykresów funkcji przynależności i wzorów analitycznych, wymienione etykiety oraz objaśnione wszystkie
-symbole ułatwiające czytelnikowi ich zrozumienie \cite{zadrozny06}. Zbędne jest
-cytowanie definicji. Konieczne precyzyjnie podane przestrzenie rozważań każdej
-zmiennej lingwistycznej, wzory i wykresy dla każdej wartości/etykiety.\\
 Jw. kwantyfikatory lingwistyczne -- opisane etykietami, wykresami funkcji
 przynależności i wzorami analitycznymi. Uzasadnione wiedzą dziedzinową wybrane
 zakresy i etykiety. Precyzyjnie podane przestrzenie rozważań każdego kwantyfikatora 
 lingwistycznego/rozmytego, wzory i wykresy dla każdej wartości/etykiety. Opisy własne z~przypisami do literatury, tak by inżynier innej specjalności zrozumiał dalszy
 opis tego konkretnego ćwiczenia/eksperymentu. \\ 
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 09 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
 
 \section{Narzędzia obliczeniowe: projekt (wybór, implementacja) i diagram UML pakietu obliczeń rozmytych. Diagram UML generatora podsumowań}
 \subsection{Diagram pakietu obliczeń rozmytych}
