@@ -25,7 +25,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cel}
-Celem projektu jest stworzenie aplikacji lingwistycznie agregującej zawartości zbioru danych wypadków samochodowych w Zjednoczonych Stanach Ameryki\cite{dane}. Jako wynik działania aplikacji zostanie wygenerowany opis zawartości danych liczbowych w zbiorze w języku quasi-naturalnym.
+Celem projektu jest stworzenie aplikacji pozwalającej na opisanie językiem naturalnym zbioru danych zawierających liczbowe informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020\cite{dane}. Zbiór danych składa się z 47 kolumn. W celu wykonania opisu danych językiem naturalnym wykorzystamy metody logiki rozmytej. Logika rozmyta pozwala na opisanie wartości zapisanych językiem naturalnym za pomocą zrozumiałych określeń jak: mało, dużo, około połowy. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charakterystyka podsumowywanej bazy danych}
@@ -197,28 +198,6 @@ gdzie: \(\mu _{temperaturaBardzoZimna}\), \(\mu _{temperaturaZimna}\), \(\mu _{t
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Przedstawienie dotkliwości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: duża, mała. 
-\begin{equation}
-\mu _{dotkliwoscDuza}(x) =  \frac{x - 1}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
-\end{equation}
-
-\begin{equation}
-\mu _{dotkliwoscMala}(x) =  \frac{4 - x}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
-\end{equation}
-
-gdzie: \(\mu _{dotkliwoscDuza}\), \(\mu _{dotkliwoscMala}\)- funkcje przynależności, \textit{x} - dotkliwość. 
-
-\begin{figure}[h!]
- \centering
- \includegraphics[width=14cm]{FunkcjaPrzynaleznosciDotkliwosc.png}
- \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego dotkliwości. }
- \label{rysunek do eksperymentu 1 wariantu 1}
-\end{figure}
-\newpage
-
 
 
 
@@ -469,11 +448,6 @@ Do kwantyfikatora lingwistycznego zostały dopasowane etykiety: niewiele, około
 \end{figure}
 \newpage
 
-Jw. kwantyfikatory lingwistyczne -- opisane etykietami, wykresami funkcji
-przynależności i wzorami analitycznymi. Uzasadnione wiedzą dziedzinową wybrane
-zakresy i etykiety. Precyzyjnie podane przestrzenie rozważań każdego kwantyfikatora 
-lingwistycznego/rozmytego, wzory i wykresy dla każdej wartości/etykiety. Opisy własne z~przypisami do literatury, tak by inżynier innej specjalności zrozumiał dalszy
-opis tego konkretnego ćwiczenia/eksperymentu. \\ 
 
 \section{Narzędzia obliczeniowe: projekt (wybór, implementacja) i diagram UML pakietu obliczeń rozmytych. Diagram UML generatora podsumowań}
 \subsection{Diagram pakietu obliczeń rozmytych}
