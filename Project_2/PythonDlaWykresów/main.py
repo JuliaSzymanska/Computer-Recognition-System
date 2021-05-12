@@ -1,6 +1,8 @@
 # This is a sample Python script.
 
 import matplotlib.pyplot as plt
+import numpy as numpy
+from scipy.stats import norm
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -51,11 +53,11 @@ def draw_distance():
 
 def draw_temperature():
     plt.grid(linestyle='dotted')
-    plt.plot([-16, 14, 23], [1, 1, 0], '#0000CD', label="Bardzo Niska Temperatura")
-    plt.plot([14, 23, 44, 54], [0, 1, 1, 0], '#1E90FF', label="Niska Temperatura")
-    plt.plot([44, 54, 63, 71], [0, 1, 1, 0], '#FFD700', label="Średnia Temperatura")
-    plt.plot([63, 71, 80, 90], [0, 1, 1, 0], '#FF4500', label="Wysoka Temperatura")
-    plt.plot([80, 90, 104], [0, 1, 1], '#FF0000', label="Bardzo Wysoka Temperatura")
+    plt.plot([-16, 14, 23], [1, 1, 0], '#0000CD', label="Bardzo Zimno")
+    plt.plot([14, 23, 44, 54], [0, 1, 1, 0], '#1E90FF', label="Zimno")
+    plt.plot([44, 54, 63, 71], [0, 1, 1, 0], '#FFD700', label="Umiarkowanie")
+    plt.plot([63, 71, 80, 90], [0, 1, 1, 0], '#FF4500', label="Ciepło")
+    plt.plot([80, 90, 104], [0, 1, 1], '#FF0000', label="Bardzo Ciepło")
     plt.xlabel('Temperatura W Stopniach Fahrenheita')
     plt.ylabel('Stopień Przynależności')
     plt.title("Funkcja Przynależności Zbioru Rozmytego\nTemperatury W Momencie Wypadku")
@@ -134,8 +136,35 @@ def draw_principation():
     plt.show()
 
 
+def my_gauss(x, sigma=1, h=1, mid=0):
+    from math import exp, pow
+    variance = pow(sigma, 2)
+    return h * exp(-pow(x-mid, 2)/(2*variance))
+
+
+def draw_quantificators():
+    plt.grid(linestyle='dotted')
+    x_axis = numpy.arange(0, 1, 0.001)
+    y_axis_niewiele = [my_gauss(x, 0.1, 1, 0) for x in x_axis]
+    y_axis_ok_14 = [my_gauss(x, 0.1, 1, 1/4) for x in x_axis]
+    y_axis_ok_pol = [my_gauss(x, 0.1, 1, 1/2) for x in x_axis]
+    y_axis_wieksz = [my_gauss(x, 0.1, 1, 3/4) for x in x_axis]
+    y_axis_praw_wszy = [my_gauss(x, 0.1, 1, 1) for x in x_axis]
+    plt.plot(x_axis, y_axis_niewiele, label="Niewiele")
+    plt.plot(x_axis, y_axis_ok_14, label="Około 1/4")
+    plt.plot(x_axis, y_axis_ok_pol, label="Około połowy")
+    plt.plot(x_axis, y_axis_wieksz, label="Większość")
+    plt.plot(x_axis, y_axis_praw_wszy, label="Prawie Wszystkie")
+    plt.xlabel('Stosunek liczby obiektów posiadających cechę do wszystkich rozważanych obiektów')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Wykres Funkcji Przynależności Kwantyfikatorów Lingwistycznych")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_severity()
+    draw_quantificators()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
