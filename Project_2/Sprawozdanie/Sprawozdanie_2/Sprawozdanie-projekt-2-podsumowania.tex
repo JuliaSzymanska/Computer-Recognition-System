@@ -341,11 +341,19 @@ Przedstawienie widoczności jako zmiennej lingwistycznej. Do zmiennej lingwistyc
 \begin{equation}
 \mu _{widocznoscDobra}(x) =  \left\{ \begin{array}{rcl}
 \frac{x - 0.7}{0.3} & \mbox{dla} & 0.7 < x \leq 1\\
-1 & \mbox{dla} & 1 \leq x\\
+1 & \mbox{dla} & 1 < x < 2\\
+\frac{3 - x}{1} & \mbox{dla} & 2 < x \leq 3\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{widocznoscBrak}\), \(\mu _{widocznoscSlaba}\), \(\mu _{widocznoscOgraniczona}\), \(\mu _{widocznoscDobra}\)  - funkcje przynależności, \textit{x} - widoczność. 
+\begin{equation}
+\mu _{widocznoscPelna}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 3}{1} & \mbox{dla} & 2 < x \leq 3\\
+1 & \mbox{dla} & 3 \leq x\\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{widocznoscBrak}\), \(\mu _{widocznoscSlaba}\), \(\mu _{widocznoscOgraniczona}\), \(\mu _{widocznoscDobra}\), \(\mu _{widocznoscPelna}\)  - funkcje przynależności, \textit{x} - widoczność. 
 
 \begin{figure}[h!]
  \centering
@@ -404,7 +412,6 @@ Przedstawienie predkości wiatru jako zmiennej lingwistycznej. Do zmiennej lingw
 
 gdzie: \(\mu _{wiatrBrak}\), \(\mu _{wiatrSlaby}\), \(\mu _{wiatrUmiarkowany}\), \(\mu _{wiatrSilny}\), \(\mu _{wiatrWicher}\), \(\mu _{wiatrHuragan}\)  - funkcje przynależności, \textit{x} - prędkość wiatru. 
 
-\newpage
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciPredkoscWiatru.png}
@@ -433,19 +440,28 @@ Przedstawienie opadów jako zmiennej lingwistycznej. Do zmiennej lingwistycznej 
 \begin{equation}
 \mu _{opadyUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
 \frac{x - 0.1}{0.1} & \mbox{dla} & 0.1 < x \leq 0.2\\
-1 & \mbox{dla} & 0.2 < x < 0.4\\
+1 & \mbox{dla} & 0.2 < x < 0.3\\
+\frac{0.35 - x}{0.05} & \mbox{dla} & 0.3 < x \leq 0.35\\
+\end{array}\right.
+\end{equation}
+
+
+\begin{equation}
+\mu _{opadyDuze}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 0.35}{0.05} & \mbox{dla} & 0.3 < x \leq 0.35\\
+1 & \mbox{dla} & 0.35 < x < 0.4\\
 \frac{0.45 - x}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{opadyDuze}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 0.45}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
+\mu _{opadyBardzoDuze}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 0.4}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
 1 & \mbox{dla} & 0.45 \leq x\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{opadyBrak}\), \(\mu _{opadyNiewielkie}\), \(\mu _{opadyUmiarkowane}\), \(\mu _{opadyDuze}\)  - funkcje przynależności, \textit{x} - opady. 
+gdzie: \(\mu _{opadyBrak}\), \(\mu _{opadyNiewielkie}\), \(\mu _{opadyUmiarkowane}\), \(\mu _{opadyDuze}\), \(\mu _{opadyBardzoDuze}\)  - funkcje przynależności, \textit{x} - opady. 
 
 \begin{figure}[h!]
  \centering
@@ -460,15 +476,101 @@ gdzie: \(\mu _{opadyBrak}\), \(\mu _{opadyNiewielkie}\), \(\mu _{opadyUmiarkowan
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Do kwantyfikatora lingwistycznego zostały dopasowane etykiety: niewiele, około 1/4, około połowy, większość, prawie wszystkie. 
 
+\begin{equation}
+\mu _{niewiele}(x) =   exp( \frac{- x^2}{0.02} )
+\end{equation}
+
+\begin{equation}
+\mu _{okoloJednejCzwartej}(x) =   exp( \frac{- (x - 0.25)^2}{0.02} )
+\end{equation}
+
+\begin{equation}
+\mu _{okoloPolowy}(x) =   exp( \frac{- (x - 0.5)^2}{0.02} )
+\end{equation}
+
+\begin{equation}
+\mu _{wiekszosc}(x) =   exp( \frac{- (x - 0.75)^2}{0.02} )
+\end{equation}
+
+\begin{equation}
+\mu _{prawieWszystkie}(x) =   exp( \frac{- (x - 1)^2}{0.02} )
+\end{equation}
+
+gdzie: \(\mu _{niewiele}\), \(\mu _{okoloJednejCzwartej}\), \(\mu _{okoloPolowy}\), \(\mu _{wiekszosc}\), \(\mu _{prawieWszystkie}\)  - kwantyfikatory, \textit{x} - stosunek liczby obiektów posiadających cechę do wszystkich rozważanych obiektów. 
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{kwantyfikatory.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego opadów. }
+ \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Do kwantyfikatora lingwistycznego absolutnego zostały dopasowane etykiety: poniżej dziesięciu, około pięćdziesięciu, około stu, między sto a dwieście, około dwustu, ponad dwieście. 
+
+\begin{equation}
+\mu _{ponizejDziesieciu}(x) =  \left\{ \begin{array}{rcl}
+\frac{10 - x}{10} & \mbox{dla} & 0 < x \leq 10\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{okoloDziesieciu}(x) =  \left\{ \begin{array}{rcl}
+\frac{x}{10} & \mbox{dla} & 0 < x \leq 10\\
+\frac{20 - x}{10} & \mbox{dla} & 10 < x \leq 20\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{okoloPiecdziesieciu}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 10}{25} & \mbox{dla} & 10 < x \leq 35\\
+1 & \mbox{dla} & 35 < x < 65\\
+\frac{90 - x}{25} & \mbox{dla} & 65 < x \leq 90\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{okoloStu}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 50}{40} & \mbox{dla} & 50 < x \leq 90\\
+1 & \mbox{dla} & 90 < x < 110\\
+\frac{150 - x}{50} & \mbox{dla} & 110 < x \leq 150\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{miedzyStoADwiescie}(x) =  \left\{ \begin{array}{rcl}
+\frac{x}{50} & \mbox{dla} & 100 < x \leq 150\\
+\frac{200- x}{50} & \mbox{dla} & 150 < x \leq 200\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{okoloDwustu}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 150}{40} & \mbox{dla} & 150 < x \leq 190\\
+1 & \mbox{dla} & 190 < x < 210\\
+\frac{250 - x}{40} & \mbox{dla} & 210 < x \leq 250\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{PonadDwiescie}(x) =  \left\{ \begin{array}{rcl}
+\frac{x}{50} & \mbox{dla} & 200 < x \leq 250\\
+1 & \mbox{dla} & 250 \leq x\\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{ponizejDziesieciu}\), \(\mu _{okoloDziesieciu}\), \(\mu _{okoloPiecdziesieciu}\), \(\mu _{okoloStu}\), \(\mu _{miedzyStoADwiescie}\), \(\mu _{okoloDwustu}\), \(\mu _{PonadDwiescie}\)  - kwantyfikatory absolutne, \textit{x} - absolutna wartość liczby obiektów posiadających cechę. 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{kwantyfikatory_absolutny.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych absolutnych. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Narzędzia obliczeniowe: projekt (wybór, implementacja) i diagram UML pakietu obliczeń rozmytych. Diagram UML generatora podsumowań}
