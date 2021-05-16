@@ -25,7 +25,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cel}
-Celem projektu jest stworzenie aplikacji lingwistycznie agregującej zawartości zbioru danych wypadków samochodowych w Zjednoczonych Stanach Ameryki\cite{dane}. Jako wynik działania aplikacji zostanie wygenerowany opis zawartości danych liczbowych w zbiorze w języku quasi-naturalnym.
+Celem projektu jest stworzenie aplikacji pozwalającej na opisanie językiem naturalnym zbioru danych zawierających liczbowe informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020\cite{dane}. Zbiór danych składa się z 47 kolumn. W celu wykonania opisu danych językiem naturalnym wykorzystamy metody logiki rozmytej. Logika rozmyta pozwala na opisanie wartości zapisanych językiem naturalnym za pomocą zrozumiałych określeń jak: mało, dużo, około połowy. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charakterystyka podsumowywanej bazy danych}
@@ -33,7 +34,6 @@ W programie został użyty zbiór danych\cite{dane} znajdujący się w pliku CSV
 
 Zbiór danych zawiera informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020. Spośród 47 kolumn znajdujących się w zbiorze danych, wybraliśmy następujące 11 kolumn:
 \begin{itemize}
-\item Dotkliwość - Severity - wpływ wypadku na ruch na drodze, przyjmuje wartości całkowite od 1 do 4 włącznie, gdzie 1 oznacza najmniejszy wpływ na ruch drogowy, natomaist 4 oznacza największy wpływ. Dotkliwość można lingistycznie opisać jako mały lub duży wpływ na ruch drogowy.
 \item Czas rozpoczęcia - Start\_Time - czas rozpoczęcia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 31 grudnia 2020. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku.
 \item Czas zakończenia - End\_Time - czas zakończenia się wypadku w lokalnej strefie czasowej, przyjmuje wartości od 8 lutego 2016, do 1 stycznia 2021. Wartość kolumny zostanie zamieniona na wartość całkowitą oznaczającą liczbę sekund od początku 1970 roku. 
 \item Odległość - Distance - długość odcinka ulicy wyrażony w milach, na którego miał wpływ wypadek. Przyjmuje wartości zmiennoprzecinkowe od 0 do 334, gdzie zdecydowana większość danych mieści się w przedziale od 0.00 do 4.00. 
@@ -67,43 +67,51 @@ Przykładowo temperatura, mimo że zrozumiała dla człowieka w postaci liczbowe
 Poniżej zostaną przedstawione zmiene lingwistyczne dla jedenastu atrybutów z bazy danych wraz z przypisanymi etykietami w formie funkcji przynależności oraz wzorów analitycznych. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Na podstawie znajdujących się w bazie danych pól Czas rozpoczęcia (Start\_Time) oraz Czas zakończenia (End\_Time) zostanie obliczony Czas trwania (Duration) wypadku według wzoru:
+Na podstawie znajdujących się w bazie danych pól Czas rozpoczęcia (Start\_Time) oraz Czas zakończenia (End\_Time) zostanie obliczony Czas utrudnień w ruchu drogowym (Duration) spowodowanych przez wypadek według wzoru:
 \begin{equation}
 Duration = End\_Time - Start\_Time
 \end{equation}
-Przedstawienie Czasu trwania (Duration) jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, średni, długi. 
+Przedstawienie Czasu utrudnień w ruchu drogowym (Duration) spowodowanych przez wypadek jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, średni, długi. 
 \begin{equation}
-\mu _{czasTrwaniaKrotki}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 1.5 \\
-\frac{3 - x}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
-0 & \mbox{dla} & 3 \leq x\\
+\mu _{czasTrwaniaPonizejGodziny}(x) =  \left\{ \begin{array}{rcl}
+\frac{1 - x}{1} & \mbox{dla} & 0 < x \leq 1\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{czasTrwaniaSredni}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 1.5 \\
-\frac{x - 1.5}{1.5} & \mbox{dla} & 1.5 < x \leq 3\\
-1 & \mbox{dla} & 3 < x < 5.5\\
-\frac{7 - x}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
- 0 & \mbox{dla} & x  \leq 7 \\
+\mu _{czasTrwaniaOkoloDwochGodzin}(x) =  \left\{ \begin{array}{rcl}
+\frac{x}{2} & \mbox{dla} & 0 < x \leq 2\\
+\frac{4 - x}{2} & \mbox{dla} & 2 < x \leq 4\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{czasTrwaniaDlugi}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 5.5 \\
-\frac{x - 5.5}{1.5} & \mbox{dla} & 5.5 < x \leq 7\\
-1 & \mbox{dla} & 7 \leq x\\
+\mu _{czasTrwaniaOkoloCzterechGodzin}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 2}{2} & \mbox{dla} & 2 < x \leq 4\\
+\frac{6 - x}{2} & \mbox{dla} & 4 < x \leq 6\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{czasTrwaniaKrotki}\), \(\mu _{czasTrwaniaSredni}\), \(\mu _{czasTrwaniaDlugi}\) - funkcje przynależności, \textit{x} - czas trwania wypadku. 
+\begin{equation}
+\mu _{czasTrwaniaOkoloSzesciuGodzin}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 4}{2} & \mbox{dla} & 4 < x \leq 6\\
+\frac{8 - x}{2} & \mbox{dla} & 6 < x \leq 8\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{czasTrwaniaPonadSzescGodzin}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 6}{2} & \mbox{dla} & 6 < x \leq 8\\
+ 1 & \mbox{dla} & 8 \leq  x \\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{czasTrwaniaPonizejGodziny}\), \(\mu _{czasTrwaniaOkoloDwochGodzin}\), \(\mu _{czasTrwaniaOkoloCzterechGodzin}\), \(\mu _{czasTrwaniaOkoloSzesciuGodzin}\), \(\mu _{czasTrwaniaPonadSzescGodzin}\) - funkcje przynależności, \textit{x} - czas trwania wypadku. 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCzasTrwania.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego czasu trwania wypadku. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej czas utrudnień w ruchu drogowym (Duration) spowodowanych przez wypadek. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -112,28 +120,39 @@ gdzie: \(\mu _{czasTrwaniaKrotki}\), \(\mu _{czasTrwaniaSredni}\), \(\mu _{czasT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Przedstawienie odległości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, długi. 
 \begin{equation}
-\mu _{OdlegloscKrotki}(x) =  \left\{ \begin{array}{rcl}
+\mu _{OdlegloscPonizejPolMili}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 0.5 \\
-\frac{1 - x}{0.5} & \mbox{dla} & 0.5 < x \leq 1\\
-0 & \mbox{dla} & 1 \leq x\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{OdlegloscDlugi}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 0.5 \\
-\frac{x - 0.5}{0.5} & \mbox{dla} & 0.5 < x \leq 1\\
-1 & \mbox{dla} & 1 \leq x\\
+\mu _{OdlegloscOkoloJednejMili}(x) =  \left\{ \begin{array}{rcl}
+x & \mbox{dla} & 0 < x \leq 1\\
+2 - x & \mbox{dla} & 1 < x \leq 2\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{OdlegloscKrotki}\), \(\mu _{OdlegloscDlugi}\)- funkcje przynależności, \textit{x} - odleglość. 
+\begin{equation}
+\mu _{OdlegloscOkoloTrzechMili}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 1}{2} & \mbox{dla} & 1 < x \leq 3\\
+\frac{5 - x}{2} & \mbox{dla} & 3 < x \leq 5\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{OdlegloscPonadTrzyMile}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 3}{2} & \mbox{dla} & 3 < x \leq 5\\
+1 & \mbox{dla} & 5 \leq x \\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{OdlegloscPonizejPolMili}\), \(\mu _{OdlegloscOkoloJednejMili}\), \(\mu _{OdlegloscOkoloTrzechMili}\), \(\mu _{OdlegloscPonadTrzyMile}\) - funkcje przynależności, \textit{x} - odleglość. 
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciOdleglosc.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego odległości. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej odległości. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -144,43 +163,35 @@ Przedstawienie temperatury oraz temperatury odczuwalnej jako zmiennej lingwistyc
 \mu _{temperaturaBardzoZimno}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 14 \\
 \frac{23 - x}{9} & \mbox{dla} & 14 < x \leq 23\\
-0 & \mbox{dla} & 23 \leq x\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{temperaturaZimno}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 14 \\
 \frac{x - 14}{9} & \mbox{dla} & 14 < x \leq 23\\
 1 & \mbox{dla} & 23 < x < 44\\
 \frac{54 - x}{10} & \mbox{dla} & 44 < x \leq 54\\
- 0 & \mbox{dla} & x  \leq 54 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{temperaturaUmiarkowanie}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 44 \\
 \frac{x - 44}{10} & \mbox{dla} & 44 < x \leq 54\\
 1 & \mbox{dla} & 54 < x < 63\\
 \frac{71 - x}{8} & \mbox{dla} & 63 < x \leq 71\\
- 0 & \mbox{dla} & x  \leq 71 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{temperaturaCieplo}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 63 \\
 \frac{x - 63}{8} & \mbox{dla} & 63 < x \leq 71\\
 1 & \mbox{dla} & 71 < x < 80\\
 \frac{90 - x}{10} & \mbox{dla} & 80 < x \leq 90\\
- 0 & \mbox{dla} & x  \leq 90 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{temperaturaBardzoCieplo}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 80 \\
 \frac{x - 80}{10} & \mbox{dla} & 80 < x \leq 90\\
 1 & \mbox{dla} & 90 \leq x\\
 \end{array}\right.
@@ -193,70 +204,60 @@ gdzie: \(\mu _{temperaturaBardzoZimna}\), \(\mu _{temperaturaZimna}\), \(\mu _{t
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciTemperatura.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego temperatury. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej temperatury. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Przedstawienie dotkliwości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: duża, mała. 
-\begin{equation}
-\mu _{dotkliwoscDuza}(x) =  \frac{x - 1}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
-\end{equation}
-
-\begin{equation}
-\mu _{dotkliwoscMala}(x) =  \frac{4 - x}{3} \ \ dla \ \  x\epsilon \{1, 2, 3, 4\}
-\end{equation}
-
-gdzie: \(\mu _{dotkliwoscDuza}\), \(\mu _{dotkliwoscMala}\)- funkcje przynależności, \textit{x} - dotkliwość. 
-
-\begin{figure}[h!]
- \centering
- \includegraphics[width=14cm]{FunkcjaPrzynaleznosciDotkliwosc.png}
- \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego dotkliwości. }
- \label{rysunek do eksperymentu 1 wariantu 1}
-\end{figure}
-\newpage
-
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Przedstawienie wilgotności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: suche, umiarkowane, wilgotne. 
+
+\begin{equation}
+\mu _{wilgotnoscBardzoSuche}(x) =  \left\{ \begin{array}{rcl}
+\frac{20 - x}{20} & \mbox{dla} & x \leq 20\\
+\end{array}\right.
+\end{equation}
+
 \begin{equation}
 \mu _{wilgotnoscSuche}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 30 \\
-\frac{30 - x}{9} & \mbox{dla} & 30 < x \leq 40\\
-0 & \mbox{dla} & 40 \leq x\\
+\frac{x - 20}{20} & \mbox{dla} & 4 < x \leq 20\\
+ 1 & \mbox{dla} & 20 < x < 30 \\
+\frac{30 - x}{10} & \mbox{dla} & 30 < x \leq 40\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{wilgotnoscUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 30 \\
 \frac{x - 30}{10} & \mbox{dla} & 30 < x \leq 40\\
 1 & \mbox{dla} & 40 < x < 60\\
 \frac{70 - x}{10} & \mbox{dla} & 60 < x \leq 70\\
- 0 & \mbox{dla} & x  \leq 70 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{wilgotnoscWilgotne}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 60 \\
 \frac{x - 60}{10} & \mbox{dla} & 60 < x \leq 70\\
 1 & \mbox{dla} & 70 \leq x\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wilgotnoscWilgotne}\) - funkcje przynależności, \textit{x} - wilgotność. 
+\begin{equation}
+\mu _{wilgotnoscBardzoWilgotne}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 60}{10} & \mbox{dla} & 60 < x \leq 70\\
+1 & \mbox{dla} & 70 < x < 80\\
+\frac{90 - x}{10} & \mbox{dla} & 80 < x \leq 90\\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{wilgotnoscBardzoSuche}\), \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wilgotnoscWilgotne}\), \(\mu _{wilgotnoscBardzoWilgotne}\) - funkcje przynależności, \textit{x} - wilgotność. 
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWilgotnosc.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego wilgotności. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej wilgotności. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -265,38 +266,51 @@ gdzie: \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Przedstawienie ciśnienia jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: niskie, umiarkowane, wysokie. 
 \begin{equation}
+\mu _{cisnienieBardzoNiskie}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 27 \\
+\frac{27 - x}{0.5} & \mbox{dla} & 27 < x \leq 27.5\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
 \mu _{cisnienieNiskie}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 28.5 \\
-\frac{28.5 - x}{0.5} & \mbox{dla} & 28.5 < x \leq 29\\
-0 & \mbox{dla} & 29 \leq x\\
+\frac{x - 27.5}{0.5} & \mbox{dla} & 27 < x \leq 27.5\\
+1 & \mbox{dla} & 27.5 < x < 28\\
+\frac{28.5 - x}{0.5} & \mbox{dla} & 28 < x \leq 28.5\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{cisnienieUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 28.5 \\
-\frac{x - 28.5}{0.5} & \mbox{dla} & 28.5 < x \leq 29\\
-1 & \mbox{dla} & 29 < x < 30\\
-\frac{30.5 - x}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
- 0 & \mbox{dla} & x  \leq 30.5 \\
+\frac{x - 28}{0.5} & \mbox{dla} & 28 < x \leq 28.5\\
+1 & \mbox{dla} & 28.5 < x < 29\\
+\frac{29.5 - x}{0.5} & \mbox{dla} & 29 < x \leq 29.5\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{cisnienieWysokie}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 30 \\
-\frac{x - 30}{1.5} & \mbox{dla} & 30.5 < x \leq 32\\
-1 & \mbox{dla} & 32 \leq x\\
+\frac{x - 30}{0.5} & \mbox{dla} & 29 < x \leq 29.5\\
+1 & \mbox{dla} & 29.5 < x < 30\\
+\frac{30.5 - x}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{cisnienieNiskie}\), \(\mu _{cisnienieUmiarkowane}\), \(\mu _{cisnienieWysokie}\) - funkcje przynależności, \textit{x} - ciśnienie. 
+\begin{equation}
+\mu _{cisnienieBardzoWysokie}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 30}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
+1 & \mbox{dla} & 30.5 \leq x\\
+\end{array}\right.
+\end{equation}
+
+
+gdzie: \(\mu _{cisnienieBardzoNiskie}\), \(\mu _{cisnienieNiskie}\), \(\mu _{cisnienieUmiarkowane}\), \(\mu _{cisnienieWysokie}\), \(\mu _{cisnienieBardzoWysokie}\) - funkcje przynależności, \textit{x} - ciśnienie. 
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCiśnienie.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego ciśneinia. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej ciśneinia. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -313,23 +327,19 @@ Przedstawienie widoczności jako zmiennej lingwistycznej. Do zmiennej lingwistyc
 \mu _{widocznoscSlaba}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 0.1 \\
 \frac{0.1 - x}{0.2} & \mbox{dla} & 0.1 < x \leq 0.3\\
-0 & \mbox{dla} & 0.3 \leq x\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{widocznoscOgraniczona}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 0.1 \\
 \frac{x - 0.1}{0.2} & \mbox{dla} & 0.1 < x \leq 0.3\\
 1 & \mbox{dla} & 0.3 < x < 0.7\\
 \frac{1 - x}{0.3} & \mbox{dla} & 0.7 < x \leq1\\
- 0 & \mbox{dla} & x  \leq 1 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{widocznoscDobra}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 0.7 \\
 \frac{x - 0.7}{0.3} & \mbox{dla} & 0.7 < x \leq 1\\
 1 & \mbox{dla} & 1 \leq x\\
 \end{array}\right.
@@ -341,7 +351,7 @@ gdzie: \(\mu _{widocznoscBrak}\), \(\mu _{widocznoscSlaba}\), \(\mu _{widocznosc
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciWidocznosc.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego widoczności. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej widoczności. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -358,43 +368,35 @@ Przedstawienie predkości wiatru jako zmiennej lingwistycznej. Do zmiennej lingw
 \mu _{wiatrSlaby}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 3 \\
 \frac{3- x}{0.5} & \mbox{dla} & 3 < x \leq 3.5\\
-0 & \mbox{dla} & 3.5 \leq x\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{wiatrUmiarkowany}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 3 \\
 \frac{x - 3}{0.5} & \mbox{dla} & 3 < x \leq 3.5\\
 1 & \mbox{dla} & 3.5 < x < 8\\
 \frac{9 - x}{1} & \mbox{dla} & 8 < x \leq 9\\
- 0 & \mbox{dla} & x  \leq 9 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{wiatrSilny}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 8 \\
 \frac{x - 8}{1} & \mbox{dla} & 8 < x \leq 9\\
 1 & \mbox{dla} & 9 < x < 17\\
 \frac{20 - x}{3} & \mbox{dla} & 17 < x \leq 20\\
- 0 & \mbox{dla} & x  \leq 20 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{wiatrWicher}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 17 \\
 \frac{x - 17}{3} & \mbox{dla} & 17 < x \leq 20\\
 1 & \mbox{dla} & 20 < x < 27\\
 \frac{30 - x}{3} & \mbox{dla} & 27 < x \leq 30\\
- 0 & \mbox{dla} & x  \leq 30 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{wiatrHuragan}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 27 \\
 \frac{x - 40}{10} & \mbox{dla} & 30 < x \leq 40\\
 1 & \mbox{dla} & 40 \leq x\\
 \end{array}\right.
@@ -407,7 +409,7 @@ gdzie: \(\mu _{wiatrBrak}\), \(\mu _{wiatrSlaby}\), \(\mu _{wiatrUmiarkowany}\),
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciPredkoscWiatru.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego prędkości wiatru. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej prędkości wiatru. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
@@ -425,23 +427,19 @@ Przedstawienie opadów jako zmiennej lingwistycznej. Do zmiennej lingwistycznej 
 \mu _{opadyNiewielkie}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 0.1 \\
 \frac{0.1- x}{0.1} & \mbox{dla} & 0.1 < x \leq 0.2\\
-0 & \mbox{dla} & 0.2 \leq x\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{opadyUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x  \leq 0.1 \\
 \frac{x - 0.1}{0.1} & \mbox{dla} & 0.1 < x \leq 0.2\\
 1 & \mbox{dla} & 0.2 < x < 0.4\\
 \frac{0.45 - x}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
- 0 & \mbox{dla} & x  \leq 0.45 \\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{opadyDuze}(x) =  \left\{ \begin{array}{rcl}
- 0 & \mbox{dla} & x \leq 0.4 \\
 \frac{x - 0.45}{0.05} & \mbox{dla} & 0.4 < x \leq 0.45\\
 1 & \mbox{dla} & 0.45 \leq x\\
 \end{array}\right.
@@ -453,11 +451,13 @@ gdzie: \(\mu _{opadyBrak}\), \(\mu _{opadyNiewielkie}\), \(\mu _{opadyUmiarkowan
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciOpady.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności zbioru rozmytego opadów. }
+ \caption{Wykres funkcji przynależności zbiorów rozmytych ilustrujących wartości zmiennej lingwistycznej opadów. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Do kwantyfikatora lingwistycznego zostały dopasowane etykiety: niewiele, około 1/4, około połowy, większość, prawie wszystkie. 
 
 \begin{figure}[h!]
@@ -469,12 +469,8 @@ Do kwantyfikatora lingwistycznego zostały dopasowane etykiety: niewiele, około
 \end{figure}
 \newpage
 
-Jw. kwantyfikatory lingwistyczne -- opisane etykietami, wykresami funkcji
-przynależności i wzorami analitycznymi. Uzasadnione wiedzą dziedzinową wybrane
-zakresy i etykiety. Precyzyjnie podane przestrzenie rozważań każdego kwantyfikatora 
-lingwistycznego/rozmytego, wzory i wykresy dla każdej wartości/etykiety. Opisy własne z~przypisami do literatury, tak by inżynier innej specjalności zrozumiał dalszy
-opis tego konkretnego ćwiczenia/eksperymentu. \\ 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Narzędzia obliczeniowe: projekt (wybór, implementacja) i diagram UML pakietu obliczeń rozmytych. Diagram UML generatora podsumowań}
 \subsection{Diagram pakietu obliczeń rozmytych}
 Diagram UML i zwięzły opis pakietu obliczeń rozmytych: źródło pakietu
