@@ -100,13 +100,13 @@ Przedstawienie Czasu utrudnień w ruchu drogowym (Duration) spowodowanych przez 
 \end{equation}
 
 \begin{equation}
-\mu _{czasTrwaniaOPonadSzescGodzin}(x) =  \left\{ \begin{array}{rcl}
+\mu _{czasTrwaniaPonadSzescGodzin}(x) =  \left\{ \begin{array}{rcl}
 \frac{x - 6}{2} & \mbox{dla} & 6 < x \leq 8\\
  1 & \mbox{dla} & 8 \leq  x \\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{czasTrwaniaKrotki}\), \(\mu _{czasTrwaniaSredni}\), \(\mu _{czasTrwaniaDlugi}\) - funkcje przynależności, \textit{x} - czas trwania wypadku. 
+gdzie: \(\mu _{czasTrwaniaPonizejGodziny}\), \(\mu _{czasTrwaniaOkoloDwochGodzin}\), \(\mu _{czasTrwaniaOkoloCzterechGodzin}\), \(\mu _{czasTrwaniaOkoloSzesciuGodzin}\), \(\mu _{czasTrwaniaPonadSzescGodzin}\) - funkcje przynależności, \textit{x} - czas trwania wypadku. 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{FunkcjaPrzynaleznosciCzasTrwania.png}
@@ -120,20 +120,33 @@ gdzie: \(\mu _{czasTrwaniaKrotki}\), \(\mu _{czasTrwaniaSredni}\), \(\mu _{czasT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Przedstawienie odległości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, długi. 
 \begin{equation}
-\mu _{OdlegloscKrotki}(x) =  \left\{ \begin{array}{rcl}
+\mu _{OdlegloscPonizejPolMili}(x) =  \left\{ \begin{array}{rcl}
  1 & \mbox{dla} & x  \leq 0.5 \\
-\frac{1 - x}{0.5} & \mbox{dla} & 0.5 < x \leq 1\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
-\mu _{OdlegloscDlugi}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 0.5}{0.5} & \mbox{dla} & 0.5 < x \leq 1\\
-1 & \mbox{dla} & 1 \leq x\\
+\mu _{OdlegloscOkoloJednejMili}(x) =  \left\{ \begin{array}{rcl}
+x & \mbox{dla} & 0 < x \leq 1\\
+2 - x & \mbox{dla} & 1 < x \leq 2\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{OdlegloscKrotki}\), \(\mu _{OdlegloscDlugi}\)- funkcje przynależności, \textit{x} - odleglość. 
+\begin{equation}
+\mu _{OdlegloscOkoloTrzechMili}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 1}{2} & \mbox{dla} & 1 < x \leq 3\\
+\frac{5 - x}{2} & \mbox{dla} & 3 < x \leq 5\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{OdlegloscPonadTrzyMile}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 3}{2} & \mbox{dla} & 3 < x \leq 5\\
+1 & \mbox{dla} & 5 \leq x \\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{OdlegloscPonizejPolMili}\), \(\mu _{OdlegloscOkoloJednejMili}\), \(\mu _{OdlegloscOkoloTrzechMili}\), \(\mu _{OdlegloscPonadTrzyMile}\) - funkcje przynależności, \textit{x} - odleglość. 
 
 \begin{figure}[h!]
  \centering
@@ -200,10 +213,18 @@ gdzie: \(\mu _{temperaturaBardzoZimna}\), \(\mu _{temperaturaZimna}\), \(\mu _{t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Przedstawienie wilgotności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: suche, umiarkowane, wilgotne. 
+
+\begin{equation}
+\mu _{wilgotnoscBardzoSuche}(x) =  \left\{ \begin{array}{rcl}
+\frac{20 - x}{20} & \mbox{dla} & x \leq 20\\
+\end{array}\right.
+\end{equation}
+
 \begin{equation}
 \mu _{wilgotnoscSuche}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 30 \\
-\frac{30 - x}{9} & \mbox{dla} & 30 < x \leq 40\\
+\frac{x - 20}{20} & \mbox{dla} & 4 < x \leq 20\\
+ 1 & \mbox{dla} & 20 < x < 30 \\
+\frac{30 - x}{10} & \mbox{dla} & 30 < x \leq 40\\
 \end{array}\right.
 \end{equation}
 
@@ -222,7 +243,15 @@ Przedstawienie wilgotności jako zmiennej lingwistycznej. Do zmiennej lingwistyc
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wilgotnoscWilgotne}\) - funkcje przynależności, \textit{x} - wilgotność. 
+\begin{equation}
+\mu _{wilgotnoscBardzoWilgotne}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 60}{10} & \mbox{dla} & 60 < x \leq 70\\
+1 & \mbox{dla} & 70 < x < 80\\
+\frac{90 - x}{10} & \mbox{dla} & 80 < x \leq 90\\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{wilgotnoscBardzoSuche}\), \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wilgotnoscWilgotne}\), \(\mu _{wilgotnoscBardzoWilgotne}\) - funkcje przynależności, \textit{x} - wilgotność. 
 
 \begin{figure}[h!]
  \centering
@@ -237,28 +266,45 @@ gdzie: \(\mu _{wilgotnoscSuche}\), \(\mu _{wilgotnoscUmiarkowane}\), \(\mu _{wil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Przedstawienie ciśnienia jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: niskie, umiarkowane, wysokie. 
 \begin{equation}
+\mu _{cisnienieBardzoNiskie}(x) =  \left\{ \begin{array}{rcl}
+ 1 & \mbox{dla} & x  \leq 27 \\
+\frac{27 - x}{0.5} & \mbox{dla} & 27 < x \leq 27.5\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
 \mu _{cisnienieNiskie}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 28.5 \\
-\frac{28.5 - x}{0.5} & \mbox{dla} & 28.5 < x \leq 29\\
+\frac{x - 27.5}{0.5} & \mbox{dla} & 27 < x \leq 27.5\\
+1 & \mbox{dla} & 27.5 < x < 28\\
+\frac{28.5 - x}{0.5} & \mbox{dla} & 28 < x \leq 28.5\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{cisnienieUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 28.5}{0.5} & \mbox{dla} & 28.5 < x \leq 29\\
-1 & \mbox{dla} & 29 < x < 30\\
-\frac{30.5 - x}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
+\frac{x - 28}{0.5} & \mbox{dla} & 28 < x \leq 28.5\\
+1 & \mbox{dla} & 28.5 < x < 29\\
+\frac{29.5 - x}{0.5} & \mbox{dla} & 29 < x \leq 29.5\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{cisnienieWysokie}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 30}{1.5} & \mbox{dla} & 30.5 < x \leq 32\\
-1 & \mbox{dla} & 32 \leq x\\
+\frac{x - 30}{0.5} & \mbox{dla} & 29 < x \leq 29.5\\
+1 & \mbox{dla} & 29.5 < x < 30\\
+\frac{30.5 - x}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{cisnienieNiskie}\), \(\mu _{cisnienieUmiarkowane}\), \(\mu _{cisnienieWysokie}\) - funkcje przynależności, \textit{x} - ciśnienie. 
+\begin{equation}
+\mu _{cisnienieBardzoWysokie}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 30}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
+1 & \mbox{dla} & 30.5 \leq x\\
+\end{array}\right.
+\end{equation}
+
+
+gdzie: \(\mu _{cisnienieBardzoNiskie}\), \(\mu _{cisnienieNiskie}\), \(\mu _{cisnienieUmiarkowane}\), \(\mu _{cisnienieWysokie}\), \(\mu _{cisnienieBardzoWysokie}\) - funkcje przynależności, \textit{x} - ciśnienie. 
 
 \begin{figure}[h!]
  \centering
