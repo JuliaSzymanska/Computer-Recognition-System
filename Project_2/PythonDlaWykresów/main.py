@@ -134,41 +134,41 @@ def draw_principation():
     plt.show()
 
 
-def my_gauss(x, sigma: float = 1, h: float = 1, mid: float = 0) -> float:
-    from math import exp, pow
-    variance = pow(sigma, 2)
-    return h * exp(-pow(x - mid, 2) / (2 * variance))
-
-
-def draw_quantificators():
-    plt.grid(linestyle='dotted')
-    x_axis = numpy.arange(0, 1, 0.001)
-    y_axis_niewiele = [my_gauss(x, 0.1, 1, 0) for x in x_axis]
-    y_axis_ok_14 = [my_gauss(x, 0.1, 1, 1 / 4) for x in x_axis]
-    y_axis_ok_pol = [my_gauss(x, 0.1, 1, 1 / 2) for x in x_axis]
-    y_axis_wieksz = [my_gauss(x, 0.1, 1, 3 / 4) for x in x_axis]
-    y_axis_praw_wszy = [my_gauss(x, 0.1, 1, 1) for x in x_axis]
-    plt.plot(x_axis, y_axis_niewiele, label="Niewiele")
-    plt.plot(x_axis, y_axis_ok_14, label="Około 1/4")
-    plt.plot(x_axis, y_axis_ok_pol, label="Około połowy")
-    plt.plot(x_axis, y_axis_wieksz, label="Większość")
-    plt.plot(x_axis, y_axis_praw_wszy, label="Prawie Wszystkie")
-    plt.xlabel('Stosunek liczby obiektów posiadających cechę do wszystkich rozważanych obiektów')
-    plt.ylabel('Stopień Przynależności')
-    plt.title("Wykres Funkcji Przynależności Kwantyfikatorów Lingwistycznych")
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
+# def my_gauss(x, sigma: float = 1, h: float = 1, mid: float = 0) -> float:
+#     from math import exp, pow
+#     variance = pow(sigma, 2)
+#     return h * exp(-pow(x - mid, 2) / (2 * variance))
+#
+#
+# def draw_quantificators():
+#     plt.grid(linestyle='dotted')
+#     x_axis = numpy.arange(0, 1, 0.001)
+#     y_axis_niewiele = [my_gauss(x, 0.1, 1, 0) for x in x_axis]
+#     y_axis_ok_14 = [my_gauss(x, 0.1, 1, 1 / 4) for x in x_axis]
+#     y_axis_ok_pol = [my_gauss(x, 0.1, 1, 1 / 2) for x in x_axis]
+#     y_axis_wieksz = [my_gauss(x, 0.1, 1, 3 / 4) for x in x_axis]
+#     y_axis_praw_wszy = [my_gauss(x, 0.1, 1, 1) for x in x_axis]
+#     plt.plot(x_axis, y_axis_niewiele, label="Niewiele")
+#     plt.plot(x_axis, y_axis_ok_14, label="Około 1/4")
+#     plt.plot(x_axis, y_axis_ok_pol, label="Około połowy")
+#     plt.plot(x_axis, y_axis_wieksz, label="Większość")
+#     plt.plot(x_axis, y_axis_praw_wszy, label="Prawie Wszystkie")
+#     plt.xlabel('Stosunek liczby obiektów posiadających cechę do wszystkich rozważanych obiektów')
+#     plt.ylabel('Stopień Przynależności')
+#     plt.title("Wykres Funkcji Przynależności Kwantyfikatorów Lingwistycznych")
+#     plt.legend()
+#     plt.tight_layout()
+#     plt.show()
 
 
 def draw_absolute_quantificators():
     plt.grid(linestyle='dotted')
-    plt.plot([0, 10], [1, 0], label="Poniżej Dziesięciu")
-    plt.plot([10, 40, 60, 90], [0, 1, 1, 0], label="Około Pięćdzieśiąt")
-    plt.plot([50, 90, 110, 150], [0, 1, 1, 0], label="Około Stu")
-    plt.plot([100, 150, 200], [0, 1, 0], label="Między Sto a Dwieście")
-    plt.plot([150, 190, 210, 250], [0, 1, 1, 0], label="Około Dwustu")
-    plt.plot([200, 250], [0, 1], label="Ponad Dwieście")
+    plt.plot([0, 10], [1, 0], label="Poniżej 10")
+    plt.plot([10, 40, 60, 90], [0, 1, 1, 0], label="Około 50")
+    plt.plot([50, 90, 110, 150], [0, 1, 1, 0], label="Około 100")
+    plt.plot([100, 150, 200], [0, 1, 0], label="Między 100 a 200")
+    plt.plot([150, 190, 210, 250], [0, 1, 1, 0], label="Około 200")
+    plt.plot([200, 250], [0, 1], label="Ponad 200")
     plt.xlabel('Absolutna wartość liczby obiektów posiadających cechę')
     plt.ylabel('Stopień Przynależności')
     plt.title("Wykres Funkcji Przynależności Kwantyfikatorów Lingwistycznych")
