@@ -7,6 +7,9 @@ public class FunkcjaGausowska implements FunkcjaPrzynaleznosci {
     double mid;
 
     public FunkcjaGausowska(double sigma, double h, double mid) {
+        if (h <= 0) {
+            throw  new RuntimeException();
+        }
         this.sigma = sigma;
         this.h = h;
         this.mid = mid;

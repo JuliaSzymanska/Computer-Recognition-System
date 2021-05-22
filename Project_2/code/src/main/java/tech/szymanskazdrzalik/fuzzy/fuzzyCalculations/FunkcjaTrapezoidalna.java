@@ -4,10 +4,29 @@ public class FunkcjaTrapezoidalna implements FunkcjaPrzynaleznosci{
     private double start, maxStart, maxEnd, end;
 
     public FunkcjaTrapezoidalna(double start, double maxStart, double maxEnd, double end) {
+        if (start > maxStart || maxStart > maxEnd || maxEnd > end) {
+            throw new RuntimeException();
+        }
         this.start = start;
         this.maxStart = maxStart;
         this.maxEnd = maxEnd;
         this.end = end;
+    }
+
+    public double getStart() {
+        return start;
+    }
+
+    public double getMaxStart() {
+        return maxStart;
+    }
+
+    public double getMaxEnd() {
+        return maxEnd;
+    }
+
+    public double getEnd() {
+        return end;
     }
 
     @Override
