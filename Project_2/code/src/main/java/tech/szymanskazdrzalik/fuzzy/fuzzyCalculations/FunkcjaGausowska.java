@@ -2,9 +2,22 @@ package tech.szymanskazdrzalik.fuzzy.fuzzyCalculations;
 
 public class FunkcjaGausowska implements FunkcjaPrzynaleznosci {
 
-    double sigma;
-    double h;
-    double mid;
+    private double sigma;
+    private double h;
+
+    public double getSigma() {
+        return sigma;
+    }
+
+    public double getH() {
+        return h;
+    }
+
+    public double getMid() {
+        return mid;
+    }
+
+    private double mid;
 
     public FunkcjaGausowska(double sigma, double h, double mid) {
         if (h <= 0) {
