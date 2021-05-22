@@ -1,9 +1,10 @@
 package tech.szymanskazdrzalik.fuzzy.fuzzyCalculations;
 
-public class FunkcjaTrapezoidalna implements FunkcjaPrzynaleznosci{
+public class FunkcjaTrapezoidalna extends AbstractFunkcjaPrzynaleznosci implements FunkcjaPrzynaleznosci {
     private double start, maxStart, maxEnd, end;
 
-    public FunkcjaTrapezoidalna(double start, double maxStart, double maxEnd, double end) {
+    public FunkcjaTrapezoidalna(double start, double maxStart, double maxEnd, double end, double poczatekUniversum, double koniecUniversum) {
+        super(poczatekUniversum, koniecUniversum);
         if (start > maxStart || maxStart > maxEnd || maxEnd > end) {
             throw new RuntimeException();
         }

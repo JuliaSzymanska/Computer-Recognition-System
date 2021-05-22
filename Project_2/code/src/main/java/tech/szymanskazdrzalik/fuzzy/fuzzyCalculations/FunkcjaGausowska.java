@@ -1,6 +1,6 @@
 package tech.szymanskazdrzalik.fuzzy.fuzzyCalculations;
 
-public class FunkcjaGausowska implements FunkcjaPrzynaleznosci {
+public class FunkcjaGausowska extends AbstractFunkcjaPrzynaleznosci implements FunkcjaPrzynaleznosci  {
 
     private double sigma;
     private double h;
@@ -19,7 +19,8 @@ public class FunkcjaGausowska implements FunkcjaPrzynaleznosci {
 
     private double mid;
 
-    public FunkcjaGausowska(double sigma, double h, double mid) {
+    public FunkcjaGausowska(double sigma, double h, double mid, double poczatekUniversum, double koniecUniversum) {
+        super(poczatekUniversum, koniecUniversum);
         if (h <= 0) {
             throw  new RuntimeException();
         }
