@@ -1,4 +1,4 @@
-package tech.szymanskazdrzalik.fuzzy.fuzzyCalculations;
+package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 import java.util.ArrayList;
 import java.util.List;

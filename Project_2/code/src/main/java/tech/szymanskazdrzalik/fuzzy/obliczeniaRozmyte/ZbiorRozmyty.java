@@ -1,8 +1,7 @@
-package tech.szymanskazdrzalik.fuzzy.fuzzyCalculations;
+package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public interface ZbiorRozmyty {
     Double getWysokosc();
