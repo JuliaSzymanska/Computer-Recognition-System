@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
-public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty, FunkcjaPrzynaleznosci {
+public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
     private final Double poczatekUniwersumDyskursu;
     private final Double koniecUniversumDyskursu;
 
@@ -28,8 +29,30 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty, FunkcjaPrzyn
     }
 
     @Override
+    public <T> Double liczbaKardynalna(Map<T, Double> objectDoubleMap) {
+        final Double[] sum = {0.0};
+        objectDoubleMap.forEach((t, aDouble) -> sum[0] += AbstractZbiorRozmyty.this.przynaleznosc(aDouble));
+        return sum[0];
+    }
+
+    @Override
     public <T> List<T> getNosnik(Map<T, Double> objectDoubleMap) {
         return this.getPrzekrojAlfa(objectDoubleMap, 0.0);
+    }
+
+    @Override
+    public Double iloczynZbiorow(ZbiorRozmyty zbiorRozmyty, Double x) {
+        return Math.min(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
+    }
+
+    @Override
+    public Double sumaZbiorow(ZbiorRozmyty zbiorRozmyty, Double x) {
+        return Math.max(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
+    }
+
+    @Override
+    public Double dopelnienieZbioru(Double x) {
+        return 1 - this.przynaleznosc(x);
     }
 
     @Override
