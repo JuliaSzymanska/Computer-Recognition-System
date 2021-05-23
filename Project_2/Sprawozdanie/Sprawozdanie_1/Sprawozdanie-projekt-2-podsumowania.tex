@@ -25,7 +25,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cel}
-Celem projektu jest stworzenie aplikacji pozwalającej na generowanie podsumowań lingwistycznych w oparciu o kwantyfikatory rozmyte, co oznacza opisanie danych liczbowych ze zbioru danych\cite{dane} językiem quasi-naturalnym - pozornie naturalnym. Przykładem podsumowania lingwistycznego może być: X przedmiotów jest Y [P] - "Wiele wypadków jest przy ujemnej temperaturze [0,76]" oraz X przedmiotów będących Z jest Y [P] - "Wiele wypadków będących podczas deszczu, jest przy ujemnej temperaturze [0.68]".  Analizowany zbior danych zawiera liczbowe informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020\cite{dane}. Zbiór danych składa się z 47 kolumn. W tym celu wykonania podsumowania lingwistycznego zostaną wykorzystane metody logiki rozmytej\cite{fuzzy}. Logika rozmyta pozwala na opisanie wartości zapisanych językiem naturalnym za pomocą zrozumiałych określeń jak: mało, dużo, około połowy. W projekcie zostaną wykorzystane kwantyfikatory lingwistyczne względne takie jak: niewiele, około połowy oraz kwantyfikatory lingwistyczne absolutne takie jak: około jednego, około stu.
+Celem projektu jest stworzenie aplikacji pozwalającej na generowanie podsumowań lingwistycznych\cite{przyklad} w oparciu o kwantyfikatory rozmyte\cite{niewiadomskiRozmyte}, co oznacza opisanie danych liczbowych ze zbioru danych\cite{dane} językiem quasi-naturalnym - pozornie naturalnym. \\Przykładem podsumowania lingwistycznego\cite{przyklad} w formie 
+\begin{equation} Q\ P\ jest\ S\ [T] \end{equation}
+ jest:  \textit{Wiele wypadków jest przy ujemnej temperaturze [0,76]}, gdzie \textit{Q} jest kwantyfikatorem lingwistycznym, \textit{P} podmiotem podsumowań, \textit{S} sumaryzatorem, a \textit{T[0, 1]} stopniem prawdziwości. \\ \newline Przykładem drugiego podsumowania lingwistycznego w formie:
+\begin{equation}  Q \ P \ bedacych\ W\ jest\ S\ [T] \end{equation} 
+jest: \textit{Wiele wypadków będących podczas deszczu, jest przy ujemnej temperaturze [0.68]}, gdzie \textit{Q} jest kwantyfikatorem lingwistycznym, \textit{P} podmiotem podsumowań, \textit{S} sumaryzatorem, \textit{W} kwantyfikatorem reprezentującym dodatkowe własności obiektów, a \textit{T[0, 1]} stopniem prawdziwości.  \\ \newline
+Analizowany zbior danych zawiera liczbowe informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020\cite{dane}. Zbiór danych składa się z 47 kolumn. W tym celu wykonania podsumowania lingwistycznego zostaną wykorzystane metody logiki rozmytej\cite{fuzzy}. Logika rozmyta pozwala na opisanie wartości zapisanych językiem naturalnym za pomocą zrozumiałych określeń jak: mało, dużo, około połowy. W projekcie zostaną wykorzystane kwantyfikatory lingwistyczne względne takie jak: niewiele, około połowy oraz kwantyfikatory lingwistyczne absolutne takie jak: około jednego, około stu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charakterystyka podsumowywanej bazy danych}
@@ -140,14 +145,16 @@ podać merytoryczne (ale nie czasowe) przyczyny tych braków.
 
 
 \begin{thebibliography}{99}
+\bibitem{przyklad} I. Superson, A. Niewiadomski, POZYSKIWANIE WIEDZY Z RELACYJNYCH BAZ DANYCH: WIELOPODMIOTOWE PODSUMOWANIA LINGWISTYCZNE, Politechnika Łódzka
+\bibitem{niewiadomskiRozmyte} A. Niewiadomski, Rozmyte metody inteligentnej interpretacji danych, tom 10, 2006, 546-547
 \bibitem{dane} 2021 Kaggle Inc [internetowa społeczność związana z analizą danych], US Accidents (3 million records -- updated)
 A Countrywide Traffic Accident Dataset (2016 - 2020) [przeglądany 24 kwietnia 2021], Dostępny w: \url{https://www.kaggle.com/sobhanmoosavi/us-accidents}
 Oficyna Wydawnicza EXIT, Warszawa, 2008.
 \bibitem{fuzzy} Zadeh L.A., A computational approach to fuzzy quantifiers in natural languages. Computers and Maths with Applications, nr 9, 1983, 149-183
-\bibitem{niewiadomskiRozmyte} A. Niewiadomski, Rozmyte metody inteligentnej interpretacji danych, tom 10, 2006, 546-547
  \bibitem{niewiadomski19} A. Niewiadomski, Zbiory rozmyte typu 2. Zastosowania w reprezentowaniu informacji.  Seria „Problemy współczesnej informatyki” pod redakcją L. Rutkowskiego. Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2019.
 \bibitem{zadrozny06} S. Zadrożny, Zapytania nieprecyzyjne i lingwistyczne podsumowania baz danych, EXIT, 2006, Warszawa
 \bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka 
+\bibitem{fuzzySet} Zadeh, L. A.: 1965, ‘Fuzzy sets’. Inf. and Control 8, 338–353.
 \end{thebibliography}
 
 Literatura zawiera wyłącznie źródła recenzowane i/lub o potwierdzonej wiarygodności,

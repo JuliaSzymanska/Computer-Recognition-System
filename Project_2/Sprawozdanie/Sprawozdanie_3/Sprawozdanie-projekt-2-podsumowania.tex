@@ -25,7 +25,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cel}
-Celem projektu jest stworzenie aplikacji pozwalającej na generowanie podsumowań lingwistycznych w oparciu o kwantyfikatory rozmyte, co oznacza opisanie danych liczbowych ze zbioru danych\cite{dane} językiem quasi-naturalnym - pozornie naturalnym. Przykładem podsumowania lingwistycznego może być: X przedmiotów jest Y [P] - "Wiele wypadków jest przy ujemnej temperaturze [0,76]" oraz X przedmiotów będących Z jest Y [P] - "Wiele wypadków będących podczas deszczu, jest przy ujemnej temperaturze [0.68]".  Analizowany zbior danych zawiera liczbowe informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020\cite{dane}. Zbiór danych składa się z 47 kolumn. W tym celu wykonania podsumowania lingwistycznego zostaną wykorzystane metody logiki rozmytej\cite{fuzzy}. Logika rozmyta pozwala na opisanie wartości zapisanych językiem naturalnym za pomocą zrozumiałych określeń jak: mało, dużo, około połowy. W projekcie zostaną wykorzystane kwantyfikatory lingwistyczne względne takie jak: niewiele, około połowy oraz kwantyfikatory lingwistyczne absolutne takie jak: około jednego, około stu.
+Celem projektu jest stworzenie aplikacji pozwalającej na generowanie podsumowań lingwistycznych\cite{przyklad} w oparciu o kwantyfikatory rozmyte\cite{niewiadomskiRozmyte}, co oznacza opisanie danych liczbowych ze zbioru danych\cite{dane} językiem quasi-naturalnym - pozornie naturalnym. \\Przykładem podsumowania lingwistycznego\cite{przyklad} w formie 
+\begin{equation} Q\ P\ jest\ S\ [T] \end{equation}
+ jest:  \textit{Wiele wypadków jest przy ujemnej temperaturze [0,76]}, gdzie \textit{Q} jest kwantyfikatorem lingwistycznym, \textit{P} podmiotem podsumowań, \textit{S} sumaryzatorem, a \textit{T[0, 1]} stopniem prawdziwości. \\ \newline Przykładem drugiego podsumowania lingwistycznego w formie:
+\begin{equation}  Q \ P \ bedacych\ W\ jest\ S\ [T] \end{equation} 
+jest: \textit{Wiele wypadków będących podczas deszczu, jest przy ujemnej temperaturze [0.68]}, gdzie \textit{Q} jest kwantyfikatorem lingwistycznym, \textit{P} podmiotem podsumowań, \textit{S} sumaryzatorem, \textit{W} kwantyfikatorem reprezentującym dodatkowe własności obiektów, a \textit{T[0, 1]} stopniem prawdziwości.  \\ \newline
+Analizowany zbior danych zawiera liczbowe informacje o ponad 3 milionach wypadków samochodowych w 49 stanach Zjednoczonych Stanów Ameryki, mających miejsce od lutego 2016 do grudnia 2020\cite{dane}. Zbiór danych składa się z 47 kolumn. W tym celu wykonania podsumowania lingwistycznego zostaną wykorzystane metody logiki rozmytej\cite{fuzzy}. Logika rozmyta pozwala na opisanie wartości zapisanych językiem naturalnym za pomocą zrozumiałych określeń jak: mało, dużo, około połowy. W projekcie zostaną wykorzystane kwantyfikatory lingwistyczne względne takie jak: niewiele, około połowy oraz kwantyfikatory lingwistyczne absolutne takie jak: około jednego, około stu.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -587,23 +592,16 @@ gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo10}\), \(\mu _{okolo50}\), \(\mu _{oko
 \section{Narzędzia obliczeniowe: projekt (wybór, implementacja) i diagram UML pakietu obliczeń rozmytych. Diagram UML generatora podsumowań}
 \subsection{Diagram pakietu obliczeń rozmytych}
 
-Program został wykonany w języku Java 11 LTS z użyciem narzędzia Maven. W celu wykonania projektu stworzyliśmy własny pakiet obliczeń rozmytych - obliczeniaRozmyte. W pakiecie znajdują się klasy odpowiadające funkcjom przynależności. Klasa AbstractZbiorRozmyty jest abstrakcyjną klasą, z której dziedziczą klasy FunkcjaGaussowska oraz FunkcjaTrapezoidalna. Ta abstrakcyjna klasa zawiera pola odpowiadające początkowi oraz końcowi uniwersum dyskuru\cite{fuzzy}. Klasa FunkcjaTrapezoidalna posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: początek, koniec oraz początek i koniec przedziału, w którym funkcja przynależności przyjmuje warotść 1. Klasa FunkcjaGaussowska posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: sigma, wysokość oraz środek. Klasa FunkcjaTrojkatna dziedziczy po klasie FunkcjaTrapezoidalna, gdzie początek i koniec przedziału, w którym funkcja przynależności przyjmuje wartość 1, są tą samą wartością. Klasa AbstractZbiorRozmyty implementuje interfejs ZbiorRozmyty zawierający metody pozwalające uzyskać wysokość zbioru\cite{fuzzy}, przerój alfa, nośnik, liczba kardynalna\cite{fuzzy} oraz dopełnienie zbioru\cite{fuzzy}. Gdzie funkcja zwracająca nośnik zwraca listę elementów, dla których wartość funkcji przynależności jest większa od zera. Funkcja zwracająca przkerój alfa zwraca listę elementów, dla których wartość funkcji przynależności jest więsza niż zadana w parametrze wartość. Ten interfejs pozwala również na wykonanie operacji sumy zbiorów rozmytych\cite{fuzzySet}, iloczynu zbiorów rozmytych\cite{fuzzySet}. Interfejs ZbiorRozmtyty dziedziczy interfejs FunkcjaPrzynaleznosci zawierający metodę przynaleznosc pozwalającą obliczyć wartość funkcji przynależności. 
-
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{uml.png}
  \vspace{-0.3cm}
- \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych absolutnych. }
+ \caption{Diagram uml pakietu obliczeń rozmytych. }
  \label{rysunek do eksperymentu 1 wariantu 1}
 \end{figure}
 \newpage
 
-\newpage
-Diagram UML i zwięzły opis pakietu obliczeń rozmytych: źródło pakietu
-(zewnętrzny/własny/hybrydowy), przypis do literatury. Krótka charakterystyka
-najważniejszych klas i podstawowych dla zadania ich metod. \\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 10 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+Program został wykonany w języku Java 11 LTS z użyciem narzędzia Maven. W celu wykonania projektu stworzyliśmy własny pakiet obliczeń rozmytych - obliczeniaRozmyte. W pakiecie znajdują się klasy odpowiadające funkcjom przynależności. Klasa AbstractZbiorRozmyty jest abstrakcyjną klasą, z której dziedziczą klasy FunkcjaGaussowska oraz FunkcjaTrapezoidalna. Ta abstrakcyjna klasa zawiera pola odpowiadające początkowi oraz końcowi uniwersum dyskuru\cite{fuzzy}. Klasa FunkcjaTrapezoidalna posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: początek, koniec oraz początek i koniec przedziału, w którym funkcja przynależności przyjmuje warotść 1. Klasa FunkcjaGaussowska posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: sigma, wysokość oraz środek. Klasa FunkcjaTrojkatna dziedziczy po klasie FunkcjaTrapezoidalna, gdzie początek i koniec przedziału, w którym funkcja przynależności przyjmuje wartość 1, są tą samą wartością. Klasa AbstractZbiorRozmyty implementuje interfejs ZbiorRozmyty zawierający metody pozwalające uzyskać wysokość zbioru\cite{fuzzy}, przerój alfa, nośnik, liczba kardynalna\cite{fuzzy} oraz dopełnienie zbioru\cite{fuzzy}. Gdzie funkcja zwracająca nośnik zwraca listę elementów, dla których wartość funkcji przynależności jest większa od zera. Funkcja zwracająca przkerój alfa zwraca listę elementów, dla których wartość funkcji przynależności jest więsza niż zadana w parametrze wartość. Ten interfejs pozwala również na wykonanie operacji sumy zbiorów rozmytych\cite{fuzzySet}, iloczynu zbiorów rozmytych\cite{fuzzySet}. Interfejs ZbiorRozmtyty dziedziczy interfejs FunkcjaPrzynaleznosci zawierający metodę przynaleznosc pozwalającą obliczyć wartość funkcji przynależności. 
 
 \subsection{Diagram UML generatora podsumowań. Krótka instrukcja użytkownika} 
 Diagram UML generatora podsumowań (warstwy obliczeniowej oraz interfejsu
@@ -664,11 +662,12 @@ podać merytoryczne (ale nie czasowe) przyczyny tych braków.
 
 
 \begin{thebibliography}{99}
+\bibitem{przyklad} I. Superson, A. Niewiadomski, POZYSKIWANIE WIEDZY Z RELACYJNYCH BAZ DANYCH: WIELOPODMIOTOWE PODSUMOWANIA LINGWISTYCZNE, Politechnika Łódzka
+\bibitem{niewiadomskiRozmyte} A. Niewiadomski, Rozmyte metody inteligentnej interpretacji danych, tom 10, 2006, 546-547
 \bibitem{dane} 2021 Kaggle Inc [internetowa społeczność związana z analizą danych], US Accidents (3 million records -- updated)
 A Countrywide Traffic Accident Dataset (2016 - 2020) [przeglądany 24 kwietnia 2021], Dostępny w: \url{https://www.kaggle.com/sobhanmoosavi/us-accidents}
 Oficyna Wydawnicza EXIT, Warszawa, 2008.
 \bibitem{fuzzy} Zadeh L.A., A computational approach to fuzzy quantifiers in natural languages. Computers and Maths with Applications, nr 9, 1983, 149-183
-\bibitem{niewiadomskiRozmyte} A. Niewiadomski, Rozmyte metody inteligentnej interpretacji danych, tom 10, 2006, 546-547
  \bibitem{niewiadomski19} A. Niewiadomski, Zbiory rozmyte typu 2. Zastosowania w reprezentowaniu informacji.  Seria „Problemy współczesnej informatyki” pod redakcją L. Rutkowskiego. Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2019.
 \bibitem{zadrozny06} S. Zadrożny, Zapytania nieprecyzyjne i lingwistyczne podsumowania baz danych, EXIT, 2006, Warszawa
 \bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka 
