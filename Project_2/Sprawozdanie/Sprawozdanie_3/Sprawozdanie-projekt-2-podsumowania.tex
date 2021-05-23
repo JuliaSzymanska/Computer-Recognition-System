@@ -67,6 +67,7 @@ Przykładowo temperatura, mimo że zrozumiała dla człowieka w postaci liczbowe
 Poniżej zostaną przedstawione zmiene lingwistyczne\cite{niewiadomskiRozmyte} dla jedenastu atrybutów z bazy danych wraz z przypisanymi etykietami w formie funkcji przynależności oraz wzorów analitycznych. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Czas utrudnień w ruchu drogowym spowodowanych przez wypadek}
 Na podstawie znajdujących się w bazie danych pól Czas rozpoczęcia (Start\_Time) oraz Czas zakończenia (End\_Time) zostanie obliczony Czas utrudnień w ruchu drogowym (Duration) spowodowanych przez wypadek według wzoru:
 \begin{equation}
 Duration = End\_Time - Start\_Time
@@ -118,6 +119,8 @@ gdzie: \(\mu _{czasTrwaniaPonizejGodziny}\), \(\mu _{czasTrwaniaOkoloDwochGodzin
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Odległość}
+
 Przedstawienie odległości jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: krótki, długi. 
 \begin{equation}
 \mu _{OdlegloscPonizejPolMili}(x) =  \left\{ \begin{array}{rcl}
@@ -158,6 +161,7 @@ gdzie: \(\mu _{OdlegloscPonizejPolMili}\), \(\mu _{OdlegloscOkoloJednejMili}\), 
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tempertura i temperatura odczuwalna}
 Przedstawienie temperatury oraz temperatury odczuwalnej jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: bardzo zimno, zimno, umiarkowanie, ciepło, bardzo ciepło. 
 \begin{equation}
 \mu _{temperaturaBardzoZimno}(x) =  \left\{ \begin{array}{rcl}
@@ -212,6 +216,7 @@ gdzie: \(\mu _{temperaturaBardzoZimna}\), \(\mu _{temperaturaZimna}\), \(\mu _{t
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wilgotność}
 Przedstawienie wilgotności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: suche, umiarkowane, wilgotne. 
 
 \begin{equation}
@@ -264,6 +269,7 @@ gdzie: \(\mu _{wilgotnoscBardzoSuche}\), \(\mu _{wilgotnoscSuche}\), \(\mu _{wil
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ciśnienie}
 Przedstawienie ciśnienia jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: niskie, umiarkowane, wysokie. 
 \begin{equation}
 \mu _{cisnienieBardzoNiskie}(x) =  \left\{ \begin{array}{rcl}
@@ -318,6 +324,7 @@ gdzie: \(\mu _{cisnienieBardzoNiskie}\), \(\mu _{cisnienieNiskie}\), \(\mu _{cis
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Widoczność}
 Przedstawienie widoczności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: brak, słaba, ograniczona, dobra. 
 \begin{equation}
 \mu _{widocznoscBrak}(x) =   1 \ \ dla \ \ x  = 0
@@ -366,6 +373,7 @@ gdzie: \(\mu _{widocznoscBrak}\), \(\mu _{widocznoscSlaba}\), \(\mu _{widocznosc
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Prędkość wiatru}
 Przedstawienie predkości wiatru jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: brak, słaby, umiarkowany, silny, wicher, huragan. 
 
 \begin{equation}
@@ -424,6 +432,7 @@ gdzie: \(\mu _{wiatrBrak}\), \(\mu _{wiatrSlaby}\), \(\mu _{wiatrUmiarkowany}\),
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Opady}
 Przedstawienie opadów jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: brak, niewielkie, umiarkowane, duże. 
 
 \begin{equation}
@@ -474,6 +483,7 @@ gdzie: \(\mu _{opadyBrak}\), \(\mu _{opadyNiewielkie}\), \(\mu _{opadyUmiarkowan
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kwantyfikator lingwistyczny względny}
 Do kwantyfikatora lingwistycznego względnego\cite{niewiadomskiRozmyte} zostały dopasowane etykiety: niewiele, około 1/4, około połowy, większość, prawie wszystkie. 
 
 \begin{equation}
@@ -508,6 +518,7 @@ gdzie: \(\mu _{niewiele}\), \(\mu _{okoloJednejCzwartej}\), \(\mu _{okoloPolowy}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kwantyfikator lingwistyczny absolutny}
 Do kwantyfikatora lingwistycznego absolutnego\cite{niewiadomskiRozmyte} zostały dopasowane etykiety: poniżej 10, około 50, około 100, między 100 a 200, około 200, ponad 200. 
 
 \begin{equation}
@@ -575,8 +586,17 @@ gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo10}\), \(\mu _{okolo50}\), \(\mu _{oko
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Narzędzia obliczeniowe: projekt (wybór, implementacja) i diagram UML pakietu obliczeń rozmytych. Diagram UML generatora podsumowań}
 \subsection{Diagram pakietu obliczeń rozmytych}
-W celu wykonania 
 
+Program został wykonany w języku Java 11 LTS z użyciem narzędzia Maven. W celu wykonania projektu stworzyliśmy własny pakiet obliczeń rozmytych - obliczeniaRozmyte. W pakiecie znajdują się klasy odpowiadające funkcjom przynależności. Klasa AbstractZbiorRozmyty jest abstrakcyjną klasą, z której dziedziczą klasy FunkcjaGaussowska oraz FunkcjaTrapezoidalna. Ta abstrakcyjna klasa zawiera pola odpowiadające początkowi oraz końcowi uniwersum dyskuru\cite{fuzzy}. Klasa FunkcjaTrapezoidalna posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: początek, koniec oraz początek i koniec przedziału, w którym funkcja przynależności przyjmuje warotść 1. Klasa FunkcjaGaussowska posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: sigma, wysokość oraz środek. Klasa FunkcjaTrojkatna dziedziczy po klasie FunkcjaTrapezoidalna, gdzie początek i koniec przedziału, w którym funkcja przynależności przyjmuje wartość 1, są tą samą wartością. Klasa AbstractZbiorRozmyty implementuje interfejs ZbiorRozmyty zawierający metody pozwalające uzyskać wysokość zbioru\cite{fuzzy}, przerój alfa, nośnik, liczba kardynalna\cite{fuzzy} oraz dopełnienie zbioru\cite{fuzzy}. Gdzie funkcja zwracająca nośnik zwraca listę elementów, dla których wartość funkcji przynależności jest większa od zera. Funkcja zwracająca przkerój alfa zwraca listę elementów, dla których wartość funkcji przynależności jest więsza niż zadana w parametrze wartość. Ten interfejs pozwala również na wykonanie operacji sumy zbiorów rozmytych\cite{fuzzySet}, iloczynu zbiorów rozmytych\cite{fuzzySet}. Interfejs ZbiorRozmtyty dziedziczy interfejs FunkcjaPrzynaleznosci zawierający metodę przynaleznosc pozwalającą obliczyć wartość funkcji przynależności. 
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=14cm]{uml.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych absolutnych. }
+ \label{rysunek do eksperymentu 1 wariantu 1}
+\end{figure}
+\newpage
 
 \newpage
 Diagram UML i zwięzły opis pakietu obliczeń rozmytych: źródło pakietu
@@ -652,6 +672,7 @@ Oficyna Wydawnicza EXIT, Warszawa, 2008.
  \bibitem{niewiadomski19} A. Niewiadomski, Zbiory rozmyte typu 2. Zastosowania w reprezentowaniu informacji.  Seria „Problemy współczesnej informatyki” pod redakcją L. Rutkowskiego. Akademicka Oficyna Wydawnicza EXIT, Warszawa, 2019.
 \bibitem{zadrozny06} S. Zadrożny, Zapytania nieprecyzyjne i lingwistyczne podsumowania baz danych, EXIT, 2006, Warszawa
 \bibitem{niewiadomski08} A. Niewiadomski, Methods for the Linguistic Summarization of Data: Applications of Fuzzy Sets and Their Extensions, Akademicka 
+\bibitem{fuzzySet} Zadeh, L. A.: 1965, ‘Fuzzy sets’. Inf. and Control 8, 338–353.
 \end{thebibliography}
 
 Literatura zawiera wyłącznie źródła recenzowane i/lub o potwierdzonej wiarygodności,
