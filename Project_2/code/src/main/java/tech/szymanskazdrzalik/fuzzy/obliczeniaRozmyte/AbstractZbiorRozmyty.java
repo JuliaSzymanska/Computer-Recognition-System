@@ -16,61 +16,12 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
     }
 
     public Double getPoczatekUniwersumDyskursu() {
-        return poczatekUniwersumDyskursu;
+        return this.poczatekUniwersumDyskursu;
     }
 
     public Double getKoniecUniversumDyskursu() {
-        return koniecUniversumDyskursu;
+
+        return this.koniecUniversumDyskursu;
     }
 
-    @Override
-    public Double getWysokosc() {
-        return 1.0;
-    }
-
-    @Override
-    public <T> Double liczbaKardynalna(Map<T, Double> objectDoubleMap) {
-        final Double[] sum = {0.0};
-        objectDoubleMap.forEach((t, aDouble) -> sum[0] += AbstractZbiorRozmyty.this.przynaleznosc(aDouble));
-        return sum[0];
-    }
-
-    @Override
-    public <T> List<T> getNosnik(Map<T, Double> objectDoubleMap) {
-        return this.getPrzekrojAlfa(objectDoubleMap, 0.0);
-    }
-
-    @Override
-    public Double iloczynZbiorow(ZbiorRozmyty zbiorRozmyty, Double x) {
-        return Math.min(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
-    }
-
-    @Override
-    public Double sumaZbiorow(ZbiorRozmyty zbiorRozmyty, Double x) {
-        return Math.max(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
-    }
-
-    @Override
-    public Double dopelnienieZbioru(Double x) {
-        return 1 - this.przynaleznosc(x);
-    }
-
-    @Override
-    public <T> List<T> getPrzekrojAlfa(Map<T, Double> objectDoubleMap, Double alfa) {
-        List<T> list = new ArrayList<>();
-        objectDoubleMap.forEach(new BiConsumer<>() {
-            @Override
-            public void accept(T o, Double aDouble) {
-                if (AbstractZbiorRozmyty.this.przynaleznosc(aDouble) > alfa) {
-                    list.add(o);
-                }
-            }
-
-            @Override
-            public BiConsumer<T, Double> andThen(BiConsumer<? super T, ? super Double> after) {
-                return BiConsumer.super.andThen(after);
-            }
-        });
-        return list;
-    }
 }
