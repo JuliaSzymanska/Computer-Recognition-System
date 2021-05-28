@@ -46,4 +46,5 @@ public class FunkcjaTrapezoidalna extends AbstractZbiorRozmyty {
         }
         return 0.0;
     }
+
 }

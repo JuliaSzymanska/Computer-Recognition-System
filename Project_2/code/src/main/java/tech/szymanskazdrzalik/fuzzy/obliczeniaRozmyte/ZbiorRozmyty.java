@@ -35,14 +35,6 @@ public interface ZbiorRozmyty extends FunkcjaPrzynaleznosci  {
         objectDoubleMap.forEach((t, aDouble) -> sum[0] += ZbiorRozmyty.this.przynaleznosc(aDouble));
         return sum[0];
     }
-    default Double iloczynZbiorow(ZbiorRozmyty zbiorRozmyty, Double x) {
-        return Math.min(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
-    }
 
-    default Double sumaZbiorow(ZbiorRozmyty zbiorRozmyty, Double x) {
-        return Math.max(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
-    }
-    default Double dopelnienieZbioru(Double x) {
-        return 1 - this.przynaleznosc(x);
-    }
+
 }
