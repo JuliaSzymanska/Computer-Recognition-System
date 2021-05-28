@@ -16,6 +16,26 @@ public class FunkcjaGausowska extends AbstractZbiorRozmyty  {
         this.srodek = srodek;
     }
 
+
+    public boolean jestWklesly() {
+        return false;
+    }
+
+
+    public boolean jestWypukly() {
+        return true;
+    }
+
+
+    public boolean jestPusty() {
+        return false;
+    }
+
+
+    public boolean jestNormalny() {
+        return this.wysokosc.equals(1.0);
+    }
+
     public Double getSigma() {
         return sigma;
     }

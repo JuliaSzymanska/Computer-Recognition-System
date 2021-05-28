@@ -12,13 +12,6 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
         this.koniecPrzestrzeniRozwazan = koniecPrzestrzeniRozwarzan;
     }
 
-    public <T> boolean jestPusty() {
-        return this.liczbaKardynalna(objectDoubleMap) == 0;
-    }
-
-    public <T> boolean jestNormalny(Map<T, Double> objectDoubleMap) {
-        return true;
-    }
 
     public Double getPoczatekPrzestrzeniRozwazan() {
         return poczatekPrzestrzeniRozwazan;

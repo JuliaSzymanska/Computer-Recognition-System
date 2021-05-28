@@ -47,4 +47,23 @@ public class FunkcjaTrapezoidalna extends AbstractZbiorRozmyty {
         return 0.0;
     }
 
+
+    public boolean jestWklesly() {
+        return false;
+    }
+
+
+    public boolean jestWypukly() {
+        return true;
+    }
+
+
+    public boolean jestPusty() {
+        return getPoczatek() > getKoniecPrzestrzeniRozwazan() || getKoniec() < getPoczatekPrzestrzeniRozwazan();
+    }
+
+
+    public boolean jestNormalny() {
+        return true;
+    }
 }

@@ -199,7 +199,6 @@ def draw_humidity_gauss():
     plt.show()
 
 
-
 def draw_absolute_quantificators():
     plt.grid(linestyle='dotted')
     plt.plot([0, 10], [1, 0], label="Poniżej 10")
@@ -218,6 +217,6 @@ def draw_absolute_quantificators():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_humidity_gauss()
+    print(my_gauss(0, 1, 1, 0))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
