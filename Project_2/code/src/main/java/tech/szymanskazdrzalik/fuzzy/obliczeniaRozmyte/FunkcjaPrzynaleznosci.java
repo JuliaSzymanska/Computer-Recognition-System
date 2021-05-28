@@ -1,7 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-public interface FunkcjaPrzynaleznosci {
+public interface FunkcjaPrzynaleznosci<T> {
 
-    Double przynaleznosc(Double x);
+    Double przynaleznosc(T x);
 
 }

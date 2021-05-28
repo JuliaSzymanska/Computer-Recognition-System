@@ -1,12 +1,13 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-public class FunkcjaGausowska extends AbstractZbiorRozmyty  {
+public  class FunkcjaGausowska<T> extends AbstractZbiorRozmyty<T>  {
 
     private final Double sigma;
     private final Double wysokosc;
     private final Double srodek;
+    private final GetValue<T> getValue;
 
-    public FunkcjaGausowska(Double sigma, Double wysokosc, Double srodek, Double poczatekUniversum, Double koniecUniversum) {
+    public FunkcjaGausowska(Double sigma, Double wysokosc, Double srodek, Double poczatekUniversum, Double koniecUniversum, GetValue<T> getValue) {
         super(poczatekUniversum, koniecUniversum);
         if (wysokosc <= 0) {
             throw new RuntimeException();
@@ -14,6 +15,7 @@ public class FunkcjaGausowska extends AbstractZbiorRozmyty  {
         this.sigma = sigma;
         this.wysokosc = wysokosc;
         this.srodek = srodek;
+        this.getValue = getValue;
     }
 
 
@@ -50,7 +52,7 @@ public class FunkcjaGausowska extends AbstractZbiorRozmyty  {
     }
 
     @Override
-    public Double przynaleznosc(Double x) {
-        return wysokosc * Math.exp(-Math.pow(x - srodek, 2) / (2 * Math.pow(sigma, 2)));
+    public Double przynaleznosc(T x) {
+        return wysokosc * Math.exp(-Math.pow(getValue.getValue(x) - srodek, 2) / (2 * Math.pow(sigma, 2)));
     }
 }

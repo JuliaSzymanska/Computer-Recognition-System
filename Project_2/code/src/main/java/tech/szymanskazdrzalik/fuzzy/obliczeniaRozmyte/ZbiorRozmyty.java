@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
-public interface ZbiorRozmyty extends FunkcjaPrzynaleznosci {
+public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
 
     /**
      * Wysokość - maksymalna wartość funkcji przynależności.
@@ -20,50 +21,36 @@ public interface ZbiorRozmyty extends FunkcjaPrzynaleznosci {
     /**
      * Nośnik - zbiór elementów, których wartość funkcji przynależności jest większa od 0.
      *
-     * @param <T>             the type parameter
-     * @param objectDoubleMap the object double map
      * @return the nosnik
      */
-    default <T> List<T> getNosnik(Map<T, Double> objectDoubleMap) {
+    default List<T> getNosnik(List<T> objectDoubleMap) {
         return this.getPrzekrojAlfa(objectDoubleMap, 0.0);
     }
 
     /**
      * Przekrój alfa - zbiór elementów, których wartość funkcji przynależności jest większa od {@param alfa}.
      *
-     * @param <T>             the type parameter
-     * @param objectDoubleMap the object double map
      * @param alfa            the alfa
      * @return the przekroj alfa
      */
-    default <T> List<T> getPrzekrojAlfa(Map<T, Double> objectDoubleMap, Double alfa) {
-        List<T> list = new ArrayList<>();
-        objectDoubleMap.forEach(new BiConsumer<>() {
-            @Override
-            public void accept(T o, Double aDouble) {
-                if (ZbiorRozmyty.this.przynaleznosc(aDouble) > alfa) {
-                    list.add(o);
-                }
-            }
-
-            @Override
-            public BiConsumer<T, Double> andThen(BiConsumer<? super T, ? super Double> after) {
-                return BiConsumer.super.andThen(after);
+    default  List<T> getPrzekrojAlfa(List<T> list, Double alfa) {
+        List<T> returnList = new ArrayList<>();
+        list.forEach(t -> {
+            if (ZbiorRozmyty.this.przynaleznosc(t) > alfa) {
+                returnList.add(t);
             }
         });
-        return list;
+        return returnList;
     }
 
     /**
      * Liczba kardynalna - suma wyników funkcji przynależności dla elementów.
      *
-     * @param <T>             the type parameter
-     * @param objectDoubleMap the object double map
      * @return the double
      */
-    default <T> Double liczbaKardynalna(Map<T, Double> objectDoubleMap) {
+    default Double liczbaKardynalna(List<T> list) {
         final Double[] sum = {0.0};
-        objectDoubleMap.forEach((t, aDouble) -> sum[0] += ZbiorRozmyty.this.przynaleznosc(aDouble));
+        list.forEach(t -> sum[0] += ZbiorRozmyty.this.przynaleznosc(t));
         return sum[0];
     }
 }
