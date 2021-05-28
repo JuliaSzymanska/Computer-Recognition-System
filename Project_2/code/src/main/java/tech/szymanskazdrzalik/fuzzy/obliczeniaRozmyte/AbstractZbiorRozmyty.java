@@ -1,40 +1,29 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
-    private Double poczatekPrzestrzeniRozwarzan;
-    private Double koniecPrzestrzeniRozwarzan;
+
+    private final Double poczatekPrzestrzeniRozwazan;
+    private final Double koniecPrzestrzeniRozwazan;
+
 
     public AbstractZbiorRozmyty(Double poczatekPrzestrzeniRozwarzan, Double koniecPrzestrzeniRozwarzan) {
-        this.poczatekPrzestrzeniRozwarzan = poczatekPrzestrzeniRozwarzan;
-        this.koniecPrzestrzeniRozwarzan = koniecPrzestrzeniRozwarzan;
+        this.poczatekPrzestrzeniRozwazan = poczatekPrzestrzeniRozwarzan;
+        this.koniecPrzestrzeniRozwazan = koniecPrzestrzeniRozwarzan;
     }
 
-    public void setPoczatekPrzestrzeniRozwarzan(Double poczatekPrzestrzeniRozwarzan) {
-        this.poczatekPrzestrzeniRozwarzan = poczatekPrzestrzeniRozwarzan;
+
+    public Double getPoczatekPrzestrzeniRozwazan() {
+        return poczatekPrzestrzeniRozwazan;
     }
 
-    public void setKoniecPrzestrzeniRozwarzan(Double koniecPrzestrzeniRozwarzan) {
-        this.koniecPrzestrzeniRozwarzan = koniecPrzestrzeniRozwarzan;
+    public Double getKoniecPrzestrzeniRozwazan() {
+        return koniecPrzestrzeniRozwazan;
     }
-
-    public AbstractZbiorRozmyty() {
-
-    }
-
-    public Double getPoczatekPrzestrzeniRozwarzan() {
-        return this.poczatekPrzestrzeniRozwarzan;
-    }
-
-    public Double getKoniecPrzestrzeniRozwarzan() {
-
-        return this.koniecPrzestrzeniRozwarzan;
-    }
-
 
     public ZbiorRozmyty iloczynZbiorow(AbstractZbiorRozmyty zbiorRozmyty) {
         return new AbstractZbiorRozmyty(
-                Math.min(this.poczatekPrzestrzeniRozwarzan, zbiorRozmyty.poczatekPrzestrzeniRozwarzan),
-                Math.max(this.koniecPrzestrzeniRozwarzan, zbiorRozmyty.koniecPrzestrzeniRozwarzan)) {
+                Math.min(this.poczatekPrzestrzeniRozwazan, zbiorRozmyty.poczatekPrzestrzeniRozwazan),
+                Math.max(this.koniecPrzestrzeniRozwazan, zbiorRozmyty.koniecPrzestrzeniRozwazan)) {
             @Override
             public Double przynaleznosc(Double x) {
                 return Math.min(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
@@ -45,8 +34,8 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
 
     public ZbiorRozmyty sumaZbiorow(AbstractZbiorRozmyty zbiorRozmyty) {
         return new AbstractZbiorRozmyty(
-                Math.min(this.poczatekPrzestrzeniRozwarzan, zbiorRozmyty.poczatekPrzestrzeniRozwarzan),
-                Math.max(this.koniecPrzestrzeniRozwarzan, zbiorRozmyty.koniecPrzestrzeniRozwarzan)) {
+                Math.min(this.poczatekPrzestrzeniRozwazan, zbiorRozmyty.poczatekPrzestrzeniRozwazan),
+                Math.max(this.koniecPrzestrzeniRozwazan, zbiorRozmyty.koniecPrzestrzeniRozwazan)) {
             @Override
             public Double przynaleznosc(Double x) {
                 return Math.max(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
@@ -55,7 +44,7 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
     }
 
     public ZbiorRozmyty dopelnienieZbioru() {
-        return new AbstractZbiorRozmyty(this.poczatekPrzestrzeniRozwarzan, this.koniecPrzestrzeniRozwarzan) {
+        return new AbstractZbiorRozmyty(this.poczatekPrzestrzeniRozwazan, this.koniecPrzestrzeniRozwazan) {
             @Override
             public Double przynaleznosc(Double x) {
                 return 1 - this.przynaleznosc(x);
