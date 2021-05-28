@@ -2,21 +2,19 @@ package tech.szymanskazdrzalik.fuzzy.utils;
 
 import opennlp.tools.stemmer.PorterStemmer;
 import tech.szymanskazdrzalik.fuzzy.dao.AccidentDTO;
-import tech.szymanskazdrzalik.fuzzy.model.Accident;
+import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class AccidentDTOToAccidentMapper {
     private AccidentDTOToAccidentMapper() {
     }
 
-    public static Accident mapToStory(AccidentDTO accidentDTO) {
-        return new Accident(accidentDTO);
+    public static Wypadek mapToStory(AccidentDTO accidentDTO) {
+        return new Wypadek(accidentDTO);
     }
 
     private static String[] tokenize(String toTokenize) {

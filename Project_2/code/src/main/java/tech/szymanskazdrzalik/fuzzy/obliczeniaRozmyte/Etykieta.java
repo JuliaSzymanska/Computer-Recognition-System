@@ -3,11 +3,11 @@ package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 public class Etykieta {
 
     private String nazwa;
-    private AbstractZbiorRozmyty abstractZbiorRozmyty;
+    private AbstrakcyjnyZbiorRozmyty abstrakcyjnyZbiorRozmyty;
 
-    public Etykieta(String nazwa, AbstractZbiorRozmyty abstractZbiorRozmyty) {
+    public Etykieta(String nazwa, AbstrakcyjnyZbiorRozmyty abstrakcyjnyZbiorRozmyty) {
         this.nazwa = nazwa;
-        this.abstractZbiorRozmyty = abstractZbiorRozmyty;
+        this.abstrakcyjnyZbiorRozmyty = abstrakcyjnyZbiorRozmyty;
     }
 
     public String getNazwa() {
@@ -18,11 +18,11 @@ public class Etykieta {
         this.nazwa = nazwa;
     }
 
-    public AbstractZbiorRozmyty getAbstractZbiorRozmyty() {
-        return abstractZbiorRozmyty;
+    public AbstrakcyjnyZbiorRozmyty getAbstractZbiorRozmyty() {
+        return abstrakcyjnyZbiorRozmyty;
     }
 
-    public void setAbstractZbiorRozmyty(AbstractZbiorRozmyty abstractZbiorRozmyty) {
-        this.abstractZbiorRozmyty = abstractZbiorRozmyty;
+    public void setAbstractZbiorRozmyty(AbstrakcyjnyZbiorRozmyty abstrakcyjnyZbiorRozmyty) {
+        this.abstrakcyjnyZbiorRozmyty = abstrakcyjnyZbiorRozmyty;
     }
 }

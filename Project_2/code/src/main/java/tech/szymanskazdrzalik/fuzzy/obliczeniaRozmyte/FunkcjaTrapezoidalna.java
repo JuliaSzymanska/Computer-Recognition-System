@@ -1,15 +1,15 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-public class FunkcjaTrapezoidalna<T> extends AbstractZbiorRozmyty<T> {
+public class FunkcjaTrapezoidalna<T> extends AbstrakcyjnyZbiorRozmyty<T> {
     private final Double poczatek;
     private final Double poczatekWartosciMaksymalnej;
     private final Double koniecWartosciMaksymalnej;
     private final Double koniec;
-    private final GetValue<T> getValue;
+    private final PobierzWartosc<T> pobierzWartosc;
 
-    public FunkcjaTrapezoidalna(Double poczatek, Double poczatekWartosciMaksymalnej, Double maxEnd, Double koniec, Double poczatekUniversum, double koniecUniversum, GetValue<T> getValue) {
+    public FunkcjaTrapezoidalna(Double poczatek, Double poczatekWartosciMaksymalnej, Double maxEnd, Double koniec, Double poczatekUniversum, double koniecUniversum, PobierzWartosc<T> pobierzWartosc) {
         super(poczatekUniversum, koniecUniversum);
-        this.getValue = getValue;
+        this.pobierzWartosc = pobierzWartosc;
         if (poczatek > poczatekWartosciMaksymalnej || poczatekWartosciMaksymalnej > maxEnd || maxEnd > koniec) {
             throw new RuntimeException();
         }
@@ -37,14 +37,14 @@ public class FunkcjaTrapezoidalna<T> extends AbstractZbiorRozmyty<T> {
 
     @Override
     public Double przynaleznosc(T t) {
-        if (this.getValue.getValue(t) >= poczatekWartosciMaksymalnej && this.getValue.getValue(t) <= koniecWartosciMaksymalnej) {
+        if (this.pobierzWartosc.pobierzWartosc(t) >= poczatekWartosciMaksymalnej && this.pobierzWartosc.pobierzWartosc(t) <= koniecWartosciMaksymalnej) {
             return 1.0;
         }
-        if (this.getValue.getValue(t) > poczatek && this.getValue.getValue(t) < poczatekWartosciMaksymalnej) {
-            return (this.getValue.getValue(t) - poczatek) / (poczatekWartosciMaksymalnej - poczatek);
+        if (this.pobierzWartosc.pobierzWartosc(t) > poczatek && this.pobierzWartosc.pobierzWartosc(t) < poczatekWartosciMaksymalnej) {
+            return (this.pobierzWartosc.pobierzWartosc(t) - poczatek) / (poczatekWartosciMaksymalnej - poczatek);
         }
-        if (this.getValue.getValue(t) > koniecWartosciMaksymalnej && this.getValue.getValue(t) < koniec) {
-            return 1 - ((this.getValue.getValue(t) - koniecWartosciMaksymalnej) / (koniec - koniecWartosciMaksymalnej));
+        if (this.pobierzWartosc.pobierzWartosc(t) > koniecWartosciMaksymalnej && this.pobierzWartosc.pobierzWartosc(t) < koniec) {
+            return 1 - ((this.pobierzWartosc.pobierzWartosc(t) - koniecWartosciMaksymalnej) / (koniec - koniecWartosciMaksymalnej));
         }
         return 0.0;
     }

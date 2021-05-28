@@ -1,7 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.dao;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import tech.szymanskazdrzalik.fuzzy.model.Accident;
+import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.utils.AccidentDTOToAccidentMapper;
 
 import java.io.BufferedReader;
@@ -15,20 +15,20 @@ import java.util.Objects;
 
 public class ResourcesAccidentDao implements AccidentDAO {
 
-    private static List<Accident> accidents;
+    private static List<Wypadek> wypadeks;
 
     @Override
-    public List<Accident> getAll(File file) throws IOException {
-        if (Objects.isNull(accidents)) {
-            accidents = new ArrayList<>();
+    public List<Wypadek> getAll(File file) throws IOException {
+        if (Objects.isNull(wypadeks)) {
+            wypadeks = new ArrayList<>();
             ObjectMapper mapper = new ObjectMapper();
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 String currentLine;
                 while ((currentLine = reader.readLine()) != null) {
                     try {
                         AccidentDTO accidentDTO = mapper.readValue(currentLine, AccidentDTO.class);
-                        Accident accident = AccidentDTOToAccidentMapper.mapToStory(accidentDTO);
-                        accidents.add(accident);
+                        Wypadek wypadek = AccidentDTOToAccidentMapper.mapToStory(accidentDTO);
+                        wypadeks.add(wypadek);
                     } catch (Exception e) {
 
                     }
@@ -36,16 +36,16 @@ public class ResourcesAccidentDao implements AccidentDAO {
             }
         }
         // TODO: 06.05.2021  
-        return accidents;
+        return wypadeks;
     }
 
     @Override
-    public List<Accident> getAll(String path) throws IOException {
+    public List<Wypadek> getAll(String path) throws IOException {
         return getAll(Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource(path)));
     }
 
     @Override
-    public List<Accident> getAll(URL path) throws IOException {
+    public List<Wypadek> getAll(URL path) throws IOException {
         return getAll(new File(path.getPath()));
     }
 }

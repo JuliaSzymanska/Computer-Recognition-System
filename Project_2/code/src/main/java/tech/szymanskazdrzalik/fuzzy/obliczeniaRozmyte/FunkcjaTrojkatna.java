@@ -1,8 +1,8 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 public class FunkcjaTrojkatna<T> extends FunkcjaTrapezoidalna<T> {
-    public FunkcjaTrojkatna(Double poczatek, Double punktNajwyzszejWartosci, Double koniec, Double poczatekUniversum, Double koniecUniversum, GetValue<T> getValue) {
-        super(poczatek, punktNajwyzszejWartosci, punktNajwyzszejWartosci, koniec, poczatekUniversum, koniecUniversum, getValue);
+    public FunkcjaTrojkatna(Double poczatek, Double punktNajwyzszejWartosci, Double koniec, Double poczatekUniversum, Double koniecUniversum, PobierzWartosc<T> pobierzWartosc) {
+        super(poczatek, punktNajwyzszejWartosci, punktNajwyzszejWartosci, koniec, poczatekUniversum, koniecUniversum, pobierzWartosc);
     }
 
 
