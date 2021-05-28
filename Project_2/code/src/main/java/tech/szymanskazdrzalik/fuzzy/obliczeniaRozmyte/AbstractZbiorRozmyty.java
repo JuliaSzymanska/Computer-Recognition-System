@@ -1,7 +1,5 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-import java.util.Map;
-
 public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
 
     private final Double poczatekPrzestrzeniRozwazan;
@@ -12,6 +10,9 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
         this.koniecPrzestrzeniRozwazan = koniecPrzestrzeniRozwarzan;
     }
 
+    public boolean jestGesty() {
+        return true;
+    }
 
     public Double getPoczatekPrzestrzeniRozwazan() {
         return poczatekPrzestrzeniRozwazan;
