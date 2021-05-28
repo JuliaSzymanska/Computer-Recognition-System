@@ -7,7 +7,6 @@ import java.util.function.BiConsumer;
 
 public interface ZbiorRozmyty extends FunkcjaPrzynaleznosci {
 
-
     /**
      * Wysokość - maksymalna wartość funkcji przynależności.
      *
