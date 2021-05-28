@@ -225,32 +225,19 @@ gdzie: \(\mu _{temperaturaBardzoZimna}\), \(\mu _{temperaturaZimna}\), \(\mu _{t
 Przedstawienie wilgotności jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: suche, umiarkowane, wilgotne. 
 
 \begin{equation}
-\mu _{wilgotnoscBardzoSuche}(x) =  \left\{ \begin{array}{rcl}
-\frac{20 - x}{20} & \mbox{dla} & x \leq 20\\
-\end{array}\right.
+\mu _{wilgotnoscBardzoSuche}(x) =   exp( \frac{- (x - 4)^2}{128} )
 \end{equation}
 
 \begin{equation}
-\mu _{wilgotnoscSuche}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 20}{20} & \mbox{dla} & 4 < x \leq 20\\
- 1 & \mbox{dla} & 20 < x < 30 \\
-\frac{30 - x}{10} & \mbox{dla} & 30 < x \leq 40\\
-\end{array}\right.
+\mu _{wilgotnoscSuche}(x) =   exp( \frac{- (x - 25)^2}{128} )
 \end{equation}
 
 \begin{equation}
-\mu _{wilgotnoscUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 30}{10} & \mbox{dla} & 30 < x \leq 40\\
-1 & \mbox{dla} & 40 < x < 60\\
-\frac{70 - x}{10} & \mbox{dla} & 60 < x \leq 70\\
-\end{array}\right.
+\mu _{wilgotnoscUmiarkowane}(x) =   exp( \frac{- (x - 50)^2}{128} )
 \end{equation}
 
 \begin{equation}
-\mu _{wilgotnoscWilgotne}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 60}{10} & \mbox{dla} & 60 < x \leq 70\\
-1 & \mbox{dla} & 70 \leq x\\
-\end{array}\right.
+\mu _{wilgotnoscWilgotne}(x) =   exp( \frac{- (x - 75)^2}{128} )
 \end{equation}
 
 \begin{equation}
@@ -276,35 +263,21 @@ gdzie: \(\mu _{wilgotnoscBardzoSuche}\), \(\mu _{wilgotnoscSuche}\), \(\mu _{wil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ciśnienie}
 Przedstawienie ciśnienia jako zmiennej lingwistycznej. Do zmiennej lingwistycznej zostały dopasowane etykiety: niskie, umiarkowane, wysokie. 
+
 \begin{equation}
-\mu _{cisnienieBardzoNiskie}(x) =  \left\{ \begin{array}{rcl}
- 1 & \mbox{dla} & x  \leq 27 \\
-\frac{27 - x}{0.5} & \mbox{dla} & 27 < x \leq 27.5\\
-\end{array}\right.
+\mu _{cisnienieBardzoNiskie}(x) =   exp( \frac{- (x - 27)^2}{0.18} )
 \end{equation}
 
 \begin{equation}
-\mu _{cisnienieNiskie}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 27.5}{0.5} & \mbox{dla} & 27 < x \leq 27.5\\
-1 & \mbox{dla} & 27.5 < x < 28\\
-\frac{28.5 - x}{0.5} & \mbox{dla} & 28 < x \leq 28.5\\
-\end{array}\right.
+\mu _{cisnienieNiskie}(x) =   exp( \frac{- (x - 27.75)^2}{0.18} )
 \end{equation}
 
 \begin{equation}
-\mu _{cisnienieUmiarkowane}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 28}{0.5} & \mbox{dla} & 28 < x \leq 28.5\\
-1 & \mbox{dla} & 28.5 < x < 29\\
-\frac{29.5 - x}{0.5} & \mbox{dla} & 29 < x \leq 29.5\\
-\end{array}\right.
+\mu _{cisnienieUmiarkowane}(x) =   exp( \frac{- (x - 28.75)^2}{0.18} )
 \end{equation}
 
 \begin{equation}
-\mu _{cisnienieWysokie}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 30}{0.5} & \mbox{dla} & 29 < x \leq 29.5\\
-1 & \mbox{dla} & 29.5 < x < 30\\
-\frac{30.5 - x}{0.5} & \mbox{dla} & 30 < x \leq 30.5\\
-\end{array}\right.
+\mu _{cisnienieWysokie}(x) =   exp( \frac{- (x - 29.75)^2}{0.18} )
 \end{equation}
 
 \begin{equation}
