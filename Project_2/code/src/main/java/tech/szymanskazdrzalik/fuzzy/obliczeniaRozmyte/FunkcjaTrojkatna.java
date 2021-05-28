@@ -1,5 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.PobierzWartosc;
+
 public class FunkcjaTrojkatna<T> extends FunkcjaTrapezoidalna<T> {
     public FunkcjaTrojkatna(Double poczatek, Double punktNajwyzszejWartosci, Double koniec, Double poczatekUniversum, Double koniecUniversum, PobierzWartosc<T> pobierzWartosc) {
         super(poczatek, punktNajwyzszejWartosci, punktNajwyzszejWartosci, koniec, poczatekUniversum, koniecUniversum, pobierzWartosc);

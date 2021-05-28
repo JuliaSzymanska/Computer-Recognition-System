@@ -1,5 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.PobierzWartosc;
+
 public class FunkcjaTrapezoidalna<T> extends AbstrakcyjnyZbiorRozmyty<T> {
     private final Double poczatek;
     private final Double poczatekWartosciMaksymalnej;

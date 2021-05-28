@@ -1,5 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.PobierzWartosc;
+
 public  class FunkcjaGausowska<T> extends AbstrakcyjnyZbiorRozmyty<T> {
 
     private final Double sigma;
