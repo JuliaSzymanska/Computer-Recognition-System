@@ -26,7 +26,7 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
                 Math.max(this.koniecPrzestrzeniRozwazan, zbiorRozmyty.koniecPrzestrzeniRozwazan)) {
             @Override
             public Double przynaleznosc(Double x) {
-                return Math.min(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
+                return Math.min(AbstractZbiorRozmyty.this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
             }
         };
     }
@@ -38,7 +38,7 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
                 Math.max(this.koniecPrzestrzeniRozwazan, zbiorRozmyty.koniecPrzestrzeniRozwazan)) {
             @Override
             public Double przynaleznosc(Double x) {
-                return Math.max(this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
+                return Math.max(AbstractZbiorRozmyty.this.przynaleznosc(x), zbiorRozmyty.przynaleznosc(x));
             }
         };
     }
@@ -47,7 +47,7 @@ public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
         return new AbstractZbiorRozmyty(this.poczatekPrzestrzeniRozwazan, this.koniecPrzestrzeniRozwazan) {
             @Override
             public Double przynaleznosc(Double x) {
-                return 1 - this.przynaleznosc(x);
+                return 1 - AbstractZbiorRozmyty.this.przynaleznosc(x);
             }
         };
     }
