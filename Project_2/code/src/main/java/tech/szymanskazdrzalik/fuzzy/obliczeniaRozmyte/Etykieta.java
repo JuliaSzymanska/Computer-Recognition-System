@@ -1,11 +1,11 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-public class Etykieta {
+public class Etykieta<T> {
 
     private String nazwa;
-    private AbstrakcyjnyZbiorRozmyty abstrakcyjnyZbiorRozmyty;
+    private AbstrakcyjnyZbiorRozmyty<T> abstrakcyjnyZbiorRozmyty;
 
-    public Etykieta(String nazwa, AbstrakcyjnyZbiorRozmyty abstrakcyjnyZbiorRozmyty) {
+    public Etykieta(String nazwa, AbstrakcyjnyZbiorRozmyty<T> abstrakcyjnyZbiorRozmyty) {
         this.nazwa = nazwa;
         this.abstrakcyjnyZbiorRozmyty = abstrakcyjnyZbiorRozmyty;
     }
@@ -18,11 +18,11 @@ public class Etykieta {
         this.nazwa = nazwa;
     }
 
-    public AbstrakcyjnyZbiorRozmyty getAbstractZbiorRozmyty() {
+    public AbstrakcyjnyZbiorRozmyty<T> getAbstractZbiorRozmyty() {
         return abstrakcyjnyZbiorRozmyty;
     }
 
-    public void setAbstractZbiorRozmyty(AbstrakcyjnyZbiorRozmyty abstrakcyjnyZbiorRozmyty) {
+    public void setAbstractZbiorRozmyty(AbstrakcyjnyZbiorRozmyty<T> abstrakcyjnyZbiorRozmyty) {
         this.abstrakcyjnyZbiorRozmyty = abstrakcyjnyZbiorRozmyty;
     }
 }
