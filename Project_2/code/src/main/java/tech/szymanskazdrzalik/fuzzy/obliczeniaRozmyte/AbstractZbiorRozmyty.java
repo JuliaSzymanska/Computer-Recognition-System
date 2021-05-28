@@ -1,27 +1,21 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-
 public abstract class AbstractZbiorRozmyty implements ZbiorRozmyty {
-    private final Double poczatekUniwersumDyskursu;
-    private final Double koniecUniversumDyskursu;
+    private final Double poczatekPrzestrzeniRozwarzan;
+    private final Double koniecPrzestrzeniRozwarzan;
 
-    public AbstractZbiorRozmyty(Double poczatekUniwersumDyskursu, Double koniecUniversumDyskursu) {
-        this.poczatekUniwersumDyskursu = poczatekUniwersumDyskursu;
-        this.koniecUniversumDyskursu = koniecUniversumDyskursu;
+    public AbstractZbiorRozmyty(Double poczatekPrzestrzeniRozwarzan, Double koniecPrzestrzeniRozwarzan) {
+        this.poczatekPrzestrzeniRozwarzan = poczatekPrzestrzeniRozwarzan;
+        this.koniecPrzestrzeniRozwarzan = koniecPrzestrzeniRozwarzan;
     }
 
-    public Double getPoczatekUniwersumDyskursu() {
-        return this.poczatekUniwersumDyskursu;
+    public Double getPoczatekPrzestrzeniRozwarzan() {
+        return this.poczatekPrzestrzeniRozwarzan;
     }
 
-    public Double getKoniecUniversumDyskursu() {
+    public Double getKoniecPrzestrzeniRozwarzan() {
 
-        return this.koniecUniversumDyskursu;
+        return this.koniecPrzestrzeniRozwarzan;
     }
 
 }

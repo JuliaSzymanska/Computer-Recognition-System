@@ -134,31 +134,70 @@ def draw_principation():
     plt.show()
 
 
-# def my_gauss(x, sigma: float = 1, h: float = 1, mid: float = 0) -> float:
-#     from math import exp, pow
-#     variance = pow(sigma, 2)
-#     return h * exp(-pow(x - mid, 2) / (2 * variance))
-#
-#
-# def draw_quantificators():
-#     plt.grid(linestyle='dotted')
-#     x_axis = numpy.arange(0, 1, 0.001)
-#     y_axis_niewiele = [my_gauss(x, 0.1, 1, 0) for x in x_axis]
-#     y_axis_ok_14 = [my_gauss(x, 0.1, 1, 1 / 4) for x in x_axis]
-#     y_axis_ok_pol = [my_gauss(x, 0.1, 1, 1 / 2) for x in x_axis]
-#     y_axis_wieksz = [my_gauss(x, 0.1, 1, 3 / 4) for x in x_axis]
-#     y_axis_praw_wszy = [my_gauss(x, 0.1, 1, 1) for x in x_axis]
-#     plt.plot(x_axis, y_axis_niewiele, label="Niewiele")
-#     plt.plot(x_axis, y_axis_ok_14, label="Około 1/4")
-#     plt.plot(x_axis, y_axis_ok_pol, label="Około połowy")
-#     plt.plot(x_axis, y_axis_wieksz, label="Większość")
-#     plt.plot(x_axis, y_axis_praw_wszy, label="Prawie Wszystkie")
-#     plt.xlabel('Stosunek liczby obiektów posiadających cechę do wszystkich rozważanych obiektów')
-#     plt.ylabel('Stopień Przynależności')
-#     plt.title("Wykres Funkcji Przynależności Kwantyfikatorów Lingwistycznych")
-#     plt.legend()
-#     plt.tight_layout()
-#     plt.show()
+def my_gauss(x, sigma: float = 1, h: float = 1, mid: float = 0) -> float:
+    from math import exp, pow
+    variance = pow(sigma, 2)
+    return h * exp(-pow(x - mid, 2) / (2 * variance))
+
+
+def draw_quantificators():
+    plt.grid(linestyle='dotted')
+    x_axis = numpy.arange(0, 1, 0.001)
+    y_axis_niewiele = [my_gauss(x, 0.1, 1, 0) for x in x_axis]
+    y_axis_ok_14 = [my_gauss(x, 0.1, 1, 1 / 4) for x in x_axis]
+    y_axis_ok_pol = [my_gauss(x, 0.1, 1, 1 / 2) for x in x_axis]
+    y_axis_wieksz = [my_gauss(x, 0.1, 1, 3 / 4) for x in x_axis]
+    y_axis_praw_wszy = [my_gauss(x, 0.1, 1, 1) for x in x_axis]
+    plt.plot(x_axis, y_axis_niewiele, label="Niewiele")
+    plt.plot(x_axis, y_axis_ok_14, label="Około 1/4")
+    plt.plot(x_axis, y_axis_ok_pol, label="Około połowy")
+    plt.plot(x_axis, y_axis_wieksz, label="Większość")
+    plt.plot(x_axis, y_axis_praw_wszy, label="Prawie Wszystkie")
+    plt.xlabel('Stosunek liczby obiektów posiadających cechę do wszystkich rozważanych obiektów')
+    plt.ylabel('Stopień Przynależności')
+    plt.title("Wykres Funkcji Przynależności Kwantyfikatorów Lingwistycznych")
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+
+def draw_pressure_gauss():
+    plt.grid(linestyle='dotted')
+    x_axis = numpy.arange(27, 32, 0.001)
+    y_axis_niewiele = [my_gauss(x, 0.3, 1, 27) for x in x_axis]
+    y_axis_ok_14 = [my_gauss(x, 0.3, 1, 27.75) for x in x_axis]
+    y_axis_ok_pol = [my_gauss(x, 0.3, 1, 28.75) for x in x_axis]
+    y_axis_wieksz = [my_gauss(x, 0.3, 1, 29.75) for x in x_axis]
+    plt.plot([30, 30.5, 32], [0, 1, 1], label="Bardzo Wysokie Ciśnienie")
+    plt.plot(x_axis, y_axis_niewiele, label="Bardzo Niskie Ciśnienie")
+    plt.plot(x_axis, y_axis_ok_14, label="Niskie Ciśnienie")
+    plt.plot(x_axis, y_axis_ok_pol, label="Umiarkowane Ciśnienie")
+    plt.plot(x_axis, y_axis_wieksz, label="Wysokie Ciśnienie")
+    plt.xlabel('Ciśnienie w Calach Rtęci')
+    plt.ylabel('Stopień Przynależności')
+    plt.legend()
+    # plt.tight_layout()
+    plt.show()
+
+
+def draw_humidity_gauss():
+    plt.grid(linestyle='dotted')
+    x_axis = numpy.arange(4, 100, 0.001)
+    y_axis_niewiele = [my_gauss(x, 8, 1, 4) for x in x_axis]
+    y_axis_ok_14 = [my_gauss(x, 8, 1, 25) for x in x_axis]
+    y_axis_ok_pol = [my_gauss(x, 8, 1, 50) for x in x_axis]
+    y_axis_wieksz = [my_gauss(x, 8, 1, 75) for x in x_axis]
+    plt.plot([80, 90, 100], [0, 1, 1], label="Bardzo Wilgotne Powietrze")
+    plt.plot(x_axis, y_axis_niewiele, label="Bardzo Suche Powietrze")
+    plt.plot(x_axis, y_axis_wieksz, label="Wilgotne Powietrze")
+    plt.plot(x_axis, y_axis_ok_14, label="Suche Powietrze")
+    plt.plot(x_axis, y_axis_ok_pol, label="Umiarkowana Wilgotność powietrza")
+    plt.xlabel('Ciśnienie w Calach Rtęci')
+    plt.ylabel('Stopień Przynależności')
+    plt.legend()
+    # plt.tight_layout()
+    plt.show()
+
 
 
 def draw_absolute_quantificators():
@@ -179,6 +218,6 @@ def draw_absolute_quantificators():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    draw_absolute_quantificators()
+    draw_humidity_gauss()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
