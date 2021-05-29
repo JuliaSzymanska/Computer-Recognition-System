@@ -63,18 +63,13 @@
 
     <Button fx:id="akceptacja" mnemonicParsing="false" text="Wybierz">
         <VBox.margin>
-            <Insets left="10.0" top="20.0"/>
+            <Insets left="10.0" top="20.0" bottom="10.0"/>
         </VBox.margin>
     </Button>
-    <Label id="chooseLevelText" text="Wygenerowane podsumowania:">
-        <VBox.margin>
-            <Insets left="10.0" top="10.0"/>
-        </VBox.margin>
-    </Label>
-    <TableView fx:id="podsumowanieTable" prefHeight="200.0" prefWidth="200.0">
+    <TableView fx:id="podsumowanieTable" prefHeight="200.0" prefWidth="200.0" minHeight="440.0">
         <columns>
             <TableColumn fx:id="columnTekst" prefWidth="800.0" text="Tekst"/>
-            <TableColumn fx:id="columnT1" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T1"/>
+            <TableColumn fx:id="columnT1" maxWidth="250.0" minWidth="35.0" prefWidth="250.0" text="T1"/>
             <TableColumn fx:id="columnT2" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T2"/>
             <TableColumn fx:id="columnT3" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T3"/>
             <TableColumn fx:id="columnT4" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T4"/>
