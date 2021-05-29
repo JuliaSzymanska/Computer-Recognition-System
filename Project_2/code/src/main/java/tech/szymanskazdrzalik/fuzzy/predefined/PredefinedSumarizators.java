@@ -4,7 +4,9 @@ import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaGausowska;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrapezoidalna;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrojkatna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Cisnienie;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.CzasTrwania;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.IloscOpadow;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.PredkoscWiatru;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Temperatura;
@@ -32,6 +34,11 @@ public class PredefinedSumarizators {
         sumaryzatorList.add(new Etykieta<>("jest przy ciepłej temperaturze", new FunkcjaTrapezoidalna<>(63.0, 71.0, 80.0, 90.0, -16.0, 104.0, new Temperatura())));
         sumaryzatorList.add(new Etykieta<>("jest przy zimnej temperaturze", new FunkcjaTrapezoidalna<>(14.0, 23.0, 44.0, 54.0, -16.0, 104.0, new Temperatura())));
         sumaryzatorList.add(new Etykieta<>("jest przy umiarkowanej temperaturze", new FunkcjaTrapezoidalna<>(44.0, 54.0, 63.0, 71.0, -16.0, 104.0, new Temperatura())));
+        sumaryzatorList.add(new Etykieta<>("wywołuje utrudnienia w ruchu trwające poniżej godziny", new FunkcjaTrojkatna<>(0.0, 0.0,1.0, 0.0, 24.0,  new CzasTrwania())));
+        sumaryzatorList.add(new Etykieta<>("wywołuje utrudnienia w ruchu trwające około dwóch godzin", new FunkcjaTrojkatna<>(0.0, 2.0,4.0, 0.0, 24.0,  new CzasTrwania())));
+        sumaryzatorList.add(new Etykieta<>("wywołuje utrudnienia w ruchu trwające około czterech godzin", new FunkcjaTrojkatna<>(2.0, 4.0,6.0, 0.0, 24.0,  new CzasTrwania())));
+        sumaryzatorList.add(new Etykieta<>("wywołuje utrudnienia w ruchu trwające około sześciu godzin", new FunkcjaTrojkatna<>(4.0, 6.0,8.0, 0.0, 24.0,  new CzasTrwania())));
+        sumaryzatorList.add(new Etykieta<>("wywołuje utrudnienia w ruchu trwające ponad sześć godzin", new FunkcjaTrojkatna<>(6.0, 8.0,24.0, 0.0, 24.0,  new CzasTrwania())));
 
     }
 
