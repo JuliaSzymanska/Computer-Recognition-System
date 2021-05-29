@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
@@ -21,6 +24,32 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
+    @FXML
+    public TableView podsumowanieTable;
+    @FXML
+    public TableColumn columnTekst;
+    @FXML
+    public TableColumn columnT1;
+    @FXML
+    public TableColumn columnT2;
+    @FXML
+    public TableColumn columnT3;
+    @FXML
+    public TableColumn columnT4;
+    @FXML
+    public TableColumn columnT5;
+    @FXML
+    public TableColumn columnT6;
+    @FXML
+    public TableColumn columnT7;
+    @FXML
+    public TableColumn columnT8;
+    @FXML
+    public TableColumn columnT9;
+    @FXML
+    public TableColumn columnT10;
+    @FXML
+    public TableColumn columnT11;
     @FXML
     private ComboBox<String> kwantyfikator;
 
@@ -42,6 +71,7 @@ public class MainController implements Initializable {
     @FXML
     private Button akceptacja;
 
+    private ObservableList<PodsumowanieLingwistyczneIMiary> podsumowanieLingwistyczneIMiaryObservableList;
     private List<Kwantyfikator> kwantyfikatorList;
     private List<Etykieta<Wypadek>> kwalifikatoryList;
     private List<Etykieta<Wypadek>> sumaryzatoryList;
@@ -57,6 +87,24 @@ public class MainController implements Initializable {
         this.setSumaryzatoryWybrane();
         this.setDodaj();
         this.setUsun();
+        this.initTable();
+    }
+
+    private void initTable () {
+        this.podsumowanieLingwistyczneIMiaryObservableList = FXCollections.observableArrayList();
+        this.columnTekst.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("tekst"));
+        this.columnT1.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T1"));
+        this.columnT2.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T2"));
+        this.columnT3.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T3"));
+        this.columnT4.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T4"));
+        this.columnT5.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T5"));
+        this.columnT6.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T6"));
+        this.columnT7.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T7"));
+        this.columnT8.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T8"));
+        this.columnT9.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T9"));
+        this.columnT10.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T10"));
+        this.columnT11.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T11"));
+        this.podsumowanieTable.setItems(podsumowanieLingwistyczneIMiaryObservableList);
     }
 
     private void setKwantyfikator() {
