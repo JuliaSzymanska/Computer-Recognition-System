@@ -179,7 +179,7 @@ def draw_pressure_gauss():
     # plt.tight_layout()
     plt.show()
 
-
+# TODO: POPRAWIC!
 def draw_humidity_gauss():
     plt.grid(linestyle='dotted')
     x_axis = numpy.arange(4, 100, 0.001)
