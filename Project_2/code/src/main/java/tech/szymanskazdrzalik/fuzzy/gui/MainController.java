@@ -181,7 +181,7 @@ public class MainController implements Initializable {
     }
 
     private void podsumowanie() {
-        System.out.println("Hejka naklejka");
+//        System.out.println("Hejka naklejka");
         Kwantyfikator wybranyKwantyfikator = null;
         Etykieta<Wypadek> wybranyKwalifikator = null;
         List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
@@ -191,7 +191,7 @@ public class MainController implements Initializable {
         } else {
             tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(WZGLEDNY));
         }
-        System.out.println(tempKwantyfiaktor);
+//        System.out.println(tempKwantyfiaktor);
         for (var e : this.kwantyfikatorList) {
 
             if (e.getEtykieta().getNazwa().equals(tempKwantyfiaktor)) {

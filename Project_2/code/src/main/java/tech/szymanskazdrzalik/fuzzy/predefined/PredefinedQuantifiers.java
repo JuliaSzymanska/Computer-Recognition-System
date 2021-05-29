@@ -5,6 +5,7 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaGausowska;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrapezoidalna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrojkatna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.PobierzWartosc;
 
 import java.util.ArrayList;
 import java.util.List;

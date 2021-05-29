@@ -140,6 +140,9 @@ public class MiaryJakosci {
      * T9
      */
     public static Double stopienNieprecyzyjnosciKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+            return  null;
+        }
         return 1.0 - podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty());
     }
 
@@ -147,6 +150,9 @@ public class MiaryJakosci {
      * T10
      */
     public static Double stopienKardynalnosciWzglednejKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+            return  null;
+        }
         double iloczyn = podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty().liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty());
         iloczyn /= podsumowanieLingwistyczne.getPodmioty().size();
         return 1.0 - iloczyn;
@@ -156,6 +162,9 @@ public class MiaryJakosci {
      * T11
      */
     public static Double dlugoscKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+            return  0.0;
+        }
         return 1.0;
     }
 
