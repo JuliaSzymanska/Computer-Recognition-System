@@ -9,6 +9,7 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQuantifiers;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -26,7 +27,14 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.testText.setText("SEIMANKO");
         List<Kwantyfikator> kwantyfikatorList = PredefinedQuantifiers.getKwantyfikatorList();
-        this.kwantyfikator.setItems(FXCollections.observableArrayList());
+        List<String> list = new ArrayList<>();
+        for(var e: kwantyfikatorList){
+
+            list.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? " (Absolutny)" : " (Względny)"));
+        }
+        this.kwantyfikator.setItems(FXCollections.observableArrayList(list));
+//        this.kwantyfikator.setValue(list.get(0));
+        this.testText.setText(this.kwantyfikator.getSelectionModel().getSelectedItem());
         this.kwalifikator.setItems(FXCollections.observableArrayList());
     }
 
