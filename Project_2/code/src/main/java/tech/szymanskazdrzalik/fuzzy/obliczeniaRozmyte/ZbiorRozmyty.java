@@ -2,9 +2,6 @@ package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
 
@@ -30,10 +27,10 @@ public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
     /**
      * Przekrój alfa - zbiór elementów, których wartość funkcji przynależności jest większa od {@param alfa}.
      *
-     * @param alfa            the alfa
+     * @param alfa the alfa
      * @return the przekroj alfa
      */
-    default  List<T> getPrzekrojAlfa(List<T> list, Double alfa) {
+    default List<T> getPrzekrojAlfa(List<T> list, Double alfa) {
         List<T> returnList = new ArrayList<>();
         list.forEach(t -> {
             if (ZbiorRozmyty.this.przynaleznosc(t) > alfa) {
@@ -41,6 +38,10 @@ public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
             }
         });
         return returnList;
+    }
+
+    default Double stopienRozmycia(List<T> list) {
+        return (double) (this.getNosnik(list).size()) / list.size();
     }
 
     /**
