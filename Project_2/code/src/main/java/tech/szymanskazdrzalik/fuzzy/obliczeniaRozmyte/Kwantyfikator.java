@@ -4,19 +4,19 @@ public class Kwantyfikator {
 
     private String nazwa;
     private Boolean jestAbsolutny;
-    private Etykieta etykieta;
+    private Etykieta<Double> etykieta;
 
-    public Kwantyfikator(Etykieta etykieta, String nazwa, Boolean jestAbsolutny) {
+    public Kwantyfikator(Etykieta<Double> etykieta, String nazwa, Boolean jestAbsolutny) {
         this.etykieta = etykieta;
         this.nazwa = nazwa;
         this.jestAbsolutny = jestAbsolutny;
     }
 
-    public Etykieta getEtykieta() {
+    public Etykieta<Double> getEtykieta() {
         return etykieta;
     }
 
-    public void setEtykieta(Etykieta etykieta) {
+    public void setEtykieta(Etykieta<Double> etykieta) {
         this.etykieta = etykieta;
     }
 

@@ -18,4 +18,19 @@ public class PodsumowanieLingwistyczne {
         this.kwalifikator = kwalifikator;
     }
 
+    public Kwantyfikator getKwantyfikator() {
+        return kwantyfikator;
+    }
+
+    public List<Wypadek> getPodmioty() {
+        return podmioty;
+    }
+
+    public List<Etykieta<Wypadek>> getSumaryzator() {
+        return sumaryzator;
+    }
+
+    public Etykieta<Wypadek> getKwalifikator() {
+        return kwalifikator;
+    }
 }
