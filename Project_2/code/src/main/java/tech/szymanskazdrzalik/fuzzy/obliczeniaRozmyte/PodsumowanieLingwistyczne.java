@@ -18,6 +18,4 @@ public class PodsumowanieLingwistyczne {
         this.kwalifikator = kwalifikator;
     }
 
-
-
 }
