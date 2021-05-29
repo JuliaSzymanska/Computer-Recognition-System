@@ -29,7 +29,7 @@
          <Insets left="520.0" top="-26.0" />
       </VBox.margin>
    </Button>
-   <ComboBox fx:id="wybraneSumaryzatory" prefWidth="500.0">
+   <ComboBox fx:id="sumaryzatoryWybrane" prefWidth="500.0">
       <VBox.margin>
          <Insets left="10.0" top="10.0" />
       </VBox.margin>

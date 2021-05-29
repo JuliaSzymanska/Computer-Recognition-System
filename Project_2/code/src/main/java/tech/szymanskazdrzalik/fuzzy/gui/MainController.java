@@ -1,8 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.gui;
 
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -34,7 +33,7 @@ public class MainController implements Initializable {
     private ComboBox<String> sumaryzatory;
 
     @FXML
-    private ComboBox<String> wybraneSumaryzatory;
+    private ComboBox<String> sumaryzatoryWybrane;
 
     @FXML
     private Button dodaj;
@@ -48,7 +47,8 @@ public class MainController implements Initializable {
     private List<Kwantyfikator> kwantyfikatorList;
     private List<Etykieta<Wypadek>> kwalifikatoryList;
     private List<Etykieta<Wypadek>> sumaryzatoryList;
-    private List<String> sumaryzatoryWybraneList;
+    private ObservableList<String> sumaryzatoryListString;
+    private ObservableList<String> sumaryzatoryWybraneList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -86,29 +86,35 @@ public class MainController implements Initializable {
 
     private void setSumaryzatory() {
         this.sumaryzatoryList = PredefinedSumarizators.getSumaryzatorList();
-        List<String> sumaryzatoryString = new ArrayList<>();
+        this.sumaryzatoryListString = FXCollections.observableArrayList();
         for (var e : this.sumaryzatoryList) {
-            sumaryzatoryString.add(e.getNazwa());
+            this.sumaryzatoryListString.add(e.getNazwa());
         }
-        sumaryzatoryString.add("Brak");
-        this.kwalifikator.setItems(FXCollections.observableArrayList(sumaryzatoryString));
-        this.kwalifikator.setValue(sumaryzatoryString.get(0));
+        this.sumaryzatory.setItems(this.sumaryzatoryListString);
+        this.sumaryzatory.setValue(this.sumaryzatoryListString.get(0));
     }
 
     private void setDodaj() {
         this.dodaj.setOnAction(actionEvent -> {
-            MainController.this.sumaryzatoryWybraneList.add(MainController.this.kwantyfikator.getSelectionModel().getSelectedItem());
-            MainController.this.kwalifikator.setValue(sumaryzatoryWybraneList.get(0));
+            String selected = MainController.this.sumaryzatory.getSelectionModel().getSelectedItem();
+            MainController.this.sumaryzatoryWybraneList.add(selected);
+            MainController.this.sumaryzatoryListString.remove(selected);
+            MainController.this.sumaryzatoryWybrane.setValue(sumaryzatoryWybraneList.get(0));
         });
     }
 
     private void setSumaryzatoryWybrane() {
-        this.sumaryzatoryWybraneList = new ArrayList<>();
-        this.kwalifikator.setItems(FXCollections.observableArrayList(this.sumaryzatoryWybraneList));
+        this.sumaryzatoryWybraneList = FXCollections.observableArrayList();
+        this.sumaryzatoryWybrane.setItems(this.sumaryzatoryWybraneList);
     }
 
     private void setUsun() {
-        this.usun.setOnAction(e -> MainController.this.sumaryzatoryWybraneList.remove(MainController.this.kwantyfikator.getSelectionModel().getSelectedItem()));
+        this.usun.setOnAction(actionEvent -> {
+            String selected = MainController.this.sumaryzatoryWybrane.getSelectionModel().getSelectedItem();
+            MainController.this.sumaryzatoryListString.add(selected);
+            MainController.this.sumaryzatoryWybraneList.remove(selected);
+            MainController.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
+        });
     }
 
     private void setAkceptacja() {
