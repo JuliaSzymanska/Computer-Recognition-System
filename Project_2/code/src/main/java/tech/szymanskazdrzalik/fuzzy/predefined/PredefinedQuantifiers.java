@@ -43,7 +43,7 @@ public class PredefinedQuantifiers {
 
     }
 
-    public List<Kwantyfikator> getKwantyfikatorList() {
+    public static List<Kwantyfikator> getKwantyfikatorList() {
         return kwantyfikatorList;
     }
 }
