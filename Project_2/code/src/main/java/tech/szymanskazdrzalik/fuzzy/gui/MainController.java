@@ -20,8 +20,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    @FXML
-    private TextField testText;
 
     @FXML
     private ComboBox<String> kwantyfikator;
@@ -59,7 +57,6 @@ public class MainController implements Initializable {
         this.setSumaryzatoryWybrane();
         this.setDodaj();
         this.setUsun();
-        this.testText.setText(this.kwantyfikator.getSelectionModel().getSelectedItem());
     }
 
     private void setKwantyfikator() {
@@ -118,7 +115,12 @@ public class MainController implements Initializable {
     }
 
     private void setAkceptacja() {
-        this.akceptacja.setOnAction(e -> MainController.this.testText.setText(MainController.this.kwantyfikator.getSelectionModel().getSelectedItem()));
+        this.usun.setOnAction(actionEvent -> {
+            String selected = MainController.this.sumaryzatoryWybrane.getSelectionModel().getSelectedItem();
+            MainController.this.sumaryzatoryListString.add(selected);
+            MainController.this.sumaryzatoryWybraneList.remove(selected);
+            MainController.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
+        });
     }
 
 }
