@@ -180,6 +180,7 @@ def draw_pressure_gauss():
     plt.show()
 
 
+# TODO: POPRAWIC!
 def draw_humidity_gauss():
     plt.grid(linestyle='dotted')
     x_axis = numpy.arange(4, 100, 0.001)
@@ -192,7 +193,7 @@ def draw_humidity_gauss():
     plt.plot(x_axis, y_axis_wieksz, label="Wilgotne Powietrze")
     plt.plot(x_axis, y_axis_ok_14, label="Suche Powietrze")
     plt.plot(x_axis, y_axis_ok_pol, label="Umiarkowana Wilgotność powietrza")
-    plt.xlabel('Ciśnienie w Calach Rtęci')
+    plt.xlabel('Wilgotność Powietrza')
     plt.ylabel('Stopień Przynależności')
     plt.legend()
     # plt.tight_layout()
