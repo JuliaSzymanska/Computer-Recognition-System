@@ -47,7 +47,7 @@
    </Label>
    <ComboBox fx:id="sumaryzatoryWybrane" prefWidth="500.0">
       <VBox.margin>
-         <Insets left="10.0"/>
+         <Insets left="10.0" />
       </VBox.margin>
    </ComboBox>
    <Button fx:id="usun" mnemonicParsing="false" prefWidth="70.0" text="Usuń">
@@ -66,4 +66,20 @@
          <Insets left="10.0" top="10.0" />
       </VBox.margin>
    </Label>
+   <TableView prefHeight="200.0" prefWidth="200.0">
+     <columns>
+       <TableColumn prefWidth="300.0" text="Tekst" />
+       <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T1" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T2" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T3" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T4" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T5" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T6" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T7" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T8" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T9" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T10" />
+         <TableColumn maxWidth="25.0" minWidth="25.0" prefWidth="25.0" text="T11" />
+     </columns>
+   </TableView>
 </VBox>
