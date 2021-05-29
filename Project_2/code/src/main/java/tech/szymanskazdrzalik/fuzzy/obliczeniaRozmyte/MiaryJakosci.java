@@ -23,20 +23,26 @@ public class MiaryJakosci {
         }
     }
 
-    //* T1
+    /**
+     * T1
+     * To jest po prostu wartość funkcji przynależności obiektów dla kwalifikatora and z funckją przynależności zrobioną z andów funkcji przynależności tego sumaryzatora podzielonej przez funkcję przynależności obiektów dla kwalifikatora
+     * A jak nie ma kwalifikatora to dzielimy przez liczbę obiektów
+     * i na górze nie mnożymy
+     * A jak jest kwantyfikator absolutny to nie dzielimy przez nic i robimy po prostu kwantyfikator od kardynalności dla andów funkcji przynależności sumaryzatora
+     */
     public Double stopienPrawdziwosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws BrakKwalifikatora {
         if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
             if (podsumowanieLingwistyczne.getKwalifikator() == null) {
                 throw new BrakKwalifikatora();
             }
-            var x = Sumaryzator.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
+            var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
             return podsumowanieLingwistyczne.getKwantyfikator()
                     .getEtykieta()
                     .getAbstractZbiorRozmyty()
                     .przynaleznosc(x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
         }
         if (podsumowanieLingwistyczne.getKwalifikator() == null) {
-            var x = Sumaryzator.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
+            var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
             return podsumowanieLingwistyczne.getKwantyfikator()
                     .getEtykieta()
                     .getAbstractZbiorRozmyty()
@@ -44,7 +50,7 @@ public class MiaryJakosci {
                             x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty())
                                     / podsumowanieLingwistyczne.getPodmioty().size());
         }
-        var x = Sumaryzator.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
+        var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         x = x.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty());
         return podsumowanieLingwistyczne.getKwantyfikator()
                 .getEtykieta()
@@ -56,7 +62,10 @@ public class MiaryJakosci {
                         liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
     }
 
-    //* T2
+    /**
+     * T2
+     * Liczymy srednia kwadratowa ze stopni rozmycia
+     */
     public Double stopienNieperecyzyjnosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         double stopienPierwiastka = 1.0 / podsumowanieLingwistyczne.getSumaryzator().size();
         double iloczyn = 1;
@@ -66,12 +75,17 @@ public class MiaryJakosci {
         return 1.0 - Math.pow(iloczyn, stopienPierwiastka);
     }
 
-    //* T3
+    /**
+     * T3
+     */
     public Double stopienPokrycia(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws BrakKwalifikatora {
         if(podsumowanieLingwistyczne.getKwalifikator() == null){
             throw new BrakKwalifikatora();
         }
-
+        var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
+        x = x.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty());
+        return ((double)x.getNosnik(podsumowanieLingwistyczne.getPodmioty()).size()) /
+                podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty().getNosnik(podsumowanieLingwistyczne.getPodmioty()).size();
     }
 
 }

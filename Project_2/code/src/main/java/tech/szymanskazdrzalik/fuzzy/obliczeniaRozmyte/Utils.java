@@ -2,7 +2,7 @@ package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 import java.util.List;
 
-public class Sumaryzator {
+public class Utils {
 
     public static <T> AbstrakcyjnyZbiorRozmyty<T> iloczyn(List<Etykieta<T>> list) {
         if (list.size() == 0) {
