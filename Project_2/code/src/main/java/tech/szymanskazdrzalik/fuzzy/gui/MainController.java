@@ -3,6 +3,7 @@ package tech.szymanskazdrzalik.fuzzy.gui;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
@@ -23,19 +24,24 @@ public class MainController implements Initializable {
     @FXML
     private ComboBox<String> kwalifikator = new ComboBox<>();
 
+    @FXML
+    private Button akceptacja;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         this.testText.setText("SEIMANKO");
         List<Kwantyfikator> kwantyfikatorList = PredefinedQuantifiers.getKwantyfikatorList();
         List<String> list = new ArrayList<>();
         for(var e: kwantyfikatorList){
-
             list.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? " (Absolutny)" : " (Względny)"));
         }
         this.kwantyfikator.setItems(FXCollections.observableArrayList(list));
-//        this.kwantyfikator.setValue(list.get(0));
+        this.kwantyfikator.setValue(list.get(0));
         this.testText.setText(this.kwantyfikator.getSelectionModel().getSelectedItem());
         this.kwalifikator.setItems(FXCollections.observableArrayList());
+        this.akceptacja.setText("Wybierz");
+        this.akceptacja.setOnAction(e -> MainController.this.testText.setText(MainController.this.kwantyfikator.getSelectionModel().getSelectedItem()));
     }
 
 }
