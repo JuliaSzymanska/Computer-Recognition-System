@@ -30,7 +30,7 @@ public class MiaryJakosci {
      * i na górze nie mnożymy
      * A jak jest kwantyfikator absolutny to nie dzielimy przez nic i robimy po prostu kwantyfikator od kardynalności dla andów funkcji przynależności sumaryzatora
      */
-    public Double stopienPrawdziwosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws BrakKwalifikatora {
+    public static Double stopienPrawdziwosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws BrakKwalifikatora {
         if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
             if (podsumowanieLingwistyczne.getKwalifikator() == null) {
                 throw new BrakKwalifikatora();
@@ -66,7 +66,7 @@ public class MiaryJakosci {
      * T2
      * Liczymy srednia kwadratowa ze stopni rozmycia
      */
-    public Double stopienNieperecyzyjnosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+    public static Double stopienNieperecyzyjnosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         double stopienPierwiastka = 1.0 / podsumowanieLingwistyczne.getSumaryzator().size();
         double iloczyn = 1;
         for (var x : podsumowanieLingwistyczne.getSumaryzator()) {
@@ -78,14 +78,31 @@ public class MiaryJakosci {
     /**
      * T3
      */
-    public Double stopienPokrycia(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws BrakKwalifikatora {
-        if(podsumowanieLingwistyczne.getKwalifikator() == null){
-            throw new BrakKwalifikatora();
-        }
+    public static Double stopienPokrycia(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
+        if(podsumowanieLingwistyczne.getKwalifikator() == null){
+            return ((double)x.getNosnik(podsumowanieLingwistyczne.getPodmioty()).size()) / podsumowanieLingwistyczne.getPodmioty().size();
+        }
         x = x.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty());
         return ((double)x.getNosnik(podsumowanieLingwistyczne.getPodmioty()).size()) /
                 podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty().getNosnik(podsumowanieLingwistyczne.getPodmioty()).size();
     }
+
+    /**
+     * T4
+     */
+    public static Double stopienTrafnosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+        var x = stopienPokrycia(podsumowanieLingwistyczne);
+        var iloczyn = 1;
+        for (var y : podsumowanieLingwistyczne.getSumaryzator()) {
+            iloczyn *= (double) y.getAbstractZbiorRozmyty().getNosnik(podsumowanieLingwistyczne.getPodmioty()).size();
+            iloczyn /= podsumowanieLingwistyczne.getPodmioty().size();
+        }
+        return Math.abs(iloczyn - x);
+    }
+
+
+public static Double dlugoscPodsumowania(PodsumowanieLingwistyczne podsumowanieLingwistyczne){}
+
 
 }
