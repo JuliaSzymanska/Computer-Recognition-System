@@ -19,9 +19,20 @@
          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </VBox.margin>
    </ComboBox>
-   <Button fx:id="akceptacja" mnemonicParsing="false" text="Button">
+   <ComboBox prefWidth="500.0">
       <VBox.margin>
          <Insets left="10.0" />
+      </VBox.margin>
+   </ComboBox>
+   <Button mnemonicParsing="false" prefWidth="70.0" text="Dodaj">
+      <VBox.margin>
+         <Insets left="520.0" top="-26.0" />
+      </VBox.margin>
+   </Button>
+
+   <Button fx:id="akceptacja" mnemonicParsing="false" text="Button">
+      <VBox.margin>
+         <Insets left="10.0" top="10.0" />
       </VBox.margin>
    </Button>
 </VBox>
