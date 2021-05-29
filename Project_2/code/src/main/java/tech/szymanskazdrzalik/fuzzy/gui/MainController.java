@@ -8,15 +8,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import tech.szymanskazdrzalik.fuzzy.dao.AccidentDAO;
+import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.PodsumowanieLingwistyczne;
 import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQualifiers;
 import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQuantifiers;
 import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedSumarizators;
+import tech.szymanskazdrzalik.fuzzy.utils.PropertiesLoader;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +28,8 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
+    private final String ABSOLUTNY = " (Absolutny)";
+    private final String WZGLEDNY = " (Względny)";
     @FXML
     public TableView podsumowanieTable;
     @FXML
@@ -77,6 +83,7 @@ public class MainController implements Initializable {
     private List<Etykieta<Wypadek>> sumaryzatoryList;
     private ObservableList<String> sumaryzatoryListString;
     private ObservableList<String> sumaryzatoryWybraneList;
+    private List<Wypadek> podmioty;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -88,9 +95,16 @@ public class MainController implements Initializable {
         this.setDodaj();
         this.setUsun();
         this.initTable();
+        AccidentDAO accidentDao = new ResourcesAccidentDao();
+        this.podmioty = new ArrayList<>();
+        try {
+            this.podmioty = accidentDao.getAll("Data/" + PropertiesLoader.getJsonName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void initTable () {
+    private void initTable() {
         this.podsumowanieLingwistyczneIMiaryObservableList = FXCollections.observableArrayList();
         this.columnTekst.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("tekst"));
         this.columnT1.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T1"));
@@ -111,7 +125,7 @@ public class MainController implements Initializable {
         this.kwantyfikatorList = PredefinedQuantifiers.getKwantyfikatorList();
         List<String> kwantyfikatoryString = new ArrayList<>();
         for (var e : this.kwantyfikatorList) {
-            kwantyfikatoryString.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? " (Absolutny)" : " (Względny)"));
+            kwantyfikatoryString.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? ABSOLUTNY : WZGLEDNY));
         }
         kwantyfikatoryString.add("Brak");
         this.kwantyfikator.setItems(FXCollections.observableArrayList(kwantyfikatoryString));
@@ -163,12 +177,48 @@ public class MainController implements Initializable {
     }
 
     private void setAkceptacja() {
-        this.usun.setOnAction(actionEvent -> {
-            String selected = MainController.this.sumaryzatoryWybrane.getSelectionModel().getSelectedItem();
-            MainController.this.sumaryzatoryListString.add(selected);
-            MainController.this.sumaryzatoryWybraneList.remove(selected);
-            MainController.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
-        });
+        this.akceptacja.setOnAction(actionEvent -> MainController.this.podsumowanie());
+    }
+
+    private void podsumowanie() {
+        System.out.println("Hejka naklejka");
+        Kwantyfikator wybranyKwantyfikator = null;
+        Etykieta<Wypadek> wybranyKwalifikator = null;
+        List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
+        String tempKwantyfiaktor = this.kwantyfikator.getSelectionModel().getSelectedItem();
+        if (tempKwantyfiaktor.contains(ABSOLUTNY)) {
+            tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(ABSOLUTNY));
+        } else {
+            tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(WZGLEDNY));
+        }
+        System.out.println(tempKwantyfiaktor);
+        for (var e : this.kwantyfikatorList) {
+
+            if (e.getEtykieta().getNazwa().equals(tempKwantyfiaktor)) {
+                wybranyKwantyfikator = e;
+                break;
+            }
+        }
+
+        String tempKwalifikator = this.kwalifikator.getSelectionModel().getSelectedItem();
+        for (var e : this.kwalifikatoryList) {
+            if (e.getNazwa().equals(tempKwalifikator)) {
+                wybranyKwalifikator = e;
+                break;
+            }
+        }
+
+        for (var e : this.sumaryzatoryList) {
+            for (var f : this.sumaryzatoryWybraneList)
+                if (e.getNazwa().equals(f)) {
+                    wybraneSumaryzatory.add(e);
+                    break;
+                }
+        }
+        PodsumowanieLingwistyczne podsumowanieLingwistyczne = new PodsumowanieLingwistyczne(wybranyKwantyfikator, this.podmioty, wybraneSumaryzatory, wybranyKwalifikator);
+        PodsumowanieLingwistyczneIMiary podsumowanieLingwistyczneIMiary = new PodsumowanieLingwistyczneIMiary(podsumowanieLingwistyczne);
+        this.podsumowanieLingwistyczneIMiaryObservableList.add(podsumowanieLingwistyczneIMiary);
+
     }
 
 }
