@@ -86,7 +86,7 @@ public class PodstawowyUzytkownik implements Initializable {
     @FXML
     public TextField w11;
     @FXML
-    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnZapis;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, Void> columnZapis;
     @FXML
     private ComboBox<String> kwantyfikator;
 
@@ -154,8 +154,10 @@ public class PodstawowyUzytkownik implements Initializable {
         this.columnT10.setCellValueFactory(new PropertyValueFactory<>("T10"));
         this.columnT11.setCellValueFactory(new PropertyValueFactory<>("T11"));
         this.columnSuma.setCellValueFactory(new PropertyValueFactory<>("glownaMiaraJakosci"));
+        this.columnZapis.setCellValueFactory(new PropertyValueFactory<>("button"));
         this.podsumowanieTable.setItems(podsumowanieLingwistyczneIMiaryObservableList);
     }
+
 
     private void setKwantyfikator() {
         this.kwantyfikatorList = PredefiniowaneKwantyfikatory.getKwantyfikatorList();
@@ -249,7 +251,6 @@ public class PodstawowyUzytkownik implements Initializable {
             for (var i : this.podsumowanieLingwistyczneIMiaryObservableList) {
                 i.calculateGlownaMiaraJakosci(new PodsumowanieLingwistyczneIMiary.MiaryJakosciWagi(T1waga, T2waga, T3waga, T4waga, T5waga, T6waga, T7waga, T8waga, T9waga, T10waga, T11waga));
             }
-//            this.podsumowanieLingwistyczneIMiaryObservableList;
             this.podsumowanieTable.refresh();
         });
     }
@@ -259,7 +260,6 @@ public class PodstawowyUzytkownik implements Initializable {
     }
 
     private void podsumowanie() {
-//        System.out.println("Hejka naklejka");
         Kwantyfikator wybranyKwantyfikator = null;
         Etykieta<Wypadek> wybranyKwalifikator = null;
         List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
@@ -269,7 +269,6 @@ public class PodstawowyUzytkownik implements Initializable {
         } else {
             tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(WZGLEDNY));
         }
-//        System.out.println(tempKwantyfiaktor);
         for (var e : this.kwantyfikatorList) {
 
             if (e.getEtykieta().getNazwa().equals(tempKwantyfiaktor)) {
@@ -300,7 +299,6 @@ public class PodstawowyUzytkownik implements Initializable {
         PodsumowanieLingwistyczne podsumowanieLingwistyczne = new PodsumowanieLingwistyczne(wybranyKwantyfikator, this.podmioty, wybraneSumaryzatory, wybranyKwalifikator);
         PodsumowanieLingwistyczneIMiary podsumowanieLingwistyczneIMiary = new PodsumowanieLingwistyczneIMiary(podsumowanieLingwistyczne);
         this.podsumowanieLingwistyczneIMiaryObservableList.add(podsumowanieLingwistyczneIMiary);
-
     }
 
     public void doZaawansowanego(ActionEvent actionEvent) throws IOException {

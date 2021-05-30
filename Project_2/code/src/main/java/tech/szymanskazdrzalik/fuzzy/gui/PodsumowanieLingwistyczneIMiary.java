@@ -1,6 +1,9 @@
 package tech.szymanskazdrzalik.fuzzy.gui;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.Button;
+import tech.szymanskazdrzalik.fuzzy.dao.FilePodsumowanieLingwistyczneIMiarySaveDAO;
+import tech.szymanskazdrzalik.fuzzy.dao.PodsumowanieLingwistyczneIMiarySaveDAO;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.MiaryJakosci;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.PodsumowanieLingwistyczne;
 
@@ -9,6 +12,7 @@ import java.text.NumberFormat;
 
 public class PodsumowanieLingwistyczneIMiary {
 
+    private final static String NAZWA_PLIKU = "podsumowanie";
     private final static NumberFormat formatter = new DecimalFormat("#0.00");
     private final PodsumowanieLingwistyczne podsumowanieLingwistyczne;
     private final SimpleStringProperty tekst;
@@ -32,6 +36,7 @@ public class PodsumowanieLingwistyczneIMiary {
     private final Double T9value;
     private final Double T10value;
     private final Double T11value;
+    private final Button button;
     private SimpleStringProperty T1 = null;
     private Double T1value;
     private SimpleStringProperty glownaMiaraJakosci;
@@ -84,10 +89,21 @@ public class PodsumowanieLingwistyczneIMiary {
         }
         this.glownaMiaraJakosciValue = null;
         this.glownaMiaraJakosci = new SimpleStringProperty("null");
+        this.button = new Button("Zapisz");
+        this.button.setOnAction(actionEvent -> zapiszDoPliku());
     }
 
     public static NumberFormat getFormatter() {
         return formatter;
+    }
+
+    public Button getButton() {
+        return button;
+    }
+
+    private void zapiszDoPliku() {
+        PodsumowanieLingwistyczneIMiarySaveDAO saveDAO = new FilePodsumowanieLingwistyczneIMiarySaveDAO(NAZWA_PLIKU);
+        saveDAO.Save(this);
     }
 
     public void calculateGlownaMiaraJakosci(MiaryJakosciWagi miaryJakosciWagi) {
@@ -216,7 +232,7 @@ public class PodsumowanieLingwistyczneIMiary {
     @Override
     public String toString() {
         return "PodsumowanieLingwistyczneIMiary{" +
-                "tekst=" + tekst +
+                "tekst=" + tekst.get() +
                 ", T1value=" + T1value +
                 ", T2value=" + T2value +
                 ", T3value=" + T3value +

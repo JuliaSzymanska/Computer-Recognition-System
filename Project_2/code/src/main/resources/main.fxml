@@ -199,7 +199,7 @@
 
     <TableView fx:id="podsumowanieTable" minHeight="440.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
-            <TableColumn fx:id="columnTekst" prefWidth="790.0" text="Tekst"/>
+            <TableColumn fx:id="columnTekst" prefWidth="690.0" text="Tekst"/>
             <TableColumn fx:id="columnT1" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T1"/>
             <TableColumn fx:id="columnT2" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T2"/>
             <TableColumn fx:id="columnT3" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T3"/>
@@ -212,7 +212,7 @@
             <TableColumn fx:id="columnT10" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T10"/>
             <TableColumn fx:id="columnT11" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T11"/>
             <TableColumn fx:id="columnSuma" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Suma"/>
-            <TableColumn fx:id="columnZapis" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Zapis"/>
+            <TableColumn fx:id="columnZapis" maxWidth="100.0" minWidth="50.0" prefWidth="100.0" text="Zapis"/>
         </columns>
     </TableView>
     <Button text="Do zaawansowanego" onAction="#doZaawansowanego">

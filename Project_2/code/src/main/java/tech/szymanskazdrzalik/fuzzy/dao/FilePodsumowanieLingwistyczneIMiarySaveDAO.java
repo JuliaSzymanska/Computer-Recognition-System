@@ -19,10 +19,10 @@ public class FilePodsumowanieLingwistyczneIMiarySaveDAO implements PodsumowanieL
     public void Save(PodsumowanieLingwistyczneIMiary podsumowanieLingwistyczneIMiary) {
         try (
                 OutputStreamWriter writer = new OutputStreamWriter(
-                        new FileOutputStream(fileName + ".txt"), StandardCharsets.UTF_8);
+                        new FileOutputStream(fileName + ".txt", true), StandardCharsets.UTF_8);
         ) {
-            writer.write(podsumowanieLingwistyczneIMiary.toString());
-            writer.write("\n");
+            writer.append(podsumowanieLingwistyczneIMiary.toString());
+            writer.append("\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
