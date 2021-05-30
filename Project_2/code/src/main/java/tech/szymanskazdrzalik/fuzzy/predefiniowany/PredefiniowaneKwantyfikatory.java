@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PredefiniowaneKwantyfikatory {
-    private final static double koniecUniversum = 300;
+    private final static double koniecUniversum = 15000;
     private static final List<Kwantyfikator> kwantyfikatorList = new ArrayList<>();
     // TODO: 29.05.2021 poprawic absolutne
     private static final PredefiniowaneKwantyfikatory INSTANCE = new PredefiniowaneKwantyfikatory();
@@ -41,7 +41,7 @@ public class PredefiniowaneKwantyfikatory {
         kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Około 100", new FunkcjaTrapezoidalna<>(50.0, 90.0, 110.0, 150.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
         kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Między 100 a 200", new FunkcjaTrojkatna<Double>(100.0, 150.0, 200.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
         kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Około 200", new FunkcjaTrapezoidalna<>(150.0, 190.0, 210.0, 250.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
-        kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Ponad 200", new FunkcjaTrapezoidalna<>(200.0, 250.0, 300.0, 300.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
+        kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Ponad 200", new FunkcjaTrapezoidalna<>(200.0, 250.0, 300.0, 350.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
     }
 
     public static List<Kwantyfikator> getKwantyfikatorList() {
