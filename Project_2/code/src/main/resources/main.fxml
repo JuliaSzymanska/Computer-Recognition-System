@@ -192,7 +192,7 @@
 
     <Button fx:id="akceptacja" mnemonicParsing="false" text="Wybierz">
         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" top="10.0"/>
+            <Insets bottom="5.0" left="10.0" top="-8.0"/>
         </VBox.margin>
     </Button>
 
@@ -215,4 +215,9 @@
             <TableColumn fx:id="columnZapis" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Zapis"/>
         </columns>
     </TableView>
+    <Button text="Do zaawansowanego" onAction="#doZaawansowanego">
+        <VBox.margin>
+            <Insets left="80.0" top="-470.0" />
+        </VBox.margin>
+    </Button>
 </VBox>

@@ -11,8 +11,8 @@
       maxWidth="-Infinity"
       minHeight="-Infinity"
       minWidth="-Infinity"
-      prefHeight="720.0"
-      prefWidth="1280.0"
+      prefHeight="450"
+      prefWidth="500"
       xmlns="http://javafx.com/javafx/11.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="tech.szymanskazdrzalik.fuzzy.gui.ZaawansowanyUzytkownik">
@@ -22,26 +22,21 @@
             <Insets left="10.0" top="10.0"/>
         </VBox.margin>
     </Label>
+    <ComboBox fx:id="element" minWidth="-Infinity" prefWidth="250.0">
+        <VBox.margin>
+            <Insets left="120.0" top="-20.0"/>
+        </VBox.margin>
+    </ComboBox>
     <Label text="Nazwa:">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Label>
-    <TextField fx:id="nazwaKwantyfikatora" prefWidth="50.0" maxWidth="250.0">
+    <TextField fx:id="nazwa" prefWidth="50.0" maxWidth="250.0">
         <VBox.margin>
             <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </TextField>
-    <Label text="Czy jest absolutny:">
-        <VBox.margin>
-            <Insets left="20.0" top="10.0"/>
-        </VBox.margin>
-    </Label>
-    <CheckBox fx:id="jestAbsolutny" prefWidth="50.0" maxWidth="250.0">
-        <VBox.margin>
-            <Insets left="130.0" top="-20.0"/>
-        </VBox.margin>
-    </CheckBox>
     <Label text="Funkcja:">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
@@ -57,6 +52,26 @@
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Button>
+    <Label text="Czy jest absolutny:" visible="false" fx:id="jestAbsolutnyLabel">
+        <VBox.margin>
+            <Insets left="20.0" top="10.0"/>
+        </VBox.margin>
+    </Label>
+    <CheckBox fx:id="jestAbsolutny" prefWidth="50.0" maxWidth="250.0" visible="false">
+        <VBox.margin>
+            <Insets left="130.0" top="-20.0"/>
+        </VBox.margin>
+    </CheckBox>
+    <Label text="Zmienna:" visible="false" fx:id="zmiennaLabel">
+        <VBox.margin>
+            <Insets left="20.0" top="-16.0"/>
+        </VBox.margin>
+    </Label>
+    <ComboBox fx:id="zmienne" minWidth="-Infinity" prefWidth="250.0" visible="false">
+        <VBox.margin>
+            <Insets left="120.0" top="-17.0"/>
+        </VBox.margin>
+    </ComboBox>
     <Label fx:id="pierwszyLabel" visible="false">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
@@ -102,5 +117,9 @@
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Button>
-
+    <Button text="Wróć" onAction="#doGlownego" >
+        <VBox.margin>
+            <Insets left="20.0" top="10.0"/>
+        </VBox.margin>
+    </Button>
 </VBox>
