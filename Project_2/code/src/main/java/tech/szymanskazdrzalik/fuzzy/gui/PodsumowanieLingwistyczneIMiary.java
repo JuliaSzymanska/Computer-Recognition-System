@@ -132,9 +132,9 @@ public class PodsumowanieLingwistyczneIMiary {
     public PodsumowanieLingwistyczneIMiary(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
-        stringBuilder.append(" wypadki");
-        stringBuilder.append(podsumowanieLingwistyczne.getKwalifikator() == null ?  "" : " " + podsumowanieLingwistyczne.getKwalifikator().getNazwa());
-        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(" ").append(wypadekEtykieta.getNazwa()));
+        stringBuilder.append(" wypadków");
+        stringBuilder.append(podsumowanieLingwistyczne.getKwalifikator() == null ?  "" : " będących " + podsumowanieLingwistyczne.getKwalifikator().getNazwa());
+        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
         tekst = new SimpleStringProperty(stringBuilder.toString());
         this.podsumowanieLingwistyczne = podsumowanieLingwistyczne;
         try {
