@@ -22,6 +22,7 @@ public class FilePodsumowanieLingwistyczneIMiarySaveDAO implements PodsumowanieL
                         new FileOutputStream(fileName + ".txt"), StandardCharsets.UTF_8);
         ) {
             writer.write(podsumowanieLingwistyczneIMiary.toString());
+            writer.write("\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
