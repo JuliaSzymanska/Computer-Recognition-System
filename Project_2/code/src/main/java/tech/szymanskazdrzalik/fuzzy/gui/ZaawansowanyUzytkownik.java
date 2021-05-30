@@ -26,8 +26,8 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Temperatura;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.TemperaturaOdczuwalna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Widocznosc;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Wilgotnosc;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwalifikatorySumaryzatory;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwantyfikatory;
+import tech.szymanskazdrzalik.fuzzy.predefiniowany.PredefiniowaneKwalifikatorySumaryzatory;
+import tech.szymanskazdrzalik.fuzzy.predefiniowany.PredefiniowaneKwantyfikatory;
 
 import java.io.IOException;
 import java.net.URL;

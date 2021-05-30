@@ -20,8 +20,8 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.PodsumowanieLingwistyczne;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.ZmiennaLingwistyczna;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwalifikatorySumaryzatory;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwantyfikatory;
+import tech.szymanskazdrzalik.fuzzy.predefiniowany.PredefiniowaneKwalifikatorySumaryzatory;
+import tech.szymanskazdrzalik.fuzzy.predefiniowany.PredefiniowaneKwantyfikatory;
 import tech.szymanskazdrzalik.fuzzy.utils.PropertiesLoader;
 
 import java.io.IOException;
