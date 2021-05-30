@@ -5,7 +5,6 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaGausowska;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrapezoidalna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrojkatna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
-import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.PobierzWartosc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +12,12 @@ import java.util.List;
 public class PredefinedQuantifiers {
     private final static double koniecUniversum = 300;
     private static final List<Kwantyfikator> kwantyfikatorList = new ArrayList<>();
+    // TODO: 29.05.2021 poprawic absolutne
+    private static final PredefinedQuantifiers INSTANCE = new PredefinedQuantifiers();
 
     private PredefinedQuantifiers() {
         init();
     }
-
-    // TODO: 29.05.2021 poprawic absolutne
-    private static PredefinedQuantifiers INSTANCE = new PredefinedQuantifiers();
 
     private static void init() {
         kwantyfikatorList.add(new Kwantyfikator(
