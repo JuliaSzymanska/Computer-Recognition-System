@@ -57,6 +57,8 @@ public class MainController implements Initializable {
     @FXML
     public TableColumn columnT11;
     @FXML
+    public TableColumn columnSuma;
+    @FXML
     private ComboBox<String> kwantyfikator;
 
     @FXML
