@@ -9,19 +9,18 @@ public class MiaryJakosci {
      * i na górze nie mnożymy
      * A jak jest kwantyfikator absolutny to nie dzielimy przez nic i robimy po prostu kwantyfikator od kardynalności dla andów funkcji przynależności sumaryzatora
      */
-    public static Double stopienPrawdziwosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws BrakKwalifikatora {
+    public static Double stopienPrawdziwosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws NieBrakKwalifikatora {
+        var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
-            if (podsumowanieLingwistyczne.getKwalifikator() == null) {
-                throw new BrakKwalifikatora();
+            if (podsumowanieLingwistyczne.getKwalifikator() != null) {
+                throw new NieBrakKwalifikatora();
             }
-            var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
             return podsumowanieLingwistyczne.getKwantyfikator()
                     .getEtykieta()
                     .getAbstractZbiorRozmyty()
                     .przynaleznosc(x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
         }
         if (podsumowanieLingwistyczne.getKwalifikator() == null) {
-            var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
             return podsumowanieLingwistyczne.getKwantyfikator()
                     .getEtykieta()
                     .getAbstractZbiorRozmyty()
@@ -29,7 +28,6 @@ public class MiaryJakosci {
                             x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty())
                                     / podsumowanieLingwistyczne.getPodmioty().size());
         }
-        var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         x = x.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty());
         return podsumowanieLingwistyczne.getKwantyfikator()
                 .getEtykieta()
@@ -49,8 +47,11 @@ public class MiaryJakosci {
         double stopienPierwiastka = 1.0 / podsumowanieLingwistyczne.getSumaryzator().size();
         double iloczyn = 1;
         for (var x : podsumowanieLingwistyczne.getSumaryzator()) {
+            System.out.println("Wynik " + x.getAbstractZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty()));
             iloczyn *= x.getAbstractZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty());
+            System.out.println(iloczyn + " iloczyn");
         }
+        System.out.println("koniec " + Math.pow(iloczyn, stopienPierwiastka));
         return 1.0 - Math.pow(iloczyn, stopienPierwiastka);
     }
 
@@ -88,7 +89,7 @@ public class MiaryJakosci {
      */
 
     public static Double dlugoscPodsumowania(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        return 2 * Math.pow(0.5, podsumowanieLingwistyczne.getPodmioty().size());
+        return 2 * Math.pow(0.5, podsumowanieLingwistyczne.getSumaryzator().size());
     }
 
     /**
@@ -96,6 +97,16 @@ public class MiaryJakosci {
      */
     // TODO: 29.05.2021
     public static Double stopienNieprecyzyjnosciKwantyfikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+       if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaGausowska) {
+            return 0.0;
+       } else if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaTrapezoidalna) {
+           FunkcjaTrapezoidalna<Double> funkcjaTrapezoidalna = (FunkcjaTrapezoidalna<Double>) podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
+            if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
+                return 1.0 - ((funkcjaTrapezoidalna.getKoniec() - funkcjaTrapezoidalna.getPoczatek())/( podsumowanieLingwistyczne.getPodmioty().size()));
+            } else {
+                return 1.0 - (funkcjaTrapezoidalna.getKoniec() - funkcjaTrapezoidalna.getPoczatek());
+            }
+       }
         var z = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         int count = 0;
         for (var x : podsumowanieLingwistyczne.getPodmioty()) {
@@ -103,7 +114,10 @@ public class MiaryJakosci {
                 count++;
             }
         }
-        return (double) count / podsumowanieLingwistyczne.getPodmioty().size();
+        double cnt = count;
+        double mian = podsumowanieLingwistyczne.getPodmioty().size();
+        return 1 - (cnt / mian);
+
     }
 
     /**
@@ -112,15 +126,23 @@ public class MiaryJakosci {
     // TODO: 29.05.2021
     public static Double stopienKardynalnosciWzglednejKwantyfiaktora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         var z = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
-        double suma = 0;
-        for (var x : podsumowanieLingwistyczne.getPodmioty()) {
-            suma += podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty().przynaleznosc(z.przynaleznosc(x));
+        if (podsumowanieLingwistyczne.getKwalifikator() != null) {
+            z = z.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikator().getAbstractZbiorRozmyty());
         }
-        suma /= podsumowanieLingwistyczne.getPodmioty().size();
+        if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
+            return 1 - podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty().przynaleznosc(z.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
+        } else {
+            return 1 - podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty().przynaleznosc(z.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()) / podsumowanieLingwistyczne.getPodmioty().size());
+        }
+//        double suma = 0;
+//        for (var x : podsumowanieLingwistyczne.getPodmioty()) {
+//            suma += podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty().przynaleznosc(z.przynaleznosc(x));
+//        }
+//        suma /= podsumowanieLingwistyczne.getPodmioty().size();
 //        if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
 //            return 1 - (suma) / podsumowanieLingwistyczne.getPodmioty().size())
 //        }
-        return 1 - suma;
+//        return 1 - suma;
     }
 
     /**
@@ -163,28 +185,28 @@ public class MiaryJakosci {
      */
     public static Double dlugoscKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         if (podsumowanieLingwistyczne.getKwalifikator() == null) {
-            return  0.0;
+            return 0.0;
         }
-        return 1.0;
+        return  2 * Math.pow(0.5, 1);
     }
 
-    public static class BrakKwalifikatora extends Exception {
-        public BrakKwalifikatora() {
+    public static class NieBrakKwalifikatora extends Exception {
+        public NieBrakKwalifikatora() {
         }
 
-        public BrakKwalifikatora(String message) {
+        public NieBrakKwalifikatora(String message) {
             super(message);
         }
 
-        public BrakKwalifikatora(String message, Throwable cause) {
+        public NieBrakKwalifikatora(String message, Throwable cause) {
             super(message, cause);
         }
 
-        public BrakKwalifikatora(Throwable cause) {
+        public NieBrakKwalifikatora(Throwable cause) {
             super(cause);
         }
 
-        public BrakKwalifikatora(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        public NieBrakKwalifikatora(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
             super(message, cause, enableSuppression, writableStackTrace);
         }
     }
