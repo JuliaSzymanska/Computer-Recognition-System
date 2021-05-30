@@ -60,7 +60,6 @@ public class ZaawansowanyUzytkownik implements Initializable {
 
     private String tempFunk;
     private List<String> elementy;
-    private List<String> zmienneLista;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -87,18 +86,18 @@ public class ZaawansowanyUzytkownik implements Initializable {
     }
 
     private void setZmienne() {
-        this.zmienneLista = new ArrayList<>();
-        this.zmienneLista.add("Czas trwania");
-        this.zmienneLista.add("Odległość");
-        this.zmienneLista.add("Temperatura");
-        this.zmienneLista.add("Temperatura odczuwalna");
-        this.zmienneLista.add("Wilgotność");
-        this.zmienneLista.add("Ciśnienie");
-        this.zmienneLista.add("Widoczność");
-        this.zmienneLista.add("Prędkość wiatru");
-        this.zmienneLista.add("Ilość opadów");
-        this.zmienne.setItems(FXCollections.observableArrayList(this.zmienneLista));
-        this.zmienne.setValue(this.zmienneLista.get(0));
+        List<String> zmienneLista = new ArrayList<>();
+        zmienneLista.add("Czas trwania");
+        zmienneLista.add("Odległość");
+        zmienneLista.add("Temperatura");
+        zmienneLista.add("Temperatura odczuwalna");
+        zmienneLista.add("Wilgotność");
+        zmienneLista.add("Ciśnienie");
+        zmienneLista.add("Widoczność");
+        zmienneLista.add("Prędkość wiatru");
+        zmienneLista.add("Ilość opadów");
+        this.zmienne.setItems(FXCollections.observableArrayList(zmienneLista));
+        this.zmienne.setValue(zmienneLista.get(0));
     }
 
     private void setDalej() {
@@ -254,17 +253,17 @@ public class ZaawansowanyUzytkownik implements Initializable {
         switch (tempFunk) {
             case "Gaussowska":
                 etykieta = new Etykieta<>(nazwa,
-                        new FunkcjaGausowska<Wypadek>(Double.valueOf(this.pierwszyInput.getText()), 1.0,
+                        new FunkcjaGausowska<>(Double.valueOf(this.pierwszyInput.getText()), 1.0,
                                 Double.valueOf(this.drugiInput.getText()), 0.0, 1.0, zmiennaAktualna));
                 break;
             case "Trójkątna":
                 etykieta = new Etykieta<>(nazwa,
-                        new FunkcjaTrojkatna<Wypadek>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
+                        new FunkcjaTrojkatna<>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
                                 Double.valueOf(this.trzeciInput.getText()), 0.0, 1.0, zmiennaAktualna));
                 break;
             case "Trapezoidalna":
                 etykieta = new Etykieta<>(nazwa,
-                        new FunkcjaTrapezoidalna<Wypadek>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
+                        new FunkcjaTrapezoidalna<>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
                                 Double.valueOf(this.trzeciInput.getText()), Double.valueOf(this.czwartyInput.getText()),
                                 0.0, 1.0, zmiennaAktualna));
 

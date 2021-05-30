@@ -35,33 +35,33 @@ public class PodstawowyUzytkownik implements Initializable {
     private final String ABSOLUTNY = " (Absolutny)";
     private final String WZGLEDNY = " (Względny)";
     @FXML
-    public TableView podsumowanieTable;
+    public TableView<PodsumowanieLingwistyczneIMiary> podsumowanieTable;
     @FXML
-    public TableColumn columnTekst;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnTekst;
     @FXML
-    public TableColumn columnT1;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT1;
     @FXML
-    public TableColumn columnT2;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT2;
     @FXML
-    public TableColumn columnT3;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT3;
     @FXML
-    public TableColumn columnT4;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT4;
     @FXML
-    public TableColumn columnT5;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT5;
     @FXML
-    public TableColumn columnT6;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT6;
     @FXML
-    public TableColumn columnT7;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT7;
     @FXML
-    public TableColumn columnT8;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT8;
     @FXML
-    public TableColumn columnT9;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT9;
     @FXML
-    public TableColumn columnT10;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT10;
     @FXML
-    public TableColumn columnT11;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnT11;
     @FXML
-    public TableColumn columnSuma;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnSuma;
     @FXML
     public Button wagi;
     @FXML
@@ -86,7 +86,7 @@ public class PodstawowyUzytkownik implements Initializable {
     @FXML
     public TextField w11;
     @FXML
-    public TableColumn columnZapis;
+    public TableColumn<PodsumowanieLingwistyczneIMiary, String> columnZapis;
     @FXML
     private ComboBox<String> kwantyfikator;
 
@@ -141,19 +141,19 @@ public class PodstawowyUzytkownik implements Initializable {
 
     private void initTable() {
         this.podsumowanieLingwistyczneIMiaryObservableList = FXCollections.observableArrayList();
-        this.columnTekst.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("tekst"));
-        this.columnT1.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T1"));
-        this.columnT2.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T2"));
-        this.columnT3.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T3"));
-        this.columnT4.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T4"));
-        this.columnT5.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T5"));
-        this.columnT6.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T6"));
-        this.columnT7.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T7"));
-        this.columnT8.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T8"));
-        this.columnT9.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T9"));
-        this.columnT10.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T10"));
-        this.columnT11.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T11"));
-        this.columnSuma.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("glownaMiaraJakosci"));
+        this.columnTekst.setCellValueFactory(new PropertyValueFactory<>("tekst"));
+        this.columnT1.setCellValueFactory(new PropertyValueFactory<>("T1"));
+        this.columnT2.setCellValueFactory(new PropertyValueFactory<>("T2"));
+        this.columnT3.setCellValueFactory(new PropertyValueFactory<>("T3"));
+        this.columnT4.setCellValueFactory(new PropertyValueFactory<>("T4"));
+        this.columnT5.setCellValueFactory(new PropertyValueFactory<>("T5"));
+        this.columnT6.setCellValueFactory(new PropertyValueFactory<>("T6"));
+        this.columnT7.setCellValueFactory(new PropertyValueFactory<>("T7"));
+        this.columnT8.setCellValueFactory(new PropertyValueFactory<>("T8"));
+        this.columnT9.setCellValueFactory(new PropertyValueFactory<>("T9"));
+        this.columnT10.setCellValueFactory(new PropertyValueFactory<>("T10"));
+        this.columnT11.setCellValueFactory(new PropertyValueFactory<>("T11"));
+        this.columnSuma.setCellValueFactory(new PropertyValueFactory<>("glownaMiaraJakosci"));
         this.podsumowanieTable.setItems(podsumowanieLingwistyczneIMiaryObservableList);
     }
 
@@ -218,18 +218,18 @@ public class PodstawowyUzytkownik implements Initializable {
 
     private void setPoliczSumeWag() {
         this.wagi.setOnAction(actionEvent -> {
-            Double T1waga = Double.valueOf(this.w1.getText());
-            Double T2waga = Double.valueOf(this.w2.getText());
-            Double T3waga = Double.valueOf(this.w3.getText());
-            Double T4waga = Double.valueOf(this.w4.getText());
-            Double T5waga = Double.valueOf(this.w5.getText());
-            Double T6waga = Double.valueOf(this.w6.getText());
-            Double T7waga = Double.valueOf(this.w7.getText());
-            Double T8waga = Double.valueOf(this.w8.getText());
-            Double T9waga = Double.valueOf(this.w9.getText());
-            Double T10waga = Double.valueOf(this.w10.getText());
-            Double T11waga = Double.valueOf(this.w11.getText());
-            Double suma = T1waga +
+            double T1waga = Double.parseDouble(this.w1.getText());
+            double T2waga = Double.parseDouble(this.w2.getText());
+            double T3waga = Double.parseDouble(this.w3.getText());
+            double T4waga = Double.parseDouble(this.w4.getText());
+            double T5waga = Double.parseDouble(this.w5.getText());
+            double T6waga = Double.parseDouble(this.w6.getText());
+            double T7waga = Double.parseDouble(this.w7.getText());
+            double T8waga = Double.parseDouble(this.w8.getText());
+            double T9waga = Double.parseDouble(this.w9.getText());
+            double T10waga = Double.parseDouble(this.w10.getText());
+            double T11waga = Double.parseDouble(this.w11.getText());
+            double suma = T1waga +
                     T2waga +
                     T3waga +
                     T4waga +
