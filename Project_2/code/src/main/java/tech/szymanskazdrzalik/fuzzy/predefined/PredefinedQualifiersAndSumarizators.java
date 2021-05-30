@@ -143,7 +143,7 @@ public class PredefinedQualifiersAndSumarizators {
         wilgotnosc.add(new Etykieta<>("przy suchym powietrzu", new FunkcjaGausowska<>(8.0, 1.0, 25.0, POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, new Wilgotnosc())));
         wilgotnosc.add(new Etykieta<>("przy umiarkowanie wilgotnym powietrzu", new FunkcjaGausowska<>(8.0, 1.0, 50.0, POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, new Wilgotnosc())));
         wilgotnosc.add(new Etykieta<>("przy wilgotnym powietrzu", new FunkcjaGausowska<>(8.0, 1.0, 75.0, POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, new Wilgotnosc())));
-        wilgotnosc.add(new Etykieta<>("przy wilgotnym powietrzu", new FunkcjaTrapezoidalna<>(80.0, 90.0, 100.0, 100.0, POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, new Wilgotnosc())));
+        wilgotnosc.add(new Etykieta<>("przy bardzo wilgotnym powietrzu", new FunkcjaTrapezoidalna<>(80.0, 90.0, 100.0, 100.0, POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC, new Wilgotnosc())));
 
         temperatura.add(new Etykieta<>("przy bardzo zimnej temperaturze", new FunkcjaTrapezoidalna<>(-16.0, -16.0, 14.0, 23.0, POCZATEK_PRZESTRZENI_ROZWAZAN_TEMPERATURA, KONIEC_PRZESTRZENI_ROZWAZAN_TEMPERATURA, new Temperatura())));
         temperatura.add(new Etykieta<>("przy zimnej temperaturze", new FunkcjaTrapezoidalna<>(14.0, 23.0, 44.0, 54.0, POCZATEK_PRZESTRZENI_ROZWAZAN_TEMPERATURA, KONIEC_PRZESTRZENI_ROZWAZAN_TEMPERATURA, new Temperatura())));

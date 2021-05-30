@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  30 MAY 2021 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  30 MAY 2021 17:25
 entering extended mode
 **./Sprawozdanie-projekt-2-podsumowania.tex
 (Sprawozdanie-projekt-2-podsumowania.tex
@@ -252,6 +252,9 @@ LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
 
 
 LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `uml_gui' multiply defined.
 
 )
 \openout1 = `Sprawozdanie-projekt-2-podsumowania.aux'.
@@ -611,51 +614,61 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 597--599
  [][] 
  []
 
-[20 <./uml_3.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 623--629
+<gui.png, id=289, 965.10562pt x 566.115pt>
+File: gui.png Graphic file (type png)
+<use gui.png>
+Package pdftex.def Info: gui.png  used on input line 605.
+(pdftex.def)             Requested size: 426.79134pt x 250.3439pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 605--607
+ [][] 
+ []
+
+[20 <./uml_3.png (PNG copy)> <./gui.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 631--637
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--634
+Underfull \hbox (badness 10000) in paragraph at lines 640--642
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--650
+Underfull \hbox (badness 10000) in paragraph at lines 648--658
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 651--653
+Underfull \hbox (badness 10000) in paragraph at lines 659--661
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 667.
+(Font)              <10.95> on input line 675.
 
-Underfull \hbox (badness 1019) in paragraph at lines 666--669
+Underfull \hbox (badness 1019) in paragraph at lines 674--677
 []\OT4/cmr/m/n/10.95 2021 Kag-gle Inc [in-ter-ne-to-wa spo-ªecz-no±¢ zwi¡-za-na
  z ana-li-z¡ da-nych],
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 674--675
+Underfull \hbox (badness 1377) in paragraph at lines 682--683
 []\OT4/cmr/m/n/10.95 dr in». An-na Bry-niar-ska, Pod-sta-wy teo-rii sys-te-mów 
 roz-my-tych z za-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 680.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 688.
 [22] [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 688.
  (Sprawozdanie-projekt-2-podsumowania.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 680.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 688.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 688.
 Package rerunfilecheck Info: File `Sprawozdanie-projekt-2-podsumowania.out' has
  not changed.
 (rerunfilecheck)             Checksum: 32DF1507EEF659228DACA104E62DDCDD;1694.
@@ -663,13 +676,13 @@ Package rerunfilecheck Info: File `Sprawozdanie-projekt-2-podsumowania.out' has
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 680.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 688.
  ) 
 Here is how much of TeX's memory you used:
- 5861 strings out of 480931
- 94158 string characters out of 2898858
+ 5869 strings out of 480931
+ 94233 string characters out of 2898858
  351789 words of memory out of 3000000
- 21498 multiletter control sequences out of 15000+200000
+ 21504 multiletter control sequences out of 15000+200000
  540419 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,7n,32p,3091b,364s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -691,10 +704,10 @@ iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-2-podsumowania.pdf (23 pages, 1457521 by
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (23 pages, 1490708 by
 tes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
