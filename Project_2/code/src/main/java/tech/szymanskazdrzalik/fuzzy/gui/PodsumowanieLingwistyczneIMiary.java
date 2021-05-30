@@ -1,15 +1,11 @@
 package tech.szymanskazdrzalik.fuzzy.gui;
 
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
-import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
-import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.MiaryJakosci;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.PodsumowanieLingwistyczne;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.function.Consumer;
 
 public class PodsumowanieLingwistyczneIMiary {
 
@@ -17,15 +13,6 @@ public class PodsumowanieLingwistyczneIMiary {
     private final PodsumowanieLingwistyczne podsumowanieLingwistyczne;
     private final SimpleStringProperty tekst;
     private final SimpleStringProperty T2;
-
-    public String getTekst() {
-        return tekst.get();
-    }
-
-    public SimpleStringProperty tekstProperty() {
-        return tekst;
-    }
-
     private final SimpleStringProperty T3;
     private final SimpleStringProperty T4;
     private final SimpleStringProperty T6;
@@ -34,11 +21,51 @@ public class PodsumowanieLingwistyczneIMiary {
     private final SimpleStringProperty T9;
     private final SimpleStringProperty T10;
     private final SimpleStringProperty T11;
-    private SimpleStringProperty T1 = null;
     private final SimpleStringProperty T5;
+    private SimpleStringProperty T1 = null;
+    public PodsumowanieLingwistyczneIMiary(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
+        stringBuilder.append(" wypadków");
+        stringBuilder.append(podsumowanieLingwistyczne.getKwalifikator() == null ? "" : " będących " + podsumowanieLingwistyczne.getKwalifikator().getNazwa());
+        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
+        tekst = new SimpleStringProperty(stringBuilder.toString());
+        this.podsumowanieLingwistyczne = podsumowanieLingwistyczne;
+        try {
+            var x = MiaryJakosci.stopienPrawdziwosci(podsumowanieLingwistyczne);
+            this.T1 = new SimpleStringProperty(formatter.format(x));
+        } catch (MiaryJakosci.BrakKwalifikatora brakKwalifikatora) {
+            brakKwalifikatora.printStackTrace();
+            // TODO: 29.05.2021
+        }
+        this.T2 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienNieperecyzyjnosci(podsumowanieLingwistyczne)));
+        this.T3 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienPokrycia(podsumowanieLingwistyczne)));
+        this.T4 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienTrafnosci(podsumowanieLingwistyczne)));
+        this.T5 = new SimpleStringProperty(formatter.format(MiaryJakosci.dlugoscPodsumowania(podsumowanieLingwistyczne)));
+        this.T6 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienNieprecyzyjnosciKwantyfikatora(podsumowanieLingwistyczne)));
+        this.T7 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienKardynalnosciWzglednejKwantyfiaktora(podsumowanieLingwistyczne)));
+        this.T8 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienKardynalnosciWzglednejSumaryzatora(podsumowanieLingwistyczne)));
+        if (this.podsumowanieLingwistyczne.getKwalifikator() != null) {
+            this.T9 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienNieprecyzyjnosciKwalifikatora(podsumowanieLingwistyczne)));
+            this.T10 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienKardynalnosciWzglednejKwalifikatora(podsumowanieLingwistyczne)));
+            this.T11 = new SimpleStringProperty(formatter.format(MiaryJakosci.dlugoscKwalifikatora(podsumowanieLingwistyczne)));
+        } else {
+            this.T9 = new SimpleStringProperty("null");
+            this.T10 = new SimpleStringProperty("null");
+            this.T11 = new SimpleStringProperty("0");
+        }
+    }
 
     public static NumberFormat getFormatter() {
         return formatter;
+    }
+
+    public String getTekst() {
+        return tekst.get();
+    }
+
+    public SimpleStringProperty tekstProperty() {
+        return tekst;
     }
 
     public String getT2() {
@@ -127,39 +154,6 @@ public class PodsumowanieLingwistyczneIMiary {
 
     public SimpleStringProperty t5Property() {
         return T5;
-    }
-
-    public PodsumowanieLingwistyczneIMiary(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
-        stringBuilder.append(" wypadków");
-        stringBuilder.append(podsumowanieLingwistyczne.getKwalifikator() == null ?  "" : " będących " + podsumowanieLingwistyczne.getKwalifikator().getNazwa());
-        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
-        tekst = new SimpleStringProperty(stringBuilder.toString());
-        this.podsumowanieLingwistyczne = podsumowanieLingwistyczne;
-        try {
-            var x = MiaryJakosci.stopienPrawdziwosci(podsumowanieLingwistyczne);
-            this.T1 = new SimpleStringProperty(formatter.format(x));
-        } catch (MiaryJakosci.BrakKwalifikatora brakKwalifikatora) {
-            brakKwalifikatora.printStackTrace();
-            // TODO: 29.05.2021
-        }
-        this.T2 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienNieperecyzyjnosci(podsumowanieLingwistyczne)));
-        this.T3 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienPokrycia(podsumowanieLingwistyczne)));
-        this.T4 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienTrafnosci(podsumowanieLingwistyczne)));
-        this.T5 = new SimpleStringProperty(formatter.format(MiaryJakosci.dlugoscPodsumowania(podsumowanieLingwistyczne)));
-        this.T6 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienNieprecyzyjnosciKwantyfikatora(podsumowanieLingwistyczne)));
-        this.T7 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienKardynalnosciWzglednejKwantyfiaktora(podsumowanieLingwistyczne)));
-        this.T8 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienKardynalnosciWzglednejSumaryzatora(podsumowanieLingwistyczne)));
-        if (this.podsumowanieLingwistyczne.getKwalifikator() != null) {
-            this.T9 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienNieprecyzyjnosciKwalifikatora(podsumowanieLingwistyczne)));
-            this.T10 = new SimpleStringProperty(formatter.format(MiaryJakosci.stopienKardynalnosciWzglednejKwalifikatora(podsumowanieLingwistyczne)));
-            this.T11 = new SimpleStringProperty(formatter.format(MiaryJakosci.dlugoscKwalifikatora(podsumowanieLingwistyczne)));
-        } else {
-            this.T9 = new SimpleStringProperty("null");
-            this.T10 = new SimpleStringProperty("null");
-            this.T11 = new SimpleStringProperty("0");
-        }
     }
 
     public PodsumowanieLingwistyczne getPodsumowanieLingwistyczne() {

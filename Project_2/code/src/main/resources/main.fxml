@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextField?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
       prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1"
       fx:controller="tech.szymanskazdrzalik.fuzzy.gui.MainController">
@@ -183,6 +184,9 @@
             <Insets left="10.0" top="60.0" bottom="10.0"/>
         </VBox.margin>
     </Button>
+
+
+
     <TableView fx:id="podsumowanieTable" prefHeight="200.0" prefWidth="200.0" minHeight="440.0">
         <columns>
             <TableColumn fx:id="columnTekst" prefWidth="800.0" text="Tekst"/>
@@ -197,6 +201,7 @@
             <TableColumn fx:id="columnT9" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T9"/>
             <TableColumn fx:id="columnT10" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T10"/>
             <TableColumn fx:id="columnT11" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T11"/>
+            <TableColumn fx:id="columnSuma" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="Suma"/>
         </columns>
     </TableView>
 </VBox>
