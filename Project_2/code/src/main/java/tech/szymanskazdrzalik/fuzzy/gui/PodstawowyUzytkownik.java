@@ -20,8 +20,8 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.PodsumowanieLingwistyczne;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.ZmiennaLingwistyczna;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQualifiersAndSumarizators;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQuantifiers;
+import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwalifikatorySumaryzatory;
+import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwantyfikatory;
 import tech.szymanskazdrzalik.fuzzy.utils.PropertiesLoader;
 
 import java.io.IOException;
@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class PodstawowyUzytkownik implements Initializable {
 
     private final String ABSOLUTNY = " (Absolutny)";
     private final String WZGLEDNY = " (Względny)";
@@ -158,7 +158,7 @@ public class MainController implements Initializable {
     }
 
     private void setKwantyfikator() {
-        this.kwantyfikatorList = PredefinedQuantifiers.getKwantyfikatorList();
+        this.kwantyfikatorList = PredefiniowaneKwantyfikatory.getKwantyfikatorList();
         List<String> kwantyfikatoryString = new ArrayList<>();
         for (var e : this.kwantyfikatorList) {
             kwantyfikatoryString.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? ABSOLUTNY : WZGLEDNY));
@@ -169,7 +169,7 @@ public class MainController implements Initializable {
     }
 
     private void setKwalifikator() {
-        this.kwalifikatoryList = PredefinedQualifiersAndSumarizators.getAll();
+        this.kwalifikatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
         List<String> kwalifikatoryString = new ArrayList<>();
         for (var e : this.kwalifikatoryList) {
             for (var v : e.getEtykiety()) {
@@ -182,7 +182,7 @@ public class MainController implements Initializable {
     }
 
     private void setSumaryzatory() {
-        this.sumaryzatoryList = PredefinedQualifiersAndSumarizators.getAll();
+        this.sumaryzatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
         this.sumaryzatoryListString = FXCollections.observableArrayList();
         for (var e : this.sumaryzatoryList) {
             for (var v : e.getEtykiety()) {
@@ -195,10 +195,10 @@ public class MainController implements Initializable {
 
     private void setDodaj() {
         this.dodaj.setOnAction(actionEvent -> {
-            String selected = MainController.this.sumaryzatory.getSelectionModel().getSelectedItem();
-            MainController.this.sumaryzatoryWybraneList.add(selected);
-            MainController.this.sumaryzatoryListString.remove(selected);
-            MainController.this.sumaryzatoryWybrane.setValue(sumaryzatoryWybraneList.get(0));
+            String selected = PodstawowyUzytkownik.this.sumaryzatory.getSelectionModel().getSelectedItem();
+            PodstawowyUzytkownik.this.sumaryzatoryWybraneList.add(selected);
+            PodstawowyUzytkownik.this.sumaryzatoryListString.remove(selected);
+            PodstawowyUzytkownik.this.sumaryzatoryWybrane.setValue(sumaryzatoryWybraneList.get(0));
         });
     }
 
@@ -209,10 +209,10 @@ public class MainController implements Initializable {
 
     private void setUsun() {
         this.usun.setOnAction(actionEvent -> {
-            String selected = MainController.this.sumaryzatoryWybrane.getSelectionModel().getSelectedItem();
-            MainController.this.sumaryzatoryListString.add(selected);
-            MainController.this.sumaryzatoryWybraneList.remove(selected);
-            MainController.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
+            String selected = PodstawowyUzytkownik.this.sumaryzatoryWybrane.getSelectionModel().getSelectedItem();
+            PodstawowyUzytkownik.this.sumaryzatoryListString.add(selected);
+            PodstawowyUzytkownik.this.sumaryzatoryWybraneList.remove(selected);
+            PodstawowyUzytkownik.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
         });
     }
 
@@ -255,7 +255,7 @@ public class MainController implements Initializable {
     }
 
     private void setAkceptacja() {
-        this.akceptacja.setOnAction(actionEvent -> MainController.this.podsumowanie());
+        this.akceptacja.setOnAction(actionEvent -> PodstawowyUzytkownik.this.podsumowanie());
     }
 
     private void podsumowanie() {

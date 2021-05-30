@@ -9,13 +9,13 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PredefinedQuantifiers {
+public class PredefiniowaneKwantyfikatory {
     private final static double koniecUniversum = 300;
     private static final List<Kwantyfikator> kwantyfikatorList = new ArrayList<>();
     // TODO: 29.05.2021 poprawic absolutne
-    private static final PredefinedQuantifiers INSTANCE = new PredefinedQuantifiers();
+    private static final PredefiniowaneKwantyfikatory INSTANCE = new PredefiniowaneKwantyfikatory();
 
-    private PredefinedQuantifiers() {
+    private PredefiniowaneKwantyfikatory() {
         init();
     }
 

@@ -26,8 +26,8 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Temperatura;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.TemperaturaOdczuwalna;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Widocznosc;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Wilgotnosc;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQualifiersAndSumarizators;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQuantifiers;
+import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwalifikatorySumaryzatory;
+import tech.szymanskazdrzalik.fuzzy.predefined.PredefiniowaneKwantyfikatory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -170,7 +170,7 @@ public class ZaawansowanyUzytkownik implements Initializable {
 
     private void zapiszKwantyfikator(String nazwa) {
         Etykieta<Double> etykieta = setEtykietaKwantyfikator(nazwa);
-        PredefinedQuantifiers.addKwalifikator(new Kwantyfikator(etykieta, this.jestAbsolutny.isSelected()));
+        PredefiniowaneKwantyfikatory.addKwalifikator(new Kwantyfikator(etykieta, this.jestAbsolutny.isSelected()));
     }
 
     private Etykieta<Double> setEtykietaKwantyfikator(String nazwa) {
@@ -227,23 +227,23 @@ public class ZaawansowanyUzytkownik implements Initializable {
         Etykieta<Wypadek> wypadekEtykieta = setEtykietaKwalifikatorSumaryzator(nazwa, temp);
         switch (temp) {
             case "Czas trwania":
-                PredefinedQualifiersAndSumarizators.addCzasTrwania(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addCzasTrwania(wypadekEtykieta);
             case "Odległość":
-                PredefinedQualifiersAndSumarizators.addOdleglosc(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addOdleglosc(wypadekEtykieta);
             case "Temperatura":
-                PredefinedQualifiersAndSumarizators.addTemperatura(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addTemperatura(wypadekEtykieta);
             case "Temperatura odczuwalna":
-                PredefinedQualifiersAndSumarizators.addTemperaturaOdczuwalna(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addTemperaturaOdczuwalna(wypadekEtykieta);
             case "Wilgotność":
-                PredefinedQualifiersAndSumarizators.addWilgotnosc(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addWilgotnosc(wypadekEtykieta);
             case "Ciśnienie":
-                PredefinedQualifiersAndSumarizators.addCisnienie(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addCisnienie(wypadekEtykieta);
             case "Widoczność":
-                PredefinedQualifiersAndSumarizators.addWidocznosc(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addWidocznosc(wypadekEtykieta);
             case "Prędkość wiatru":
-                PredefinedQualifiersAndSumarizators.addPredkoscWiatru(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addPredkoscWiatru(wypadekEtykieta);
             case "Ilość opadów":
-                PredefinedQualifiersAndSumarizators.addIloscOpadow(wypadekEtykieta);
+                PredefiniowaneKwalifikatorySumaryzatory.addIloscOpadow(wypadekEtykieta);
         }
 
     }
