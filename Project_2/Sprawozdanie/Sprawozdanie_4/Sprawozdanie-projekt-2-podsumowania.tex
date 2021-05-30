@@ -557,7 +557,7 @@ gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo10}\), \(\mu _{okolo50}\), \(\mu _{oko
  \includegraphics[width=14cm]{kwantyfikatory_absolutny.png}
  \vspace{-0.3cm}
  \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych absolutnych. }
- \label{rysunek do eksperymentu 1 wariantu 1}
+ \label{kwantyfikatory_lingwistyczne_absolutne}
 \end{figure}
 \newpage
 
@@ -570,25 +570,39 @@ gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo10}\), \(\mu _{okolo50}\), \(\mu _{oko
  \includegraphics[width=14cm]{uml.png}
  \vspace{-0.3cm}
  \caption{Diagram uml pakietu obliczeń rozmytych. }
- \label{rysunek do eksperymentu 1 wariantu 1}
+ \label{uml_obliczenia}
 \end{figure}
 \newpage
 
 Program został wykonany w języku Java 11 LTS z użyciem narzędzia Maven. W celu wykonania projektu stworzyliśmy własny pakiet obliczeń rozmytych - obliczeniaRozmyte. W pakiecie znajdują się klasy odpowiadające funkcjom przynależności. Klasa AbstrakcyjnyZbiorRozmyty jest abstrakcyjną klasą, z której dziedziczą klasy FunkcjaGaussowska oraz FunkcjaTrapezoidalna. Ta abstrakcyjna klasa zawiera pola odpowiadające początkowi oraz końcowi przestrzeni rozważań\cite{fuzzy}. Posiada metody zwracające dopełnienie zbioru, iloczyn oraz sumę zbiorów, a także informację czy zbiór jest gęsty czy dyskretny. Klasa FunkcjaTrapezoidalna posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: początek, koniec oraz początek i koniec przedziału, w którym funkcja przynależności przyjmuje warotść 1. Klasa FunkcjaGaussowska posiada pola dla wartości potrzebnych do wygenrowania funkcji przynależności takie jak: sigma, wysokość oraz środek. Klasa FunkcjaTrojkatna dziedziczy po klasie FunkcjaTrapezoidalna, gdzie początek i koniec przedziału, w którym funkcja przynależności przyjmuje wartość 1, są tą samą wartością. Klasa AbstractZbiorRozmyty implementuje interfejs ZbiorRozmyty zawierający metody pozwalające uzyskać wysokość zbioru\cite{fuzzy}, przerój alfa, nośnik, liczba kardynalna\cite{fuzzy} oraz stopień rozmycia \cite{niewiadomski zbiory rozmyte typu 2}. Gdzie funkcja zwracająca nośnik zwraca listę elementów, dla których wartość funkcji przynależności jest większa od zera. Funkcja zwracająca przkerój alfa zwraca listę elementów, dla których wartość funkcji przynależności jest więsza niż zadana w parametrze wartość. Interfejs ZbiorRozmtyty dziedziczy interfejs FunkcjaPrzynaleznosci zawierający metodę przynaleznosc pozwalającą obliczyć wartość funkcji przynależności. Implementacje tej metody korzystają z pakietu Zmienne. Pakiet posiada klasę ZbiorKlasyczny reprezentującą klasyczne zbiory, klasa dziedziczy po klasie FunkcjaTrapezoidalna. W naszym programie zbiór klasyczny reprezentowany jest jako zbiór trapezoidalny, w którym funkcja przynależności przyjmuje wartości tylko 0 lub 1 (prostokąt). Klasa Etykieta zawiera w sobie nazwę etykiety oraz implementację abstrakcyjnej klasy AbstrakcyjnyZbiorRozmyty. W pakeicie posiadamy również klasę Klasyfikator, który posiada swoją nazwę, obiekt klasy Etykieta oraz pole boolean czy jest klasyfikatorem absolutnym. Klasa PodsumowanieLingwistyczne posiada obiekt klasy Klasyfikator, listę Wypadków jako podmioty, listę etykiet jako sumaryzatory oraz obiekt klasy Etykieta jako kwalifikator. Klasa Utils pozwala na policzenie iloczynu oraz sumy AbstrakcyjnychZbiorowRozmytych oraz zwraca AbstrakcyjnyZbiorRozmyty. Klasa MiaryJakosci zawiera 11 metod pozwalajacych na obliczenie danej miary jakości podsumowania lingwistycznego, niektóre z metod mogą rzucić wyjatek będący obiektem klasy BrakKwalifikatora. 
 
-\newpage
 \begin{figure}[h!]
  \centering
  \includegraphics[width=14cm]{uml_2.png}
  \vspace{-0.3cm}
  \caption{Diagram uml pakietu Zmienne. }
- \label{rysunek do eksperymentu 1 wariantu 1}
+ \label{uml_zmienne}
 \end{figure}
+
 
 W programie został zaimplementowany pakiet Zmienne posiadający interfejs PobierzWartosc, który implementuje 9 klas reprezentujących analizowane pola z obiektu Wypadek. 
 
+\newpage
 
 \subsection{Diagram UML generatora podsumowań. Krótka instrukcja użytkownika} 
+
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{uml_3.png}
+ \vspace{-0.3cm}
+ \caption{Diagram uml interfejsu użytkownika }
+ \label{uml_gui}
+\end{figure}
+
+\newpage
+
+
 Diagram UML generatora podsumowań (warstwy obliczeniowej oraz interfejsu
 użytkownika). Krótki ilustrowany opis jak użytkownik może korzystać z aplikacji, w~szczególności
 wprowadzać parametry  podsumowań, odczytywać wyniki oraz definiować własne etykiety i
