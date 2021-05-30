@@ -26,6 +26,14 @@ public class Main extends Application {
         return fxmlLoader.load();
     }
 
+    public static void setRoot(String fxml) throws IOException {
+        scene.setRoot(loadFXML(fxml));
+    }
+
+    public void reload(String fxmlFileName) throws IOException {
+        stage.getScene().setRoot(loadFXML(fxmlFileName));
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
