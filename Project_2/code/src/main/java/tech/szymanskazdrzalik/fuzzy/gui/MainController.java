@@ -15,9 +15,9 @@ import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.PodsumowanieLingwistyczne;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQualifiers;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.ZmiennaLingwistyczna;
+import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQualifiersAndSumarizators;
 import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedQuantifiers;
-import tech.szymanskazdrzalik.fuzzy.predefined.PredefinedSumarizators;
 import tech.szymanskazdrzalik.fuzzy.utils.PropertiesLoader;
 
 import java.io.IOException;
@@ -79,8 +79,8 @@ public class MainController implements Initializable {
 
     private ObservableList<PodsumowanieLingwistyczneIMiary> podsumowanieLingwistyczneIMiaryObservableList;
     private List<Kwantyfikator> kwantyfikatorList;
-    private List<Etykieta<Wypadek>> kwalifikatoryList;
-    private List<Etykieta<Wypadek>> sumaryzatoryList;
+    private List<ZmiennaLingwistyczna> kwalifikatoryList;
+    private List<ZmiennaLingwistyczna> sumaryzatoryList;
     private ObservableList<String> sumaryzatoryListString;
     private ObservableList<String> sumaryzatoryWybraneList;
     private List<Wypadek> podmioty;
@@ -133,10 +133,12 @@ public class MainController implements Initializable {
     }
 
     private void setKwalifikator() {
-        this.kwalifikatoryList = PredefinedQualifiers.getKwalifikatorList();
+        this.kwalifikatoryList = PredefinedQualifiersAndSumarizators.getAll();
         List<String> kwalifikatoryString = new ArrayList<>();
         for (var e : this.kwalifikatoryList) {
-            kwalifikatoryString.add(e.getNazwa());
+            for (var v : e.getEtykiety()) {
+                kwalifikatoryString.add(v.getNazwa());
+            }
         }
         kwalifikatoryString.add("Brak");
         this.kwalifikator.setItems(FXCollections.observableArrayList(kwalifikatoryString));
@@ -144,10 +146,12 @@ public class MainController implements Initializable {
     }
 
     private void setSumaryzatory() {
-        this.sumaryzatoryList = PredefinedSumarizators.getSumaryzatorList();
+        this.sumaryzatoryList = PredefinedQualifiersAndSumarizators.getAll();
         this.sumaryzatoryListString = FXCollections.observableArrayList();
         for (var e : this.sumaryzatoryList) {
-            this.sumaryzatoryListString.add(e.getNazwa());
+            for (var v : e.getEtykiety()) {
+                this.sumaryzatoryListString.add(v.getNazwa());
+            }
         }
         this.sumaryzatory.setItems(this.sumaryzatoryListString);
         this.sumaryzatory.setValue(this.sumaryzatoryListString.get(0));
@@ -202,18 +206,22 @@ public class MainController implements Initializable {
 
         String tempKwalifikator = this.kwalifikator.getSelectionModel().getSelectedItem();
         for (var e : this.kwalifikatoryList) {
-            if (e.getNazwa().equals(tempKwalifikator)) {
-                wybranyKwalifikator = e;
-                break;
+            for (var v : e.getEtykiety()) {
+                if (v.getNazwa().equals(tempKwalifikator)) {
+                    wybranyKwalifikator = v;
+                    break;
+                }
             }
         }
 
         for (var e : this.sumaryzatoryList) {
-            for (var f : this.sumaryzatoryWybraneList)
-                if (e.getNazwa().equals(f)) {
-                    wybraneSumaryzatory.add(e);
-                    break;
-                }
+            for (var v : e.getEtykiety()) {
+                for (var f : this.sumaryzatoryWybraneList)
+                    if (v.getNazwa().equals(f)) {
+                        wybraneSumaryzatory.add(v);
+                        break;
+                    }
+            }
         }
         PodsumowanieLingwistyczne podsumowanieLingwistyczne = new PodsumowanieLingwistyczne(wybranyKwantyfikator, this.podmioty, wybraneSumaryzatory, wybranyKwalifikator);
         PodsumowanieLingwistyczneIMiary podsumowanieLingwistyczneIMiary = new PodsumowanieLingwistyczneIMiary(podsumowanieLingwistyczne);
