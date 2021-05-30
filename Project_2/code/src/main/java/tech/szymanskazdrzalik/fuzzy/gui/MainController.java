@@ -2,6 +2,7 @@ package tech.szymanskazdrzalik.fuzzy.gui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import tech.szymanskazdrzalik.fuzzy.Main;
 import tech.szymanskazdrzalik.fuzzy.dao.AccidentDAO;
 import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
@@ -301,4 +303,7 @@ public class MainController implements Initializable {
 
     }
 
+    public void doZaawansowanego(ActionEvent actionEvent) throws IOException {
+        Main.setRoot("zaawansowany");
+    }
 }

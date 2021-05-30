@@ -1,6 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.predefined;
 
 import tech.szymanskazdrzalik.fuzzy.common.Stale;
+import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaGausowska;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrapezoidalna;
@@ -188,5 +189,37 @@ public class PredefinedQualifiersAndSumarizators {
             add(odleglosc);
         }};
     }
+
+    public static void addPredkoscWiatru(Etykieta<Wypadek> wypadekEtykieta){
+        predkoscWiatru.add(wypadekEtykieta);
+    }
+
+    public static void addIloscOpadow(Etykieta<Wypadek> wypadekEtykieta){
+        iloscOpadow.add(wypadekEtykieta);
+    }
+
+    public static void addWidocznosc(Etykieta<Wypadek> wypadekEtykieta){
+        widocznosc.add(wypadekEtykieta);
+    }
+
+    public static void addCisnienie(Etykieta<Wypadek> wypadekEtykieta){
+        cisnienie.add(wypadekEtykieta);
+    }
+    public static void addWilgotnosc(Etykieta<Wypadek> wypadekEtykieta){
+        wilgotnosc.add(wypadekEtykieta);
+    }
+    public static void addTemperatura(Etykieta<Wypadek> wypadekEtykieta){
+        temperatura.add(wypadekEtykieta);
+    }
+    public static void addTemperaturaOdczuwalna(Etykieta<Wypadek> wypadekEtykieta){
+        temperaturaOdczuwalna.add(wypadekEtykieta);
+    }
+    public static void addCzasTrwania(Etykieta<Wypadek> wypadekEtykieta){
+        czasTrwania.add(wypadekEtykieta);
+    }
+    public static void addOdleglosc(Etykieta<Wypadek> wypadekEtykieta){
+        odleglosc.add(wypadekEtykieta);
+    }
+
 
 }
