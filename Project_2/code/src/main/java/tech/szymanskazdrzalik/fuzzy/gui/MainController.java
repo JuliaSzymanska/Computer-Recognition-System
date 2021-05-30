@@ -84,6 +84,8 @@ public class MainController implements Initializable {
     @FXML
     public TextField w11;
     @FXML
+    public TableColumn columnZapis;
+    @FXML
     private ComboBox<String> kwantyfikator;
 
     @FXML

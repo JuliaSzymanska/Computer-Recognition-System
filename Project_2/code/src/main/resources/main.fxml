@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="tech.szymanskazdrzalik.fuzzy.gui.MainController">
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.szymanskazdrzalik.fuzzy.gui.MainController">
     <Label id="chooseLevelText" text="Kwantyfikatory:">
         <VBox.margin>
             <Insets left="10.0" top="10.0" />
@@ -185,25 +192,27 @@
 
     <Button fx:id="akceptacja" mnemonicParsing="false" text="Wybierz">
         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" top="-20.0" />
+            <Insets bottom="10.0" left="10.0" top="10.0"/>
         </VBox.margin>
     </Button>
 
+
     <TableView fx:id="podsumowanieTable" minHeight="440.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
-            <TableColumn fx:id="columnTekst" prefWidth="800.0" text="Tekst" />
-            <TableColumn fx:id="columnT1" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T1" />
-            <TableColumn fx:id="columnT2" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T2" />
-            <TableColumn fx:id="columnT3" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T3" />
-            <TableColumn fx:id="columnT4" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T4" />
-            <TableColumn fx:id="columnT5" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T5" />
-            <TableColumn fx:id="columnT6" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T6" />
-            <TableColumn fx:id="columnT7" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T7" />
-            <TableColumn fx:id="columnT8" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T8" />
-            <TableColumn fx:id="columnT9" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T9" />
-            <TableColumn fx:id="columnT10" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T10" />
-            <TableColumn fx:id="columnT11" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T11" />
-            <TableColumn fx:id="columnSuma" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="Suma" />
+            <TableColumn fx:id="columnTekst" prefWidth="790.0" text="Tekst"/>
+            <TableColumn fx:id="columnT1" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T1"/>
+            <TableColumn fx:id="columnT2" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T2"/>
+            <TableColumn fx:id="columnT3" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T3"/>
+            <TableColumn fx:id="columnT4" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T4"/>
+            <TableColumn fx:id="columnT5" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T5"/>
+            <TableColumn fx:id="columnT6" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T6"/>
+            <TableColumn fx:id="columnT7" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T7"/>
+            <TableColumn fx:id="columnT8" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T8"/>
+            <TableColumn fx:id="columnT9" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T9"/>
+            <TableColumn fx:id="columnT10" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T10"/>
+            <TableColumn fx:id="columnT11" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T11"/>
+            <TableColumn fx:id="columnSuma" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Suma"/>
+            <TableColumn fx:id="columnZapis" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Zapis"/>
         </columns>
     </TableView>
 </VBox>
