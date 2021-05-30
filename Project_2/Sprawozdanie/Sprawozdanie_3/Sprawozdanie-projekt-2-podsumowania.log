@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  29 MAY 2021 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  30 MAY 2021 20:00
 entering extended mode
 **./Sprawozdanie-projekt-2-podsumowania.tex
 (Sprawozdanie-projekt-2-podsumowania.tex
@@ -588,89 +588,101 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 557--559
  []
 
 [16 <./kwantyfikatory_absolutny.png (PNG copy)>]
-<uml.png, id=266, 2908.8675pt x 2098.84125pt>
+<uml.png, id=266, 2182.1525pt x 1571.8725pt>
 File: uml.png Graphic file (type png)
 <use uml.png>
 Package pdftex.def Info: uml.png  used on input line 570.
-(pdftex.def)             Requested size: 398.33858pt x 287.3986pt.
+(pdftex.def)             Requested size: 398.33858pt x 286.93031pt.
 
 Overfull \hbox (8.33858pt too wide) in paragraph at lines 570--572
  [][] 
  []
 
-[17 <./uml.png (PNG copy)>] [18]
-<uml_2.png, id=281, 1799.72375pt x 190.7125pt>
+[17 <./uml.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 581--583
+
+ []
+
+
+LaTeX Warning: Citation `niewiadomski zbiory rozmyte typu 2' on page 18 undefin
+ed on input line 584.
+
+[18] [19]
+<uml_2.png, id=306, 1799.72375pt x 190.7125pt>
 File: uml_2.png Graphic file (type png)
 <use uml_2.png>
-Package pdftex.def Info: uml_2.png  used on input line 582.
+Package pdftex.def Info: uml_2.png  used on input line 589.
 (pdftex.def)             Requested size: 398.33858pt x 42.21004pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 582--584
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 589--591
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--615
+Underfull \hbox (badness 10000) in paragraph at lines 616--622
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--620
+Underfull \hbox (badness 10000) in paragraph at lines 625--627
 
  []
 
-[19 <./uml_2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 626--636
+[20 <./uml_2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 633--643
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--639
+Underfull \hbox (badness 10000) in paragraph at lines 644--646
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 653.
+(Font)              <10.95> on input line 660.
 
-Underfull \hbox (badness 1019) in paragraph at lines 652--655
+Underfull \hbox (badness 1019) in paragraph at lines 659--662
 []\OT4/cmr/m/n/10.95 2021 Kag-gle Inc [in-ter-ne-to-wa spo-ªecz-no±¢ zwi¡-za-na
  z ana-li-z¡ da-nych],
  []
 
-[20]
-Underfull \hbox (badness 1377) in paragraph at lines 660--661
+[21]
+Underfull \hbox (badness 1377) in paragraph at lines 667--668
 []\OT4/cmr/m/n/10.95 dr in». An-na Bry-niar-ska, Pod-sta-wy teo-rii sys-te-mów 
 roz-my-tych z za-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 666.
-[21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 666.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
+[22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
  (Sprawozdanie-projekt-2-podsumowania.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 666.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 666.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 672.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 672.
 Package rerunfilecheck Info: File `Sprawozdanie-projekt-2-podsumowania.out' has
  not changed.
 (rerunfilecheck)             Checksum: 32DF1507EEF659228DACA104E62DDCDD;1694.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 666.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
  ) 
 Here is how much of TeX's memory you used:
- 5848 strings out of 480931
- 93984 string characters out of 2898858
- 351463 words of memory out of 3000000
- 21489 multiletter control sequences out of 15000+200000
+ 5847 strings out of 480931
+ 93904 string characters out of 2898858
+ 354406 words of memory out of 3000000
+ 21488 multiletter control sequences out of 15000+200000
  540419 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,32p,3091b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,7n,32p,2846b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
 nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.
 enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit
@@ -689,10 +701,10 @@ iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-2-podsumowania.pdf (21 pages, 1065681 by
-tes).
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (22 pages, 999135 byt
+es).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
+ 399 PDF objects out of 1000 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
  234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
