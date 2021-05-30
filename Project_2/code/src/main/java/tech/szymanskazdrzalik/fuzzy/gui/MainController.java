@@ -240,10 +240,11 @@ public class MainController implements Initializable {
                     T9waga +
                     T10waga +
                     T11waga;
-            System.out.println(suma);
             double eps = 0.0001;
-            if (suma - 1.0 >= eps || suma - 1.0 <= eps) {
+            if (Math.abs(suma - 1.0) > eps) {
                 this.nieRowne.setText("Suma wartości musi być równa 1");
+            } else {
+                this.nieRowne.setText("");
             }
             for (var i : this.podsumowanieLingwistyczneIMiaryObservableList) {
                 i.calculateGlownaMiaraJakosci(new PodsumowanieLingwistyczneIMiary.MiaryJakosciWagi(T1waga, T2waga, T3waga, T4waga, T5waga, T6waga, T7waga, T8waga, T9waga, T10waga, T11waga));
