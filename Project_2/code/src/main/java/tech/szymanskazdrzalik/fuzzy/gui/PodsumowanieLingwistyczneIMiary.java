@@ -54,8 +54,8 @@ public class PodsumowanieLingwistyczneIMiary {
             var x = MiaryJakosci.stopienPrawdziwosci(podsumowanieLingwistyczne);
             this.T1value = x;
             this.T1 = new SimpleStringProperty(formatter.format(x));
-        } catch (MiaryJakosci.BrakKwalifikatora brakKwalifikatora) {
-            brakKwalifikatora.printStackTrace();
+        } catch (MiaryJakosci.NieBrakKwalifikatora nieBrakKwalifikatora) {
+            nieBrakKwalifikatora.printStackTrace();
             // TODO: 29.05.2021
         }
         this.T2value = MiaryJakosci.stopienNieperecyzyjnosci(podsumowanieLingwistyczne);
@@ -66,7 +66,7 @@ public class PodsumowanieLingwistyczneIMiary {
         this.T4 = new SimpleStringProperty(formatter.format(this.T4value));
         this.T5value = MiaryJakosci.dlugoscPodsumowania(podsumowanieLingwistyczne);
         this.T5 = new SimpleStringProperty(formatter.format(this.T5value));
-        this.T6value = MiaryJakosci.dlugoscPodsumowania(podsumowanieLingwistyczne);
+        this.T6value = MiaryJakosci.stopienNieprecyzyjnosciKwantyfikatora(podsumowanieLingwistyczne);
         this.T6 = new SimpleStringProperty(formatter.format(this.T6value));
         this.T7value = MiaryJakosci.stopienKardynalnosciWzglednejKwantyfiaktora(podsumowanieLingwistyczne);
         this.T7 = new SimpleStringProperty(formatter.format(this.T7value));
@@ -107,6 +107,18 @@ public class PodsumowanieLingwistyczneIMiary {
     }
 
     public void calculateGlownaMiaraJakosci(MiaryJakosciWagi miaryJakosciWagi) {
+        double T8Value = 0.0;
+        if (this.T8value != null ) {
+            T8Value = this.T8value;
+        }
+        double T9Value = 0.0;
+        if (this.T9value != null ) {
+            T9Value = this.T9value;
+        }
+        double T10Value = 0.0;
+        if (this.T10value != null ) {
+            T10Value = this.T10value;
+        }
         this.glownaMiaraJakosciValue = this.T1value * miaryJakosciWagi.getT1() +
                 this.T2value * miaryJakosciWagi.getT2() +
                 this.T3value * miaryJakosciWagi.getT3() +
@@ -114,9 +126,9 @@ public class PodsumowanieLingwistyczneIMiary {
                 this.T5value * miaryJakosciWagi.getT5() +
                 this.T6value * miaryJakosciWagi.getT6() +
                 this.T7value * miaryJakosciWagi.getT7() +
-                this.T8value * miaryJakosciWagi.getT8() +
-                this.T9value * miaryJakosciWagi.getT9() +
-                this.T10value * miaryJakosciWagi.getT10() +
+                T8Value * miaryJakosciWagi.getT8() +
+                T9Value * miaryJakosciWagi.getT9() +
+                T10Value * miaryJakosciWagi.getT10() +
                 this.T11value * miaryJakosciWagi.getT11();
         this.glownaMiaraJakosci = new SimpleStringProperty(formatter.format(this.glownaMiaraJakosciValue));
     }

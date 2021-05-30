@@ -12,7 +12,7 @@ public class CzasTrwania implements PobierzWartosc<Wypadek> {
         long czasRozpoczecia = wypadek.getCzasRozpoczecia().getTime();
         long czasTrwania = czasZakonczenia - czasRozpoczecia;
         long minuty = TimeUnit.MILLISECONDS.toMinutes(czasTrwania);
-        long godziny = TimeUnit.MINUTES.toHours(czasTrwania);
+        long godziny = TimeUnit.MILLISECONDS.toHours(czasTrwania);
         minuty %= 60;
         return godziny + (double) minuty / 60;
     }
