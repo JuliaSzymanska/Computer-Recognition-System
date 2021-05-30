@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -102,6 +103,9 @@ public class MainController implements Initializable {
 
     @FXML
     private Button akceptacja;
+
+    @FXML
+    private Label nieRowne;
 
     private ObservableList<PodsumowanieLingwistyczneIMiary> podsumowanieLingwistyczneIMiaryObservableList;
     private List<Kwantyfikator> kwantyfikatorList;
@@ -235,7 +239,7 @@ public class MainController implements Initializable {
             System.out.println(suma);
             double eps = 0.0001;
             if (suma - 1.0 >= eps || suma - 1.0 <= eps) {
-                // TODO: 30.05.2021  nie równe 1?
+                this.nieRowne.setText("Suma wartości musi być równa 1");
             }
             for (var i : this.podsumowanieLingwistyczneIMiaryObservableList) {
                 i.calculateGlownaMiaraJakosci(new PodsumowanieLingwistyczneIMiary.MiaryJakosciWagi(T1waga, T2waga, T3waga, T4waga, T5waga, T6waga, T7waga, T8waga, T9waga, T10waga, T11waga));
