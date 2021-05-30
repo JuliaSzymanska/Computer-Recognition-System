@@ -1,5 +1,6 @@
 package tech.szymanskazdrzalik.fuzzy.predefined;
 
+import tech.szymanskazdrzalik.fuzzy.common.Stale;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaGausowska;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaTrapezoidalna;
@@ -17,6 +18,22 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Zmienne.Wilgotnosc;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_CISNIENIE;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_CZAS_TRWANIA;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_ODLEGLOSC;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_TEMPERATURA;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_WIDOCZNOSC;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_CISNIENIE;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_CZAS_TRWANIA;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_ODLEGLOSC;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_TEMPERATURA;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_WIDOCZNOSC;
+import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC;
 
 public class PredefinedQualifiersAndSumarizators {
 
@@ -89,29 +106,6 @@ public class PredefinedQualifiersAndSumarizators {
         return odleglosc;
     }
 
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU = 0.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU = 40.0;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW = 0.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW = 0.5;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_WIDOCZNOSC= 0.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_WIDOCZNOSC = 10.0;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_CISNIENIE= 27.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_CISNIENIE = 32.0;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC = 4.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_WILGOTNOSC = 100.0;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_TEMPERATURA = -16.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_TEMPERATURA = 104.0;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_ODLEGLOSC = 0.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_ODLEGLOSC = 6.0;
-
-    public static final Double POCZATEK_PRZESTRZENI_ROZWAZAN_CZAS_TRWANIA = 0.0;
-    public static final Double KONIEC_PRZESTRZENI_ROZWAZAN_CZAS_TRWANIA = 24.0;
 
     private static void init() {
         predkoscWiatru = new ZmiennaLingwistyczna(new ArrayList<>());
@@ -123,11 +117,11 @@ public class PredefinedQualifiersAndSumarizators {
         temperaturaOdczuwalna = new ZmiennaLingwistyczna(new ArrayList<>());
         czasTrwania = new ZmiennaLingwistyczna(new ArrayList<>());
         odleglosc = new ZmiennaLingwistyczna(new ArrayList<>());
-        predkoscWiatru.add(new Etykieta<>("przy słabym wietrze", new FunkcjaTrapezoidalna<>(0.0, 0.0, 3.0, 3.5, POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
-        predkoscWiatru.add(new Etykieta<>("przy umiarkowanym wietrze", new FunkcjaTrapezoidalna<>(3.0, 3.5, 8.0, 9.0, POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
-        predkoscWiatru.add(new Etykieta<>("przy silnym wietrze", new FunkcjaTrapezoidalna<>(8.0, 9.0, 17.0, 20.0, POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
-        predkoscWiatru.add(new Etykieta<>("przy wichrze", new FunkcjaTrapezoidalna<>(17.0, 20.0, 27.0, 30.0, POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
-        predkoscWiatru.add(new Etykieta<>("przy huraganie", new FunkcjaTrapezoidalna<>(27.0, 30.0, 40.0, 40.0, POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
+        predkoscWiatru.add(new Etykieta<>("przy słabym wietrze", new FunkcjaTrapezoidalna<>(0.0, 0.0, 3.0, 3.5, Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
+        predkoscWiatru.add(new Etykieta<>("przy umiarkowanym wietrze", new FunkcjaTrapezoidalna<>(3.0, 3.5, 8.0, 9.0, Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
+        predkoscWiatru.add(new Etykieta<>("przy silnym wietrze", new FunkcjaTrapezoidalna<>(8.0, 9.0, 17.0, 20.0, Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
+        predkoscWiatru.add(new Etykieta<>("przy wichrze", new FunkcjaTrapezoidalna<>(17.0, 20.0, 27.0, 30.0, Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
+        predkoscWiatru.add(new Etykieta<>("przy huraganie", new FunkcjaTrapezoidalna<>(27.0, 30.0, 40.0, 40.0, Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, KONIEC_PRZESTRZENI_ROZWAZAN_PREDKOSC_WIATRU, new PredkoscWiatru())));
 
         iloscOpadow.add(new Etykieta<>("przy niewielkich opadach", new FunkcjaTrapezoidalna<>(0.0, 0.0, 0.1, 0.2, POCZATEK_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW, KONIEC_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW, new IloscOpadow())));
         iloscOpadow.add(new Etykieta<>("przy umiarowanych opadach", new FunkcjaTrapezoidalna<>(0.1, 0.2, 0.3, 0.35, POCZATEK_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW, KONIEC_PRZESTRZENI_ROZWAZAN_ILOSC_OPADOW, new IloscOpadow())));
