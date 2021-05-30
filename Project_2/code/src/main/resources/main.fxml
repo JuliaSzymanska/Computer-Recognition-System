@@ -73,7 +73,7 @@
             <Insets left="600.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w1" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w1" maxWidth="50.0" prefWidth="50.0" text="0.5">
         <VBox.margin>
             <Insets left="620.0" top="-20.0" />
         </VBox.margin>
@@ -83,7 +83,7 @@
             <Insets left="600.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w2" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w2" maxWidth="50.0" prefWidth="50.0" text="0.25">
         <VBox.margin>
             <Insets left="620.0" top="-20.0" />
         </VBox.margin>
@@ -93,7 +93,7 @@
             <Insets left="600.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w3" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w3" maxWidth="50.0" prefWidth="50.0" text="0.04">
         <VBox.margin>
             <Insets left="620.0" top="-20.0" />
         </VBox.margin>
@@ -103,7 +103,7 @@
             <Insets left="600.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w4" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w4" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="620.0" top="-20.0" />
         </VBox.margin>
@@ -113,7 +113,7 @@
             <Insets left="600.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w5" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w5" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="620.0" top="-20.0" />
         </VBox.margin>
@@ -123,7 +123,7 @@
             <Insets left="600.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w6" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w6" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="620.0" top="-20.0" />
         </VBox.margin>
@@ -133,7 +133,7 @@
             <Insets left="680.0" top="-164.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w7" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w7" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="710.0" top="-20.0" />
         </VBox.margin>
@@ -143,7 +143,7 @@
             <Insets left="680.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w8" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w8" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="710.0" top="-20.0" />
         </VBox.margin>
@@ -153,7 +153,7 @@
             <Insets left="680.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w9" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w9" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="710.0" top="-20.0" />
         </VBox.margin>
@@ -163,7 +163,7 @@
             <Insets left="680.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w10" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w10" maxWidth="50.0" prefWidth="50.0" text="0.03">
         <VBox.margin>
             <Insets left="710.0" top="-20.0" />
         </VBox.margin>
@@ -173,7 +173,7 @@
             <Insets left="680.0" top="5.0" />
         </VBox.margin>
     </Label>
-    <TextField fx:id="w11" maxWidth="50.0" prefWidth="50.0" text="0.0">
+    <TextField fx:id="w11" maxWidth="50.0" prefWidth="50.0" text="0.00">
         <VBox.margin>
             <Insets left="710.0" top="-20.0" />
         </VBox.margin>
@@ -199,7 +199,7 @@
 
     <TableView fx:id="podsumowanieTable" minHeight="440.0" prefHeight="200.0" prefWidth="200.0">
         <columns>
-            <TableColumn fx:id="columnTekst" prefWidth="690.0" text="Tekst"/>
+            <TableColumn fx:id="columnTekst" prefWidth="760.0" text="Tekst" maxWidth="760.0"/>
             <TableColumn fx:id="columnT1" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T1"/>
             <TableColumn fx:id="columnT2" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T2"/>
             <TableColumn fx:id="columnT3" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T3"/>
@@ -212,7 +212,7 @@
             <TableColumn fx:id="columnT10" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T10"/>
             <TableColumn fx:id="columnT11" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T11"/>
             <TableColumn fx:id="columnSuma" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Suma"/>
-            <TableColumn fx:id="columnZapis" maxWidth="100.0" minWidth="50.0" prefWidth="100.0" text="Zapis"/>
+            <TableColumn fx:id="columnZapis" maxWidth="80.0" minWidth="50.0" prefWidth="100.0" text="Zapis"/>
         </columns>
     </TableView>
     <Button text="Do zaawansowanego" onAction="#doZaawansowanego">
