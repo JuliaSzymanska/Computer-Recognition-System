@@ -240,7 +240,8 @@ public class MainController implements Initializable {
             for (var i : this.podsumowanieLingwistyczneIMiaryObservableList) {
                 i.calculateGlownaMiaraJakosci(new PodsumowanieLingwistyczneIMiary.MiaryJakosciWagi(T1waga, T2waga, T3waga, T4waga, T5waga, T6waga, T7waga, T8waga, T9waga, T10waga, T11waga));
             }
-//            this.podsumowanieLingwistyczneIMiaryObservableList.notify();
+//            this.podsumowanieLingwistyczneIMiaryObservableList;
+            this.podsumowanieTable.refresh();
         });
     }
 
