@@ -34,7 +34,7 @@ public class PodsumowanieLingwistyczneIMiary {
     private final Double T11value;
     private SimpleStringProperty T1 = null;
     private Double T1value;
-    private SimpleStringProperty glownaMiaraJakosci = null;
+    private SimpleStringProperty glownaMiaraJakosci;
     private Double glownaMiaraJakosciValue;
 
     public PodsumowanieLingwistyczneIMiary(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {

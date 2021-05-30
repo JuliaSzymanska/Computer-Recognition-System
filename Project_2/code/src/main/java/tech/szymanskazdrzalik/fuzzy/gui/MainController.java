@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import tech.szymanskazdrzalik.fuzzy.dao.AccidentDAO;
 import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
@@ -59,6 +60,29 @@ public class MainController implements Initializable {
     @FXML
     public TableColumn columnSuma;
     @FXML
+    public Button wagi;
+    @FXML
+    public TextField w1;
+    @FXML
+    public TextField w2;
+    @FXML
+    public TextField w3;
+    @FXML
+    public TextField w4;
+    public TextField w5;
+    @FXML
+    public TextField w6;
+    @FXML
+    public TextField w7;
+    @FXML
+    public TextField w8;
+    @FXML
+    public TextField w9;
+    @FXML
+    public TextField w10;
+    @FXML
+    public TextField w11;
+    @FXML
     private ComboBox<String> kwantyfikator;
 
     @FXML
@@ -96,6 +120,7 @@ public class MainController implements Initializable {
         this.setSumaryzatoryWybrane();
         this.setDodaj();
         this.setUsun();
+        this.setPoliczSumeWag();
         this.initTable();
         AccidentDAO accidentDao = new ResourcesAccidentDao();
         this.podmioty = new ArrayList<>();
@@ -120,6 +145,7 @@ public class MainController implements Initializable {
         this.columnT9.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T9"));
         this.columnT10.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T10"));
         this.columnT11.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("T11"));
+        this.columnSuma.setCellValueFactory(new PropertyValueFactory<PodsumowanieLingwistyczneIMiary, String>("glownaMiaraJakosci"));
         this.podsumowanieTable.setItems(podsumowanieLingwistyczneIMiaryObservableList);
     }
 
@@ -179,6 +205,42 @@ public class MainController implements Initializable {
             MainController.this.sumaryzatoryListString.add(selected);
             MainController.this.sumaryzatoryWybraneList.remove(selected);
             MainController.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
+        });
+    }
+
+    private void setPoliczSumeWag() {
+        this.wagi.setOnAction(actionEvent -> {
+            Double T1waga = Double.valueOf(this.w1.getText());
+            Double T2waga = Double.valueOf(this.w2.getText());
+            Double T3waga = Double.valueOf(this.w3.getText());
+            Double T4waga = Double.valueOf(this.w4.getText());
+            Double T5waga = Double.valueOf(this.w5.getText());
+            Double T6waga = Double.valueOf(this.w6.getText());
+            Double T7waga = Double.valueOf(this.w7.getText());
+            Double T8waga = Double.valueOf(this.w8.getText());
+            Double T9waga = Double.valueOf(this.w9.getText());
+            Double T10waga = Double.valueOf(this.w10.getText());
+            Double T11waga = Double.valueOf(this.w11.getText());
+            Double suma = T1waga +
+                    T2waga +
+                    T3waga +
+                    T4waga +
+                    T5waga +
+                    T6waga +
+                    T7waga +
+                    T8waga +
+                    T9waga +
+                    T10waga +
+                    T11waga;
+            System.out.println(suma);
+            double eps = 0.0001;
+            if (suma - 1.0 >= eps || suma - 1.0 <= eps) {
+                // TODO: 30.05.2021  nie równe 1?
+            }
+            for (var i : this.podsumowanieLingwistyczneIMiaryObservableList) {
+                i.calculateGlownaMiaraJakosci(new PodsumowanieLingwistyczneIMiary.MiaryJakosciWagi(T1waga, T2waga, T3waga, T4waga, T5waga, T6waga, T7waga, T8waga, T9waga, T10waga, T11waga));
+            }
+//            this.podsumowanieLingwistyczneIMiaryObservableList.notify();
         });
     }
 
