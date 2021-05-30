@@ -36,9 +36,9 @@ import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZ
 import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_WIDOCZNOSC;
 import static tech.szymanskazdrzalik.fuzzy.common.Stale.POCZATEK_PRZESTRZENI_ROZWAZAN_WILGOTNOSC;
 
-public class PredefinedQualifiersAndSumarizators {
+public class PredefiniowaneKwalifikatorySumaryzatory {
 
-    private static final PredefinedQualifiersAndSumarizators INSTANCE = new PredefinedQualifiersAndSumarizators();
+    private static final PredefiniowaneKwalifikatorySumaryzatory INSTANCE = new PredefiniowaneKwalifikatorySumaryzatory();
 
     private static ZmiennaLingwistyczna predkoscWiatru;
 
@@ -67,7 +67,7 @@ public class PredefinedQualifiersAndSumarizators {
 
     private static boolean didInit = false;
 
-    private PredefinedQualifiersAndSumarizators() {
+    private PredefiniowaneKwalifikatorySumaryzatory() {
         init();
     }
 

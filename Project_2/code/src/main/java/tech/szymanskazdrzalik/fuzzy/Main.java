@@ -14,14 +14,10 @@ public class Main extends Application {
     private static Scene scene;
 
     public static void main(String[] args) throws IOException {
-//        AccidentDAO accidentDao = new ResourcesAccidentDao();
-//        var x = accidentDao.getAll("Data/" + PropertiesLoader.getJsonName());
-//        int y = 0;
         launch();
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-//        ResourceBundle resourceBundle = ResourceBundle.getBundle("Lang", Locale.getDefault());
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }
