@@ -554,6 +554,15 @@ gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo10}\), \(\mu _{okolo50}\), \(\mu _{oko
 
 \begin{figure}[h!]
  \centering
+ \includegraphics[width=14cm]{kwantyfikatory_absolutny_2.png}
+ \vspace{-0.3cm}
+ \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych absolutnych od wartości 0 do 350. }
+ \label{kwantyfikatory_lingwistyczne_absolutne}
+\end{figure}
+
+
+\begin{figure}[h!]
+ \centering
  \includegraphics[width=14cm]{kwantyfikatory_absolutny.png}
  \vspace{-0.3cm}
  \caption{Wykres funkcji przynależności kwantyfikatorów lingwistycznych absolutnych. }
@@ -611,6 +620,8 @@ PodsumowanieLingwistyczneIMiary zawiera metodę getGlownaMiaraJakosci zwracając
 
 \subsubsection{Instrukcja obsługi}
 
+
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=15cm]{gui.png}
@@ -619,25 +630,63 @@ PodsumowanieLingwistyczneIMiary zawiera metodę getGlownaMiaraJakosci zwracając
  \label{gui}
 \end{figure}
 
-Na rysunku \ref{gui}. został przedstawiony podstawowy wygląd interfejsu użytkownika. Zaczynając od lewego górnego roku najpeirw użytkownik z rozwijanej lsity wybiera kwantyfikator, następnie z rozwijanej listy wybierany jest kwalifikator. Kolejnym krokiem jest wybranie jednego bądź wielu sumaryzatorów, w tym celu użytkownik wybiera pierwszy wybrany sumaryzator i naciska przycisk Dodaj znajdujący się po prawej stronie od rozwijanej listy sumaryzatorów, za pomocą którego wybrany sumaryzator jest dodawany do lsity wybranych przez użytkownika sumaryzatorów. Aby wybrać więcej niż jeden sumaryzator użytkownik musi powtórzyć wcześniejsze czynności zaczynając od wybrania z rozwijanej listy pożądanego sumaryzatora. Istnieje możliwość usunięcia sumaryzatora z lsity wybranych sumaryzatorów, w tym celu użytkownik wybiera z rozwijanej listy, znajdującej się pod dostępnymi sumaryzatorami, sumaryzator do usunięcia. Następnie przcyiska przycisk Usuń. W celu usunięcia więcej niż jednego sumaryzatora, użytkownik musi powtórzyć opisane czynności zaczynając od wyboru sumaryzatora z listy wybranych sumaryzatorów. W celu wykonania podsumowania lignwistycznego należy przycisnąć przycisk Wybierz znajdujący się pod rozwijaną listą z wybranymi sumaryzatorami, następnie w tabeli na dole ekranu pojawi się wygenerowany tekst podsumowania
+Na rysunku \ref{gui}. został przedstawiony podstawowy wygląd interfejsu użytkownika. Zaczynając od lewego górnego roku najpeirw użytkownik z rozwijanej lsity wybiera kwantyfikator, następnie z rozwijanej listy wybierany jest kwalifikator. Kolejnym krokiem jest wybranie jednego bądź wielu sumaryzatorów, w tym celu użytkownik wybiera pierwszy wybrany sumaryzator i naciska przycisk Dodaj znajdujący się po prawej stronie od rozwijanej listy sumaryzatorów, za pomocą którego wybrany sumaryzator jest dodawany do lsity wybranych przez użytkownika sumaryzatorów. Aby wybrać więcej niż jeden sumaryzator użytkownik musi powtórzyć wcześniejsze czynności zaczynając od wybrania z rozwijanej listy pożądanego sumaryzatora. Istnieje możliwość usunięcia sumaryzatora z lsity wybranych sumaryzatorów, w tym celu użytkownik wybiera z rozwijanej listy, znajdującej się pod dostępnymi sumaryzatorami, sumaryzator do usunięcia. Następnie przcyiska przycisk Usuń. W celu usunięcia więcej niż jednego sumaryzatora, użytkownik musi powtórzyć opisane czynności zaczynając od wyboru sumaryzatora z listy wybranych sumaryzatorów. W celu wykonania podsumowania lignwistycznego należy przycisnąć przycisk Wybierz znajdujący się pod rozwijaną listą z wybranymi sumaryzatorami, następnie w tabeli na dole ekranu pojawi się wygenerowany tekst podsumowania oraz wartości miar jakości. W ostatniej kolumnie tabeli znajduje sie przycisk Zapisz, dla każdego wygenerowanego podsumwoania. Po przyciśnięciu opisanego przycisku dane podsumowanie zostanie dopisane do pliku txt. W programie istnieje możliwość obliczenia głównej miary podsumowania, w tym celu należy wpisać odpowiednie wagi, dla każdej z miar w polach znajdujących się na środku ekranu. Pod polami znajduje się przycisk Wybierz, którego kliknięcie spowoduje policzenie głównej miary podsumowań we wszystkich podsumowaniach znajdujących się w tabeli. Kliknięcie przycisku Do zaawansowanego spowoduje przejście do ekranu użytkownika zaawansowanego. 
 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{gui_2.png}
+ \vspace{-0.3cm}
+ \caption{Przykład wyglądu interfejsu zaawansowanego użytkownika}
+ \label{gui2}
+\end{figure}
+
+Na rysunku \ref{gui2}. został przedstawiony wygląd interfejsu zaawansowanego użytkownika, któRy służy do tworzenia własnych kwantyfikatorów, klasyfikatorów oraz sumaryzatorów. Zaczynając od lewego górnego rogu na użytkownik wybiera, który z elementów chce utworzyć: kwantyfiaktor, kwalifikator, sumaryzator. Następnie poniżej należy wpisać nazwę elementu oraz wybrać z rozwijanej listy funkcję przynależności. Kliknięcie przcisku Dalej powoduje pojawienie się pól do wprowadzenia kolejnych danych w zależności od cześniej wybranych wartości. Dla warotści wybranych na rysunku \ref{gui2} po kliknięciu przyciski Dalej pojawią się następujące pola: checkbox do zaznaczenia czy kwantyfiaktor jest absolutny, początek funkcji przynależności, początek i koniec maksymalnej wartości, dla których funkcja przyjmuje wartość maksymalną oraz wartość końcową. Kliknięcie przycisku Zapisz spowosuje zapisanie elementu do listy dostępnych elementów. Przyciśnięcie przycisku Wróć wróci do ekranu użytkownika podstawowego. \\
+
+Wymagania, które muszą zostać spełnione by uruchomić program na własnym komputerze to: wersja Javy 11. 
 
 \newpage
-Diagram UML generatora podsumowań (warstwy obliczeniowej oraz interfejsu
-użytkownika). Krótki ilustrowany opis jak użytkownik może korzystać z aplikacji, w~szczególności
-wprowadzać parametry  podsumowań, odczytywać wyniki oraz definiować własne etykiety i
-kwantyfikatory. Wersja JRE i inne wymogi niezbędne do uruchomienia aplikacji przez użytkownika na własnym komputerze. \\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 11 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
 
 \section{ Jednopodmiotowe podsumowania lingwistyczne. Miary jakości, podsumowanie optymalne}
-Wyniki kolejnych eksperymentów wg punktów 2.-4. opisu projektu 2.  Listy podsumowań
-jednopodmiotowych i tabele/rankingi podsumowań dla danych atrybutów obowiązkowe i dokładnie opisane w ,,captions'' (tytułach), konieczny opis kolumn i wierszy tabel. Dla każdego podsumowania podane miary jakości oraz miara jakości podsumowania
-optymalnego.\\
-\noindent {\bf Sekcja uzupełniona jako efekt zadania Tydzień 11 wg Harmonogramu Zajęć
-na WIKAMP KSR.}
+\subsection{Eksperyment 1}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex1.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki podsumowań lingwistycznych dla eksperymentu 1. Kolumna Tekst zawiera tekst wygenerowanego podsumowania lingwistycznego. Kolumny T1-T11 są miarami jakości podsumowania lignwistycznego\cite{niewiadomski19}. Kolumna Suma zawiera wartości jakości optymalnego podsumowania lingwistycznego, które są średnią ważoną miar jakości od T1 do T11. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane podsumwoanie lignwistyczne do pliku. Każdy rząd zawiera jedno wygenerowane podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie Suma malejąco.  }
+ \label{ex1}
+\end{figure}
 
+W pierwszym eksperymencie zostały wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w pierwszej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
 
+Na podstawie tabeli \ref{ex1} można zauważyć, że zdanie 'Niewiele wypadków, jest przy słabym wietrze, jest przy umiarkowanych opadach' jest zdaniem najbardziej zgodnym z prawdą dla kwantfikatorów względnych, ponieważ nie ma wielu wypadków, które były przy słabym wietrze i umiarkowanych opadach. Natomiast patrząc na zdanie, które jest najmniej zgodne z prawdą, 'Niewiele wypadków, jest przy słabym wietrze', wnioskujemy, że jest wiele wypadków, które nastąpiły przy słabym wietrze. Zdanie 'Około 3500 wypadków, jest przy słabym wietrze' jest zdaniem najbardziej zgodnym z prawdą. 
+
+\newpage
+\subsection{Eksperyment 2}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex2.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki podsumowań lingwistycznych dla eksperymentu 2. Kolumna Tekst zawiera tekst wygenerowanego podsumowania lingwistycznego. Kolumny T1-T11 są miarami jakości podsumowania lignwistycznego\cite{niewiadomski19}. Kolumna Suma zawiera wartości jakości optymalnego podsumowania lingwistycznego, które są średnią ważoną miar jakości od T1 do T11. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane podsumwoanie lignwistyczne do pliku. Każdy rząd zawiera jedno wygenerowane podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie Suma malejąco.  }
+ \label{ex2}
+\end{figure}
+
+W drugim eksperymencie zostały wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w drugiej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
+
+Na podstawie tabeli \ref{ex2} można zauważyć, że zdanie 'Około połowy wypadków będących przy  dobrej widoczności, jest przy niewielkich opadach, jest przy zimnej temperaturze' jest zdaniem najbardziej zgodnym z prawdą, a jednocześnie zdanie 'Niewiele wypadków będących przy  dobrej widoczności, jest przy niewielkich opadach, jest przy zimnej temperaturze' jest zdaniem najmniej zgodnym z prawdą. Można zauważyć, że te zdania zaprzeczają sobie nazwajem, więc wyniki miar jakości podsumowania optymalnego są uzasadnione. Zgodnie z naszymi oczekiwaniami 'Prawie wszystkie wypadki będące przy dobrej widoczności, jest przy niewielkich opadach', jest trzecim zdaniem najbardziej zgodnym z prawdą, ponieważ opady powodują złą widoczność, więc jeśli widoczność była dobra oznacza to, że opadów nie było, bądź były niewielkie. Natomaist zdanie 'Niewiele wypadków będących przy dobrej widoczności, jest przy niewielkich opadach, jest przy suchym powietrzu' nie było zgodne z naszymi oczekiwaniami, ponieważ spodziewaliśmy się, że przy większości wypadków jeśeli jest dobra widoczność, to nie ma opadów, a co za tym idzie jest suche powietrze, co okazało się być zdaniem nieprawdziwym. 
+
+\newpage
+\subsection{Eksperyment 3}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex3.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki podsumowań lingwistycznych dla eksperymentu 3. Kolumna Tekst zawiera tekst wygenerowanego podsumowania lingwistycznego. Kolumny T1-T11 są miarami jakości podsumowania lignwistycznego\cite{niewiadomski19}. Kolumna Suma zawiera wartości jakości optymalnego podsumowania lingwistycznego, które są średnią ważoną miar jakości od T1 do T11. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane podsumwoanie lignwistyczne do pliku. Każdy rząd zawiera jedno wygenerowane podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie Suma malejąco.  }
+ \label{ex3}
+\end{figure}
+
+W trzecim eksperymencie zostały wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w drugiej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
+
+Wykonany eksperyment miał na celu sprawdzenie zależności długości odcinka drogi, na którym nastąpiły utrudnienia w ruchu spowodowane przez wypadek od czasu trwania utrudnień w ruchu drogowym przez ten wypadek. Uzyskane wyniki potwierdzają postawioną tezę. Na podstawie tabeli \ref{ex3} można zauważyć, że zdanie 'Około połowy wypadków będących wywołuje utrudnienia w ruchu o długości poniżej pół mili, jest wywołuje utrudnienia w ruchu trwające około dwóch godzin' jest najbardziej prawdziwym zdaniem. Jednocześnie możemy zauważyć, że to samo zdanie z kwantyfiaktorem 'Niewiele' jest najmniej prawdziwym zdaniem. To samo zdanie z kwantyfiaktorami 'Około 1/4' lub 'Większość' są zdecydowanie mniej prawdziwe niż pierwsze opisane zdanie. Kolejnym zdaniem potwierdzającym tezę jest: 'Niewiele wypadków będących wywołuje utrudnienia w ruchu o długości poniżej pół mili, jest wywołuje utrudnienia w ruchu trwające około sześciu godzin', ponieważ, odcinek poniżej pół mili jest krótkim odcinkiem, a czas trwania sześć godzin jest znacznie długim czasem. Ze zdania możemy odczytać, że nie wiele wypadków będących na krótkim odcinku drogi wywoluje tak długi czas trwania utrudnień w ruchu drogowym.
 
 \section{Wielopodmiotowe podsumowania lingwistyczne i~ich miary jakości} 
 Wyniki kolejnych eksperymentów wg punktów 2.-4. opisu projektu 2. Uzasadnienie i
