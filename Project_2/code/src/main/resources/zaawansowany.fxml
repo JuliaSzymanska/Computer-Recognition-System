@@ -29,7 +29,7 @@
     </Label>
     <TextField fx:id="nazwaKwantyfikatora" prefWidth="50.0" maxWidth="250.0">
         <VBox.margin>
-            <Insets left="70.0" top="-20.0"/>
+            <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </TextField>
     <Label text="Czy jest absolutny:">
@@ -49,7 +49,7 @@
     </Label>
     <ComboBox fx:id="funkcjaKwantyfikatora" minWidth="-Infinity" prefWidth="250.0">
         <VBox.margin>
-            <Insets left="70.0" top="-20.0"/>
+            <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </ComboBox>
     <Button text="Dalej" fx:id="dalej">
@@ -57,46 +57,50 @@
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Button>
-    <Label fx:id="pierwszyLabel">
+    <Label fx:id="pierwszyLabel" visible="false">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Label>
-    <TextField fx:id="pierwszyInput" prefWidth="50.0" maxWidth="250.0">
+    <TextField fx:id="pierwszyInput" prefWidth="50.0" maxWidth="250.0" visible="false">
         <VBox.margin>
-            <Insets left="70.0" top="-20.0"/>
+            <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </TextField>
-    <Label fx:id="drugiLabel">
+    <Label fx:id="drugiLabel" visible="false">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Label>
-    <TextField fx:id="drugiInput" prefWidth="50.0" maxWidth="250.0">
+    <TextField fx:id="drugiInput" prefWidth="50.0" maxWidth="250.0" visible="false">
         <VBox.margin>
-            <Insets left="70.0" top="-20.0"/>
+            <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </TextField>
-    <Label fx:id="trzeciLabel">
+    <Label fx:id="trzeciLabel" visible="false">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Label>
-    <TextField fx:id="trzeciInput" prefWidth="50.0" maxWidth="250.0">
+    <TextField fx:id="trzeciInput" prefWidth="50.0" maxWidth="250.0" visible="false">
         <VBox.margin>
-            <Insets left="70.0" top="-20.0"/>
+            <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </TextField>
-    <Label fx:id="czwartyLabel">
+    <Label fx:id="czwartyLabel" visible="false">
         <VBox.margin>
             <Insets left="20.0" top="10.0"/>
         </VBox.margin>
     </Label>
-    <TextField fx:id="czwartyInput" prefWidth="50.0" maxWidth="250.0">
+    <TextField fx:id="czwartyInput" prefWidth="50.0" maxWidth="250.0" visible="false">
         <VBox.margin>
-            <Insets left="70.0" top="-20.0"/>
+            <Insets left="120.0" top="-20.0"/>
         </VBox.margin>
     </TextField>
-
+    <Button text="Zapisz" fx:id="zapiszKwantyfiaktor" visible="false">
+        <VBox.margin>
+            <Insets left="20.0" top="10.0"/>
+        </VBox.margin>
+    </Button>
 
 </VBox>

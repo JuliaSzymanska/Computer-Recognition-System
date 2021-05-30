@@ -47,4 +47,9 @@ public class PredefinedQuantifiers {
     public static List<Kwantyfikator> getKwantyfikatorList() {
         return kwantyfikatorList;
     }
+
+    public static void addKwalifikator(Kwantyfikator kwantyfikator){
+        kwantyfikatorList.add(kwantyfikator);
+    }
+
 }
