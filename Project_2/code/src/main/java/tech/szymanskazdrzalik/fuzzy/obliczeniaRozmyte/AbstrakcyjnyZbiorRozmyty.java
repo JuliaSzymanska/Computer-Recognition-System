@@ -10,10 +10,6 @@ public abstract class AbstrakcyjnyZbiorRozmyty<T> implements ZbiorRozmyty<T> {
         this.koniecPrzestrzeniRozwazan = koniecPrzestrzeniRozwarzan;
     }
 
-    public boolean jestGesty() {
-        return true;
-    }
-
     public Double getPoczatekPrzestrzeniRozwazan() {
         return poczatekPrzestrzeniRozwazan;
     }

@@ -14,6 +14,9 @@ public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
         return 1.0;
     }
 
+    default boolean jestDyskretny() {
+        return true;
+    }
 
     /**
      * Nośnik - zbiór elementów, których wartość funkcji przynależności jest większa od 0.
