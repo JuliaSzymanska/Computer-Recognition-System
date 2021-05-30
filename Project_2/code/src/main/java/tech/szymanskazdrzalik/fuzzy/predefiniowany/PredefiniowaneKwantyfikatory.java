@@ -1,4 +1,4 @@
-package tech.szymanskazdrzalik.fuzzy.predefined;
+package tech.szymanskazdrzalik.fuzzy.predefiniowany;
 
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.FunkcjaGausowska;
