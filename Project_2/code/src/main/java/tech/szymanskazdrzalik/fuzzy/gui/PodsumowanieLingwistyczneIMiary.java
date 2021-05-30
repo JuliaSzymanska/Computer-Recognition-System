@@ -130,11 +130,12 @@ public class PodsumowanieLingwistyczneIMiary {
     }
 
     public PodsumowanieLingwistyczneIMiary(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        final String[] tmp = {podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa()};
-        // todo: NAZWA?
-        tmp[0] += podsumowanieLingwistyczne.getKwalifikator() == null ?  "" :  podsumowanieLingwistyczne.getKwalifikator().getNazwa();
-        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> tmp[0] += wypadekEtykieta.getNazwa());
-        tekst = new SimpleStringProperty(tmp[0]);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
+        stringBuilder.append(" wypadki");
+        stringBuilder.append(podsumowanieLingwistyczne.getKwalifikator() == null ?  "" : " " + podsumowanieLingwistyczne.getKwalifikator().getNazwa());
+        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(" ").append(wypadekEtykieta.getNazwa()));
+        tekst = new SimpleStringProperty(stringBuilder.toString());
         this.podsumowanieLingwistyczne = podsumowanieLingwistyczne;
         try {
             var x = MiaryJakosci.stopienPrawdziwosci(podsumowanieLingwistyczne);

@@ -18,6 +18,7 @@ public class PredefinedQuantifiers {
         init();
     }
 
+    // TODO: 29.05.2021 poprawic absolutne
     private static PredefinedQuantifiers INSTANCE = new PredefinedQuantifiers();
 
     private static void init() {
@@ -34,7 +35,7 @@ public class PredefinedQuantifiers {
                 new Etykieta<>("Większość", new FunkcjaGausowska<>(0.1, 1.0, 0.75, 0.0, 1.0, aDouble -> aDouble)),
                 false));
         kwantyfikatorList.add(new Kwantyfikator(
-                new Etykieta<>("Prawie Wszystkie", new FunkcjaGausowska<>(0.1, 1.0, 1.0, 0.0, 1.0, aDouble -> aDouble)),
+                new Etykieta<>("Prawie wszystkie", new FunkcjaGausowska<>(0.1, 1.0, 1.0, 0.0, 1.0, aDouble -> aDouble)),
                 false));
         kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Ponizej 10", new FunkcjaTrojkatna<Double>(0.0, 0.0, 10.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
         kwantyfikatorList.add(new Kwantyfikator(new Etykieta<>("Około 20", new FunkcjaTrojkatna<Double>(0.0, 20.0, 40.0, 0.0, koniecUniversum, aDouble -> aDouble)), true));
