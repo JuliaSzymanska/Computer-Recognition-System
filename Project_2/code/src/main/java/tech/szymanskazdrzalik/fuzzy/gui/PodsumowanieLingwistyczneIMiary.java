@@ -213,6 +213,25 @@ public class PodsumowanieLingwistyczneIMiary {
         return podsumowanieLingwistyczne;
     }
 
+    @Override
+    public String toString() {
+        return "PodsumowanieLingwistyczneIMiary{" +
+                "tekst=" + tekst +
+                ", T1value=" + T1value +
+                ", T2value=" + T2value +
+                ", T3value=" + T3value +
+                ", T4value=" + T4value +
+                ", T5value=" + T5value +
+                ", T6value=" + T6value +
+                ", T7value=" + T7value +
+                ", T8value=" + T8value +
+                ", T9value=" + T9value +
+                ", T10value=" + T10value +
+                ", T11value=" + T11value +
+                ", glownaMiaraJakosciValue=" + glownaMiaraJakosciValue +
+                '}';
+    }
+
     public static class MiaryJakosciWagi {
         private double T1;
         private double T2;
