@@ -506,17 +506,17 @@ Do kwantyfikatora lingwistycznego absolutnego\cite{niewiadomskiRozmyte} zostały
 \end{equation}
 
 \begin{equation}
-\mu _{okolo10}(x) =  \left\{ \begin{array}{rcl}
-\frac{x}{10} & \mbox{dla} & 0 < x \leq 10\\
-\frac{20 - x}{10} & \mbox{dla} & 10 < x \leq 20\\
+\mu _{okolo20}(x) =  \left\{ \begin{array}{rcl}
+\frac{x}{20} & \mbox{dla} & 0 < x \leq 20\\
+\frac{40 - x}{20} & \mbox{dla} & 0 < x \leq 40\\
 \end{array}\right.
 \end{equation}
 
 \begin{equation}
 \mu _{okolo50}(x) =  \left\{ \begin{array}{rcl}
-\frac{x - 10}{25} & \mbox{dla} & 10 < x \leq 35\\
-1 & \mbox{dla} & 35 < x < 65\\
-\frac{90 - x}{25} & \mbox{dla} & 65 < x \leq 90\\
+\frac{x - 10}{30} & \mbox{dla} & 10 < x \leq40\\
+1 & \mbox{dla} & 40 < x < 60\\
+\frac{90 - x}{30} & \mbox{dla} & 60 < x \leq 90\\
 \end{array}\right.
 \end{equation}
 
@@ -545,12 +545,45 @@ Do kwantyfikatora lingwistycznego absolutnego\cite{niewiadomskiRozmyte} zostały
 
 \begin{equation}
 \mu _{Ponad200}(x) =  \left\{ \begin{array}{rcl}
-\frac{x}{50} & \mbox{dla} & 200 < x \leq 250\\
-1 & \mbox{dla} & 250 \leq x\\
+\frac{x - 200}{50} & \mbox{dla} & 200 < x \leq 250\\
+1 & \mbox{dla} & 250 < x < 300\\
+\frac{300 - x}{50} & \mbox{dla} & 300 < x \leq 350\\
 \end{array}\right.
 \end{equation}
 
-gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo10}\), \(\mu _{okolo50}\), \(\mu _{okolo100}\), \(\mu _{miedzy100A200}\), \(\mu _{okolo200}\), \(\mu _{Ponad200}\)  - kwantyfikatory absolutne, \textit{x} - absolutna wartość liczby obiektów posiadających cechę. 
+\begin{equation}
+\mu _{Okolo500}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 300}{200} & \mbox{dla} & 300 < x \leq 400\\
+1 & \mbox{dla} & 400 < x < 600\\
+\frac{600 - x}{100} & \mbox{dla} & 600 < x \leq 700\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{Okolo1000}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 600}{200} & \mbox{dla} & 600 < x \leq 800\\
+1 & \mbox{dla} & 800 < x < 1200\\
+\frac{1200 - x}{200} & \mbox{dla} & 1200 < x \leq 1400\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{Okolo2000}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 1200}{400} & \mbox{dla} & 1200 < x \leq 1600\\
+1 & \mbox{dla} & 1600 < x < 2400\\
+\frac{2400 - x}{400} & \mbox{dla} & 2400 < x \leq 2800\\
+\end{array}\right.
+\end{equation}
+
+\begin{equation}
+\mu _{Okolo3500}(x) =  \left\{ \begin{array}{rcl}
+\frac{x - 2400}{400} & \mbox{dla} & 2400 < x \leq 2800\\
+1 & \mbox{dla} & 2800 < x < 4200\\
+\frac{4200 - x}{400} & \mbox{dla} & 4200 < x \leq 4600\\
+\end{array}\right.
+\end{equation}
+
+gdzie: \(\mu _{ponizej10}\), \(\mu _{okolo20}\), \(\mu _{okolo50}\), \(\mu _{okolo100}\), \(\mu _{miedzy100A200}\), \(\mu _{okolo200}\), \(\mu _{Ponad200}\),  \(\mu _{Okolo500}\), \(\mu _{Okolo1000}\),  \(\mu _{Okolo200}\), \(\mu _{Okolo3500}\),  - kwantyfikatory absolutne, \textit{x} - absolutna wartość liczby obiektów posiadających cechę. 
 
 \begin{figure}[h!]
  \centering
@@ -631,7 +664,7 @@ PodsumowanieLingwistyczneIMiary zawiera metodę getGlownaMiaraJakosci zwracając
  \label{gui}
 \end{figure}
 
-Na rysunku \ref{gui}. został przedstawiony podstawowy wygląd interfejsu użytkownika. Zaczynając od lewego górnego roku najpeirw użytkownik z rozwijanej lsity wybiera kwantyfikator, następnie z rozwijanej listy wybierany jest kwalifikator. Kolejnym krokiem jest wybranie jednego bądź wielu sumaryzatorów, w tym celu użytkownik wybiera pierwszy wybrany sumaryzator i naciska przycisk Dodaj znajdujący się po prawej stronie od rozwijanej listy sumaryzatorów, za pomocą którego wybrany sumaryzator jest dodawany do lsity wybranych przez użytkownika sumaryzatorów. Aby wybrać więcej niż jeden sumaryzator użytkownik musi powtórzyć wcześniejsze czynności zaczynając od wybrania z rozwijanej listy pożądanego sumaryzatora. Istnieje możliwość usunięcia sumaryzatora z lsity wybranych sumaryzatorów, w tym celu użytkownik wybiera z rozwijanej listy, znajdującej się pod dostępnymi sumaryzatorami, sumaryzator do usunięcia. Następnie przcyiska przycisk Usuń. W celu usunięcia więcej niż jednego sumaryzatora, użytkownik musi powtórzyć opisane czynności zaczynając od wyboru sumaryzatora z listy wybranych sumaryzatorów. W celu wykonania podsumowania lignwistycznego należy przycisnąć przycisk Wybierz znajdujący się pod rozwijaną listą z wybranymi sumaryzatorami, następnie w tabeli na dole ekranu pojawi się wygenerowany tekst podsumowania oraz wartości miar jakości. W ostatniej kolumnie tabeli znajduje sie przycisk Zapisz, dla każdego wygenerowanego podsumwoania. Po przyciśnięciu opisanego przycisku dane podsumowanie zostanie dopisane do pliku txt. W programie istnieje możliwość obliczenia głównej miary podsumowania, w tym celu należy wpisać odpowiednie wagi, dla każdej z miar w polach znajdujących się na środku ekranu. Pod polami znajduje się przycisk Wybierz, którego kliknięcie spowoduje policzenie głównej miary podsumowań we wszystkich podsumowaniach znajdujących się w tabeli. Kliknięcie przycisku Do zaawansowanego spowoduje przejście do ekranu użytkownika zaawansowanego. 
+Na rysunku \ref{gui}. został przedstawiony podstawowy wygląd interfejsu użytkownika. Zaczynając od lewego górnego roku najpierw użytkownik z rozwijanej listy wybiera kwantyfikator, następnie z rozwijanej listy wybierany jest kwalifikator. Kolejnym krokiem jest wybranie jednego bądź wielu sumaryzatorów, w tym celu użytkownik wybiera pierwszy wybrany sumaryzator i naciska przycisk Dodaj znajdujący się po prawej stronie od rozwijanej listy sumaryzatorów, za pomocą którego wybrany sumaryzator jest dodawany do listy wybranych przez użytkownika sumaryzatorów. Aby wybrać więcej niż jeden sumaryzator użytkownik musi powtórzyć wcześniejsze czynności zaczynając od wybrania z rozwijanej listy pożądanego sumaryzatora. Istnieje możliwość usunięcia sumaryzatora z lsity wybranych sumaryzatorów, w tym celu użytkownik wybiera z rozwijanej listy, znajdującej się pod dostępnymi sumaryzatorami, sumaryzator do usunięcia. Następnie przcyiska przycisk Usuń. W celu usunięcia więcej niż jednego sumaryzatora, użytkownik musi powtórzyć opisane czynności zaczynając od wyboru sumaryzatora z listy wybranych sumaryzatorów. W celu wykonania podsumowania lignwistycznego należy przycisnąć przycisk Wybierz znajdujący się pod rozwijaną listą z wybranymi sumaryzatorami, następnie w tabeli na dole ekranu pojawi się wygenerowany tekst podsumowania oraz wartości miar jakości. W ostatniej kolumnie tabeli znajduje sie przycisk Zapisz, dla każdego wygenerowanego podsumwoania. Po przyciśnięciu opisanego przycisku dane podsumowanie zostanie dopisane do pliku txt. W programie istnieje możliwość obliczenia głównej miary podsumowania, w tym celu należy wpisać odpowiednie wagi, dla każdej z miar w polach znajdujących się na środku ekranu. Pod polami znajduje się przycisk Wybierz, którego kliknięcie spowoduje policzenie głównej miary podsumowań we wszystkich podsumowaniach znajdujących się w tabeli. Kliknięcie przycisku Do zaawansowanego spowoduje przejście do ekranu użytkownika zaawansowanego. 
 
 \begin{figure}[h!]
  \centering
@@ -641,7 +674,7 @@ Na rysunku \ref{gui}. został przedstawiony podstawowy wygląd interfejsu użytk
  \label{gui2}
 \end{figure}
 
-Na rysunku \ref{gui2}. został przedstawiony wygląd interfejsu zaawansowanego użytkownika, któRy służy do tworzenia własnych kwantyfikatorów, klasyfikatorów oraz sumaryzatorów. Zaczynając od lewego górnego rogu na użytkownik wybiera, który z elementów chce utworzyć: kwantyfiaktor, kwalifikator, sumaryzator. Następnie poniżej należy wpisać nazwę elementu oraz wybrać z rozwijanej listy funkcję przynależności. Kliknięcie przcisku Dalej powoduje pojawienie się pól do wprowadzenia kolejnych danych w zależności od cześniej wybranych wartości. Dla warotści wybranych na rysunku \ref{gui2} po kliknięciu przyciski Dalej pojawią się następujące pola: checkbox do zaznaczenia czy kwantyfiaktor jest absolutny, początek funkcji przynależności, początek i koniec maksymalnej wartości, dla których funkcja przyjmuje wartość maksymalną oraz wartość końcową. Kliknięcie przycisku Zapisz spowosuje zapisanie elementu do listy dostępnych elementów. Przyciśnięcie przycisku Wróć wróci do ekranu użytkownika podstawowego. \\
+Na rysunku \ref{gui2}. został przedstawiony wygląd interfejsu zaawansowanego użytkownika, który służy do tworzenia własnych kwantyfikatorów, klasyfikatorów oraz sumaryzatorów. Zaczynając od lewego górnego rogu na użytkownik wybiera, który z elementów chce utworzyć: kwantyfiaktor, kwalifikator, sumaryzator. Następnie poniżej należy wpisać nazwę elementu oraz wybrać z rozwijanej listy funkcję przynależności. Kliknięcie przcisku Dalej powoduje pojawienie się pól do wprowadzenia kolejnych danych w zależności od cześniej wybranych wartości. Dla warotści wybranych na rysunku \ref{gui2} po kliknięciu przyciski Dalej pojawią się następujące pola: checkbox do zaznaczenia czy kwantyfiaktor jest absolutny, początek funkcji przynależności, początek i koniec maksymalnej wartości, dla których funkcja przyjmuje wartość maksymalną oraz wartość końcową. Kliknięcie przycisku Zapisz spowosuje zapisanie elementu do listy dostępnych elementów. Przyciśnięcie przycisku Wróć wróci do ekranu użytkownika podstawowego. \\
 
 Wymagania, które muszą zostać spełnione by uruchomić program na własnym komputerze to: wersja Javy 11. 
 
@@ -663,7 +696,7 @@ Wymagania, które muszą zostać spełnione by uruchomić program na własnym ko
  \label{ex1}
 \end{figure}
 
-W pierwszym eksperymencie zostały wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w pierwszej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
+W pierwszym eksperymencie wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w pierwszej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. W kolumnach T9 i T10 wszystkie wartości przyjmują wartość null, ponieważ są to mairy jakości 
 
 Na podstawie tabeli \ref{ex1} można zauważyć, że zdanie 'Niewiele wypadków, jest przy słabym wietrze, jest przy umiarkowanych opadach' jest zdaniem najbardziej zgodnym z prawdą dla kwantfikatorów względnych, ponieważ nie ma wielu wypadków, które były przy słabym wietrze i umiarkowanych opadach. Natomiast patrząc na zdanie, które jest najmniej zgodne z prawdą, 'Niewiele wypadków, jest przy słabym wietrze', wnioskujemy, że jest wiele wypadków, które nastąpiły przy słabym wietrze. Zdanie 'Około 3500 wypadków, jest przy słabym wietrze' jest zdaniem najbardziej zgodnym z prawdą. 
 
@@ -680,7 +713,7 @@ Na podstawie tabeli \ref{ex1} można zauważyć, że zdanie 'Niewiele wypadków,
  \label{ex2}
 \end{figure}
 
-W drugim eksperymencie zostały wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w drugiej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
+W drugim eksperymencie wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w drugiej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
 
 Na podstawie tabeli \ref{ex2} można zauważyć, że zdanie 'Około połowy wypadków będących przy  dobrej widoczności, jest przy niewielkich opadach, jest przy zimnej temperaturze' jest zdaniem najbardziej zgodnym z prawdą, a jednocześnie zdanie 'Niewiele wypadków będących przy  dobrej widoczności, jest przy niewielkich opadach, jest przy zimnej temperaturze' jest zdaniem najmniej zgodnym z prawdą. Można zauważyć, że te zdania zaprzeczają sobie nazwajem, więc wyniki miar jakości podsumowania optymalnego są uzasadnione. Zgodnie z naszymi oczekiwaniami 'Prawie wszystkie wypadki będące przy dobrej widoczności, jest przy niewielkich opadach', jest trzecim zdaniem najbardziej zgodnym z prawdą, ponieważ opady powodują złą widoczność, więc jeśli widoczność była dobra oznacza to, że opadów nie było, bądź były niewielkie. Natomaist zdanie 'Niewiele wypadków będących przy dobrej widoczności, jest przy niewielkich opadach, jest przy suchym powietrzu' nie było zgodne z naszymi oczekiwaniami, ponieważ spodziewaliśmy się, że przy większości wypadków jeśeli jest dobra widoczność, to nie ma opadów, a co za tym idzie jest suche powietrze, co okazało się być zdaniem nieprawdziwym. 
 
@@ -696,7 +729,7 @@ Na podstawie tabeli \ref{ex2} można zauważyć, że zdanie 'Około połowy wypa
  \label{ex3}
 \end{figure}
 
-W trzecim eksperymencie zostały wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w drugiej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
+W trzecim eksperymencie wygenerowaliśmy jednopodmiotowe podsumowania lingwistyczne w drugiej formie. Do obliczenia miary jakości podsumowania optymalnego zostały użyte następujące wagi odpowiednio dla mair od T1 do T11: 0.65, 0.10, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.00. 
 
 Wykonany eksperyment miał na celu sprawdzenie zależności długości odcinka drogi, na którym nastąpiły utrudnienia w ruchu spowodowane przez wypadek od czasu trwania utrudnień w ruchu drogowym przez ten wypadek. Uzyskane wyniki potwierdzają postawioną tezę. Na podstawie tabeli \ref{ex3} można zauważyć, że zdanie 'Około połowy wypadków będących wywołuje utrudnienia w ruchu o długości poniżej pół mili, jest wywołuje utrudnienia w ruchu trwające około dwóch godzin' jest najbardziej prawdziwym zdaniem. Jednocześnie możemy zauważyć, że to samo zdanie z kwantyfiaktorem 'Niewiele' jest najmniej prawdziwym zdaniem. To samo zdanie z kwantyfiaktorami 'Około 1/4' lub 'Większość' są zdecydowanie mniej prawdziwe niż pierwsze opisane zdanie. Kolejnym zdaniem potwierdzającym tezę jest: 'Niewiele wypadków będących wywołuje utrudnienia w ruchu o długości poniżej pół mili, jest wywołuje utrudnienia w ruchu trwające około sześciu godzin', ponieważ, odcinek poniżej pół mili jest krótkim odcinkiem, a czas trwania sześć godzin jest znacznie długim czasem. Ze zdania możemy odczytać, że nie wiele wypadków będących na krótkim odcinku drogi wywoluje tak długi czas trwania utrudnień w ruchu drogowym.
 
