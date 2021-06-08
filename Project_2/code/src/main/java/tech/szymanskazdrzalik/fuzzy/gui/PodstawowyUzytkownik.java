@@ -87,11 +87,16 @@ public class PodstawowyUzytkownik implements Initializable {
     public TextField w11;
     @FXML
     public TableColumn<PodsumowanieLingwistyczneIMiary, Void> columnZapis;
+    public Button dodajKwalifikator;
+    public Button usunKwalifikator;
     @FXML
     private ComboBox<String> kwantyfikator;
 
     @FXML
     private ComboBox<String> kwalifikator;
+
+    @FXML
+    private ComboBox<String> kwalifikatorWybrane;
 
     @FXML
     private ComboBox<String> sumaryzatory;
@@ -116,13 +121,18 @@ public class PodstawowyUzytkownik implements Initializable {
     private List<ZmiennaLingwistyczna> kwalifikatoryList;
     private List<ZmiennaLingwistyczna> sumaryzatoryList;
     private ObservableList<String> sumaryzatoryListString;
+    private ObservableList<String> kwalifikatoryString;
     private ObservableList<String> sumaryzatoryWybraneList;
+    private ObservableList<String> kwalifikatorWybraneList;
     private List<Wypadek> podmioty;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.setKwantyfikator();
         this.setKwalifikator();
+        this.setDodajKwalifikator();
+        this.setKwalifikatorWybrane();
+        this.setUsunKwalifikator();
         this.setAkceptacja();
         this.setSumaryzatory();
         this.setSumaryzatoryWybrane();
@@ -172,15 +182,38 @@ public class PodstawowyUzytkownik implements Initializable {
 
     private void setKwalifikator() {
         this.kwalifikatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
-        List<String> kwalifikatoryString = new ArrayList<>();
+        this.kwalifikatoryString = FXCollections.observableArrayList();
         for (var e : this.kwalifikatoryList) {
             for (var v : e.getEtykiety()) {
-                kwalifikatoryString.add(v.getNazwa());
+                this.kwalifikatoryString.add(v.getNazwa());
             }
         }
-        kwalifikatoryString.add("Brak");
-        this.kwalifikator.setItems(FXCollections.observableArrayList(kwalifikatoryString));
-        this.kwalifikator.setValue(kwalifikatoryString.get(0));
+        this.kwalifikatoryString.add("Brak");
+        this.kwalifikator.setItems(this.kwalifikatoryString);
+        this.kwalifikator.setValue(this.kwalifikatoryString.get(0));
+    }
+
+    private void setDodajKwalifikator() {
+        this.dodajKwalifikator.setOnAction(actionEvent -> {
+            String selected = PodstawowyUzytkownik.this.kwalifikator.getSelectionModel().getSelectedItem();
+            PodstawowyUzytkownik.this.kwalifikatorWybraneList.add(selected);
+            PodstawowyUzytkownik.this.kwalifikatoryString.remove(selected);
+            PodstawowyUzytkownik.this.kwalifikatorWybrane.setValue(kwalifikatorWybraneList.get(0));
+        });
+    }
+
+    private void setKwalifikatorWybrane() {
+        this.kwalifikatorWybraneList = FXCollections.observableArrayList();
+        this.kwalifikatorWybrane.setItems(this.kwalifikatorWybraneList);
+    }
+
+    private void setUsunKwalifikator() {
+        this.usunKwalifikator.setOnAction(actionEvent -> {
+            String selected = PodstawowyUzytkownik.this.kwalifikatorWybrane.getSelectionModel().getSelectedItem();
+            PodstawowyUzytkownik.this.kwalifikatoryString.add(selected);
+            PodstawowyUzytkownik.this.kwalifikatorWybraneList.remove(selected);
+            PodstawowyUzytkownik.this.kwalifikator.setValue(kwalifikatoryString.get(0));
+        });
     }
 
     private void setSumaryzatory() {
