@@ -52,6 +52,7 @@ public class ZaawansowanyUzytkownik implements Initializable {
     public ComboBox<String> zmienne;
     public Label jestAbsolutnyLabel;
     public Label zmiennaLabel;
+    public Label warning;
     @FXML
     private TextField nazwa;
 
@@ -169,6 +170,7 @@ public class ZaawansowanyUzytkownik implements Initializable {
 
     private void zapiszKwantyfikator(String nazwa) {
         Etykieta<Double> etykieta = setEtykietaKwantyfikator(nazwa);
+        if (etykieta == null) return;
         PredefiniowaneKwantyfikatory.addKwalifikator(new Kwantyfikator(etykieta, this.jestAbsolutny.isSelected()));
     }
 
@@ -176,21 +178,35 @@ public class ZaawansowanyUzytkownik implements Initializable {
         Etykieta<Double> etykieta = null;
         switch (tempFunk) {
             case "Gaussowska":
-                etykieta = new Etykieta<>(nazwa,
-                        new FunkcjaGausowska<>(Double.valueOf(this.pierwszyInput.getText()), 1.0,
-                                Double.valueOf(this.drugiInput.getText()), 0.0, 1.0, aDouble -> aDouble));
+                FunkcjaGausowska<Double> f1 = new FunkcjaGausowska<>(Double.valueOf(this.pierwszyInput.getText()), 1.0,
+                        Double.valueOf(this.drugiInput.getText()), 0.0, 1.0, aDouble -> aDouble);
+                if (!f1.jestNormalny() || !f1.jestWypukly()) {
+                    this.warning.setVisible(true);
+                    etykieta = null;
+                    break;
+                }
+                etykieta = new Etykieta<>(nazwa, f1);
                 break;
             case "Trójkątna":
-                etykieta = new Etykieta<>(nazwa,
-                        new FunkcjaTrojkatna<>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
-                                Double.valueOf(this.trzeciInput.getText()), 0.0, 1.0, aDouble -> aDouble));
+                FunkcjaTrojkatna<Double> f2 = new FunkcjaTrojkatna<>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
+                        Double.valueOf(this.trzeciInput.getText()), 0.0, 1.0, aDouble -> aDouble);
+                if (!f2.jestNormalny() || !f2.jestWypukly()) {
+                    this.warning.setVisible(true);
+                    etykieta = null;
+                    break;
+                }
+                etykieta = new Etykieta<>(nazwa, f2);
                 break;
             case "Trapezoidalna":
-                etykieta = new Etykieta<>(nazwa,
-                        new FunkcjaTrapezoidalna<>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
-                                Double.valueOf(this.trzeciInput.getText()), Double.valueOf(this.czwartyInput.getText()),
-                                0.0, 1.0, aDouble -> aDouble));
-
+                FunkcjaTrapezoidalna<Double> f3 = new FunkcjaTrapezoidalna<>(Double.valueOf(this.pierwszyInput.getText()), Double.valueOf(this.drugiInput.getText()),
+                        Double.valueOf(this.trzeciInput.getText()), Double.valueOf(this.czwartyInput.getText()),
+                        0.0, 1.0, aDouble -> aDouble);
+                if (!f3.jestNormalny() || !f3.jestWypukly()) {
+                    this.warning.setVisible(true);
+                    etykieta = null;
+                    break;
+                }
+                etykieta = new Etykieta<>(nazwa, f3);
                 break;
         }
         return etykieta;
@@ -273,6 +289,7 @@ public class ZaawansowanyUzytkownik implements Initializable {
     }
 
     private void zapiszOnClick() {
+        this.warning.setVisible(false);
         String nazwa = this.nazwa.getText();
         String elementAktualny = this.element.getValue();
         switch (elementAktualny) {
