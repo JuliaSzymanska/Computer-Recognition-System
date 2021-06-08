@@ -37,7 +37,7 @@ public class FunkcjaGausowska<T> extends AbstrakcyjnyZbiorRozmyty<T> {
 
 
     public boolean jestNormalny() {
-        return this.wysokosc.equals(1.0);
+        return this.wysokosc.equals(1.0) && (this.srodek > getPoczatekPrzestrzeniRozwazan() && this.srodek < getKoniecPrzestrzeniRozwazan());
     }
 
     public Double getSigma() {

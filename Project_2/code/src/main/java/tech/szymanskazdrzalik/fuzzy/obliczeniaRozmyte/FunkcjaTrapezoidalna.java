@@ -68,6 +68,6 @@ public class FunkcjaTrapezoidalna<T> extends AbstrakcyjnyZbiorRozmyty<T> {
 
 
     public boolean jestNormalny() {
-        return true;
+        return getKoniecWartosciMaksymalnej() >= getPoczatekPrzestrzeniRozwazan() && getPoczatekWartosciMaksymalnej() <= getKoniecPrzestrzeniRozwazan();
     }
 }
