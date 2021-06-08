@@ -294,7 +294,7 @@ public class PodstawowyUzytkownik implements Initializable {
 
     private void podsumowanie() {
         Kwantyfikator wybranyKwantyfikator = null;
-        Etykieta<Wypadek> wybranyKwalifikator = null;
+        List<Etykieta<Wypadek>> wybranyKwalifikator =  new ArrayList<>();
         List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
         String tempKwantyfiaktor = this.kwantyfikator.getSelectionModel().getSelectedItem();
         if (tempKwantyfiaktor.contains(ABSOLUTNY)) {
@@ -313,8 +313,9 @@ public class PodstawowyUzytkownik implements Initializable {
         String tempKwalifikator = this.kwalifikator.getSelectionModel().getSelectedItem();
         for (var e : this.kwalifikatoryList) {
             for (var v : e.getEtykiety()) {
-                if (v.getNazwa().equals(tempKwalifikator)) {
-                    wybranyKwalifikator = v;
+                for(var f : this.kwalifikatorWybraneList)
+                if (v.getNazwa().equals(f)) {
+                    wybranyKwalifikator.add(v);
                     break;
                 }
             }
