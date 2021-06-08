@@ -13,7 +13,7 @@ public class MiaryJakosci {
         var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
             if (podsumowanieLingwistyczne.getKwalifikator().size() != 0) {
-                throw new NieBrakKwalifikatora();
+                x = x.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty());
             }
 //            System.out.println(x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
 //            System.out.println(podsumowanieLingwistyczne.getKwantyfikator()
@@ -25,7 +25,7 @@ public class MiaryJakosci {
                     .getAbstractZbiorRozmyty()
                     .przynaleznosc(x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
         }
-        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+        if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
             return podsumowanieLingwistyczne.getKwantyfikator()
                     .getEtykieta()
                     .getAbstractZbiorRozmyty()
@@ -64,7 +64,7 @@ public class MiaryJakosci {
     // TODO: 29.05.2021
     public static Double stopienPokrycia(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
-        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+        if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
             return ((double) x.getNosnik(podsumowanieLingwistyczne.getPodmioty()).size()) / podsumowanieLingwistyczne.getPodmioty().size();
         }
         x = x.iloczynZbiorow(podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty());
@@ -157,7 +157,7 @@ public class MiaryJakosci {
      * T9
      */
     public static Double stopienNieprecyzyjnosciKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+        if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
             return  null;
         }
         return 1.0 - podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty());
@@ -167,7 +167,7 @@ public class MiaryJakosci {
      * T10
      */
     public static Double stopienKardynalnosciWzglednejKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
+        if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
             return  null;
         }
         double iloczyn = podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty().liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty());
@@ -179,8 +179,8 @@ public class MiaryJakosci {
      * T11
      */
     public static Double dlugoscKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        if (podsumowanieLingwistyczne.getKwalifikator() == null) {
-            return 0.0;
+        if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
+            return  0.0;
         }
         return  2 * Math.pow(0.5, 1);
     }

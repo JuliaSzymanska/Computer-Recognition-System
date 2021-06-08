@@ -72,7 +72,7 @@ public class PodsumowanieLingwistyczneIMiary {
         this.T7 = new SimpleStringProperty(formatter.format(this.T7value));
         this.T8value = MiaryJakosci.stopienKardynalnosciWzglednejSumaryzatora(podsumowanieLingwistyczne);
         this.T8 = new SimpleStringProperty(formatter.format(this.T8value));
-        if (this.podsumowanieLingwistyczne.getKwalifikator() != null) {
+        if (this.podsumowanieLingwistyczne.getKwalifikator().size() != 0) {
             this.T9value = MiaryJakosci.stopienNieprecyzyjnosciKwalifikatora(podsumowanieLingwistyczne);
             this.T10value = MiaryJakosci.stopienKardynalnosciWzglednejKwalifikatora(podsumowanieLingwistyczne);
             this.T11value = MiaryJakosci.dlugoscKwalifikatora(podsumowanieLingwistyczne);
