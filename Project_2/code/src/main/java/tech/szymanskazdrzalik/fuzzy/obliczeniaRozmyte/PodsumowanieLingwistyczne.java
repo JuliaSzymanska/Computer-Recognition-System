@@ -11,7 +11,8 @@ public class PodsumowanieLingwistyczne {
     private final List<Wypadek> podmioty;
     private final List<Etykieta<Wypadek>> sumaryzator;
     private final List<Etykieta<Wypadek>> kwalifikator;
-    private final AbstrakcyjnyZbiorRozmyty<Wypadek> kwalifikatorZbiorRozmyty;
+    private AbstrakcyjnyZbiorRozmyty<Wypadek> kwalifikatorZbiorRozmyty;
+
     public PodsumowanieLingwistyczne(Kwantyfikator kwantyfikator, List<Wypadek> podmioty, List<Etykieta<Wypadek>> sumaryzator, Etykieta<Wypadek> kwalifikator) {
         this.kwantyfikator = kwantyfikator;
         this.podmioty = podmioty;
@@ -27,7 +28,9 @@ public class PodsumowanieLingwistyczne {
         this.podmioty = podmioty;
         this.sumaryzator = sumaryzator;
         this.kwalifikator = kwalifikator;
-        this.kwalifikatorZbiorRozmyty = Utils.iloczyn(this.kwalifikator);
+        if (this.kwalifikator.size() != 0) {
+            this.kwalifikatorZbiorRozmyty = Utils.iloczyn(this.kwalifikator);
+        }
     }
 
     public AbstrakcyjnyZbiorRozmyty<Wypadek> getKwalifikatorZbiorRozmyty() {

@@ -12,7 +12,7 @@ public class MiaryJakosci {
     public static Double stopienPrawdziwosci(PodsumowanieLingwistyczne podsumowanieLingwistyczne) throws NieBrakKwalifikatora {
         var x = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
-            if (podsumowanieLingwistyczne.getKwalifikator() != null) {
+            if (podsumowanieLingwistyczne.getKwalifikator().size() != 0) {
                 throw new NieBrakKwalifikatora();
             }
 //            System.out.println(x.liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));

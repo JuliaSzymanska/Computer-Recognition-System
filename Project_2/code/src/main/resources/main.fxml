@@ -231,7 +231,7 @@
             <TableColumn fx:id="columnT9" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T9"/>
             <TableColumn fx:id="columnT10" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T10"/>
             <TableColumn fx:id="columnT11" maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="T11"/>
-            <TableColumn fx:id="columnSuma" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Suma"/>
+            <TableColumn fx:id="columnSuma" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="T_opt"/>
             <TableColumn fx:id="columnZapis" maxWidth="80.0" minWidth="50.0" prefWidth="100.0" text="Zapis"/>
         </columns>
     </TableView>
