@@ -27,6 +27,8 @@ public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
         return this.getPrzekrojAlfa(objectDoubleMap, 0.0);
     }
 
+
+
     /**
      * Przekrój alfa - zbiór elementów, których wartość funkcji przynależności jest większa od {@param alfa}.
      *
@@ -36,7 +38,7 @@ public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
     default List<T> getPrzekrojAlfa(List<T> list, Double alfa) {
         List<T> returnList = new ArrayList<>();
         list.forEach(t -> {
-            if (ZbiorRozmyty.this.przynaleznosc(t) > alfa) {
+            if (ZbiorRozmyty.this.przynaleznosc(t) >= alfa) {
                 returnList.add(t);
             }
         });

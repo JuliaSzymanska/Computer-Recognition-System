@@ -46,7 +46,7 @@ public class PodsumowanieLingwistyczneIMiary {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
         stringBuilder.append(" wypadków");
-        stringBuilder.append(podsumowanieLingwistyczne.getKwalifikator() == null ? "" : " będących " + podsumowanieLingwistyczne.getKwalifikator().getNazwa());
+        podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" będących ").append(etykieta.getNazwa()));
         podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
         tekst = new SimpleStringProperty(stringBuilder.toString());
         this.podsumowanieLingwistyczne = podsumowanieLingwistyczne;
