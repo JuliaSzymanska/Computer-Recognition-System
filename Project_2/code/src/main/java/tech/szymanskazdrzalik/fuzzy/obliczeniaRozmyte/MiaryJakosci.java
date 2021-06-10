@@ -45,7 +45,7 @@ public class MiaryJakosci {
     /**
      * T1
      */
-    public static Double stopienPrawdziwosci(WielopodmiotowePodsumowanieLingwistyczne wielopodmiotowePodsumowanieLingwistyczne) throws NieBrakKwalifikatora {
+    public static Double stopienPrawdziwosci(WielopodmiotowePodsumowanieLingwistyczne wielopodmiotowePodsumowanieLingwistyczne) {
         var x = Utils.iloczyn(wielopodmiotowePodsumowanieLingwistyczne.getSumaryzator());
         double licznik, mianownik;
         switch (wielopodmiotowePodsumowanieLingwistyczne.getRodzajPodsumowania()) {
