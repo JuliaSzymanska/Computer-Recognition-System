@@ -42,13 +42,57 @@ public class MiaryJakosci {
                         liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
     }
 
-    /** T1
-
+    /**
+     * T1
      */
     public static Double stopienPrawdziwosci(WielopodmiotowePodsumowanieLingwistyczne wielopodmiotowePodsumowanieLingwistyczne) throws NieBrakKwalifikatora {
+        var x = Utils.iloczyn(wielopodmiotowePodsumowanieLingwistyczne.getSumaryzator());
+        double licznik, mianownik;
         switch (wielopodmiotowePodsumowanieLingwistyczne.getRodzajPodsumowania()) {
             case PIERWSZA_FORMA:
-
+                // pozyskiwanie wiedzy z relacyjnych baz danych strona 6
+                licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
+                        x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
+                mianownik = licznik +
+                        (1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size()) *
+                                x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2());
+                return wielopodmiotowePodsumowanieLingwistyczne.getKwantyfikator().
+                        getEtykieta().
+                        getAbstractZbiorRozmyty().
+                        przynaleznosc(licznik / mianownik);
+            case DRUGA_FORMA:
+                // pozyskiwanie wiedzy z relacyjnych baz danych strona 7
+                licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
+                        (x.iloczynZbiorow(wielopodmiotowePodsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty()))
+                                .liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
+                mianownik = licznik +
+                        (1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size()) *
+                                x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2());
+                return wielopodmiotowePodsumowanieLingwistyczne.getKwantyfikator().
+                        getEtykieta().
+                        getAbstractZbiorRozmyty().
+                        przynaleznosc(licznik / mianownik);
+            case TRZECIA_FORMA:
+                // pozyskiwanie wiedzy z relacyjnych baz danych strona 8
+                licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
+                        x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
+                mianownik = licznik +
+                        ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size()) *
+                                x.iloczynZbiorow(wielopodmiotowePodsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty())
+                                        .liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()));
+                return wielopodmiotowePodsumowanieLingwistyczne.getKwantyfikator().
+                        getEtykieta().
+                        getAbstractZbiorRozmyty().
+                        przynaleznosc(licznik / mianownik);
+            default:
+                // pozyskiwanie wiedzy z relacyjnych baz danych strona 9
+                licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
+                        (x.iloczynZbiorow(wielopodmiotowePodsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty()))
+                                .liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
+                mianownik = licznik +
+                        (1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size()) *
+                                x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2());
+                return licznik / mianownik;
         }
     }
 
@@ -110,16 +154,16 @@ public class MiaryJakosci {
      */
     // TODO: 29.05.2021
     public static Double stopienNieprecyzyjnosciKwantyfikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-       if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaGausowska) {
+        if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaGausowska) {
             return 0.0;
-       } else if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaTrapezoidalna) {
-           FunkcjaTrapezoidalna<Double> funkcjaTrapezoidalna = (FunkcjaTrapezoidalna<Double>) podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
+        } else if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaTrapezoidalna) {
+            FunkcjaTrapezoidalna<Double> funkcjaTrapezoidalna = (FunkcjaTrapezoidalna<Double>) podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
             if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
-                return 1.0 - ((funkcjaTrapezoidalna.getKoniec() - funkcjaTrapezoidalna.getPoczatek())/( podsumowanieLingwistyczne.getPodmioty().size()));
+                return 1.0 - ((funkcjaTrapezoidalna.getKoniec() - funkcjaTrapezoidalna.getPoczatek()) / (podsumowanieLingwistyczne.getPodmioty().size()));
             } else {
                 return 1.0 - (funkcjaTrapezoidalna.getKoniec() - funkcjaTrapezoidalna.getPoczatek());
             }
-       }
+        }
         var z = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         int count = 0;
         for (var x : podsumowanieLingwistyczne.getPodmioty()) {
@@ -168,7 +212,7 @@ public class MiaryJakosci {
      */
     public static Double stopienNieprecyzyjnosciKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
-            return  null;
+            return null;
         }
         return 1.0 - podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty());
     }
@@ -178,7 +222,7 @@ public class MiaryJakosci {
      */
     public static Double stopienKardynalnosciWzglednejKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
-            return  null;
+            return null;
         }
         double iloczyn = podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty().liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty());
         iloczyn /= podsumowanieLingwistyczne.getPodmioty().size();
@@ -190,9 +234,9 @@ public class MiaryJakosci {
      */
     public static Double dlugoscKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
-            return  0.0;
+            return 0.0;
         }
-        return  2 * Math.pow(0.5, 1);
+        return 2 * Math.pow(0.5, 1);
     }
 
     public static class NieBrakKwalifikatora extends Exception {
