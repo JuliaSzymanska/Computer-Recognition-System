@@ -6,11 +6,14 @@ import tech.szymanskazdrzalik.fuzzy.dao.FilePodsumowanieLingwistyczneIMiarySaveD
 import tech.szymanskazdrzalik.fuzzy.dao.FileWielopodmiotowePodsumowanieLingwistyczneIMiarySaveDao;
 import tech.szymanskazdrzalik.fuzzy.dao.PodsumowanieLingwistyczneIMiarySaveDAO;
 import tech.szymanskazdrzalik.fuzzy.dao.WielopodmiotowePodsumowanieLingwistyczneIMiarySaveDao;
+import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.MiaryJakosci;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.WielopodmiotowePodsumowanieLingwistyczne;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.function.Consumer;
 
 public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
     private final static String NAZWA_PLIKU = "podsumowanie";
@@ -22,12 +25,37 @@ public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
     private final Double T1value;
 
     public WielopodmiotowePodsumowanieLingwistyczneIMiary(WielopodmiotowePodsumowanieLingwistyczne podsumowanieLingwistyczne) {
-        // TODO: 10.06.2021 TEKST
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
-        stringBuilder.append(" wypadków");
-        podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" będących ").append(etykieta.getNazwa()));
-        podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
+        if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA) ||
+                podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA) ||
+                podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA)) {
+            stringBuilder.append(podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getNazwa());
+            stringBuilder.append(podsumowanieLingwistyczne.getPodmioty1Nazwa());
+        }
+        if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA)) {
+            podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" będących ").append(etykieta.getNazwa()));
+        }
+        if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA) ||
+                podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA) ||
+                podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA)) {
+        stringBuilder.append("w odniesieniu do ").append(podsumowanieLingwistyczne.getPodmioty2Nazwa());
+        }
+        if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA)) {
+            podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" będących ").append(etykieta.getNazwa()));
+        }
+        if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA) ||
+                podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA) ||
+                podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA)) {
+            podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
+        }
+
+        if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.CZWARTA_FORMA)) {
+            stringBuilder.append("Więcej ").append(podsumowanieLingwistyczne.getPodmioty1Nazwa()).append(" niż ").append(podsumowanieLingwistyczne.getPodmioty2Nazwa());
+            podsumowanieLingwistyczne.getSumaryzator().forEach(wypadekEtykieta -> stringBuilder.append(", jest ").append(wypadekEtykieta.getNazwa()));
+        }
+
+
+        // TODO: 10.06.2021 TEKST
         tekst = new SimpleStringProperty(stringBuilder.toString());
         this.podsumowanieLingwistyczne = podsumowanieLingwistyczne;
         var x = MiaryJakosci.stopienPrawdziwosci(podsumowanieLingwistyczne);
@@ -54,12 +82,12 @@ public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
         return tekst.get();
     }
 
-    public SimpleStringProperty tekstProperty() {
-        return tekst;
-    }
-
     public void setTekst(String tekst) {
         this.tekst.set(tekst);
+    }
+
+    public SimpleStringProperty tekstProperty() {
+        return tekst;
     }
 
     public Button getButton() {
@@ -70,12 +98,12 @@ public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
         return T1.get();
     }
 
-    public SimpleStringProperty t1Property() {
-        return T1;
-    }
-
     public void setT1(String t1) {
         this.T1.set(t1);
+    }
+
+    public SimpleStringProperty t1Property() {
+        return T1;
     }
 
     public Double getT1value() {
@@ -86,9 +114,6 @@ public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
         WielopodmiotowePodsumowanieLingwistyczneIMiarySaveDao saveDAO = new FileWielopodmiotowePodsumowanieLingwistyczneIMiarySaveDao(NAZWA_PLIKU);
         saveDAO.Save(this);
     }
-
-
-
 
 
 }

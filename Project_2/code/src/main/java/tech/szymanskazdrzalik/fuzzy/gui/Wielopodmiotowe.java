@@ -200,7 +200,9 @@ public class Wielopodmiotowe implements Initializable {
                         this.podmiotyWybrane2,
                         wybraneSumaryzatory,
                         wybranyKwalifikator,
-                        WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.valueOf(this.forma.getSelectionModel().getSelectedItem())
+                        WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.valueOf(this.forma.getSelectionModel().getSelectedItem()),
+                        "TMP STRING 1",
+                        "TMP STRING 2"
 
                 ));
         this.wielopodmiotowePodsumowanieLingwistyczneIMiary.add(wielopodmiotowePodsumowanieLingwistyczneIMiary);

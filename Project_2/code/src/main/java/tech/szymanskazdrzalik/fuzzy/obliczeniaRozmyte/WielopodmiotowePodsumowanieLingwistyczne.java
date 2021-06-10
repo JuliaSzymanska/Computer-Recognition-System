@@ -7,23 +7,37 @@ import java.util.List;
 
 public class WielopodmiotowePodsumowanieLingwistyczne {
     private final List<Wypadek> podmioty1;
+    private final String podmioty1Nazwa;
     private final List<Wypadek> podmioty2;
+    private final String podmioty2Nazwa;
     private final List<Etykieta<Wypadek>> sumaryzator;
     private final RodzajPodsumowania rodzajPodsumowania;
     private Kwantyfikator kwantyfikator;
     private List<Etykieta<Wypadek>> kwalifikator;
     private AbstrakcyjnyZbiorRozmyty<Wypadek> kwalifikatorZbiorRozmyty;
 
+    public String getPodmioty1Nazwa() {
+        return podmioty1Nazwa;
+    }
+
+    public String getPodmioty2Nazwa() {
+        return podmioty2Nazwa;
+    }
+
     public WielopodmiotowePodsumowanieLingwistyczne(Kwantyfikator kwantyfikator,
                                                     List<Wypadek> podmioty1,
                                                     List<Wypadek> podmioty2,
                                                     List<Etykieta<Wypadek>> sumaryzator,
                                                     List<Etykieta<Wypadek>> kwalifikator,
-                                                    RodzajPodsumowania rodzajPodsumowania) {
+                                                    RodzajPodsumowania rodzajPodsumowania,
+                                                    String podmioty1Nazwa,
+                                                    String podmioty2Nazwa) {
         if (kwantyfikator.getJestAbsolutny()) {
             // TODO: 10.06.2021 CHYBA!
             throw new RuntimeException(" ZLEEE ");
         }
+        this.podmioty1Nazwa = podmioty1Nazwa;
+        this.podmioty2Nazwa = podmioty2Nazwa;
         this.podmioty1 = podmioty1;
         this.podmioty2 = podmioty2;
         this.sumaryzator = sumaryzator;
