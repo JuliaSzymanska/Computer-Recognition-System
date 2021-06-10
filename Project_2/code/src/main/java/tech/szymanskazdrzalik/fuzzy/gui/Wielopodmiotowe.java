@@ -7,7 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.WielopodmiotowePodsumowanieLingwistyczne;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.ZmiennaLingwistyczna;
@@ -38,7 +40,7 @@ public class Wielopodmiotowe implements Initializable {
     public Label labelDostepneKwalifikatory;
     public Label labelWybraneKwalifikatory;
 
-    private ObservableList<PodsumowanieLingwistyczneIMiary> podsumowanieLingwistyczneIMiaryObservableList;
+    private ObservableList<WielopodmiotowePodsumowanieLingwistyczneIMiary> wielopodmiotowePodsumowanieLingwistyczneIMiary;
     private List<Kwantyfikator> kwantyfikatorList;
     private List<ZmiennaLingwistyczna> kwalifikatoryList;
     private List<ZmiennaLingwistyczna> sumaryzatoryList;
@@ -46,7 +48,8 @@ public class Wielopodmiotowe implements Initializable {
     private ObservableList<String> kwalifikatoryString;
     private ObservableList<String> sumaryzatoryWybraneList;
     private ObservableList<String> kwalifikatorWybraneList;
-    private List<Wypadek> podmioty;
+    private List<Wypadek> podmiotyWybrane1;
+    private List<Wypadek> podmiotyWybrane2;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,7 +65,7 @@ public class Wielopodmiotowe implements Initializable {
 
         this.setPodmioty();
         this.setForma();
-        Wspolne.setKwantyfikator(this.kwantyfikatorList, this.kwantyfikator);
+        this.setKwantyfiaktor();
         Wspolne.setKwalifikator(this.kwalifikatoryString, this.kwalifikatoryList, this.kwalifikator);
         this.dodajKwalifikator.setOnAction(actionEvent -> Wspolne.setDodajKwalifikator(this.kwalifikator, this.kwalifikatoryString, this.kwalifikatorWybraneList, this.kwalifikatorWybrane));
         this.usunKwalifikator.setOnAction(actionEvent -> Wspolne.setUsunKwalifikator(this.kwalifikator, this.kwalifikatoryString, this.kwalifikatorWybraneList, this.kwalifikatorWybrane));
@@ -70,9 +73,22 @@ public class Wielopodmiotowe implements Initializable {
         this.dodaj.setOnAction(actionEvent -> Wspolne.setDodaj(this.sumaryzatoryWybraneList, this.sumaryzatoryListString, this.sumaryzatoryWybrane, this.sumaryzatory));
         this.usun.setOnAction(actionEvent -> Wspolne.setUsun(this.sumaryzatoryWybraneList, this.sumaryzatoryListString, this.sumaryzatoryWybrane, this.sumaryzatory));
         this.dalej.setOnAction(actionEvent -> this.setDalej());
+        this.wielopodmiotowePodsumowanieLingwistyczneIMiary = FXCollections.observableArrayList();
     }
 
-    private void setPodmioty(){
+    private void setKwantyfiaktor() {
+        List<String> kwantyfikatoryString = new ArrayList<>();
+        for (var e : kwantyfikatorList) {
+            if (!e.getJestAbsolutny()) {
+                kwantyfikatoryString.add(e.getEtykieta().getNazwa());
+            }
+        }
+        kwantyfikatoryString.add("Brak");
+        kwantyfikator.setItems(FXCollections.observableArrayList(kwantyfikatoryString));
+        kwantyfikator.setValue(kwantyfikatoryString.get(0));
+    }
+
+    private void setPodmioty() {
         List<Integer> podmiotyInt = new ArrayList<>();
         podmiotyInt.add(1);
         podmiotyInt.add(2);
@@ -125,7 +141,55 @@ public class Wielopodmiotowe implements Initializable {
         }
     }
 
+    private void podsumowanie() {
+        Kwantyfikator wybranyKwantyfikator = null;
+        List<Etykieta<Wypadek>> wybranyKwalifikator = new ArrayList<>();
+        List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
+        String tempKwantyfiaktor = this.kwantyfikator.getSelectionModel().getSelectedItem();
+        for (var e : this.kwantyfikatorList) {
+            if (e.getEtykieta().getNazwa().equals(tempKwantyfiaktor)) {
+                wybranyKwantyfikator = e;
+                break;
+            }
+        }
+
+
+        for (var e : this.kwalifikatoryList) {
+            for (var v : e.getEtykiety()) {
+                for (var f : this.kwalifikatorWybraneList)
+                    if (v.getNazwa().equals(f)) {
+                        wybranyKwalifikator.add(v);
+                        break;
+                    }
+            }
+        }
+
+        for (var e : this.sumaryzatoryList) {
+            for (var v : e.getEtykiety()) {
+                for (var f : this.sumaryzatoryWybraneList)
+                    if (v.getNazwa().equals(f)) {
+                        wybraneSumaryzatory.add(v);
+                        break;
+                    }
+            }
+        }
+        this.podmiotyWybrane1 = ResourcesAccidentDao.getWypadek_severity(podmiot1.getSelectionModel().getSelectedItem());
+        this.podmiotyWybrane2 = ResourcesAccidentDao.getWypadek_severity(podmiot2.getSelectionModel().getSelectedItem());
+        WielopodmiotowePodsumowanieLingwistyczneIMiary wielopodmiotowePodsumowanieLingwistyczneIMiary = new WielopodmiotowePodsumowanieLingwistyczneIMiary(
+                new WielopodmiotowePodsumowanieLingwistyczne(
+                        wybranyKwantyfikator,
+                        this.podmiotyWybrane1,
+                        this.podmiotyWybrane2,
+                        wybraneSumaryzatory,
+                        wybranyKwalifikator,
+                        WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.valueOf(this.forma.getSelectionModel().getSelectedItem())
+
+                ));
+        this.wielopodmiotowePodsumowanieLingwistyczneIMiary.add(wielopodmiotowePodsumowanieLingwistyczneIMiary);
+    }
+
 
     public void podsumowanie(ActionEvent actionEvent) {
+        this.podsumowanie();
     }
 }

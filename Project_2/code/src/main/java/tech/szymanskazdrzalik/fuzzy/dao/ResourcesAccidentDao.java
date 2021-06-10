@@ -38,6 +38,21 @@ public class ResourcesAccidentDao implements AccidentDAO {
         return wypadek_severity_4;
     }
 
+    public static List<Wypadek> getWypadek_severity(int numer){
+        switch (numer) {
+            case 1:
+                 return getWypadek_severity_1();
+            case 2:
+                return getWypadek_severity_2();
+            case 3:
+                return getWypadek_severity_3();
+            case 4:
+                return getWypadek_severity_4();
+            default:
+                throw new IllegalArgumentException("nu nu");
+        }
+    }
+
     @Override
     public List<Wypadek> getAll(File file) throws IOException {
         if (Objects.isNull(wypadeks)) {
