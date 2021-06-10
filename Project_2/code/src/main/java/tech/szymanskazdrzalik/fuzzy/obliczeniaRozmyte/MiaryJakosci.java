@@ -46,7 +46,10 @@ public class MiaryJakosci {
 
      */
     public static Double stopienPrawdziwosci(WielopodmiotowePodsumowanieLingwistyczne wielopodmiotowePodsumowanieLingwistyczne) throws NieBrakKwalifikatora {
-        switch (wielopodmiotowePodsumowanieLingwistyczne.)
+        switch (wielopodmiotowePodsumowanieLingwistyczne.getRodzajPodsumowania()) {
+            case PIERWSZA_FORMA:
+
+        }
     }
 
     /**

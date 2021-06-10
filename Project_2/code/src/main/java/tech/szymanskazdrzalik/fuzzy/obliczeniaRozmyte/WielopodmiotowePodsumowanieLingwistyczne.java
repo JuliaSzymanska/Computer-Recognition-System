@@ -21,6 +21,10 @@ public class WielopodmiotowePodsumowanieLingwistyczne {
                                                     List<Etykieta<Wypadek>> sumaryzator,
                                                     List<Etykieta<Wypadek>> kwalifikator,
                                                     RodzajPodsumowania rodzajPodsumowania) {
+        if (kwantyfikator.getJestAbsolutny()) {
+            // TODO: 10.06.2021 CHYBA!
+            throw new RuntimeException(" ZLEEE ");
+        }
         this.podmioty1 = podmioty1;
         this.podmioty2 = podmioty2;
         this.sumaryzator = sumaryzator;
