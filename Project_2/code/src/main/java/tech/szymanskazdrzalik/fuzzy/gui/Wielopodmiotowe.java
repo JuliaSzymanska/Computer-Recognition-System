@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Kwantyfikator;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.WielopodmiotowePodsumowanieLingwistyczne;
@@ -20,19 +21,22 @@ import java.util.ResourceBundle;
 
 public class Wielopodmiotowe implements Initializable {
     public ComboBox<String> forma;
-    public ComboBox<String> podmiot1; ////////////////////////////////////////
-    public ComboBox<String> podmiot2; ////////////////////////////////////////
+    public ComboBox<Integer> podmiot1;
+    public ComboBox<Integer> podmiot2;
     public ComboBox<String> sumaryzatory;
     public Button dodaj;
     public ComboBox<String> sumaryzatoryWybrane;
     public Button usun;
-    public Button dalej; /////////////////////////////////////////
+    public Button dalej;
     public ComboBox<String> kwantyfikator;
     public ComboBox<String> kwalifikator;
     public Button dodajKwalifikator;
     public Button usunKwalifikator;
     public ComboBox<String> kwalifikatorWybrane;
     public Button podsumowaniePrzycisk;
+    public Label labelKwantyfikator;
+    public Label labelDostepneKwalifikatory;
+    public Label labelWybraneKwalifikatory;
 
     private ObservableList<PodsumowanieLingwistyczneIMiary> podsumowanieLingwistyczneIMiaryObservableList;
     private List<Kwantyfikator> kwantyfikatorList;
@@ -56,76 +60,28 @@ public class Wielopodmiotowe implements Initializable {
         this.sumaryzatoryWybraneList = FXCollections.observableArrayList();
         this.sumaryzatoryWybrane.setItems(this.sumaryzatoryWybraneList);
 
+        this.setPodmioty();
         this.setForma();
         Wspolne.setKwantyfikator(this.kwantyfikatorList, this.kwantyfikator);
         Wspolne.setKwalifikator(this.kwalifikatoryString, this.kwalifikatoryList, this.kwalifikator);
         this.dodajKwalifikator.setOnAction(actionEvent -> Wspolne.setDodajKwalifikator(this.kwalifikator, this.kwalifikatoryString, this.kwalifikatorWybraneList, this.kwalifikatorWybrane));
         this.usunKwalifikator.setOnAction(actionEvent -> Wspolne.setUsunKwalifikator(this.kwalifikator, this.kwalifikatoryString, this.kwalifikatorWybraneList, this.kwalifikatorWybrane));
         Wspolne.setSumaryzatory(this.sumaryzatoryList, this.sumaryzatoryListString, this.sumaryzatory);
-//        this.akceptacja.setOnAction(actionEvent -> podsumowanie());
         this.dodaj.setOnAction(actionEvent -> Wspolne.setDodaj(this.sumaryzatoryWybraneList, this.sumaryzatoryListString, this.sumaryzatoryWybrane, this.sumaryzatory));
         this.usun.setOnAction(actionEvent -> Wspolne.setUsun(this.sumaryzatoryWybraneList, this.sumaryzatoryListString, this.sumaryzatoryWybrane, this.sumaryzatory));
         this.dalej.setOnAction(actionEvent -> this.setDalej());
     }
 
-    private void setDalej() {
-        this.podsumowaniePrzycisk.setVisible(true);
-        if (this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA.toString())) {
-            this.jestAbsolutny.setVisible(true);
-            this.jestAbsolutnyLabel.setVisible(true);
-            this.zmienne.setVisible(false);
-            this.zmiennaLabel.setVisible(false);
-        } else if (this.element.getValue().equals(this.elementy.get(1)) || this.element.getValue().equals(this.elementy.get(2))) {
-            this.zmienne.setVisible(true);
-            this.zmiennaLabel.setVisible(true);
-            this.jestAbsolutny.setVisible(false);
-            this.jestAbsolutnyLabel.setVisible(false);
-        }
-        tempFunk = this.funkcjaKwantyfikatora.getValue();
-        switch (tempFunk) {
-            case "Gaussowska":
-                this.pierwszyLabel.setText("Sigma: ");
-                this.pierwszyLabel.setVisible(true);
-                this.pierwszyInput.setVisible(true);
-                this.drugiLabel.setText("Środek");
-                this.drugiLabel.setVisible(true);
-                this.drugiInput.setVisible(true);
-                this.zapiszKwantyfiaktor.setVisible(true);
-                this.trzeciLabel.setVisible(false);
-                this.trzeciInput.setVisible(false);
-                this.czwartyLabel.setVisible(false);
-                this.czwartyInput.setVisible(false);
-                break;
-            case "Trójkątna":
-                this.pierwszyLabel.setText("Początek: ");
-                this.pierwszyLabel.setVisible(true);
-                this.pierwszyInput.setVisible(true);
-                this.drugiLabel.setText("Najwyższy");
-                this.drugiLabel.setVisible(true);
-                this.drugiInput.setVisible(true);
-                this.trzeciLabel.setText("Koniec");
-                this.trzeciLabel.setVisible(true);
-                this.trzeciInput.setVisible(true);
-                this.zapiszKwantyfiaktor.setVisible(true);
-                this.czwartyLabel.setVisible(false);
-                this.czwartyInput.setVisible(false);
-                break;
-            case "Trapezoidalna":
-                this.pierwszyLabel.setText("Początek: ");
-                this.pierwszyLabel.setVisible(true);
-                this.pierwszyInput.setVisible(true);
-                this.drugiLabel.setText("Początek max:");
-                this.drugiLabel.setVisible(true);
-                this.drugiInput.setVisible(true);
-                this.trzeciLabel.setText("Koniec max:");
-                this.trzeciLabel.setVisible(true);
-                this.trzeciInput.setVisible(true);
-                this.czwartyLabel.setText("Koniec");
-                this.czwartyLabel.setVisible(true);
-                this.czwartyInput.setVisible(true);
-                this.zapiszKwantyfiaktor.setVisible(true);
-                break;
-        }
+    private void setPodmioty(){
+        List<Integer> podmiotyInt = new ArrayList<>();
+        podmiotyInt.add(1);
+        podmiotyInt.add(2);
+        podmiotyInt.add(3);
+        podmiotyInt.add(4);
+        podmiot1.setItems(FXCollections.observableArrayList(podmiotyInt));
+        podmiot2.setItems(FXCollections.observableArrayList(podmiotyInt));
+        podmiot1.setValue(podmiotyInt.get(0));
+        podmiot2.setValue(podmiotyInt.get(0));
     }
 
     private void setForma() {
@@ -133,12 +89,40 @@ public class Wielopodmiotowe implements Initializable {
         for (var e : WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.values()) {
             kwantyfikatoryString.add(e.toString());
         }
-        kwantyfikatoryString.add(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA.toString());
-        kwantyfikatoryString.add(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA.toString());
-        kwantyfikatoryString.add(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA.toString());
-        kwantyfikatoryString.add(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.CZWARTA_FORMA.toString());
         this.forma.setItems(FXCollections.observableArrayList(kwantyfikatoryString));
         this.forma.setValue(kwantyfikatoryString.get(0));
+    }
+
+    private void setDalej() {
+        this.podsumowaniePrzycisk.setVisible(true);
+        if (this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA.toString())) {
+            labelKwantyfikator.setVisible(true);
+            kwantyfikator.setVisible(true);
+            labelDostepneKwalifikatory.setVisible(false);
+            kwalifikator.setVisible(false);
+            dodajKwalifikator.setVisible(false);
+            labelWybraneKwalifikatory.setVisible(false);
+            kwalifikatorWybrane.setVisible(false);
+            usunKwalifikator.setVisible(false);
+        } else if (this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA.toString())
+                || this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA.toString())) {
+            labelKwantyfikator.setVisible(true);
+            kwantyfikator.setVisible(true);
+            labelDostepneKwalifikatory.setVisible(true);
+            kwalifikator.setVisible(true);
+            dodajKwalifikator.setVisible(true);
+            labelWybraneKwalifikatory.setVisible(true);
+            kwalifikatorWybrane.setVisible(true);
+            usunKwalifikator.setVisible(true);
+        } else if (this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.CZWARTA_FORMA.toString())) {
+            labelKwantyfikator.setVisible(false);
+            kwantyfikator.setVisible(false);
+            labelDostepneKwalifikatory.setVisible(false);
+            kwalifikator.setVisible(false);
+            dodajKwalifikator.setVisible(false);
+            labelWybraneKwalifikatory.setVisible(false);
+            kwalifikatorWybrane.setVisible(false);
+        }
     }
 
 

@@ -240,4 +240,9 @@
             <Insets left="80.0" top="-470.0" />
         </VBox.margin>
     </Button>
+    <Button text="Do wielopodmiotowego" onAction="#doWielopodmiotowego">
+        <VBox.margin>
+            <Insets left="215.0" top="-26.0" />
+        </VBox.margin>
+    </Button>
 </VBox>

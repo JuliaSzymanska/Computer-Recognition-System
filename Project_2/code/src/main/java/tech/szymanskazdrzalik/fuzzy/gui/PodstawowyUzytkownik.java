@@ -259,4 +259,8 @@ public class PodstawowyUzytkownik implements Initializable {
     public void doZaawansowanego(ActionEvent actionEvent) throws IOException {
         Main.setRoot("zaawansowany");
     }
+
+    public void doWielopodmiotowego(ActionEvent actionEvent) throws IOException {
+        Main.setRoot("wielopodmiotowe");
+    }
 }

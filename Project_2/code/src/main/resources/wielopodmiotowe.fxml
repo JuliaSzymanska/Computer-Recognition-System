@@ -73,43 +73,45 @@
         </VBox.margin>
     </Button>
 
-    <Label text="Kwantyfikator:">
+
+
+    <Label text="Kwantyfikator:" fx:id="labelKwantyfikator" visible="false">
         <VBox.margin>
             <Insets left="520.0" top="-240.0" />
         </VBox.margin>
     </Label>
-    <ComboBox fx:id="kwantyfikator" prefWidth="460.0">
+    <ComboBox fx:id="kwantyfikator" prefWidth="460.0" visible="false">
         <VBox.margin>
             <Insets left="520.0" />
         </VBox.margin>
     </ComboBox>
 
-    <Label id="chooseLevelText" text="Dostępne kwalifikatory:">
+    <Label text="Dostępne kwalifikatory:" fx:id="labelDostepneKwalifikatory" visible="false">
         <VBox.margin>
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
     </Label>
-    <ComboBox fx:id="kwalifikator" prefWidth="380.0">
+    <ComboBox fx:id="kwalifikator" prefWidth="380.0" visible="false">
         <VBox.margin>
             <Insets left="520.0" />
         </VBox.margin>
     </ComboBox>
-    <Button fx:id="dodajKwalifikator" mnemonicParsing="false" prefWidth="70.0" text="Dodaj">
+    <Button fx:id="dodajKwalifikator" mnemonicParsing="false" prefWidth="70.0" text="Dodaj" visible="false">
         <VBox.margin>
             <Insets left="920.0" top="-26.0" />
         </VBox.margin>
     </Button>
-    <Label id="chooseLevelText" text="Wybrane kwalifikatory:">
+    <Label text="Wybrane kwalifikatory:" fx:id="labelWybraneKwalifikatory" visible="false">
         <VBox.margin>
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
     </Label>
-    <ComboBox fx:id="kwalifikatorWybrane" prefWidth="380.0">
+    <ComboBox fx:id="kwalifikatorWybrane" prefWidth="380.0" visible="false">
         <VBox.margin>
             <Insets left="520.0" />
         </VBox.margin>
     </ComboBox>
-    <Button fx:id="usunKwalifikator" mnemonicParsing="false" prefWidth="70.0" text="Usuń">
+    <Button fx:id="usunKwalifikator" mnemonicParsing="false" prefWidth="70.0" text="Usuń" visible="false">
         <VBox.margin>
             <Insets left="920.0" top="-26.0" />
         </VBox.margin>
