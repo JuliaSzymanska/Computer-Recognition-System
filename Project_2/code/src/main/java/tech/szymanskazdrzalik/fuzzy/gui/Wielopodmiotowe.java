@@ -7,6 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
@@ -39,6 +42,10 @@ public class Wielopodmiotowe implements Initializable {
     public Label labelKwantyfikator;
     public Label labelDostepneKwalifikatory;
     public Label labelWybraneKwalifikatory;
+    public TableView<WielopodmiotowePodsumowanieLingwistyczneIMiary> podsumowanieTable;
+    public TableColumn<WielopodmiotowePodsumowanieLingwistyczneIMiary, String> columnTekst;
+    public TableColumn<WielopodmiotowePodsumowanieLingwistyczneIMiary, String> columnT1;
+    public TableColumn<WielopodmiotowePodsumowanieLingwistyczneIMiary, String> columnZapis;
 
     private ObservableList<WielopodmiotowePodsumowanieLingwistyczneIMiary> wielopodmiotowePodsumowanieLingwistyczneIMiary;
     private List<Kwantyfikator> kwantyfikatorList;
@@ -73,7 +80,7 @@ public class Wielopodmiotowe implements Initializable {
         this.dodaj.setOnAction(actionEvent -> Wspolne.setDodaj(this.sumaryzatoryWybraneList, this.sumaryzatoryListString, this.sumaryzatoryWybrane, this.sumaryzatory));
         this.usun.setOnAction(actionEvent -> Wspolne.setUsun(this.sumaryzatoryWybraneList, this.sumaryzatoryListString, this.sumaryzatoryWybrane, this.sumaryzatory));
         this.dalej.setOnAction(actionEvent -> this.setDalej());
-        this.wielopodmiotowePodsumowanieLingwistyczneIMiary = FXCollections.observableArrayList();
+        this.initTable();
     }
 
     private void setKwantyfiaktor() {
@@ -139,6 +146,14 @@ public class Wielopodmiotowe implements Initializable {
             labelWybraneKwalifikatory.setVisible(false);
             kwalifikatorWybrane.setVisible(false);
         }
+    }
+
+    private void initTable() {
+        this.wielopodmiotowePodsumowanieLingwistyczneIMiary = FXCollections.observableArrayList();
+        this.columnTekst.setCellValueFactory(new PropertyValueFactory<>("tekst"));
+        this.columnT1.setCellValueFactory(new PropertyValueFactory<>("T1"));
+        this.columnZapis.setCellValueFactory(new PropertyValueFactory<>("button"));
+        this.podsumowanieTable.setItems(wielopodmiotowePodsumowanieLingwistyczneIMiary);
     }
 
     private void podsumowanie() {

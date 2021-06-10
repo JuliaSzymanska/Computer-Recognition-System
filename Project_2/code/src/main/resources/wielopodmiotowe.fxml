@@ -69,15 +69,23 @@
 
     <Button fx:id="dalej" text="Dalej">
         <VBox.margin>
-            <Insets left="10.0" top="10.0" />
+            <Insets left="10.0" top="10.0" bottom="10.0"/>
         </VBox.margin>
     </Button>
 
+    <TableView fx:id="podsumowanieTable" minHeight="440.0" prefHeight="200.0" prefWidth="400.0">
+        <columns>
+            <TableColumn fx:id="columnTekst" maxWidth="1000.0" prefWidth="584.999981701374" text="Tekst" />
+            <TableColumn fx:id="columnT1" maxWidth="210" minWidth="35.0" prefWidth="50.39996337890625" text="T1" />
+            <TableColumn fx:id="columnZapis" maxWidth="240.0" minWidth="50.0" prefWidth="78.0" text="Zapis" />
+        </columns>
+    </TableView>
 
 
-    <Label text="Kwantyfikator:" fx:id="labelKwantyfikator" visible="false">
+
+    <Label fx:id="labelKwantyfikator" text="Kwantyfikator:" visible="false">
         <VBox.margin>
-            <Insets left="520.0" top="-240.0" />
+            <Insets left="520.0" top="-640.0" />
         </VBox.margin>
     </Label>
     <ComboBox fx:id="kwantyfikator" prefWidth="460.0" visible="false">
@@ -86,7 +94,7 @@
         </VBox.margin>
     </ComboBox>
 
-    <Label text="Dostępne kwalifikatory:" fx:id="labelDostepneKwalifikatory" visible="false">
+    <Label fx:id="labelDostepneKwalifikatory" text="Dostępne kwalifikatory:" visible="false">
         <VBox.margin>
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
@@ -101,7 +109,7 @@
             <Insets left="920.0" top="-26.0" />
         </VBox.margin>
     </Button>
-    <Label text="Wybrane kwalifikatory:" fx:id="labelWybraneKwalifikatory" visible="false">
+    <Label fx:id="labelWybraneKwalifikatory" text="Wybrane kwalifikatory:" visible="false">
         <VBox.margin>
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
@@ -117,9 +125,10 @@
         </VBox.margin>
     </Button>
 
-    <Button onAction="#podsumowanie" text="Podsumowanie" fx:id="podsumowaniePrzycisk">
+    <Button fx:id="podsumowaniePrzycisk" onAction="#podsumowanie" text="Podsumowanie">
         <VBox.margin>
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
     </Button>
+
 </VBox>
