@@ -1,0 +1,10 @@
+package tech.szymanskazdrzalik.fuzzy.dao;
+
+import tech.szymanskazdrzalik.fuzzy.gui.PodsumowanieLingwistyczneIMiary;
+import tech.szymanskazdrzalik.fuzzy.gui.WielopodmiotowePodsumowanieLingwistyczneIMiary;
+import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.WielopodmiotowePodsumowanieLingwistyczne;
+
+public interface WielopodmiotowePodsumowanieLingwistyczneIMiarySaveDao extends SaveDAO<WielopodmiotowePodsumowanieLingwistyczneIMiary> {
+    @Override
+    void Save(WielopodmiotowePodsumowanieLingwistyczneIMiary WielopodmiotowePodsumowanieLingwistyczneIMiary);
+}
