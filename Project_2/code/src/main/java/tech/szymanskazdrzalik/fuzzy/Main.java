@@ -36,6 +36,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        new ResourcesAccidentDao().getAll("Data/" + PropertiesLoader.getJsonName());
         stage = primaryStage;
         scene = new Scene(loadFXML("main"));
         stage.setResizable(false);

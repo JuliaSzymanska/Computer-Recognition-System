@@ -190,6 +190,9 @@ public class Wielopodmiotowe implements Initializable {
         }
         this.podmiotyWybrane1 = ResourcesAccidentDao.getWypadek_severity(podmiot1.getSelectionModel().getSelectedItem());
         this.podmiotyWybrane2 = ResourcesAccidentDao.getWypadek_severity(podmiot2.getSelectionModel().getSelectedItem());
+        System.out.println(this.forma.getSelectionModel().getSelectedItem());
+        System.out.println(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.valueOf(this.forma.getSelectionModel().getSelectedItem()));
+        System.out.println(wybranyKwantyfikator);
         WielopodmiotowePodsumowanieLingwistyczneIMiary wielopodmiotowePodsumowanieLingwistyczneIMiary = new WielopodmiotowePodsumowanieLingwistyczneIMiary(
                 new WielopodmiotowePodsumowanieLingwistyczne(
                         wybranyKwantyfikator,
