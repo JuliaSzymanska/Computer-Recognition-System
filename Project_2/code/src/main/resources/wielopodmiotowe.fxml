@@ -104,7 +104,7 @@
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
     </Label>
-    <ComboBox fx:id="kwalifikatoryWybrane" prefWidth="380.0">
+    <ComboBox fx:id="kwalifikatorWybrane" prefWidth="380.0">
         <VBox.margin>
             <Insets left="520.0" />
         </VBox.margin>

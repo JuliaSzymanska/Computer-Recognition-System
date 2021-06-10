@@ -127,17 +127,26 @@ public class PodstawowyUzytkownik implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.kwantyfikatorList = PredefiniowaneKwantyfikatory.getKwantyfikatorList();
+        this.kwalifikatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
+        this.kwalifikatoryString = FXCollections.observableArrayList();
+        this.kwalifikatorWybraneList = FXCollections.observableArrayList();
+        this.kwalifikatorWybrane.setItems(this.kwalifikatorWybraneList);
+        this.sumaryzatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
+        this.sumaryzatoryListString = FXCollections.observableArrayList();
+        this.sumaryzatoryWybraneList = FXCollections.observableArrayList();
+        this.sumaryzatoryWybrane.setItems(this.sumaryzatoryWybraneList);
+
         Wspolne.setKwantyfikator(this.kwantyfikatorList, this.kwantyfikator);
-        this.setKwalifikator();
-        this.setDodajKwalifikator();
-        this.setKwalifikatorWybrane();
-        this.setUsunKwalifikator();
-        this.setAkceptacja();
-        this.setSumaryzatory();
-        this.setSumaryzatoryWybrane();
-        this.setDodaj();
-        this.setUsun();
+        Wspolne.setKwalifikator(this.kwalifikatoryString, this.kwalifikatoryList, this.kwalifikator);
+        this.dodajKwalifikator.setOnAction(actionEvent -> Wspolne.setDodajKwalifikator(kwalifikator, kwalifikatoryString, kwalifikatorWybraneList, kwalifikatorWybrane));
+        this.usunKwalifikator.setOnAction(actionEvent -> Wspolne.setUsunKwalifikator(kwalifikator, kwalifikatoryString, kwalifikatorWybraneList, kwalifikatorWybrane));
+        Wspolne.setSumaryzatory(sumaryzatoryList, sumaryzatoryListString, sumaryzatory);
+        this.akceptacja.setOnAction(actionEvent -> PodstawowyUzytkownik.this.podsumowanie());
+        this.dodaj.setOnAction(actionEvent -> Wspolne.setDodaj(sumaryzatoryWybraneList, sumaryzatoryListString, sumaryzatoryWybrane, sumaryzatory));
+        this.usun.setOnAction(actionEvent -> Wspolne.setUsun(sumaryzatoryWybraneList, sumaryzatoryListString, sumaryzatoryWybrane, sumaryzatory));
+
         this.setPoliczSumeWag();
+
         this.initTable();
         AccidentDAO accidentDao = new ResourcesAccidentDao();
         this.podmioty = new ArrayList<>();
@@ -165,80 +174,6 @@ public class PodstawowyUzytkownik implements Initializable {
         this.columnSuma.setCellValueFactory(new PropertyValueFactory<>("glownaMiaraJakosci"));
         this.columnZapis.setCellValueFactory(new PropertyValueFactory<>("button"));
         this.podsumowanieTable.setItems(podsumowanieLingwistyczneIMiaryObservableList);
-    }
-
-
-
-
-    private void setKwalifikator() {
-        this.kwalifikatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
-        this.kwalifikatoryString = FXCollections.observableArrayList();
-        for (var e : this.kwalifikatoryList) {
-            for (var v : e.getEtykiety()) {
-                this.kwalifikatoryString.add(v.getNazwa());
-            }
-        }
-        this.kwalifikatoryString.add("Brak");
-        this.kwalifikator.setItems(this.kwalifikatoryString);
-        this.kwalifikator.setValue(this.kwalifikatoryString.get(0));
-    }
-
-    private void setDodajKwalifikator() {
-        this.dodajKwalifikator.setOnAction(actionEvent -> {
-            String selected = PodstawowyUzytkownik.this.kwalifikator.getSelectionModel().getSelectedItem();
-            PodstawowyUzytkownik.this.kwalifikatorWybraneList.add(selected);
-            PodstawowyUzytkownik.this.kwalifikatoryString.remove(selected);
-            PodstawowyUzytkownik.this.kwalifikatorWybrane.setValue(kwalifikatorWybraneList.get(0));
-        });
-    }
-
-    private void setKwalifikatorWybrane() {
-        this.kwalifikatorWybraneList = FXCollections.observableArrayList();
-        this.kwalifikatorWybrane.setItems(this.kwalifikatorWybraneList);
-    }
-
-    private void setUsunKwalifikator() {
-        this.usunKwalifikator.setOnAction(actionEvent -> {
-            String selected = PodstawowyUzytkownik.this.kwalifikatorWybrane.getSelectionModel().getSelectedItem();
-            PodstawowyUzytkownik.this.kwalifikatoryString.add(selected);
-            PodstawowyUzytkownik.this.kwalifikatorWybraneList.remove(selected);
-            PodstawowyUzytkownik.this.kwalifikator.setValue(kwalifikatoryString.get(0));
-        });
-    }
-
-    private void setSumaryzatory() {
-        this.sumaryzatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
-        this.sumaryzatoryListString = FXCollections.observableArrayList();
-        for (var e : this.sumaryzatoryList) {
-            for (var v : e.getEtykiety()) {
-                this.sumaryzatoryListString.add(v.getNazwa());
-            }
-        }
-        this.sumaryzatory.setItems(this.sumaryzatoryListString);
-        this.sumaryzatory.setValue(this.sumaryzatoryListString.get(0));
-    }
-
-    private void setDodaj() {
-        this.dodaj.setOnAction(actionEvent -> {
-            String selected = PodstawowyUzytkownik.this.sumaryzatory.getSelectionModel().getSelectedItem();
-            PodstawowyUzytkownik.this.sumaryzatoryWybraneList.add(selected);
-            PodstawowyUzytkownik.this.sumaryzatoryListString.remove(selected);
-            PodstawowyUzytkownik.this.sumaryzatoryWybrane.setValue(sumaryzatoryWybraneList.get(0));
-        });
-    }
-
-    private void setSumaryzatoryWybrane() {
-        this.sumaryzatoryWybraneList = FXCollections.observableArrayList();
-        this.sumaryzatoryWybrane.setItems(this.sumaryzatoryWybraneList);
-    }
-
-    private void setUsun() {
-        this.usun.setOnAction(actionEvent -> {
-            String selected = PodstawowyUzytkownik.this.sumaryzatoryWybrane.getSelectionModel().getSelectedItem();
-            PodstawowyUzytkownik.this.sumaryzatoryListString.add(selected);
-            PodstawowyUzytkownik.this.sumaryzatoryWybraneList.remove(selected);
-            PodstawowyUzytkownik.this.sumaryzatory.setValue(sumaryzatoryListString.get(0));
-        });
     }
 
     private void setPoliczSumeWag() {
@@ -278,13 +213,9 @@ public class PodstawowyUzytkownik implements Initializable {
         });
     }
 
-    private void setAkceptacja() {
-        this.akceptacja.setOnAction(actionEvent -> PodstawowyUzytkownik.this.podsumowanie());
-    }
-
     private void podsumowanie() {
         Kwantyfikator wybranyKwantyfikator = null;
-        List<Etykieta<Wypadek>> wybranyKwalifikator =  new ArrayList<>();
+        List<Etykieta<Wypadek>> wybranyKwalifikator = new ArrayList<>();
         List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
         String tempKwantyfiaktor = this.kwantyfikator.getSelectionModel().getSelectedItem();
         if (tempKwantyfiaktor.contains(Wspolne.ABSOLUTNY)) {
@@ -303,11 +234,11 @@ public class PodstawowyUzytkownik implements Initializable {
         String tempKwalifikator = this.kwalifikator.getSelectionModel().getSelectedItem();
         for (var e : this.kwalifikatoryList) {
             for (var v : e.getEtykiety()) {
-                for(var f : this.kwalifikatorWybraneList)
-                if (v.getNazwa().equals(f)) {
-                    wybranyKwalifikator.add(v);
-                    break;
-                }
+                for (var f : this.kwalifikatorWybraneList)
+                    if (v.getNazwa().equals(f)) {
+                        wybranyKwalifikator.add(v);
+                        break;
+                    }
             }
         }
 
