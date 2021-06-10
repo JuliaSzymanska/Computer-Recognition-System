@@ -32,8 +32,6 @@ import java.util.ResourceBundle;
 
 public class PodstawowyUzytkownik implements Initializable {
 
-    private final String ABSOLUTNY = " (Absolutny)";
-    private final String WZGLEDNY = " (Względny)";
     @FXML
     public TableView<PodsumowanieLingwistyczneIMiary> podsumowanieTable;
     @FXML
@@ -128,7 +126,8 @@ public class PodstawowyUzytkownik implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.setKwantyfikator();
+        this.kwantyfikatorList = PredefiniowaneKwantyfikatory.getKwantyfikatorList();
+        Wspolne.setKwantyfikator(this.kwantyfikatorList, this.kwantyfikator);
         this.setKwalifikator();
         this.setDodajKwalifikator();
         this.setKwalifikatorWybrane();
@@ -169,16 +168,7 @@ public class PodstawowyUzytkownik implements Initializable {
     }
 
 
-    private void setKwantyfikator() {
-        this.kwantyfikatorList = PredefiniowaneKwantyfikatory.getKwantyfikatorList();
-        List<String> kwantyfikatoryString = new ArrayList<>();
-        for (var e : this.kwantyfikatorList) {
-            kwantyfikatoryString.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? ABSOLUTNY : WZGLEDNY));
-        }
-        kwantyfikatoryString.add("Brak");
-        this.kwantyfikator.setItems(FXCollections.observableArrayList(kwantyfikatoryString));
-        this.kwantyfikator.setValue(kwantyfikatoryString.get(0));
-    }
+
 
     private void setKwalifikator() {
         this.kwalifikatoryList = PredefiniowaneKwalifikatorySumaryzatory.getAll();
@@ -297,10 +287,10 @@ public class PodstawowyUzytkownik implements Initializable {
         List<Etykieta<Wypadek>> wybranyKwalifikator =  new ArrayList<>();
         List<Etykieta<Wypadek>> wybraneSumaryzatory = new ArrayList<>();
         String tempKwantyfiaktor = this.kwantyfikator.getSelectionModel().getSelectedItem();
-        if (tempKwantyfiaktor.contains(ABSOLUTNY)) {
-            tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(ABSOLUTNY));
+        if (tempKwantyfiaktor.contains(Wspolne.ABSOLUTNY)) {
+            tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(Wspolne.ABSOLUTNY));
         } else {
-            tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(WZGLEDNY));
+            tempKwantyfiaktor = tempKwantyfiaktor.substring(0, tempKwantyfiaktor.indexOf(Wspolne.WZGLEDNY));
         }
         for (var e : this.kwantyfikatorList) {
 
