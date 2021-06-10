@@ -7,13 +7,14 @@ import java.util.List;
 
 
 public class WielopodmiotowePodsumowanieLingwistyczne {
-    private Kwantyfikator kwantyfikator;
     private final List<Wypadek> podmioty1;
     private final List<Wypadek> podmioty2;
     private final List<Etykieta<Wypadek>> sumaryzator;
+    private final RodzajPodsumowania rodzajPodsumowania;
+    private Kwantyfikator kwantyfikator;
     private List<Etykieta<Wypadek>> kwalifikator;
     private AbstrakcyjnyZbiorRozmyty<Wypadek> kwalifikatorZbiorRozmyty;
-    private final RodzajPodsumowania rodzajPodsumowania;
+
     public WielopodmiotowePodsumowanieLingwistyczne(Kwantyfikator kwantyfikator,
                                                     List<Wypadek> podmioty1,
                                                     List<Wypadek> podmioty2,
@@ -39,6 +40,46 @@ public class WielopodmiotowePodsumowanieLingwistyczne {
         }
 
 
+    }
+
+    public Kwantyfikator getKwantyfikator() {
+        return kwantyfikator;
+    }
+
+    public void setKwantyfikator(Kwantyfikator kwantyfikator) {
+        this.kwantyfikator = kwantyfikator;
+    }
+
+    public List<Wypadek> getPodmioty1() {
+        return podmioty1;
+    }
+
+    public List<Wypadek> getPodmioty2() {
+        return podmioty2;
+    }
+
+    public List<Etykieta<Wypadek>> getSumaryzator() {
+        return sumaryzator;
+    }
+
+    public List<Etykieta<Wypadek>> getKwalifikator() {
+        return kwalifikator;
+    }
+
+    public void setKwalifikator(List<Etykieta<Wypadek>> kwalifikator) {
+        this.kwalifikator = kwalifikator;
+    }
+
+    public AbstrakcyjnyZbiorRozmyty<Wypadek> getKwalifikatorZbiorRozmyty() {
+        return kwalifikatorZbiorRozmyty;
+    }
+
+    public void setKwalifikatorZbiorRozmyty(AbstrakcyjnyZbiorRozmyty<Wypadek> kwalifikatorZbiorRozmyty) {
+        this.kwalifikatorZbiorRozmyty = kwalifikatorZbiorRozmyty;
+    }
+
+    public RodzajPodsumowania getRodzajPodsumowania() {
+        return rodzajPodsumowania;
     }
 
 

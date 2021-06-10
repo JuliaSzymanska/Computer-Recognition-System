@@ -42,6 +42,13 @@ public class MiaryJakosci {
                         liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
     }
 
+    /** T1
+
+     */
+    public static Double stopienPrawdziwosci(WielopodmiotowePodsumowanieLingwistyczne wielopodmiotowePodsumowanieLingwistyczne) throws NieBrakKwalifikatora {
+        switch (wielopodmiotowePodsumowanieLingwistyczne.)
+    }
+
     /**
      * T2
      * Liczymy srednia kwadratowa ze stopni rozmycia
