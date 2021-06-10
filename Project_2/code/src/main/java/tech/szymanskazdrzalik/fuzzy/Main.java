@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
+import tech.szymanskazdrzalik.fuzzy.utils.PropertiesLoader;
 
 import java.io.IOException;
 
@@ -14,6 +16,8 @@ public class Main extends Application {
     private static Scene scene;
 
     public static void main(String[] args) throws IOException {
+        // TODO: 10.06.2021 sprawdzic czy to sie wywoluje
+        new ResourcesAccidentDao().getAll("Data/" + PropertiesLoader.getJsonName());
         launch();
     }
 

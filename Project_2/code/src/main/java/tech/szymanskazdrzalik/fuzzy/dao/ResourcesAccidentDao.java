@@ -17,10 +17,35 @@ public class ResourcesAccidentDao implements AccidentDAO {
 
     private static List<Wypadek> wypadeks;
 
+    private static List<Wypadek> wypadek_severity_1;
+    private static List<Wypadek> wypadek_severity_2;
+    private static List<Wypadek> wypadek_severity_3;
+    private static List<Wypadek> wypadek_severity_4;
+
+    public static List<Wypadek> getWypadek_severity_1() {
+        return wypadek_severity_1;
+    }
+
+    public static List<Wypadek> getWypadek_severity_2() {
+        return wypadek_severity_2;
+    }
+
+    public static List<Wypadek> getWypadek_severity_3() {
+        return wypadek_severity_3;
+    }
+
+    public static List<Wypadek> getWypadek_severity_4() {
+        return wypadek_severity_4;
+    }
+
     @Override
     public List<Wypadek> getAll(File file) throws IOException {
         if (Objects.isNull(wypadeks)) {
             wypadeks = new ArrayList<>();
+            wypadek_severity_1 = new ArrayList<>();
+            wypadek_severity_2 = new ArrayList<>();
+            wypadek_severity_3 = new ArrayList<>();
+            wypadek_severity_4 = new ArrayList<>();
             ObjectMapper mapper = new ObjectMapper();
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 String currentLine;
@@ -29,6 +54,22 @@ public class ResourcesAccidentDao implements AccidentDAO {
                         AccidentDTO accidentDTO = mapper.readValue(currentLine, AccidentDTO.class);
                         Wypadek wypadek = AccidentDTOToAccidentMapper.mapToStory(accidentDTO);
                         wypadeks.add(wypadek);
+                        switch (wypadek.getDotkliwosc()) {
+                            case 1:
+                                wypadek_severity_1.add(wypadek);
+                                break;
+                            case 2:
+                                wypadek_severity_2.add(wypadek);
+                                break;
+                            case 3:
+                                wypadek_severity_3.add(wypadek);
+                                break;
+                            case 4:
+                                wypadek_severity_4.add(wypadek);
+                                break;
+                            default:
+                                break;
+                        }
                     } catch (Exception e) {
 
                     }
