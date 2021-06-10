@@ -19,7 +19,6 @@ public class Wspolne {
         for (var e : kwantyfikatorList) {
             kwantyfikatoryString.add(e.getEtykieta().getNazwa() + (e.getJestAbsolutny() ? ABSOLUTNY : WZGLEDNY));
         }
-        kwantyfikatoryString.add("Brak");
         kwantyfikator.setItems(FXCollections.observableArrayList(kwantyfikatoryString));
         kwantyfikator.setValue(kwantyfikatoryString.get(0));
     }
@@ -32,7 +31,6 @@ public class Wspolne {
                 kwalifikatoryString.add(v.getNazwa());
             }
         }
-        kwalifikatoryString.add("Brak");
         kwalifikator.setItems(kwalifikatoryString);
         kwalifikator.setValue(kwalifikatoryString.get(0));
     }

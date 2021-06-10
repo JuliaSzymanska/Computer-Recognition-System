@@ -145,6 +145,7 @@ public class Wielopodmiotowe implements Initializable {
             dodajKwalifikator.setVisible(false);
             labelWybraneKwalifikatory.setVisible(false);
             kwalifikatorWybrane.setVisible(false);
+            usunKwalifikator.setVisible(false);
         }
     }
 
@@ -201,8 +202,8 @@ public class Wielopodmiotowe implements Initializable {
                         wybraneSumaryzatory,
                         wybranyKwalifikator,
                         WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.valueOf(this.forma.getSelectionModel().getSelectedItem()),
-                        "TMP STRING 1",
-                        "TMP STRING 2"
+                        "wypadków o dotkliwości " + this.podmiot1.getSelectionModel().getSelectedItem(),
+                        "wypadków o dotkliwości " + this.podmiot2.getSelectionModel().getSelectedItem()
 
                 ));
         this.wielopodmiotowePodsumowanieLingwistyczneIMiary.add(wielopodmiotowePodsumowanieLingwistyczneIMiary);

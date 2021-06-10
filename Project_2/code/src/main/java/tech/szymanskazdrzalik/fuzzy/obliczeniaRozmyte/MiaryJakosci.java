@@ -87,8 +87,7 @@ public class MiaryJakosci {
             default:
                 // pozyskiwanie wiedzy z relacyjnych baz danych strona 9
                 licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
-                        (x.iloczynZbiorow(wielopodmiotowePodsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty()))
-                                .liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
+                        x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
                 mianownik = licznik +
                         (1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size()) *
                                 x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2());
