@@ -2,7 +2,6 @@ package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -88,9 +87,20 @@ public class WielopodmiotowePodsumowanieLingwistyczne {
 
 
     public enum RodzajPodsumowania {
-        PIERWSZA_FORMA,
-        DRUGA_FORMA,
-        TRZECIA_FORMA,
-        CZWARTA_FORMA
+        PIERWSZA_FORMA("PIERWSZA_FORMA"),
+        DRUGA_FORMA("DRUGA_FORMA"),
+        TRZECIA_FORMA("TRZECIA_FORMA"),
+        CZWARTA_FORMA("CZWARTA_FORMA");
+
+        String wartosc;
+
+        RodzajPodsumowania(String forma) {
+            this.wartosc = forma;
+        }
+
+        @Override
+        public String toString() {
+            return wartosc;
+        }
     }
 }

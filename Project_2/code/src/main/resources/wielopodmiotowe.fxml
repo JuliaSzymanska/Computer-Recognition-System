@@ -115,7 +115,7 @@
         </VBox.margin>
     </Button>
 
-    <Button onAction="#podsumowanie" text="Podsumowanie">
+    <Button onAction="#podsumowanie" text="Podsumowanie" fx:id="podsumowaniePrzycisk">
         <VBox.margin>
             <Insets left="520.0" top="10.0" />
         </VBox.margin>
