@@ -66,6 +66,14 @@ public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
         this.button.setOnAction(actionEvent -> zapiszDoPliku());
     }
 
+    @Override
+    public String toString() {
+        return "WielopodmiotowePodsumowanieLingwistyczneIMiary{" +
+                "tekst=" + tekst.get() +
+                ", T1value=" + T1value +
+                '}';
+    }
+
 
     public static String getNazwaPliku() {
         return NAZWA_PLIKU;

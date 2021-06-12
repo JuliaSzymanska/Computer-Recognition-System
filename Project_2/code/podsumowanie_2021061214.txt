@@ -1,0 +1,13 @@
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Niewiele wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości ponad trzech mili, T1value=0.00272844819889294}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Około 1/4 wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości ponad trzech mili, T1value=0.6451235524776179}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Niewiele wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości około trzech mili, T1value=0.3146062264544949}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Około 1/4 wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości około trzech mili, T1value=0.6191515162597394}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Około 1/4 wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości około jednej mili, T1value=0.33540961046793333}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Około połowy wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości około jednej mili, T1value=3.660741259126906E-4}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Niewiele wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości około jednej mili, T1value=0.593255070181467}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Niewiele wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu trwające około sześciu godzin, T1value=1.0}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Niewiele wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest przy słaba widoczność, T1value=0.39710056470188965}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Około 1/4 wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest przy słaba widoczność, T1value=0.5216098545457232}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Prawie wszystkie wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest przy słabym wietrze, T1value=6.52052264488071E-8}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Większość wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest przy słabym wietrze, T1value=0.0050446168048510626}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Około połowy wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest przy słabym wietrze, T1value=0.753413582197948}
