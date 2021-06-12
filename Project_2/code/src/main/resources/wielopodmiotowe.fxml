@@ -72,6 +72,11 @@
             <Insets left="10.0" top="10.0" bottom="10.0"/>
         </VBox.margin>
     </Button>
+    <Button onAction="#doGlownego" text="Wróć">
+        <VBox.margin>
+            <Insets left="70.0" top="-36.0" bottom="30"/>
+        </VBox.margin>
+    </Button>
 
     <TableView fx:id="podsumowanieTable" minHeight="440.0" prefHeight="200.0" prefWidth="400.0">
         <columns>

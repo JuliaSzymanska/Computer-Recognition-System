@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import tech.szymanskazdrzalik.fuzzy.Main;
 import tech.szymanskazdrzalik.fuzzy.dao.ResourcesAccidentDao;
 import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
 import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.Etykieta;
@@ -19,6 +20,7 @@ import tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte.ZmiennaLingwistyczna;
 import tech.szymanskazdrzalik.fuzzy.predefiniowany.PredefiniowaneKwalifikatorySumaryzatory;
 import tech.szymanskazdrzalik.fuzzy.predefiniowany.PredefiniowaneKwantyfikatory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -212,5 +214,9 @@ public class Wielopodmiotowe implements Initializable {
 
     public void podsumowanie(ActionEvent actionEvent) {
         this.podsumowanie();
+    }
+
+    public void doGlownego(ActionEvent actionEvent) throws IOException {
+        Main.setRoot("main");
     }
 }
