@@ -747,7 +747,71 @@ W trzecim eksperymencie wygenerowaliśmy jednopodmiotowe podsumowania lingwistyc
 
 Wykonany eksperyment miał na celu sprawdzenie zależności długości odcinka drogi, na którym nastąpiły utrudnienia w ruchu spowodowane przez wypadek od czasu trwania utrudnień w ruchu drogowym przez ten wypadek. Uzyskane wyniki potwierdzają postawioną tezę. Na podstawie tabeli \ref{ex3} można zauważyć, że zdanie 'Około połowy wypadków będących wywołuje utrudnienia w ruchu o długości poniżej pół mili, jest wywołuje utrudnienia w ruchu trwające około dwóch godzin' jest najbardziej prawdziwym zdaniem. Jednocześnie możemy zauważyć, że to samo zdanie z kwantyfiaktorem 'Niewiele' jest najmniej prawdziwym zdaniem. To samo zdanie z kwantyfiaktorami 'Około 1/4' lub 'Większość' są zdecydowanie mniej prawdziwe niż pierwsze opisane zdanie. Kolejnym zdaniem potwierdzającym tezę jest: 'Niewiele wypadków będących wywołuje utrudnienia w ruchu o długości poniżej pół mili, jest wywołuje utrudnienia w ruchu trwające około sześciu godzin', ponieważ, odcinek poniżej pół mili jest krótkim odcinkiem, a czas trwania sześć godzin jest znacznie długim czasem. Ze zdania możemy odczytać, że nie wiele wypadków będących na krótkim odcinku drogi wywoluje tak długi czas trwania utrudnień w ruchu drogowym.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Wielopodmiotowe podsumowania lingwistyczne i~ich miary jakości} 
+\label{section:ex_wiel}
+
+Zbiór danych został podzielony na rozłączne podmioty na podstawie kolumny Dotkliwość (Severity). Kolumna przyjmuje liczby całkowite od 1 do 4 włącznie. Im wyższa wartość kolumny tym bardziej dotkliwy był wypadek. W ten sposób uzyskujemy 4 rozłączne podzbiory podmiotów, które są podzielone ze względu na wpływ wypadku na ruch drogowy, gdzie wartość kolumny 1 oznacza najmniejszy wpływ, natoamist wartość 4 największy wpływ wypadku na ruch drogowy. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Eksperyment 1}
+\label{section:ex_wiel1}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex_wiel1.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki wielopodmiotowych podsumowań lingwistycznych w pierwszej formie dla eksperymentu 1. Kolumna Tekst zawiera tekst wygenerowanego wielopodmiotowego podsumowania lingwistycznego. Kolumna T1 zawiera wartość miary jakości T1 dla wielopodmiotowego podsumowania lignwistycznego \cite{niewiadomski19}. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane wielopodmiotowego podsumowania lignwistycznego do pliku. Każdy rząd zawiera jedno wygenerowane wielopodmiotowe podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie T1 malejąco.  }
+ \label{wykr_ex_wiel1}
+\end{figure}
+\newpage
+
+W pierwszym eksperymencie wygenerowaliśmy wielopodmiotowe podsumowania lingwistyczne w pierwszej formie. 
+
+Na podstawie tabeli \ref{wykr_ex_wiel1} można zauważyć, że zdanie 'Większość wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości poniżej pół mili' jest zdaniem najbardziej zgodnym z prawdą z wszystkich wygenerowanych podsumowań wielopodmiotowych. Zgodnie z naszymi oczekiwaniami, zdecydowanie więcej wypadków o dotkliwości 1 (mających najmniejszy wpływ na ruch drogowy) wywoływało utrudunienia w ruchu o długości poniżej pół mili, czyli utrudnienia na najmniejszym odcinku drogi, w porównaniu do wypadków o dotkliwości 4 (majacych największy wpływ na ruch drogowy).  Zdanie "Około 1/4 wypadków o dotkliwości 1 w odniesieniu do wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości ponad trzech mili" jest trzecim wygenerowanym podsumowaniem najbardziej zgodnym z prawdą. Wspomniane zdanie również jest zgodne z nasyzmi oczekiwaniami, ponieważ zdecydowanie mneij wyapdków o dotkliwości 1  w porównaniu do wypadków o dotkliwości 4 wywłuje utrudnienia w ruchu drogowym o długości ponad 3 mil, czyli najdłuższe utrudnienia. Z tego zdania wynika, że większość wypadków powodujących najdłuższe utrudnienia w ruchu drogowym są o największej dotkliwości, z pierwszego opisanego w tym eksperymencie zdania wynika, że najkrótsze utrudnienia w ruchu drogowym powodują wypadki o najmniejszej dotkliwości. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Eksperyment 2}
+\label{section:ex_wiel2}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex_wiel1.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki wielopodmiotowych podsumowań lingwistycznych w drugiej formie dla eksperymentu 2. Kolumna Tekst zawiera tekst wygenerowanego wielopodmiotowego podsumowania lingwistycznego. Kolumna T1 zawiera wartość miary jakości T1 dla wielopodmiotowego podsumowania lignwistycznego \cite{niewiadomski19}. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane wielopodmiotowego podsumowania lignwistycznego do pliku. Każdy rząd zawiera jedno wygenerowane wielopodmiotowe podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie T1 malejąco.  }
+ \label{wykr_ex_wiel2}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Eksperyment 3}
+\label{section:ex_wiel3}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex_wiel1.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki wielopodmiotowych podsumowań lingwistycznych w trzeciej formie dla eksperymentu 3. Kolumna Tekst zawiera tekst wygenerowanego wielopodmiotowego podsumowania lingwistycznego. Kolumna T1 zawiera wartość miary jakości T1 dla wielopodmiotowego podsumowania lignwistycznego \cite{niewiadomski19}. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane wielopodmiotowego podsumowania lignwistycznego do pliku. Każdy rząd zawiera jedno wygenerowane wielopodmiotowe podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie T1 malejąco.  }
+ \label{wykr_ex_wiel3}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Eksperyment 4}
+\label{section:ex_wiel4}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=15cm]{ex_wiel4.png}
+ \vspace{-0.3cm}
+ \caption{Tabela przedstawia wyniki wielopodmiotowych podsumowań lingwistycznych w czwartej formie dla eksperymentu 4. Kolumna Tekst zawiera tekst wygenerowanego wielopodmiotowego podsumowania lingwistycznego. Kolumna T1 zawiera wartość miary jakości T1 dla wielopodmiotowego podsumowania lignwistycznego \cite{niewiadomski19}. Ostatnia kolumna, Zapisz, zawiera przcisk zapisujący dane wielopodmiotowego podsumowania lignwistycznego do pliku. Każdy rząd zawiera jedno wygenerowane wielopodmiotowe podsumowanie lignwistyczne. Rzędy zostały posortowane po kolumnie T1 malejąco.  }
+ \label{wykr_ex_wiel4}
+\end{figure}
+
+
 Wyniki kolejnych eksperymentów wg punktów 2.-4. opisu projektu 2. Uzasadnienie i
 metoda podziału zbioru danych na rozłączne podmioty. Listy podsumowań
 wielopodmiotowych i tabele/rankingi podsumowań dla danych atrybutów obowiązkowe i
