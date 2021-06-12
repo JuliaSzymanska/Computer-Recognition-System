@@ -1,0 +1,859 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  12 JUN 2021 22:45
+entering extended mode
+**./Sprawozdanie-projekt-2-podsumowania.tex
+(Sprawozdanie-projekt-2-podsumowania.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (classrep.cls
+Document Class: classrep 2009/11/27 ICS Class Assignment Report
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mwcls\mwart.cls"
+Document Class: mwart 2017/05/13 v0.75 A LaTeX document class (MW)
+*** Beta version. Formatting may change
+*** in future versions of this class.
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mwcls\mw12.clo"
+File: mw12.clo 2017/05/13 v0.75 A document class size option (MW)
+)
+\@parindent=\dimen134
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen135
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\polski.st
+y"
+Package: polski 2017/05/04 v1.3.4 Polish language package
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ot4enc.def"
+File: ot4enc.def 2020/02/11 v2.0o Standard LaTeX file
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+)) ("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.s
+ty"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\col
+or.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdf
+tex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+x.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.
+sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+s.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.st
+y"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\gra
+phics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperre
+f.sty"
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmd
+s.sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.st
+y"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdfte
+xcmds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infw
+arerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvse
+tkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\k
+vdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfescape\pdfe
+scape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hycolor\hycolor.
+sty"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/letltxmacro\letl
+txmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\auxhook.
+sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvopti
+ons.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen138
+\Hy@linkcounter=\count175
+\Hy@pagecounter=\count176
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.
+def"
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/intcalc\intcal
+c.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/etexcmds\etexc
+mds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count177
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count178
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen139
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\bitset.
+sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bigintcalc\big
+intcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count179
+\Field@Width=\dimen140
+\Fld@charsize=\dimen141
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/atbegshi\atbeg
+shi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count180
+\c@Item=\count181
+\c@Hfootnote=\count182
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex
+.def"
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/atveryend\atvery
+end.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count183
+\c@bookmark@seq@number=\count184
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfilecheck\r
+erunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/uniquecounter\
+uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip49
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3back
+end-pdfmode.def"
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count185
+\l__pdf_internal_box=\box45
+) (Sprawozdanie-projekt-2-podsumowania.aux
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
+
+
+LaTeX Warning: Label `kwantyfikatory_lingwistyczne_absolutne' multiply defined.
+
+
+)
+\openout1 = `Sprawozdanie-projekt-2-podsumowania.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 23.
+LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 2
+3.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmr.fd
+"
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
+-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count186
+\scratchdimen=\dimen142
+\scratchbox=\box46
+\nofMPsegments=\count187
+\nofMParguments=\count188
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count189
+\MPscratchDim=\dimen143
+\MPnumerator=\count190
+\makeMPintoPDFobject=\count191
+\everyMPtoPDFconversion=\toks19
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\eps
+topdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+\AtBeginShipoutBox=\box47
+Package hyperref Info: Link coloring OFF on input line 23.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref
+.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\refcoun
+t.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitlestring
+\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count192
+)
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
+ (Sprawozdanie-projekt-2-podsumowania.out)
+(Sprawozdanie-projekt-2-podsumowania.out)
+\@outlinefile=\write3
+\openout3 = `Sprawozdanie-projekt-2-podsumowania.out'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 25.
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 
+25.
+
+("C:\Users\Przemek\AppData\Local\Programs\MiKTeX 2.9\tex/latex/polski\ot4cmtt.f
+d"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+Overfull \hbox (31.82062pt too wide) in paragraph at lines 28--29
+\OT4/cmr/m/n/12 ozna-cza opi-sa-nie da-nych licz-bo-wych ze zbio-ru da-nych [[]
+] j¦-zy-kiem quasi-naturalnym
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--34
+
+ []
+
+[1
+
+{C:/Users/Przemek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+[2] [3]
+<accidents.png, id=191, 272.01625pt x 340.27126pt>
+File: accidents.png Graphic file (type png)
+<use accidents.png>
+Package pdftex.def Info: accidents.png  used on input line 61.
+(pdftex.def)             Requested size: 398.33858pt x 498.31837pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 61--63
+ [][] 
+ []
+
+[4 <./accidents.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+<FunkcjaPrzynaleznosciCzasTrwania.png, id=199, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciCzasTrwania.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciCzasTrwania.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciCzasTrwania.png  used on input li
+ne 118.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 118--120
+ [][] 
+ []
+
+
+Overfull \hbox (70.1588pt too wide) in paragraph at lines 115--123
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 ,
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5]
+Overfull \hbox (0.8402pt too wide) in paragraph at lines 157--158
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 ,
+ []
+
+<FunkcjaPrzynaleznosciOdleglosc.png, id=216, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciOdleglosc.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciOdleglosc.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciOdleglosc.png  used on input line
+ 161.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 161--163
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./FunkcjaPrzynaleznosciCzasTrwania.png>]
+Overfull \hbox (63.16948pt too wide) in paragraph at lines 209--210
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
+t/12 []$\OT4/cmr/m/n/12 ,
+ []
+
+<FunkcjaPrzynaleznosciTemperatura.png, id=227, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciTemperatura.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciTemperatura.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciTemperatura.png  used on input li
+ne 214.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 214--216
+ [][] 
+ []
+
+[7 <./FunkcjaPrzynaleznosciOdleglosc.png>] [8 <./FunkcjaPrzynaleznosciTemperatu
+ra.png>]
+Overfull \hbox (35.59561pt too wide) in paragraph at lines 251--252
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
+t/12 []$\OT4/cmr/m/n/12 ,
+ []
+
+<FunkcjaPrzynaleznosciWilgotnosc.png, id=246, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciWilgotnosc.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciWilgotnosc.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciWilgotnosc.png  used on input lin
+e 255.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 255--257
+ [][] 
+ []
+
+[9 <./FunkcjaPrzynaleznosciWilgotnosc.png (PNG copy)>]
+Overfull \hbox (16.20522pt too wide) in paragraph at lines 291--292
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
+t/12 []$\OT4/cmr/m/n/12 ,
+ []
+
+<FunkcjaPrzynaleznosciCiÅ›nienie.png, id=257, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciCiÅ›nienie.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciCiÅ›nienie.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciCiÅ›nienie.png  used on input lin
+e 295.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 295--297
+ [][] 
+ []
+
+[10 <./FunkcjaPrzynaleznosciCiÅ›nienie.png>]
+<FunkcjaPrzynaleznosciWidocznosc.png, id=269, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciWidocznosc.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciWidocznosc.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciWidocznosc.png  used on input lin
+e 345.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 345--347
+ [][] 
+ []
+
+[11 <./FunkcjaPrzynaleznosciWidocznosc.png>]
+Overfull \hbox (39.9245pt too wide) in paragraph at lines 399--400
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
+t/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/
+it/12 []$
+ []
+
+<FunkcjaPrzynaleznosciPredkoscWiatru.png, id=281, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciPredkoscWiatru.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciPredkoscWiatru.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciPredkoscWiatru.png  used on input
+ line 403.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 403--405
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
+Overfull \hbox (14.68216pt too wide) in paragraph at lines 451--452
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
+t/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$
+ []
+
+<FunkcjaPrzynaleznosciOpady.png, id=292, 642.4pt x 481.8pt>
+File: FunkcjaPrzynaleznosciOpady.png Graphic file (type png)
+<use FunkcjaPrzynaleznosciOpady.png>
+Package pdftex.def Info: FunkcjaPrzynaleznosciOpady.png  used on input line 455
+.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 455--457
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13 <./FunkcjaPrzynaleznosciPredkoscWiatru.png>]
+<kwantyfikatory.png, id=306, 642.4pt x 481.8pt>
+File: kwantyfikatory.png Graphic file (type png)
+<use kwantyfikatory.png>
+Package pdftex.def Info: kwantyfikatory.png  used on input line 491.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 491--493
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 493--493
+ []\OT4/cmr/m/n/10.95 Rysunek 10.[]Wykres funk-cji przy-na-le»-no-±ci kwan-ty-f
+i-ka-to-rów lin-gwi-stycz-nych 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <./FunkcjaPrzynaleznosciOpady.png>] [15 <./kwantyfikatory.png>]
+Overfull \hbox (5.91766pt too wide) in paragraph at lines 586--587
+[]\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
+/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
+t/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/
+it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 ,
+ []
+
+<kwantyfikatory_absolutny_2.png, id=331, 642.4pt x 481.8pt>
+File: kwantyfikatory_absolutny_2.png Graphic file (type png)
+<use kwantyfikatory_absolutny_2.png>
+Package pdftex.def Info: kwantyfikatory_absolutny_2.png  used on input line 590
+.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 590--592
+ [][] 
+ []
+
+<kwantyfikatory_absolutny.png, id=332, 642.4pt x 481.8pt>
+File: kwantyfikatory_absolutny.png Graphic file (type png)
+<use kwantyfikatory_absolutny.png>
+Package pdftex.def Info: kwantyfikatory_absolutny.png  used on input line 599.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 599--601
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16 <./kwantyfikatory_absolutny_2.png>]
+<uml.png, id=344, 3716.88625pt x 2492.31125pt>
+File: uml.png Graphic file (type png)
+<use uml.png>
+Package pdftex.def Info: uml.png  used on input line 612.
+(pdftex.def)             Requested size: 398.33858pt x 267.08159pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 612--614
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17 <./kwantyfikatory_absolutny.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 619--622
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./uml.png (PNG copy)>]
+<uml_2.png, id=378, 1799.72375pt x 190.7125pt>
+File: uml_2.png Graphic file (type png)
+<use uml_2.png>
+Package pdftex.def Info: uml_2.png  used on input line 625.
+(pdftex.def)             Requested size: 398.33858pt x 42.21004pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 625--627
+ [][] 
+ []
+
+[19 <./uml_2.png (PNG copy)>]
+<uml_3.png, id=385, 2591.6825pt x 3404.72pt>
+File: uml_3.png Graphic file (type png)
+<use uml_3.png>
+Package pdftex.def Info: uml_3.png  used on input line 644.
+(pdftex.def)             Requested size: 426.79134pt x 560.66359pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 644--646
+ [][] 
+ []
+
+
+Underfull \vbox (badness 4713) has occurred while \output is active []
+
+ [20 <./uml_3.png (PNG copy)>] [21] [22]
+<gui.png, id=399, 1283.79625pt x 673.51625pt>
+File: gui.png Graphic file (type png)
+<use gui.png>
+Package pdftex.def Info: gui.png  used on input line 662.
+(pdftex.def)             Requested size: 426.79134pt x 223.90536pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 662--664
+ [][] 
+ []
+
+[23 <./gui.png>]
+<gui_2.png, id=407, 960.58875pt x 561.297pt>
+File: gui_2.png Graphic file (type png)
+<use gui_2.png>
+Package pdftex.def Info: gui_2.png  used on input line 672.
+(pdftex.def)             Requested size: 426.79134pt x 249.38667pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 672--674
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
+
+ []
+
+<gui_3.png, id=410, 1134.2375pt x 629.35126pt>
+File: gui_3.png Graphic file (type png)
+<use gui_3.png>
+Package pdftex.def Info: gui_3.png  used on input line 682.
+(pdftex.def)             Requested size: 426.79134pt x 236.8128pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 682--684
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24 <./gui_2.png>] [25 <./gui_3.png>]
+<ex1.png, id=425, 1279.78125pt x 698.61pt>
+File: ex1.png Graphic file (type png)
+<use ex1.png>
+Package pdftex.def Info: ex1.png  used on input line 707.
+(pdftex.def)             Requested size: 426.79134pt x 232.97247pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 707--709
+ [][] 
+ []
+
+[26 <./ex1.png>]
+<ex2.png, id=434, 1280.785pt x 695.59875pt>
+File: ex2.png Graphic file (type png)
+<use ex2.png>
+Package pdftex.def Info: ex2.png  used on input line 724.
+(pdftex.def)             Requested size: 426.79134pt x 231.78784pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 724--726
+ [][] 
+ []
+
+[27 <./ex2.png>]
+<ex3.png, id=443, 1517.67pt x 697.60625pt>
+File: ex3.png Graphic file (type png)
+<use ex3.png>
+Package pdftex.def Info: ex3.png  used on input line 740.
+(pdftex.def)             Requested size: 426.79134pt x 196.16934pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 740--742
+ [][] 
+ []
+
+[28 <./ex3.png>]
+<ex_wiel1.png, id=452, 1136.245pt x 694.595pt>
+File: ex_wiel1.png Graphic file (type png)
+<use ex_wiel1.png>
+Package pdftex.def Info: ex_wiel1.png  used on input line 764.
+(pdftex.def)             Requested size: 426.79134pt x 260.89642pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 764--766
+ [][] 
+ []
+
+[29 <./ex_wiel1.png>] [30]
+<ex_wiel2.png, id=465, 1502.61375pt x 679.53876pt>
+File: ex_wiel2.png Graphic file (type png)
+<use ex_wiel2.png>
+Package pdftex.def Info: ex_wiel2.png  used on input line 782.
+(pdftex.def)             Requested size: 426.79134pt x 193.00694pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 782--784
+ [][] 
+ []
+
+[31 <./ex_wiel2.png>]
+<ex_wiel2_2.png, id=475, 1394.20876pt x 470.75874pt>
+File: ex_wiel2_2.png Graphic file (type png)
+<use ex_wiel2_2.png>
+Package pdftex.def Info: ex_wiel2_2.png  used on input line 796.
+(pdftex.def)             Requested size: 426.79134pt x 144.10916pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 796--798
+ [][] 
+ []
+
+[32 <./ex_wiel2_2.png>]
+<ex_wiel3.png, id=484, 1333.98375pt x 595.22375pt>
+File: ex_wiel3.png Graphic file (type png)
+<use ex_wiel3.png>
+Package pdftex.def Info: ex_wiel3.png  used on input line 817.
+(pdftex.def)             Requested size: 426.79134pt x 190.43008pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 817--819
+ [][] 
+ []
+
+[33 <./ex_wiel3.png>] [34]
+<ex_wiel4.png, id=497, 1130.2225pt x 601.24625pt>
+File: ex_wiel4.png Graphic file (type png)
+<use ex_wiel4.png>
+Package pdftex.def Info: ex_wiel4.png  used on input line 837.
+(pdftex.def)             Requested size: 426.79134pt x 227.03558pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 837--839
+ [][] 
+ []
+
+[35 <./ex_wiel4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 858--859
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--863
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
+
+ []
+
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [37]
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
+
+ []
+
+[38]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 912.
+
+Underfull \hbox (badness 1019) in paragraph at lines 911--914
+[]\OT4/cmr/m/n/10.95 2021 Kag-gle Inc [in-ter-ne-to-wa spo-ªecz-no±¢ zwi¡-za-na
+ z ana-li-z¡ da-nych],
+ []
+
+[39]
+Underfull \hbox (badness 1377) in paragraph at lines 919--920
+[]\OT4/cmr/m/n/10.95 dr in». An-na Bry-niar-ska, Pod-sta-wy teo-rii sys-te-mów 
+roz-my-tych z za-
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 925.
+[40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 925.
+ (Sprawozdanie-projekt-2-podsumowania.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 925.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 925.
+Package rerunfilecheck Info: File `Sprawozdanie-projekt-2-podsumowania.out' has
+ not changed.
+(rerunfilecheck)             Checksum: A70E197C5CEE4A3FEB4FB57141EFD532;3271.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 925.
+ ) 
+Here is how much of TeX's memory you used:
+ 6023 strings out of 480931
+ 96379 string characters out of 2898858
+ 360114 words of memory out of 3000000
+ 21597 multiletter control sequences out of 15000+200000
+ 540419 words of font info for 46 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,7n,32p,2361b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
+nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.
+enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit
+.enc}<C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Przemek/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Przeme
+k/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2355938 by
+tes).
+PDF statistics:
+ 628 PDF objects out of 1000 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
+ 443 words of extra memory for PDF output out of 10000 (max. 10000000)
+
