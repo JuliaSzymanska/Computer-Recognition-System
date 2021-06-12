@@ -129,6 +129,7 @@ public class Wielopodmiotowe implements Initializable {
             labelWybraneKwalifikatory.setVisible(false);
             kwalifikatorWybrane.setVisible(false);
             usunKwalifikator.setVisible(false);
+            podsumowaniePrzycisk.setVisible(true);
         } else if (this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA.toString())
                 || this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA.toString())) {
             labelKwantyfikator.setVisible(true);
@@ -139,6 +140,7 @@ public class Wielopodmiotowe implements Initializable {
             labelWybraneKwalifikatory.setVisible(true);
             kwalifikatorWybrane.setVisible(true);
             usunKwalifikator.setVisible(true);
+            podsumowaniePrzycisk.setVisible(true);
         } else if (this.forma.getValue().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.CZWARTA_FORMA.toString())) {
             labelKwantyfikator.setVisible(false);
             kwantyfikator.setVisible(false);
@@ -148,6 +150,7 @@ public class Wielopodmiotowe implements Initializable {
             labelWybraneKwalifikatory.setVisible(false);
             kwalifikatorWybrane.setVisible(false);
             usunKwalifikator.setVisible(false);
+            podsumowaniePrzycisk.setVisible(true);
         }
     }
 
