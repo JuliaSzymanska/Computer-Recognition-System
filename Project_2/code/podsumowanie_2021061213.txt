@@ -1,0 +1,11 @@
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 1 niż wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości poniżej pół mili, T1value=0.7297380423131593}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 1 niż wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości ponad trzech mili, T1value=0.3436283532164983}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 1 niż wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu trwające poniżej godziny, T1value=0.5618501081606473}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 1, jest wywołuje utrudnienia w ruchu trwające około czterech godzin, T1value=0.9242269035165948}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 1, jest wywołuje utrudnienia w ruchu trwające około sześciu godzin, T1value=1.0}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 1, jest wywołuje utrudnienia w ruchu trwające ponad sześć godzin, T1value=0.7693444129570968}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 1, jest wywołuje utrudnienia w ruchu o długości około trzech mili, T1value=0.8479188705394818}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 1, jest wywołuje utrudnienia w ruchu o długości ponad trzech mili, T1value=0.6563716467835017}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 1, jest przy dużych opadach, T1value=NaN}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 2, jest przy umiarowanych opadach, T1value=0.5832161305867551}
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 1 niż wypadków o dotkliwości 4, jest przy niewielkich opadach, T1value=0.5025955516675353}
