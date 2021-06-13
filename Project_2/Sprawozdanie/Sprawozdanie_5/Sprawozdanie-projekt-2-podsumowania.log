@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  30 MAY 2021 20:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  12 JUN 2021 22:45
 entering extended mode
 **./Sprawozdanie-projekt-2-podsumowania.tex
 (Sprawozdanie-projekt-2-podsumowania.tex
@@ -253,6 +253,10 @@ LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
 
 LaTeX Warning: Label `rysunek do eksperymentu 1 wariantu 1' multiply defined.
 
+
+LaTeX Warning: Label `kwantyfikatory_lingwistyczne_absolutne' multiply defined.
+
+
 )
 \openout1 = `Sprawozdanie-projekt-2-podsumowania.aux'.
 
@@ -351,9 +355,9 @@ LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line
 d"
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Overfull \hbox (29.20953pt too wide) in paragraph at lines 28--29
-\OT4/cmr/m/n/12 ozna-cza opi-sa-nie da-nych licz-bo-wych ze zbio-ru danych[[]] 
-j¦-zy-kiem quasi-naturalnym
+Overfull \hbox (31.82062pt too wide) in paragraph at lines 28--29
+\OT4/cmr/m/n/12 ozna-cza opi-sa-nie da-nych licz-bo-wych ze zbio-ru da-nych [[]
+] j¦-zy-kiem quasi-naturalnym
  []
 
 
@@ -370,7 +374,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--34
 
 {C:/Users/Przemek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 [2] [3]
-<accidents.png, id=119, 272.01625pt x 340.27126pt>
+<accidents.png, id=191, 272.01625pt x 340.27126pt>
 File: accidents.png Graphic file (type png)
 <use accidents.png>
 Package pdftex.def Info: accidents.png  used on input line 61.
@@ -385,7 +389,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-<FunkcjaPrzynaleznosciCzasTrwania.png, id=127, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciCzasTrwania.png, id=199, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciCzasTrwania.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciCzasTrwania.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciCzasTrwania.png  used on input li
@@ -411,7 +415,7 @@ Overfull \hbox (0.8402pt too wide) in paragraph at lines 157--158
 /12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 ,
  []
 
-<FunkcjaPrzynaleznosciOdleglosc.png, id=144, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciOdleglosc.png, id=216, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciOdleglosc.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciOdleglosc.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciOdleglosc.png  used on input line
@@ -432,7 +436,7 @@ Overfull \hbox (63.16948pt too wide) in paragraph at lines 209--210
 t/12 []$\OT4/cmr/m/n/12 ,
  []
 
-<FunkcjaPrzynaleznosciTemperatura.png, id=155, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciTemperatura.png, id=227, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciTemperatura.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciTemperatura.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciTemperatura.png  used on input li
@@ -451,7 +455,7 @@ Overfull \hbox (35.59561pt too wide) in paragraph at lines 251--252
 t/12 []$\OT4/cmr/m/n/12 ,
  []
 
-<FunkcjaPrzynaleznosciWilgotnosc.png, id=174, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciWilgotnosc.png, id=246, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciWilgotnosc.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciWilgotnosc.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciWilgotnosc.png  used on input lin
@@ -469,7 +473,7 @@ Overfull \hbox (16.20522pt too wide) in paragraph at lines 291--292
 t/12 []$\OT4/cmr/m/n/12 ,
  []
 
-<FunkcjaPrzynaleznosciCiÅ›nienie.png, id=185, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciCiÅ›nienie.png, id=257, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciCiÅ›nienie.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciCiÅ›nienie.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciCiÅ›nienie.png  used on input lin
@@ -481,7 +485,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 295--297
  []
 
 [10 <./FunkcjaPrzynaleznosciCiÅ›nienie.png>]
-<FunkcjaPrzynaleznosciWidocznosc.png, id=197, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciWidocznosc.png, id=269, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciWidocznosc.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciWidocznosc.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciWidocznosc.png  used on input lin
@@ -500,7 +504,7 @@ t/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/
 it/12 []$
  []
 
-<FunkcjaPrzynaleznosciPredkoscWiatru.png, id=209, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciPredkoscWiatru.png, id=281, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciPredkoscWiatru.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciPredkoscWiatru.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciPredkoscWiatru.png  used on input
@@ -521,7 +525,7 @@ Overfull \hbox (14.68216pt too wide) in paragraph at lines 451--452
 t/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$
  []
 
-<FunkcjaPrzynaleznosciOpady.png, id=220, 642.4pt x 481.8pt>
+<FunkcjaPrzynaleznosciOpady.png, id=292, 642.4pt x 481.8pt>
 File: FunkcjaPrzynaleznosciOpady.png Graphic file (type png)
 <use FunkcjaPrzynaleznosciOpady.png>
 Package pdftex.def Info: FunkcjaPrzynaleznosciOpady.png  used on input line 455
@@ -536,12 +540,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 455--457
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [13 <./FunkcjaPrzynaleznosciPredkoscWiatru.png>]
-Overfull \hbox (0.74664pt too wide) in paragraph at lines 465--466
-[]\OT4/cmr/m/n/12 Do kwan-ty-fi-ka-to-ra lin-gwi-stycz-ne-go wzgl¦dnego[[]] zo-
-sta-ªy do-pa-so-wa-ne ety-
- []
-
-<kwantyfikatory.png, id=234, 642.4pt x 481.8pt>
+<kwantyfikatory.png, id=306, 642.4pt x 481.8pt>
 File: kwantyfikatory.png Graphic file (type png)
 <use kwantyfikatory.png>
 Package pdftex.def Info: kwantyfikatory.png  used on input line 491.
@@ -561,133 +560,278 @@ i-ka-to-rów lin-gwi-stycz-nych
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [14 <./FunkcjaPrzynaleznosciOpady.png>] [15 <./kwantyfikatory.png>]
-Overfull \hbox (2.65381pt too wide) in paragraph at lines 553--554
+Overfull \hbox (5.91766pt too wide) in paragraph at lines 586--587
 []\OT4/cmr/m/n/12 gdzie: $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it
 /12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/i
 t/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/
-it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$
+it/12 []$\OT4/cmr/m/n/12 , $\OML/cmm/m/it/12 []$\OT4/cmr/m/n/12 ,
  []
 
-<kwantyfikatory_absolutny.png, id=259, 642.4pt x 481.8pt>
-File: kwantyfikatory_absolutny.png Graphic file (type png)
-<use kwantyfikatory_absolutny.png>
-Package pdftex.def Info: kwantyfikatory_absolutny.png  used on input line 557.
+<kwantyfikatory_absolutny_2.png, id=331, 642.4pt x 481.8pt>
+File: kwantyfikatory_absolutny_2.png Graphic file (type png)
+<use kwantyfikatory_absolutny_2.png>
+Package pdftex.def Info: kwantyfikatory_absolutny_2.png  used on input line 590
+.
 (pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 557--559
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 590--592
  [][] 
  []
 
-[16 <./kwantyfikatory_absolutny.png (PNG copy)>]
-<uml.png, id=266, 2908.8675pt x 2098.84125pt>
-File: uml.png Graphic file (type png)
-<use uml.png>
-Package pdftex.def Info: uml.png  used on input line 570.
-(pdftex.def)             Requested size: 398.33858pt x 287.3986pt.
+<kwantyfikatory_absolutny.png, id=332, 642.4pt x 481.8pt>
+File: kwantyfikatory_absolutny.png Graphic file (type png)
+<use kwantyfikatory_absolutny.png>
+Package pdftex.def Info: kwantyfikatory_absolutny.png  used on input line 599.
+(pdftex.def)             Requested size: 398.33858pt x 298.76436pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 570--572
- [][] 
- []
-
-[17 <./uml.png (PNG copy)>]
-<uml_2.png, id=276, 1799.72375pt x 190.7125pt>
-File: uml_2.png Graphic file (type png)
-<use uml_2.png>
-Package pdftex.def Info: uml_2.png  used on input line 581.
-(pdftex.def)             Requested size: 398.33858pt x 42.21004pt.
-
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 581--583
- [][] 
- []
-
-[18 <./uml_2.png (PNG copy)>] [19]
-<uml_3.png, id=288, 2785.40625pt x 2964.07375pt>
-File: uml_3.png Graphic file (type png)
-<use uml_3.png>
-Package pdftex.def Info: uml_3.png  used on input line 597.
-(pdftex.def)             Requested size: 426.79134pt x 454.13501pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 597--599
- [][] 
- []
-
-[20 <./uml_3.png (PNG copy)>]
-<gui.png, id=294, 965.10562pt x 566.115pt>
-File: gui.png Graphic file (type png)
-<use gui.png>
-Package pdftex.def Info: gui.png  used on input line 608.
-(pdftex.def)             Requested size: 426.79134pt x 250.3439pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 608--610
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 599--601
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 635--641
+[16 <./kwantyfikatory_absolutny_2.png>]
+<uml.png, id=344, 3716.88625pt x 2492.31125pt>
+File: uml.png Graphic file (type png)
+<use uml.png>
+Package pdftex.def Info: uml.png  used on input line 612.
+(pdftex.def)             Requested size: 398.33858pt x 267.08159pt.
 
- []
-
-[22 <./gui.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 642--643
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--646
-
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 612--614
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 652--662
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17 <./kwantyfikatory_absolutny.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 619--622
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--665
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./uml.png (PNG copy)>]
+<uml_2.png, id=378, 1799.72375pt x 190.7125pt>
+File: uml_2.png Graphic file (type png)
+<use uml_2.png>
+Package pdftex.def Info: uml_2.png  used on input line 625.
+(pdftex.def)             Requested size: 398.33858pt x 42.21004pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 625--627
+ [][] 
+ []
+
+[19 <./uml_2.png (PNG copy)>]
+<uml_3.png, id=385, 2591.6825pt x 3404.72pt>
+File: uml_3.png Graphic file (type png)
+<use uml_3.png>
+Package pdftex.def Info: uml_3.png  used on input line 644.
+(pdftex.def)             Requested size: 426.79134pt x 560.66359pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 644--646
+ [][] 
+ []
+
+
+Underfull \vbox (badness 4713) has occurred while \output is active []
+
+ [20 <./uml_3.png (PNG copy)>] [21] [22]
+<gui.png, id=399, 1283.79625pt x 673.51625pt>
+File: gui.png Graphic file (type png)
+<use gui.png>
+Package pdftex.def Info: gui.png  used on input line 662.
+(pdftex.def)             Requested size: 426.79134pt x 223.90536pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 662--664
+ [][] 
+ []
+
+[23 <./gui.png>]
+<gui_2.png, id=407, 960.58875pt x 561.297pt>
+File: gui_2.png Graphic file (type png)
+<use gui_2.png>
+Package pdftex.def Info: gui_2.png  used on input line 672.
+(pdftex.def)             Requested size: 426.79134pt x 249.38667pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 672--674
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
-[23]
+<gui_3.png, id=410, 1134.2375pt x 629.35126pt>
+File: gui_3.png Graphic file (type png)
+<use gui_3.png>
+Package pdftex.def Info: gui_3.png  used on input line 682.
+(pdftex.def)             Requested size: 426.79134pt x 236.8128pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 682--684
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24 <./gui_2.png>] [25 <./gui_3.png>]
+<ex1.png, id=425, 1279.78125pt x 698.61pt>
+File: ex1.png Graphic file (type png)
+<use ex1.png>
+Package pdftex.def Info: ex1.png  used on input line 707.
+(pdftex.def)             Requested size: 426.79134pt x 232.97247pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 707--709
+ [][] 
+ []
+
+[26 <./ex1.png>]
+<ex2.png, id=434, 1280.785pt x 695.59875pt>
+File: ex2.png Graphic file (type png)
+<use ex2.png>
+Package pdftex.def Info: ex2.png  used on input line 724.
+(pdftex.def)             Requested size: 426.79134pt x 231.78784pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 724--726
+ [][] 
+ []
+
+[27 <./ex2.png>]
+<ex3.png, id=443, 1517.67pt x 697.60625pt>
+File: ex3.png Graphic file (type png)
+<use ex3.png>
+Package pdftex.def Info: ex3.png  used on input line 740.
+(pdftex.def)             Requested size: 426.79134pt x 196.16934pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 740--742
+ [][] 
+ []
+
+[28 <./ex3.png>]
+<ex_wiel1.png, id=452, 1136.245pt x 694.595pt>
+File: ex_wiel1.png Graphic file (type png)
+<use ex_wiel1.png>
+Package pdftex.def Info: ex_wiel1.png  used on input line 764.
+(pdftex.def)             Requested size: 426.79134pt x 260.89642pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 764--766
+ [][] 
+ []
+
+[29 <./ex_wiel1.png>] [30]
+<ex_wiel2.png, id=465, 1502.61375pt x 679.53876pt>
+File: ex_wiel2.png Graphic file (type png)
+<use ex_wiel2.png>
+Package pdftex.def Info: ex_wiel2.png  used on input line 782.
+(pdftex.def)             Requested size: 426.79134pt x 193.00694pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 782--784
+ [][] 
+ []
+
+[31 <./ex_wiel2.png>]
+<ex_wiel2_2.png, id=475, 1394.20876pt x 470.75874pt>
+File: ex_wiel2_2.png Graphic file (type png)
+<use ex_wiel2_2.png>
+Package pdftex.def Info: ex_wiel2_2.png  used on input line 796.
+(pdftex.def)             Requested size: 426.79134pt x 144.10916pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 796--798
+ [][] 
+ []
+
+[32 <./ex_wiel2_2.png>]
+<ex_wiel3.png, id=484, 1333.98375pt x 595.22375pt>
+File: ex_wiel3.png Graphic file (type png)
+<use ex_wiel3.png>
+Package pdftex.def Info: ex_wiel3.png  used on input line 817.
+(pdftex.def)             Requested size: 426.79134pt x 190.43008pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 817--819
+ [][] 
+ []
+
+[33 <./ex_wiel3.png>] [34]
+<ex_wiel4.png, id=497, 1130.2225pt x 601.24625pt>
+File: ex_wiel4.png Graphic file (type png)
+<use ex_wiel4.png>
+Package pdftex.def Info: ex_wiel4.png  used on input line 837.
+(pdftex.def)             Requested size: 426.79134pt x 227.03558pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 837--839
+ [][] 
+ []
+
+[35 <./ex_wiel4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 858--859
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 862--863
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
+
+ []
+
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [37]
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
+
+ []
+
+[38]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 679.
+(Font)              <10.95> on input line 912.
 
-Underfull \hbox (badness 1019) in paragraph at lines 678--681
+Underfull \hbox (badness 1019) in paragraph at lines 911--914
 []\OT4/cmr/m/n/10.95 2021 Kag-gle Inc [in-ter-ne-to-wa spo-ªecz-no±¢ zwi¡-za-na
  z ana-li-z¡ da-nych],
  []
 
-
-Underfull \hbox (badness 1377) in paragraph at lines 686--687
+[39]
+Underfull \hbox (badness 1377) in paragraph at lines 919--920
 []\OT4/cmr/m/n/10.95 dr in». An-na Bry-niar-ska, Pod-sta-wy teo-rii sys-te-mów 
 roz-my-tych z za-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 692.
-[24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 692.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 925.
+[40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 925.
  (Sprawozdanie-projekt-2-podsumowania.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 692.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 692.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 925.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 925.
 Package rerunfilecheck Info: File `Sprawozdanie-projekt-2-podsumowania.out' has
  not changed.
-(rerunfilecheck)             Checksum: 32DF1507EEF659228DACA104E62DDCDD;1694.
+(rerunfilecheck)             Checksum: A70E197C5CEE4A3FEB4FB57141EFD532;3271.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 692.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 925.
  ) 
 Here is how much of TeX's memory you used:
- 5870 strings out of 480931
- 94240 string characters out of 2898858
- 351856 words of memory out of 3000000
- 21504 multiletter control sequences out of 15000+200000
+ 6023 strings out of 480931
+ 96379 string characters out of 2898858
+ 360114 words of memory out of 3000000
+ 21597 multiletter control sequences out of 15000+200000
  540419 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,32p,3091b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,7n,32p,2361b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
 nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.
 enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit
@@ -706,10 +850,10 @@ iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-2-podsumowania.pdf (24 pages, 1517030 by
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2355934 by
 tes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
- 126 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 628 PDF objects out of 1000 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
+ 443 words of extra memory for PDF output out of 10000 (max. 10000000)
 
