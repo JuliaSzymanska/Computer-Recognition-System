@@ -235,7 +235,7 @@ public class MiaryJakosci {
         if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
             return 0.0;
         }
-        return 2 * Math.pow(0.5, 1);
+        return 2 * Math.pow(0.5, podsumowanieLingwistyczne.getKwalifikator().size());
     }
 
     public static class NieBrakKwalifikatora extends Exception {
