@@ -211,7 +211,7 @@ public class MiaryJakosci {
      */
     public static Double stopienNieprecyzyjnosciKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
-            return null;
+            return 0.0;
         }
         return 1.0 - podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty());
     }
@@ -221,7 +221,7 @@ public class MiaryJakosci {
      */
     public static Double stopienKardynalnosciWzglednejKwalifikatora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         if (podsumowanieLingwistyczne.getKwalifikator().size() == 0) {
-            return null;
+            return 0.0;
         }
         double iloczyn = podsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty().liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty());
         iloczyn /= podsumowanieLingwistyczne.getPodmioty().size();
