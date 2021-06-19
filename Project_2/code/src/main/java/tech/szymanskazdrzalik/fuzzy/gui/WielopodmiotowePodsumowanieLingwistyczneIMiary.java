@@ -34,15 +34,15 @@ public class WielopodmiotowePodsumowanieLingwistyczneIMiary {
             stringBuilder.append(podsumowanieLingwistyczne.getPodmioty1Nazwa());
         }
         if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA)) {
-            podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" będących ").append(etykieta.getNazwa()));
+            podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" które są ").append(etykieta.getNazwa()));
         }
         if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA) ||
                 podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA) ||
                 podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.TRZECIA_FORMA)) {
-        stringBuilder.append(" w odniesieniu do ").append(podsumowanieLingwistyczne.getPodmioty2Nazwa());
+        stringBuilder.append(" w porównaniu do ").append(podsumowanieLingwistyczne.getPodmioty2Nazwa());
         }
         if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA)) {
-            podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" będących ").append(etykieta.getNazwa()));
+            podsumowanieLingwistyczne.getKwalifikator().forEach(etykieta -> stringBuilder.append(" które są ").append(etykieta.getNazwa()));
         }
         if (podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.PIERWSZA_FORMA) ||
                 podsumowanieLingwistyczne.getRodzajPodsumowania().equals(WielopodmiotowePodsumowanieLingwistyczne.RodzajPodsumowania.DRUGA_FORMA) ||
