@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  12 JUN 2021 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  19 JUN 2021 11:29
 entering extended mode
 **./Sprawozdanie-projekt-2-podsumowania.tex
 (Sprawozdanie-projekt-2-podsumowania.tex
@@ -679,18 +679,18 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 682--684
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24 <./gui_2.png>] [25 <./gui_3.png>]
-<ex1.png, id=425, 1279.78125pt x 698.61pt>
+<ex1.png, id=425, 959.08313pt x 469.755pt>
 File: ex1.png Graphic file (type png)
 <use ex1.png>
 Package pdftex.def Info: ex1.png  used on input line 707.
-(pdftex.def)             Requested size: 426.79134pt x 232.97247pt.
+(pdftex.def)             Requested size: 426.79134pt x 209.0439pt.
 
 Overfull \hbox (36.79134pt too wide) in paragraph at lines 707--709
  [][] 
  []
 
 [26 <./ex1.png>]
-<ex2.png, id=434, 1280.785pt x 695.59875pt>
+<ex2.png, id=433, 1280.785pt x 695.59875pt>
 File: ex2.png Graphic file (type png)
 <use ex2.png>
 Package pdftex.def Info: ex2.png  used on input line 724.
@@ -701,7 +701,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 724--726
  []
 
 [27 <./ex2.png>]
-<ex3.png, id=443, 1517.67pt x 697.60625pt>
+<ex3.png, id=442, 1517.67pt x 697.60625pt>
 File: ex3.png Graphic file (type png)
 <use ex3.png>
 Package pdftex.def Info: ex3.png  used on input line 740.
@@ -712,7 +712,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 740--742
  []
 
 [28 <./ex3.png>]
-<ex_wiel1.png, id=452, 1136.245pt x 694.595pt>
+<ex_wiel1.png, id=451, 1136.245pt x 694.595pt>
 File: ex_wiel1.png Graphic file (type png)
 <use ex_wiel1.png>
 Package pdftex.def Info: ex_wiel1.png  used on input line 764.
@@ -723,7 +723,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 764--766
  []
 
 [29 <./ex_wiel1.png>] [30]
-<ex_wiel2.png, id=465, 1502.61375pt x 679.53876pt>
+<ex_wiel2.png, id=464, 1502.61375pt x 679.53876pt>
 File: ex_wiel2.png Graphic file (type png)
 <use ex_wiel2.png>
 Package pdftex.def Info: ex_wiel2.png  used on input line 782.
@@ -734,7 +734,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 782--784
  []
 
 [31 <./ex_wiel2.png>]
-<ex_wiel2_2.png, id=475, 1394.20876pt x 470.75874pt>
+<ex_wiel2_2.png, id=474, 1394.20876pt x 470.75874pt>
 File: ex_wiel2_2.png Graphic file (type png)
 <use ex_wiel2_2.png>
 Package pdftex.def Info: ex_wiel2_2.png  used on input line 796.
@@ -745,7 +745,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 796--798
  []
 
 [32 <./ex_wiel2_2.png>]
-<ex_wiel3.png, id=484, 1333.98375pt x 595.22375pt>
+<ex_wiel3.png, id=483, 1333.98375pt x 595.22375pt>
 File: ex_wiel3.png Graphic file (type png)
 <use ex_wiel3.png>
 Package pdftex.def Info: ex_wiel3.png  used on input line 817.
@@ -756,7 +756,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 817--819
  []
 
 [33 <./ex_wiel3.png>] [34]
-<ex_wiel4.png, id=497, 1130.2225pt x 601.24625pt>
+<ex_wiel4.png, id=496, 1130.2225pt x 601.24625pt>
 File: ex_wiel4.png Graphic file (type png)
 <use ex_wiel4.png>
 Package pdftex.def Info: ex_wiel4.png  used on input line 837.
@@ -850,10 +850,10 @@ iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2355934 by
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2354635 by
 tes).
 PDF statistics:
- 628 PDF objects out of 1000 (max. 8388607)
+ 627 PDF objects out of 1000 (max. 8388607)
  175 named destinations out of 1000 (max. 500000)
  443 words of extra memory for PDF output out of 10000 (max. 10000000)
 

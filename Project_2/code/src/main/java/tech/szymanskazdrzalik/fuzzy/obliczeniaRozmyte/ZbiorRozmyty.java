@@ -2,6 +2,8 @@ package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
 
@@ -24,7 +26,7 @@ public interface ZbiorRozmyty<T> extends FunkcjaPrzynaleznosci<T> {
      * @return the nosnik
      */
     default List<T> getNosnik(List<T> objectDoubleMap) {
-        return this.getPrzekrojAlfa(objectDoubleMap, 0.0);
+        return objectDoubleMap.stream().filter(t -> ZbiorRozmyty.this.przynaleznosc(t) != 0).collect(Collectors.toList());
     }
 
 
