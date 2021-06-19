@@ -72,21 +72,12 @@ public class PodsumowanieLingwistyczneIMiary {
         this.T7 = new SimpleStringProperty(formatter.format(this.T7value));
         this.T8value = MiaryJakosci.stopienKardynalnosciWzglednejSumaryzatora(podsumowanieLingwistyczne);
         this.T8 = new SimpleStringProperty(formatter.format(this.T8value));
-        if (this.podsumowanieLingwistyczne.getKwalifikator().size() != 0) {
-            this.T9value = MiaryJakosci.stopienNieprecyzyjnosciKwalifikatora(podsumowanieLingwistyczne);
-            this.T10value = MiaryJakosci.stopienKardynalnosciWzglednejKwalifikatora(podsumowanieLingwistyczne);
-            this.T11value = MiaryJakosci.dlugoscKwalifikatora(podsumowanieLingwistyczne);
-            this.T9 = new SimpleStringProperty(formatter.format(this.T9value));
-            this.T10 = new SimpleStringProperty(formatter.format(this.T10value));
-            this.T11 = new SimpleStringProperty(formatter.format(this.T11value));
-        } else {
-            this.T9value = null;
-            this.T10value = null;
-            this.T11value = 0.0;
-            this.T9 = new SimpleStringProperty("null");
-            this.T10 = new SimpleStringProperty("null");
-            this.T11 = new SimpleStringProperty("0");
-        }
+        this.T9value = MiaryJakosci.stopienNieprecyzyjnosciKwalifikatora(podsumowanieLingwistyczne);
+        this.T10value = MiaryJakosci.stopienKardynalnosciWzglednejKwalifikatora(podsumowanieLingwistyczne);
+        this.T11value = MiaryJakosci.dlugoscKwalifikatora(podsumowanieLingwistyczne);
+        this.T9 = new SimpleStringProperty(formatter.format(this.T9value));
+        this.T10 = new SimpleStringProperty(formatter.format(this.T10value));
+        this.T11 = new SimpleStringProperty(formatter.format(this.T11value));
         this.glownaMiaraJakosciValue = null;
         this.glownaMiaraJakosci = new SimpleStringProperty("null");
         this.button = new Button("Zapisz");
@@ -108,15 +99,15 @@ public class PodsumowanieLingwistyczneIMiary {
 
     public void calculateGlownaMiaraJakosci(MiaryJakosciWagi miaryJakosciWagi) {
         double T8Value = 0.0;
-        if (this.T8value != null ) {
+        if (this.T8value != null) {
             T8Value = this.T8value;
         }
         double T9Value = 0.0;
-        if (this.T9value != null ) {
+        if (this.T9value != null) {
             T9Value = this.T9value;
         }
         double T10Value = 0.0;
-        if (this.T10value != null ) {
+        if (this.T10value != null) {
             T10Value = this.T10value;
         }
         this.glownaMiaraJakosciValue = this.T1value * miaryJakosciWagi.getT1() +

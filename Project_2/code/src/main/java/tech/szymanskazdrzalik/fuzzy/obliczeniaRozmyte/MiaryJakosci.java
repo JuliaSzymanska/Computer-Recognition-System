@@ -103,11 +103,8 @@ public class MiaryJakosci {
         double stopienPierwiastka = 1.0 / podsumowanieLingwistyczne.getSumaryzator().size();
         double iloczyn = 1;
         for (var x : podsumowanieLingwistyczne.getSumaryzator()) {
-//            System.out.println("Wynik " + x.getAbstractZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty()));
             iloczyn *= x.getAbstractZbiorRozmyty().stopienRozmycia(podsumowanieLingwistyczne.getPodmioty());
-//            System.out.println(iloczyn + " iloczyn");
         }
-//        System.out.println("koniec " + Math.pow(iloczyn, stopienPierwiastka));
         return 1.0 - Math.pow(iloczyn, stopienPierwiastka);
     }
 
