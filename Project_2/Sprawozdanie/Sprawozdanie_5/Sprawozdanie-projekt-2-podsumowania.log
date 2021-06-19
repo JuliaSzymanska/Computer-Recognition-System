@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  19 JUN 2021 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  19 JUN 2021 12:20
 entering extended mode
 **./Sprawozdanie-projekt-2-podsumowania.tex
 (Sprawozdanie-projekt-2-podsumowania.tex
@@ -679,11 +679,11 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 682--684
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24 <./gui_2.png>] [25 <./gui_3.png>]
-<ex1.png, id=425, 959.08313pt x 469.755pt>
+<ex1.png, id=425, 954.56625pt x 444.91219pt>
 File: ex1.png Graphic file (type png)
 <use ex1.png>
 Package pdftex.def Info: ex1.png  used on input line 707.
-(pdftex.def)             Requested size: 426.79134pt x 209.0439pt.
+(pdftex.def)             Requested size: 426.79134pt x 198.91875pt.
 
 Overfull \hbox (36.79134pt too wide) in paragraph at lines 707--709
  [][] 
@@ -850,7 +850,7 @@ iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2354635 by
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2354182 by
 tes).
 PDF statistics:
  627 PDF objects out of 1000 (max. 8388607)
