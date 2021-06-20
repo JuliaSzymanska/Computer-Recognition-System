@@ -1,5 +1,8 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MiaryJakosci {
 
     /**
@@ -42,6 +45,7 @@ public class MiaryJakosci {
                         liczbaKardynalna(podsumowanieLingwistyczne.getPodmioty()));
     }
 
+
     /**
      * T1
      */
@@ -50,7 +54,6 @@ public class MiaryJakosci {
         double licznik, mianownik;
         switch (wielopodmiotowePodsumowanieLingwistyczne.getRodzajPodsumowania()) {
             case PIERWSZA_FORMA:
-                // pozyskiwanie wiedzy z relacyjnych baz danych strona 6
                 licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
                         x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
                 mianownik = licznik +
@@ -61,7 +64,6 @@ public class MiaryJakosci {
                         getAbstractZbiorRozmyty().
                         przynaleznosc(licznik / mianownik);
             case DRUGA_FORMA:
-                // pozyskiwanie wiedzy z relacyjnych baz danych strona 7
                 licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
                         (x.iloczynZbiorow(wielopodmiotowePodsumowanieLingwistyczne.getKwalifikatorZbiorRozmyty()))
                                 .liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
@@ -73,7 +75,6 @@ public class MiaryJakosci {
                         getAbstractZbiorRozmyty().
                         przynaleznosc(licznik / mianownik);
             case TRZECIA_FORMA:
-                // pozyskiwanie wiedzy z relacyjnych baz danych strona 8
                 licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
                         x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
                 mianownik = licznik +
@@ -85,13 +86,10 @@ public class MiaryJakosci {
                         getAbstractZbiorRozmyty().
                         przynaleznosc(licznik / mianownik);
             default:
-                // pozyskiwanie wiedzy z relacyjnych baz danych strona 9
-                licznik = ((1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()) *
-                        x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()));
-                mianownik = licznik +
-                        (1.0 / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size()) *
-                                x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2());
-                return licznik / mianownik;
+                ImplikacjaRozmyta implikacjaRozmyta = new Lukasiewicz();
+
+                return 1 - implikacjaRozmyta.wartosc((x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()),
+                        x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
         }
     }
 
@@ -179,15 +177,19 @@ public class MiaryJakosci {
     // TODO: 29.05.2021
     public static Double stopienKardynalnosciWzglednejKwantyfiaktora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         var z = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
-        double suma = 0;
+        if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaTrapezoidalna) {
+          var x = (FunkcjaTrapezoidalna<Double>)   podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
+          var len = x.getKoniecPrzestrzeniRozwazan() - x.getPoczatekPrzestrzeniRozwazan();
+          var inny_len = x.getKoniec() - x.getPoczatek();
+          return 1 - inny_len / len;
+        } else if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaGausowska) {
+            return 0.0;
+        }
+        List<Double> doubleList = new ArrayList<>();
         for (var x : podsumowanieLingwistyczne.getPodmioty()) {
-            suma += podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty().przynaleznosc(z.przynaleznosc(x));
+            doubleList.add(z.przynaleznosc(x));
         }
-        suma /= podsumowanieLingwistyczne.getPodmioty().size();
-        if (podsumowanieLingwistyczne.getKwantyfikator().getJestAbsolutny()) {
-            return 1 - (suma) / podsumowanieLingwistyczne.getPodmioty().size();
-        }
-        return 1 - suma;
+        return 1 - (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty().liczbaKardynalna(doubleList) / doubleList.size());
     }
 
     /**
