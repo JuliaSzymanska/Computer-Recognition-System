@@ -1,5 +1,7 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
+import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,6 +89,24 @@ public class MiaryJakosci {
                         przynaleznosc(licznik / mianownik);
             default:
                 ImplikacjaRozmyta implikacjaRozmyta = new Lukasiewicz();
+//                List<Double> wypadeks = new ArrayList<>();
+//                List<Double> wypadeks1 = new ArrayList<>();
+//                List<Double> wypadeks2 = new ArrayList<>();
+//                var sum = 0.0;
+//                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) {
+//                    sum += implikacjaRozmyta.wartosc(x.przynaleznosc(i), 0);
+//                    wypadeks.add(x.przynaleznosc(i));
+//                    wypadeks1.add(x.przynaleznosc(i));
+//                }
+//                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) {
+//                    sum += implikacjaRozmyta.wartosc(0, x.przynaleznosc(i));
+//                    wypadeks.add(x.przynaleznosc(i));
+//                    wypadeks2.add(x.przynaleznosc(i));
+//                }
+
+
+//                return  1 - (sum) / (wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size() + wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
+
 
                 return 1 - implikacjaRozmyta.wartosc((x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()),
                         x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
