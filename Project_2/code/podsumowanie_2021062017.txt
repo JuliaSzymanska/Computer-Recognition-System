@@ -1,0 +1,1 @@
+WielopodmiotowePodsumowanieLingwistyczneIMiary{tekst=Więcej wypadków o dotkliwości 4 niż wypadków o dotkliwości 4, jest wywołuje utrudnienia w ruchu o długości poniżej pół mili, T1value=0.15649397590388003}
