@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  19 JUN 2021 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.5)  20 JUN 2021 18:33
 entering extended mode
 **./Sprawozdanie-projekt-2-podsumowania.tex
 (Sprawozdanie-projekt-2-podsumowania.tex
@@ -366,6 +366,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--31
  []
 
 
+LaTeX Warning: Command \k invalid in math mode on input line 31.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 31.
+
+Missing character: There is no ¦ in font cmmi12!
+Missing character: There is no ¡ in font cmmi12!
+
 Underfull \hbox (badness 10000) in paragraph at lines 31--34
 
  []
@@ -625,7 +633,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 625--627
  []
 
 [19 <./uml_2.png (PNG copy)>]
-<uml_3.png, id=385, 2591.6825pt x 3404.72pt>
+<uml_3.png, id=386, 2591.6825pt x 3404.72pt>
 File: uml_3.png Graphic file (type png)
 <use uml_3.png>
 Package pdftex.def Info: uml_3.png  used on input line 644.
@@ -639,18 +647,18 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 644--646
 Underfull \vbox (badness 4713) has occurred while \output is active []
 
  [20 <./uml_3.png (PNG copy)>] [21] [22]
-<gui.png, id=399, 1283.79625pt x 673.51625pt>
+<gui.png, id=400, 958.782pt x 540.21825pt>
 File: gui.png Graphic file (type png)
 <use gui.png>
 Package pdftex.def Info: gui.png  used on input line 662.
-(pdftex.def)             Requested size: 426.79134pt x 223.90536pt.
+(pdftex.def)             Requested size: 426.79134pt x 240.47467pt.
 
 Overfull \hbox (36.79134pt too wide) in paragraph at lines 662--664
  [][] 
  []
 
 [23 <./gui.png>]
-<gui_2.png, id=407, 960.58875pt x 561.297pt>
+<gui_2.png, id=408, 960.58875pt x 561.297pt>
 File: gui_2.png Graphic file (type png)
 <use gui_2.png>
 Package pdftex.def Info: gui_2.png  used on input line 672.
@@ -665,11 +673,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
-<gui_3.png, id=410, 1134.2375pt x 629.35126pt>
+<gui_3.png, id=411, 850.377pt x 504.08325pt>
 File: gui_3.png Graphic file (type png)
 <use gui_3.png>
 Package pdftex.def Info: gui_3.png  used on input line 682.
-(pdftex.def)             Requested size: 426.79134pt x 236.8128pt.
+(pdftex.def)             Requested size: 426.79134pt x 252.99477pt.
 
 Overfull \hbox (36.79134pt too wide) in paragraph at lines 682--684
  [][] 
@@ -679,18 +687,20 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 682--684
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24 <./gui_2.png>] [25 <./gui_3.png>]
-<ex1.png, id=425, 954.56625pt x 444.91219pt>
+<ex1.png, id=426, 961.79324pt x 449.2785pt>
 File: ex1.png Graphic file (type png)
 <use ex1.png>
 Package pdftex.def Info: ex1.png  used on input line 707.
-(pdftex.def)             Requested size: 426.79134pt x 198.91875pt.
+(pdftex.def)             Requested size: 426.79134pt x 199.36272pt.
 
 Overfull \hbox (36.79134pt too wide) in paragraph at lines 707--709
  [][] 
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 709.
 [26 <./ex1.png>]
-<ex2.png, id=433, 1280.785pt x 695.59875pt>
+<ex2.png, id=436, 1280.785pt x 695.59875pt>
 File: ex2.png Graphic file (type png)
 <use ex2.png>
 Package pdftex.def Info: ex2.png  used on input line 724.
@@ -700,8 +710,8 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 724--726
  [][] 
  []
 
-[27 <./ex2.png>]
-<ex3.png, id=442, 1517.67pt x 697.60625pt>
+[27 <./ex2.png>] [28]
+<ex3.png, id=449, 1517.67pt x 697.60625pt>
 File: ex3.png Graphic file (type png)
 <use ex3.png>
 Package pdftex.def Info: ex3.png  used on input line 740.
@@ -711,8 +721,8 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 740--742
  [][] 
  []
 
-[28 <./ex3.png>]
-<ex_wiel1.png, id=451, 1136.245pt x 694.595pt>
+[29 <./ex3.png>]
+<ex_wiel1.png, id=458, 1136.245pt x 694.595pt>
 File: ex_wiel1.png Graphic file (type png)
 <use ex_wiel1.png>
 Package pdftex.def Info: ex_wiel1.png  used on input line 764.
@@ -722,8 +732,8 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 764--766
  [][] 
  []
 
-[29 <./ex_wiel1.png>] [30]
-<ex_wiel2.png, id=464, 1502.61375pt x 679.53876pt>
+[30 <./ex_wiel1.png>] [31]
+<ex_wiel2.png, id=472, 1502.61375pt x 679.53876pt>
 File: ex_wiel2.png Graphic file (type png)
 <use ex_wiel2.png>
 Package pdftex.def Info: ex_wiel2.png  used on input line 782.
@@ -733,8 +743,8 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 782--784
  [][] 
  []
 
-[31 <./ex_wiel2.png>]
-<ex_wiel2_2.png, id=474, 1394.20876pt x 470.75874pt>
+[32 <./ex_wiel2.png>]
+<ex_wiel2_2.png, id=481, 1394.20876pt x 470.75874pt>
 File: ex_wiel2_2.png Graphic file (type png)
 <use ex_wiel2_2.png>
 Package pdftex.def Info: ex_wiel2_2.png  used on input line 796.
@@ -744,8 +754,8 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 796--798
  [][] 
  []
 
-[32 <./ex_wiel2_2.png>]
-<ex_wiel3.png, id=483, 1333.98375pt x 595.22375pt>
+[33 <./ex_wiel2_2.png>]
+<ex_wiel3.png, id=490, 1333.98375pt x 595.22375pt>
 File: ex_wiel3.png Graphic file (type png)
 <use ex_wiel3.png>
 Package pdftex.def Info: ex_wiel3.png  used on input line 817.
@@ -755,8 +765,8 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 817--819
  [][] 
  []
 
-[33 <./ex_wiel3.png>] [34]
-<ex_wiel4.png, id=496, 1130.2225pt x 601.24625pt>
+[34 <./ex_wiel3.png>] [35]
+<ex_wiel4.png, id=503, 1130.2225pt x 601.24625pt>
 File: ex_wiel4.png Graphic file (type png)
 <use ex_wiel4.png>
 Package pdftex.def Info: ex_wiel4.png  used on input line 837.
@@ -766,7 +776,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 837--839
  [][] 
  []
 
-[35 <./ex_wiel4.png>]
+[36 <./ex_wiel4.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 858--859
 
  []
@@ -776,7 +786,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 862--863
 
  []
 
-[36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 870--871
 
  []
@@ -786,55 +796,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 874--875
 
  []
 
-
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
- [37]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 878--879
 
  []
 
-[38]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 912.
-
+[39]
 Underfull \hbox (badness 1019) in paragraph at lines 911--914
 []\OT4/cmr/m/n/10.95 2021 Kag-gle Inc [in-ter-ne-to-wa spo-ªecz-no±¢ zwi¡-za-na
  z ana-li-z¡ da-nych],
  []
 
-[39]
+[40]
 Underfull \hbox (badness 1377) in paragraph at lines 919--920
 []\OT4/cmr/m/n/10.95 dr in». An-na Bry-niar-ska, Pod-sta-wy teo-rii sys-te-mów 
 roz-my-tych z za-
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 925.
-[40]
+[41]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 925.
  (Sprawozdanie-projekt-2-podsumowania.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 925.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 925.
-Package rerunfilecheck Info: File `Sprawozdanie-projekt-2-podsumowania.out' has
- not changed.
-(rerunfilecheck)             Checksum: A70E197C5CEE4A3FEB4FB57141EFD532;3271.
 
+
+Package rerunfilecheck Warning: File `Sprawozdanie-projekt-2-podsumowania.out' 
+has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Sprawozdanie-projekt-2-podsumowania
+.out':
+(rerunfilecheck)             Before: 7771A15F3FDEA93D81F40D4E637798B7;3310
+(rerunfilecheck)             After:  6AB1A393885C76676CD115454B730475;3272.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 925.
  ) 
 Here is how much of TeX's memory you used:
- 6023 strings out of 480931
- 96379 string characters out of 2898858
+ 6028 strings out of 480931
+ 96429 string characters out of 2898858
  360114 words of memory out of 3000000
- 21597 multiletter control sequences out of 15000+200000
- 540419 words of font info for 46 fonts, out of 3000000 for 9000
+ 21599 multiletter control sequences out of 15000+200000
+ 541498 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,32p,2361b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,7n,32p,2363b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.e
-nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.
-enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit
+nc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.
+enc}{C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm
 .enc}<C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmex10.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiK
@@ -848,12 +859,14 @@ onts/type1/public/pl/plbx12.pfb><C:/Users/Przemek/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/Przemek/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/Przemek/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/Przemek/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on Sprawozdanie-projekt-2-podsumowania.pdf (40 pages, 2354182 by
+Programs/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Users/Przemek/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Users/Przemek/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plti8.pfb><C:/Users/Przem
+ek/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
+Output written on Sprawozdanie-projekt-2-podsumowania.pdf (41 pages, 2425334 by
 tes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
- 175 named destinations out of 1000 (max. 500000)
+ 640 PDF objects out of 1000 (max. 8388607)
+ 176 named destinations out of 1000 (max. 500000)
  443 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -80,7 +80,7 @@
 
     <TableView fx:id="podsumowanieTable" minHeight="440.0" prefHeight="200.0" prefWidth="400.0">
         <columns>
-            <TableColumn fx:id="columnTekst" maxWidth="1000.0" prefWidth="1000.0" text="Tekst" />
+            <TableColumn fx:id="columnTekst" maxWidth="1400.0" prefWidth="1000.0" text="Tekst" />
             <TableColumn fx:id="columnT1" maxWidth="210" minWidth="35.0" prefWidth="50.39996337890625" text="T1" />
             <TableColumn fx:id="columnZapis" maxWidth="240.0" minWidth="50.0" prefWidth="78.0" text="Zapis" />
         </columns>

@@ -88,7 +88,19 @@ public class MiaryJakosci {
                         getAbstractZbiorRozmyty().
                         przynaleznosc(licznik / mianownik);
             default:
-                ImplikacjaRozmyta implikacjaRozmyta = new Lukasiewicz();
+                ImplikacjaRozmyta implikacjaRozmyta = new Reichenbach();
+
+//                var sum = 0.0;
+//                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) {
+//                    sum += implikacjaRozmyta.wartosc(x.przynaleznosc(i), 0);
+//                }
+//                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) {
+//                    sum += implikacjaRozmyta.wartosc(0, x.przynaleznosc(i));
+//                }
+//
+//
+//                return  1 - (sum) / (wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size() + wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
+
 
                 return 1 - implikacjaRozmyta.wartosc((x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()),
                         x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
