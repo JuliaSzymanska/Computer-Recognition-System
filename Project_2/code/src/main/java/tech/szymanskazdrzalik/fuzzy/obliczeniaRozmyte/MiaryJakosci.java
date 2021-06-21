@@ -196,8 +196,6 @@ public class MiaryJakosci {
           var len = x.getKoniecPrzestrzeniRozwazan() - x.getPoczatekPrzestrzeniRozwazan();
           var pole = (x.getPoczatekWartosciMaksymalnej() - x.getPoczatek()) * 0.5 + (x.getKoniecWartosciMaksymalnej() - x.getPoczatekWartosciMaksymalnej()) + (x.getKoniec() - x.getKoniecWartosciMaksymalnej()) * 0.5;
           return 1 - pole / podsumowanieLingwistyczne.getPodmioty().size();
-        } else if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaGausowska) {
-            return 0.0;
         }
         List<Double> doubleList = new ArrayList<>();
         for (var x : podsumowanieLingwistyczne.getPodmioty()) {
