@@ -89,10 +89,10 @@ public class MiaryJakosci {
                 ImplikacjaRozmyta implikacjaRozmyta = new Reichenbach();
 
                 var sum = 0.0;
-                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) {
+                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) {
                     sum += implikacjaRozmyta.wartosc(x.przynaleznosc(i), 0);
                 }
-                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) {
+                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) {
                     sum += implikacjaRozmyta.wartosc(0, x.przynaleznosc(i));
                 }
 
