@@ -1,7 +1,5 @@
 package tech.szymanskazdrzalik.fuzzy.obliczeniaRozmyte;
 
-import tech.szymanskazdrzalik.fuzzy.model.Wypadek;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,20 +88,16 @@ public class MiaryJakosci {
             default:
                 ImplikacjaRozmyta implikacjaRozmyta = new Reichenbach();
 
-//                var sum = 0.0;
-//                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) {
-//                    sum += implikacjaRozmyta.wartosc(x.przynaleznosc(i), 0);
-//                }
-//                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) {
-//                    sum += implikacjaRozmyta.wartosc(0, x.przynaleznosc(i));
-//                }
-//
-//
-//                return  1 - (sum) / (wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size() + wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
+                var sum = 0.0;
+                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) {
+                    sum += implikacjaRozmyta.wartosc(x.przynaleznosc(i), 0);
+                }
+                for (var i : wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) {
+                    sum += implikacjaRozmyta.wartosc(0, x.przynaleznosc(i));
+                }
 
+                return 1 - (sum) / (wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size() + wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
 
-                return 1 - implikacjaRozmyta.wartosc((x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty1().size()),
-                        x.liczbaKardynalna(wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2()) / wielopodmiotowePodsumowanieLingwistyczne.getPodmioty2().size());
         }
     }
 
@@ -192,10 +186,9 @@ public class MiaryJakosci {
     public static Double stopienKardynalnosciWzglednejKwantyfiaktora(PodsumowanieLingwistyczne podsumowanieLingwistyczne) {
         var z = Utils.iloczyn(podsumowanieLingwistyczne.getSumaryzator());
         if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaTrapezoidalna) {
-          var x = (FunkcjaTrapezoidalna<Double>)   podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
-          var len = x.getKoniecPrzestrzeniRozwazan() - x.getPoczatekPrzestrzeniRozwazan();
-          var pole = (x.getPoczatekWartosciMaksymalnej() - x.getPoczatek()) * 0.5 + (x.getKoniecWartosciMaksymalnej() - x.getPoczatekWartosciMaksymalnej()) + (x.getKoniec() - x.getKoniecWartosciMaksymalnej()) * 0.5;
-          return 1 - pole / podsumowanieLingwistyczne.getPodmioty().size();
+            var x = (FunkcjaTrapezoidalna<Double>) podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
+            var pole = (x.getPoczatekWartosciMaksymalnej() - x.getPoczatek()) * 0.5 + (x.getKoniecWartosciMaksymalnej() - x.getPoczatekWartosciMaksymalnej()) + (x.getKoniec() - x.getKoniecWartosciMaksymalnej()) * 0.5;
+            return 1 - pole / podsumowanieLingwistyczne.getPodmioty().size();
         }
         List<Double> doubleList = new ArrayList<>();
         for (var x : podsumowanieLingwistyczne.getPodmioty()) {
