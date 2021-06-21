@@ -194,10 +194,8 @@ public class MiaryJakosci {
         if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaTrapezoidalna) {
           var x = (FunkcjaTrapezoidalna<Double>)   podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty();
           var len = x.getKoniecPrzestrzeniRozwazan() - x.getPoczatekPrzestrzeniRozwazan();
-          var inny_len = x.getKoniec() - x.getPoczatek();
-          return 1 - inny_len / len;
-        } else if (podsumowanieLingwistyczne.getKwantyfikator().getEtykieta().getAbstractZbiorRozmyty() instanceof FunkcjaGausowska) {
-            return 0.0;
+          var pole = (x.getPoczatekWartosciMaksymalnej() - x.getPoczatek()) * 0.5 + (x.getKoniecWartosciMaksymalnej() - x.getPoczatekWartosciMaksymalnej()) + (x.getKoniec() - x.getKoniecWartosciMaksymalnej()) * 0.5;
+          return 1 - pole / podsumowanieLingwistyczne.getPodmioty().size();
         }
         List<Double> doubleList = new ArrayList<>();
         for (var x : podsumowanieLingwistyczne.getPodmioty()) {
